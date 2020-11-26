@@ -1,0 +1,13 @@
+{
+  "name": "elysia instant",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/modoridev/instant.git",
+  "author": "modori",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+  }
+}

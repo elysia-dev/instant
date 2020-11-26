@@ -1,0 +1,416 @@
+<html>
+
+<head>
+  <title>Elysia</title>
+  <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+    async function navigate(id, poolId) {
+      Array.from(document.getElementsByTagName("main"))
+        .filter((element) => element.id != id)
+        .forEach((element) => {
+          element.style = "display: none";
+        });
+
+      document.getElementById(id).style = "display: block";
+    }
+  </script>
+  <link rel="stylesheet" type="text/css" href="./src/css/style.css" />
+</head>
+
+<body class="body-container">
+  <div class="header-container">
+    <header class="header-wrapper">
+      <div>
+        <h3 class="header-title"><a onclick='navigate("home")'>
+            <img class="starting-logo default-logo" alt="엘리시아" src="./src/shared/assets/images/logo_color.png"
+              style="height: 30px;">
+          </a></h3>
+        <nav class="menu-link-wrapper">
+          <p class="menu-link about">
+            <a onclick='navigate("about")'>ABOUT</a>
+          </p>
+          <p class="menu-link cocktails">
+            <a onclick='navigate("whitepaper"); calYieldTvlMcap();'>WHITEPAPER</a>
+          </p>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-container" id="home">
+      <div class="vc_col-sm-6 wpb_column column_container vc_column_container col padding-15-percent instance-1"
+        data-shadow="none" data-border-radius="none" data-border-animation="" data-border-animation-delay=""
+        data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="top"
+        data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
+        data-animation="" data-delay="0">
+        <div class="vc_column-inner">
+          <div class="wpb_wrapper">
+            <div class="divider-wrap">
+              <div style="margin-top: 20px; width: 30px; height: 5px; margin-bottom: 20px;" data-width="30"
+                data-animate="" data-animation-delay="" data-color="extra-color-gradient-2"
+                class="divider-small-border"></div>
+            </div>
+            <h2 style="text-align: left;font-family:Roboto;font-weight:700;font-style:normal" class="vc_custom_heading">
+              Real
+              estate opportunities<br>
+              at your fingertips</h2>
+            <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+              <div class="wpb_wrapper">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><a href="https://apps.apple.com/kr/app/itunes-connect/id376771144"><img
+                            src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred.png"
+                            style='height:54px'></a></td>
+                      <td><a href="https://play.google.com/store/apps/details?id=land.elysia"><img
+                            src="https://lh3.googleusercontent.com/cjsqrWQKJQp9RFO7-hJ9AfpKzbUb_Y84vXfjlP0iRHBvladwAfXih984olktDhPnFqyZ0nu9A5jvFwOEQPXzv7hr3ce3QVsLN8kQ2Ao=s0"
+                            style='height:54px'></a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <img class="" alt="app-descriptions" src="./src/shared/assets/images/apps.png">
+    </main>
+
+    <main class="main-container" id="whitepaper" style="display: none">
+      whitepaper link!
+    </main>
+
+    <main class="main-container" id="about" style="display: none">
+      <h3 style='color:#383838'>Team</h3>
+      <div>
+        <div style="margin: auto; width: 725px">
+          <div style='color:#383838;text-align: left;font-size: 22px; margin-bottom: 50px'>
+            Elysia
+          </div>
+          <div>
+
+            <div class="about-member">
+              <div clss="about-photo">
+                <img class="about-img" src="./src/shared/assets/images/limjunggun.png">
+              </div>
+              <div class="about-content">
+                <div class="about-name">
+                  JungGun Lim
+                </div>
+                <div class="about-desc">
+                  <div class="about-desc-element"> ・ ELYSIA CEO</div>
+                  <div class="about-desc-element"> ・ Seoul National University, Dept. of chemical & biological engineering </div>
+                  <div class="about-desc-element"> ・ Samsung SDI</div>
+                  <div class="about-desc-element"> ・ Specializes in Ruby/React JS</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-member">
+              <div class="about-photo">
+                <img class="about-img" src="./src/shared/assets/images/yoonkim.png">
+              </div>
+              <div class="about-content">
+                <div class="about-name">
+                  Yoon Kim
+                </div>
+                <div class="about-desc">
+                  <div class="about-desc-element"> ・ ELYSIA CMO</div>
+                  <div class="about-desc-element"> ・ Pepperdine University B.A.</div>
+                  <div class="about-desc-element"> ・ Business Development at STX O&S and Hanjin </div>
+                  <div class="about-desc-element"> ・ Business Development at ICONLOOP</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-member">
+              <div class="about-photo">
+                <img class="about-img" src="./src/shared/assets/images/chawonjoon.png">
+              </div>
+              <div class="about-content">
+                <div class="about-name">
+                  WonJoon Cha
+                </div>
+                <div class="about-desc">
+                  <div class="about-desc-element"> ・ ELYSIA CSO</div>
+                  <div class="about-desc-element"> ・ Seoul National University, School of mechanical & aerospace engineering </div>
+                  <div class="about-desc-element"> ・ CEO of BTbridge lnc.</div>
+                  <div class="about-desc-element"> ・ Specializes in Big data development </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="about-member">
+              <div class="about-photo">
+                <img class="about-img" src="./src/shared/assets/images/doungukse.png">
+              </div>
+              <div class="about-content">
+                <div class="about-name">
+                  DongUk Seo
+                </div>
+                <div class="about-desc">
+                  <div class="about-desc-element"> ・ ELYSIA CTO</div>
+                  <div class="about-desc-element"> ・ Seoul National University, Computer Science & Engineering</div>
+                  <div class="about-desc-element"> ・ Backend Lead Developer at HCG </div>
+                  <div class="about-desc-element"> ・ Backend Development Intern at Naver</div>
+                  <div class="about-desc-element"> ・ IOS Development Intern at Woowa Brothers</div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="about-member">
+              <div class="about-photo">
+                <img class="about-img" src="./src/shared/assets/images/heesoo.png">
+              </div>
+              <div class="about-content">
+                <div class="about-name">
+                  HeeSoo Han
+                </div>
+                <div class="about-desc">
+                  <div class="about-desc-element"> ・ ELYSIA designer</div>
+                  <div class="about-desc-element"> ・ Soongsil University, School of Global media</div>
+                  <div class="about-desc-element"> ・ Specializes in UX/UI design</div>
+                  <div class="about-desc-element"> ・ Specializes in Brand/Web design</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-member">
+              <div class="about-photo">
+                <img class="about-img" src="./src/shared/assets/images/hyunoh-1.png">
+              </div>
+              <div class="about-content">
+                <div class="about-name">
+                  HyunOh Bae
+                </div>
+                <div class="about-desc">
+                  <div class="about-desc-element"> ・ ELYSIA developer</div>
+                  <div class="about-desc-element"> ・ Korea National University of Transportation, Dept. of software</div>
+                  <div class="about-desc-element"> ・ Specializes in VR contents development</div>
+                  <div class="about-desc-element"> ・ Specializes in Server architecture & Front-end development</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-member">
+              <div class="about-photo">
+                <img class="about-img" src="./src/shared/assets/images/leejaebok.png">
+              </div>
+              <div class="about-content">
+                <div class="about-name">
+                  JaeBok Lee
+                </div>
+                <div class="about-desc">
+                  <div class="about-desc-element"> ・ ELYSIA developer</div>
+                  <div class="about-desc-element"> ・ Seoul National University, College of Pharmacy</div>
+                  <div class="about-desc-element"> ・ Specializes in Python/Django</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-member">
+              <div class="about-photo">
+                <img class="about-img" src="./src/shared/assets/images/seounyeon2.png">
+              </div>
+              <div class="about-content">
+                <div class="about-name">
+                  SeungYun Shin
+                </div>
+                <div class="about-desc">
+                  <div class="about-desc-element"> ・ ELYSIA developer</div>
+                  <div class="about-desc-element"> ・ Seoul National University,
+                    College of Business Administration, Combined Major AI, Combined Minor ICD</div>
+                  <div class="about-desc-element"> ・ University of Washington, Art and Science </div>
+                  <div class="about-desc-element"> ・ Specializes in Python/Django, UX Design, Business Development</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-member">
+              <div class="about-photo">
+                <img class="about-img" src="./src/shared/assets/images/hyemin.png">
+              </div>
+              <div class="about-content">
+                <div class="about-name">
+                  HyeMin Lee
+                </div>
+                <div class="about-desc">
+                  <div class="about-desc-element"> ・ ELYSIA developer</div>
+                  <div class="about-desc-element"> ・ Seoul National University,
+                    Dept. of rural systems engineering & Dept. of information science and culture </div>
+                  <div class="about-desc-element"> ・ Specializes in Python/Django</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div style='color:#383838;text-align: left;font-size: 22px; margin: 50px 0px'>
+            Advisor
+          </div>
+
+          <div>
+            <div class="about-member">
+              <div class="about-photo">
+                <img class="about-img" src="./src/shared/assets/images/yeho.png">
+              </div>
+              <div class="about-content">
+                <div class="about-name">
+                  YeHo Lee
+                </div>
+                <div class="about-desc">
+                  <div class="about-desc-element"> ・ Beescompany CEO </div>
+                  <div class="about-desc-element"> ・ Seoul National University, Dept. of naval architecture & ocean engineering</div>
+                  <div class="about-desc-element"> ・ DEMB basic design department</div>
+                  <div class="about-desc-element"> ・ The 27th certified realtor</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-member">
+              <div class="about-photo">
+                <img class="about-img" src="./src/shared/assets/images/jacob-1.png">
+              </div>
+              <div class="about-content">
+                <div class="about-name">
+                  Jacob Lee
+                </div>
+                <div class="about-desc">
+                  <div class="about-desc-element"> ・ Beescompany COO</div>
+                  <div class="about-desc-element"> ・ Hanyang University, Dept. of mechanical engineering</div>
+                  <div class="about-desc-element"> ・ STX Co.junior engineer</div>
+                  <div class="about-desc-element"> ・ Specializes in rental management and consulting</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-member">
+              <div class="about-photo">
+                <img class="about-img" src="./src/shared/assets/images/kwonmiae-1.png">
+              </div>
+              <div class="about-content">
+                <div class="about-name">
+                  Miae Kwon
+                </div>
+                <div class="about-desc">
+                  <div class="about-desc-element"> ・ A-Player partners Ltd, Director</div>
+                  <div class="about-desc-element"> ・ University of Seoul, Economy Master</div>
+                  <div class="about-desc-element"> ・ The Bank of Korea, Macro-economics Research assistant</div>
+                  <div class="about-desc-element"> ・ National Pension Research Institute, Researcher</div>
+                  <div class="about-desc-element"> ・ The 28th certified realtor</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style='color:#383838;text-align: left;font-size: 22px; margin: 50px 0px'>
+            ELYSIA Partners
+          </div>
+
+          <div class="about-partners">
+            <div class="elysia-partner">
+              <img src="./src/shared/assets/images/nh_digital-1.png">
+            </div>
+            <div class="elysia-partner">
+              <img src="./src/shared/assets/images/bkl-1.png">
+            </div>
+            <div class="elysia-partner">
+              <img src="./src/shared/assets/images/beescompany-1.png">
+            </div>
+            <div class="elysia-partner">
+              <img src="./src/shared/assets/images/focus-1.png">
+            </div>
+            <div class="elysia-partner">
+              <img src="./src/shared/assets/images/velic-1.png">
+            </div>
+            <div class="elysia-partner">
+              <img src="./src/shared/assets/images/blocore-1.png">
+            </div>
+            <div class="elysia-partner">
+              <img src="./src/shared/assets/images/able-1.png">
+            </div>
+            <div class="elysia-partner">
+              <img src="./src/shared/assets/images/iconloop-1.png">
+            </div>
+            <div class="elysia-partner">
+              <img src="./src/shared/assets/images/daybit-1.png">
+            </div>
+            <div class="elysia-partner">
+              <img src="./src/shared/assets/images/tokenbank-1.png">
+            </div>
+            <div class="elysia-partner">
+              <img src="./src/shared/assets/images/hahm-1.png">
+            </div>
+            <div class="elysia-partner">
+              <img src="./src/shared/assets/images/xtock-1.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="footer-outer">
+    <div id="footer-widgets">
+      <div class="container">
+        <div class="footer-row">
+          <div class="footer-col span_3 one-fourths clear-both">
+            <div id="text-2" class="widget widget_text">
+              <div class="textwidget">
+                <p><img style="width: 75%; margin-bottom: 0px; margin-top: 0px;"
+                    src="https://elysia.kr/wp-content/uploads/2018/09/logo_white_new.png"
+                    data-pagespeed-url-hash="1009868030"
+                    onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></p>
+                <p style="padding-left: 0px;">Elysia © 2018-2020. all rights reserved.</p>
+              </div>
+            </div>
+          </div>
+          <div class="footer-col span_3 one-fourths right-edge">
+            <div id="text-8" class="widget widget_text">
+              <h4>Company</h4>
+              <div class="textwidget">
+                <p>ELYSIA PLATFORM PTE. LTD.</p>
+                <p>CONTACT : cs@elysia.land</p>
+              </div>
+            </div>
+          </div>
+          <div class="footer-col span_3 one-fourths clear-both">
+            <div id="text-7" class="widget widget_text">
+              <h4>Community</h4>
+              <div class="textwidget">
+                <p><a href="https://www.facebook.com/ElysiaHQ" target="_blank" rel="noopener">Facebook</a><br>
+                  <a href="https://open.kakao.com/o/gUpSOwkb" target="_blank" rel="noopener">Kakaotalk</a><br>
+                  <a href="https://twitter.com/Elysia_HQ" target="_blank" rel="noopener">Twitter</a><br>
+                  <a href="https://t.me/elysia_official" target="_blank" rel="noopener">Telegram</a><br>
+                  <a href="https://github.com/Elysia-HQ/elysia_beta" target="_blank" rel="noopener">Github</a><br>
+                  <a href="https://medium.com/@ELYSIA_HQ" target="_blank" rel="noopener">Medium</a><br>
+                  <a href="https://www.weibo.com/7449962304/profile?topnav=1&amp;wvr=6" target="_blank"
+                    rel="noopener">Weibo</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="footer-col span_3 one-fourths right-edge col_last">
+            <div id="text-6" class="widget widget_text">
+              <h4>Download</h4>
+              <div class="textwidget">
+                <div style="display:inline-flex !important;">
+                  <a href="https://play.google.com/store/apps/details?id=land.elysia" target="_blank"
+                    rel="noopener"><img style="width: 50px;"
+                      src="https://elysia.land/wp-content/uploads/2020/11/play01.png"
+                      data-pagespeed-url-hash="3200875245"
+                      onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a><br>
+                  <a href="https://apps.apple.com/us/app/elysia/id1536733411" target="_blank" rel="noopener"><img
+                      style="width: 50px;" src="https://elysia.land/wp-content/uploads/2020/11/app01.png"
+                      data-pagespeed-url-hash="1868957424"
+                      onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
