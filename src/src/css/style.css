@@ -1,0 +1,23 @@
+a {
+  text-decoration: none;
+  color: #333333;
+}
+header.header-container {
+  width: 1190px;
+  margin: 0 auto;
+  padding: 40px 25px 0px 25px;
+}
+img.elysia-logo {
+  display: inline;
+  cursor: pointer;
+}
+nav.header-link-wrapper {
+  float: right;
+}
+p.header-link {
+  margin: 0 30px;
+  font-size: 15px;
+  line-height: 18px;
+  display: inline;
+  cursor: pointer;
+}
