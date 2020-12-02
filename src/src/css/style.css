@@ -1,6 +1,16 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../shared/fonts/Inter-VariableFont_slnt,wght.ttf")
+    format("truetype");
+}
+p,
+h3 {
+  font-family: "Inter";
+}
 a {
   text-decoration: none;
   color: #333333;
+  font-family: "Inter";
 }
 header.header-container {
   max-width: 1190px;
@@ -34,7 +44,7 @@ p.main-text {
   font-size: 62px;
   font-weight: bolder;
 }
-div.main-wrapper {
+section.main-wrapper {
   max-width: 1190px;
   margin: 0 auto;
   padding: 30px;
@@ -47,7 +57,7 @@ img.app-store {
 img.elysia-app {
   float: right;
 }
-div.contents-wrapper {
+section.contents-wrapper {
   height: 900px;
   max-width: 1190px;
   margin: 0 auto;
@@ -70,7 +80,7 @@ img.service-square {
 div.service-text {
   display: inline-block;
 }
-div.service-wrapper {
+section.service-wrapper {
   flex-direction: row;
   display: flex;
   justify-content: space-around;
@@ -118,7 +128,7 @@ p.header-text {
   font-weight: bold;
   text-align: left;
 }
-div.team-wrapper {
+section.team-wrapper {
   text-align: center;
 }
 div.team-info-wrapper > h3 {
@@ -213,10 +223,10 @@ p.footer-terms-fo-service {
   flex: 1;
   text-align: right;
 }
-div.partners-wrapper {
+section.partners-wrapper {
   height: 700px;
 }
-div.contact-wrapper {
+section.contact-wrapper {
   height: 400px;
   text-align: center;
 }
@@ -240,4 +250,5 @@ button.contact-button {
   color: #fff;
   font-size: 15px;
   border: none;
+  font-family: "Inter";
 }

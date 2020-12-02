@@ -25,19 +25,11 @@ import Medium from '../src/src/shared/image/medium.png';
 import Telegram from '../src/src/shared/image/telegram.png';
 import Weibo from '../src/src/shared/image/weibo.png';
 import Twitter from '../src/src/shared/image/twitter.png';
-
-
-
-
-
-
-
-
-
-
 import '../src/src/css/style.css';
 
 class App extends Component {
+  btnArr = document.getElementById('123');
+
   render() {
     return (
       <div>
@@ -46,7 +38,7 @@ class App extends Component {
           <nav className="header-link-wrapper">
             <p className="header-link service">
               {/* eslint-disable-next-line */}
-              <a href='#'>서비스</a>
+              <a href='#service'>서비스</a>
             </p>
             <p className="header-link milestone">
               {/* eslint-disable-next-line */}
@@ -54,19 +46,19 @@ class App extends Component {
             </p>
             <p className="header-link team">
               {/* eslint-disable-next-line */}
-              <a href='#'>팀</a>
+              <a href='#team'>팀</a>
             </p>
             <p className="header-link partners">
               {/* eslint-disable-next-line */}
-              <a href='#'>협력업체</a>
+              <a href='#partners'>협력업체</a>
             </p>
             <p className="header-link contect">
               {/* eslint-disable-next-line */}
-              <a href='#'>문의하기</a>
+              <a href='#contact'>문의하기</a>
             </p>
           </nav>
         </header>
-        <div className="main-wrapper">
+        <section className="main-wrapper" id="main">
           <div className="main-text-wrapper">
             <p className="main-text">
               세상에 없던 새로운 부동산 투자
@@ -75,8 +67,8 @@ class App extends Component {
             <img src={GooglePlay} className="google-play" alt="Elysia" />
           </div>
           <img src={ElysiaApp} className="elysia-app" alt="Elysia" />
-        </div>
-        <div className="service-wrapper contents-wrapper">
+        </section>
+        <section className="service-wrapper contents-wrapper" id="service">
           <img src={Onboarding} className="on-boarding" alt="Elysia" />
           <div className="service-icon-wrapper">
             <div className="service-icon-bar" />
@@ -98,8 +90,9 @@ class App extends Component {
               <p className="service-text">당신의 부동산 자산을 부동산 토큰으로 바꾸세요</p>
             </div>
           </div>
-        </div>
-        <div className="team-wrapper contents-wrapper">
+        </section>
+
+        <section className="team-wrapper contents-wrapper" id="team">
           <p className="team-header-text header-text">TEAM</p>
           <div className="team-info-wrapper">
             <img src={Temp} className="team-picture" alt="Elysia" />
@@ -141,8 +134,8 @@ class App extends Component {
             <h3>이재곱</h3>
             <p>Bees' Compony CEO</p>
           </div>
-        </div>
-        <div className="partners-wrapper contents-wrapper">
+        </section>
+        <section className="partners-wrapper contents-wrapper" id="partners">
           <p className="pertners-header-text header-text">PARTNERS</p>
           <div className="partners-container">
             <img src={Iconloop} className="partners-picture" alt="Elysia" />
@@ -151,12 +144,12 @@ class App extends Component {
             <img src={Xangle} className="partners-picture" alt="Elysia" />
             <img src={Chainlink} className="partners-picture" alt="Elysia" />
           </div>
-        </div>
-        <div className="contact-wrapper contents-wrapper">
+        </section>
+        <section className="contact-wrapper contents-wrapper" id="contact">
           <p className="contact-header-text">Didn’t find what you’re looking for?</p>
           <p className="contact-text">We’re in the business of helping our customers stay ahead. We’d love to hear from you.</p>
           <button className="contact-button">CONTACT</button>
-        </div>
+        </section>
         <footer>
           <div className="footer-container">
             <div className="footer-wrapper">
