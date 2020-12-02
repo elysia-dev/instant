@@ -252,3 +252,72 @@ button.contact-button {
   border: none;
   font-family: "Inter";
 }
+/* mliestone */
+section.mliestone-wrapper {
+  max-width: 100%;
+}
+div.mliestone-dot-wrapper {
+  width: 1190px;
+  display: flex;
+  margin: 0 auto;
+}
+div.mliestone-timeline {
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-top: 150px;
+  height: 1px;
+  width: 100%;
+  position: relative;
+  .mliestone-line {
+    position: absolute;
+    height: 1px;
+    background-color: #3679b5;
+    width: 50%;
+    left: 0;
+  }
+  .mliestone-dot {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    transition: 0.3s ease-in-out;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    position: relative;
+    top: -5px;
+    text-align: center;
+    background-color: #fff;
+    cursor: pointer;
+    &:nth-child(1) {
+      left: 0%;
+    }
+    &:nth-child(2) {
+      left: 33%;
+    }
+    &:nth-child(3) {
+      left: 66%;
+    }
+    &:nth-child(4) {
+      left: 100%;
+    }
+    &:hover {
+      background-color: #3679b5;
+      box-shadow: 0px 6px 10px #2498ff9a;
+    }
+    p {
+      font-family: roboto;
+      font-size: 1.1rem;
+      display: block;
+      position: relative;
+      top: -60px;
+      text-align: center;
+    }
+    span {
+      // display: inline-block;
+      display: none;
+      background-color: #3679b5;
+      width: 24px;
+      height: 24px;
+      border-radius: 5px;
+      box-shadow: 0px 3px 6px #2498ff9a;
+    }
+  }
+}
