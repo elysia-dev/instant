@@ -32,17 +32,34 @@ const App = () => {
     selectMliestone: 0,
   });
 
+  // async function ChangeMliestoneDot(count: number) {
+  //   const DocumentClassName: HTMLElement = window.document.getElementById("mliestone-dot")!;
+  //   DocumentClassName.style.backgroundColor = "#fff";
+  //   for(var i=0; i>count; i++) {
+  //     let DocumentElement: HTMLElement = window.document.getElementById("mliestone-" + i)!;
+  //     DocumentElement.style.backgroundColor = "#3679b5";
+  //   }
+  //   // let DocumentElement: HTMLElement = window.document.getElementById("mliestone-" + count)!;
+  //   // DocumentElement.style.backgroundColor = "#3679b5";
+  //   setState({ ...state, selectMliestone: count});
+  // };
+  const MliestoneSelect = {
+    width: 24,
+    height: 24,
+    backgroundColor: "#3679b5",
+    borderRadius: 5,
+    boxShadow: "0px 3px 6px #3679b5"
+  }
   async function ChangeMliestoneDot(count: number) {
-    const DocumentClassName: HTMLElement = window.document.getElementById("mliestone-dot")!;
-    DocumentClassName.style.backgroundColor = "#fff";
     for(var i=0; i>count; i++) {
       let DocumentElement: HTMLElement = window.document.getElementById("mliestone-" + i)!;
       DocumentElement.style.backgroundColor = "#3679b5";
     }
-    // let DocumentElement: HTMLElement = window.document.getElementById("mliestone-" + count)!;
-    // DocumentElement.style.backgroundColor = "#3679b5";
-    setState({ ...state, selectMliestone: count});
-  };
+  }
+  const TimeLineListing = Array(4).fill(0).map((_x, index) => {
+
+  });
+  
   return (
     <div>
       <header className="header-container">
@@ -106,7 +123,7 @@ const App = () => {
       <section className="mliestone-wrapper contents-wrapper" id="milestone">
         <div className="mliestone-timeline">
           <div className="mliestone-dot-wrapper">
-            <div className="mliestone-dot" id="mliestone-1" onClick={() => ChangeMliestoneDot(1)}>
+            <div className="mliestone-dot" id="mliestone-1" style={MliestoneSelect} onClick={() => ChangeMliestoneDot(1)}>
               <span />
               <p>12312321</p>
             </div>
