@@ -9,6 +9,7 @@ import ElysiaOff from '../../shared/image/square-elysia-off.png';
 import DefiOff from '../../shared/image/square-defi-off.png';
 import OnboardingOff from '../../shared/image/square-onboarding-off.png';
 import i18n from '../../i18n/i18n';
+import '../../css/style.scss';
 
 interface Props {
   Timer: number
@@ -98,15 +99,15 @@ export class ServiceComponent extends Component<Props, State> {
         </div>
         <div className="service-text-wrapper">
           <div className="service-onboarding-wrapper service-text">
-            <p className="service-header-text" style={{ color: (this.state.Focusing === 1 ? "#3679b5" : "#000000") }} >{i18n.t('service.onboarding')}</p>
+            <p className="service-header-text" style={{ color: (this.state.Focusing === 1 ? "#3679b5" : "#2C2C2C") }} >{i18n.t('service.onboarding')}</p>
             <p className="service-text">{i18n.t('service.onboarding_label')}</p>
           </div>
           <div className="service-elysia-wrapper service-text">
-            <p className="service-header-text" style={{ color: (this.state.Focusing === 2 ? "#3679b5" : "#000000") }} >{i18n.t('service.elysia_app')}</p>
+            <p className="service-header-text" style={{ color: (this.state.Focusing === 2 ? "#3679b5" : "#2C2C2C") }} >{i18n.t('service.elysia_app')}</p>
             <p className="service-text">{i18n.t('service.elysia_app_label')}</p>
           </div>
           <div className="service-defi-wrapper service-text">
-            <p className="service-header-text" style={{ color: (this.state.Focusing === 3 ? "#3679b5" : "#000000") }} >{i18n.t('service.defi')}</p>
+            <p className="service-header-text" style={{ color: (this.state.Focusing === 3 ? "#3679b5" : "#2C2C2C") }} >{i18n.t('service.defi')}</p>
             <p className="service-text">{i18n.t('service.defi_label')}</p>
           </div>
         </div>

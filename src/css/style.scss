@@ -3,6 +3,9 @@
   src: url("../shared/fonts/Inter-VariableFont_slnt,wght.ttf")
     format("truetype");
 }
+div.elysia {
+  background-color: #FFFFFF;
+}
 p, h3, h1 {
   font-family: "Inter";
   cursor: default;
@@ -153,8 +156,15 @@ div.partners-container {
   margin-top: 100px;
 }
 footer {
-  color: #fff;
-  background-color: #1a1a1a;
+  color: #fff !important;
+  background-color: #1a1a1a !important;
+}
+div.footer-lower > p{
+  color: #fff !important;
+  cursor: pointer;
+}
+div.footer-lower > p.footer-copyright{
+  cursor: default;
 }
 div.footer-container {
   background-color: #333333;
@@ -195,6 +205,7 @@ p.footer-header-text {
   font-size: 15px;
   margin: 0;
   margin-bottom: 13px;
+  color: #fff;
 }
 p.footer-text {
   font-size: 15px;
@@ -215,6 +226,7 @@ div.footer-lower {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  color: #fff;
 }
 p.footer-copyright {
   flex: 4;
@@ -321,7 +333,7 @@ div.mliestone-timeline {
     width: 500px;
     white-space: pre-line;
     text-align: left;
-    color: #333333;
+    color: #2C2C2C;
     font-size: 20px;
     display: none;
     cursor: default;
@@ -332,7 +344,7 @@ div.mliestone-timeline {
     width: 400px;
     white-space: pre-line;
     text-align: left;
-    color: #333333;
+    color: #2C2C2C;
     font-size: 20px;
     display: none;
     cursor: default;
