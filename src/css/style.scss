@@ -3,9 +3,9 @@
   src: url("../shared/fonts/Inter-VariableFont_slnt,wght.ttf")
     format("truetype");
 }
-p,
-h3 {
+p, h3 {
   font-family: "Inter";
+  cursor: default;
 }
 a {
   text-decoration: none;
@@ -206,6 +206,7 @@ div.footer-container-contact > p {
 }
 img.footer-icon {
   margin: 6px 0px 20px 26px;
+  cursor: pointer;
 }
 div.footer-lower {
   max-width: 1190px;
@@ -253,6 +254,7 @@ button.contact-button {
   font-size: 15px;
   border: none;
   font-family: "Inter";
+  cursor: pointer;
 }
 /* mliestone */
 section.mliestone-wrapper {
@@ -321,6 +323,7 @@ div.mliestone-timeline {
     color: #333333;
     font-size: 20px;
     display: none;
+    cursor: default;
   }
   h1.mliestone-lower-text {
     position: absolute;
@@ -331,6 +334,7 @@ div.mliestone-timeline {
     color: #333333;
     font-size: 20px;
     display: none;
+    cursor: default;
   }
 }
 p.mliestone-header-text {

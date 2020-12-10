@@ -29,7 +29,6 @@ import { ServiceComponent } from './modules/service/ServiceComponent';
 const App = () => {
   const [state, setState] = useState({
     selectMliestone: -1,
-    totalMliestoneArray: 15,
     language: "ko",
   });
   i18n.locale = state.language;
@@ -61,11 +60,7 @@ const App = () => {
     borderRadius: 2,
     boxShadow: "0px 6px 10px #2498ff9a"
   }
-  async function ChangeMliestoneDot(count: number) {
-    setState({ ...state, selectMliestone: count});
-    console.log(state.selectMliestone);
-  }
-  const TimeLineListing = Array(state.totalMliestoneArray).fill(0).map((_x, index) => {
+  const TimeLineListing = Array(i18n.t('mliestone.timeline').length).fill(0).map((_x, index) => {
     return (
       <>
         <div className={"mliestone-dot " + (state.selectMliestone === index ? 'mliestone-selected' : '')} id={"mliestone-" + index} style={{
@@ -73,7 +68,7 @@ const App = () => {
               MliestoneSelected : 
             state.selectMliestone > index &&
               MliestoneActivation)
-            }} onClick={() => ChangeMliestoneDot(index)}>
+            }} onClick={() => setState({ ...state, selectMliestone: index})}>
           <p className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')}>{i18n.t('mliestone.timeline.' + index)}</p>
           <h1 className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')} style={{ ...(state.selectMliestone === index ? {display: "block"} : {display: "none"} )}}>{i18n.t('mliestone.timeline_contant.' + index)}</h1>
         </div>
@@ -93,7 +88,9 @@ const App = () => {
   return (
     <div className="elysia" ref={Top}>
       <header className="header-container">
-        <img src={ElysiaLogo} className="elysia-logo" alt="Elysia" />
+        <a href="https://elysia.land/">
+          <img src={ElysiaLogo} className="elysia-logo" alt="Elysia" />
+        </a>
         <nav className="header-link-wrapper">
           <p className="header-link service">
             <a onClick={() => Scroll(Service)}>{i18n.t("main.service")}</a>
@@ -118,8 +115,12 @@ const App = () => {
           <p className="main-text">
             {i18n.t('main.invest_label')}
           </p>
-          <img src={AppStore} className="app-store" alt="Elysia" />
-          <img src={GooglePlay} className="google-play" alt="Elysia" />
+          <a href="https://apps.apple.com/us/app/elysia/id1536733411">
+            <img src={AppStore} className="app-store" alt="Elysia" />
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=land.elysia">
+            <img src={GooglePlay} className="google-play" alt="Elysia" />
+          </a>
         </div>
         <img src={ElysiaApp} className="elysia-app" alt="Elysia" />
       </section>
@@ -129,9 +130,9 @@ const App = () => {
       <section className="mliestone-wrapper contents-wrapper" id="milestone" ref={Milestone}> 
         <div>
           <p className="mliestone-header-text header-text">{i18n.t("mliestone.header_label")}</p>
-          <div className="mliestone-timeline" style={{ ...(state.totalMliestoneArray === (state.selectMliestone + 1) ? { backgroundColor: "#3679b5" } : { backgroundColor: "#cccccc" }) }}>
+          <div className="mliestone-timeline" style={{ ...(i18n.t('mliestone.timeline').length === (state.selectMliestone + 1) ? { backgroundColor: "#3679b5" } : { backgroundColor: "#cccccc" }) }}>
             <div className="mliestone-dot-wrapper">
-              <div className="mliestone-line" style={{ width: (1190/(state.totalMliestoneArray-1)) * state.selectMliestone }} />
+              <div className="mliestone-line" style={{ width: (1190/(i18n.t('mliestone.timeline').length-1)) * state.selectMliestone }} />
               {TimeLineListing}
             </div>
           </div>
@@ -175,7 +176,9 @@ const App = () => {
                   {i18n.t("footer.whitepaper")}
                 </p>
                 <p className="footer-text">
-                  https://주소
+                  <a href="https://drive.google.com/file/d/1Sxu8-jIIJlVUZoVhtX4QG8kS73vXr3Cs/view" style={{ color: "#fff" }}>
+                    https://drive.google.com/file/d/1Sxu8-jIIJlVUZoVhtX4QG8kS73vXr3Cs/view
+                  </a>
                 </p>
               </div>
             </div>
@@ -183,14 +186,30 @@ const App = () => {
               <p className="footer-header-text">
                 {i18n.t("footer.community")}
               </p>
-              <img src={Twitter} className="footer-icon" alt="Elysia"/>
-              <img src={Kakaotalk} className="footer-icon" alt="Elysia"/>
-              <img src={Telegram} className="footer-icon" alt="Elysia"/>
-              <img src={Github} className="footer-icon" alt="Elysia"/>
-              <img src={Fackbook} className="footer-icon" alt="Elysia"/>
-              <img src={Weibo} className="footer-icon" alt="Elysia"/>
-              <img src={Medium} className="footer-icon" alt="Elysia"/>
-              <img src={Blog} className="footer-icon" alt="Elysia"/>
+              <a href="https://twitter.com/Elysia_HQ">
+                <img src={Twitter} className="footer-icon" alt="Elysia"/>   
+              </a>
+              <a href="https://open.kakao.com/o/gUpSOwkb">
+               <img src={Kakaotalk} className="footer-icon" alt="Elysia"/>
+              </a>
+              <a href="https://t.me/elysia_official">
+                <img src={Telegram} className="footer-icon" alt="Elysia"/>
+              </a>
+              <a href="https://github.com/elysia-land?tab=repositories">
+               <img src={Github} className="footer-icon" alt="Elysia"/>
+              </a>
+              <a href="https://www.facebook.com/ElysiaHQ">
+                <img src={Fackbook} className="footer-icon" alt="Elysia"/>
+              </a>
+              <a href="https://www.weibo.com/u/7449962304">
+                <img src={Weibo} className="footer-icon" alt="Elysia"/>
+              </a>
+              <a href="https://medium.com/@ELYSIA_HQ">
+               <img src={Medium} className="footer-icon" alt="Elysia"/>
+              </a>
+              <a href="https://blog.naver.com/elysia_platform">
+               <img src={Blog} className="footer-icon" alt="Elysia"/>
+              </a>
             </div>
           </div>
         </div>
