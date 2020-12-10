@@ -48,8 +48,8 @@ section.main-wrapper {
   max-width: 1190px;
   margin: 0 auto;
   padding: 30px;
-  padding-top: 70px;
-  height: 700px;
+  margin-top: 10vh;
+  height: 80vh;
 }
 img.app-store {
   margin-right: 30px;
@@ -58,12 +58,9 @@ img.elysia-app {
   float: right;
 }
 section.contents-wrapper {
-  height: 900px;
+  height: 80vh;
   max-width: 1190px;
   margin: 0 auto;
-}
-img.on-boarding {
-  display: inline-block;
 }
 div.service-text-wrapper {
   display: flex;
@@ -72,10 +69,10 @@ div.service-text-wrapper {
 img.service-square {
   display: inline-block;
   z-index: 2;
-  margin-bottom: 65px;
-  margin-top: 65px;
-  bottom: 10px;
-  position: relative;
+  position: relative; 
+  top: 0; 
+  left: 0;
+  transition: all .3s ease-in-out;
 }
 div.service-text {
   display: inline-block;
@@ -86,9 +83,18 @@ section.service-wrapper {
   justify-content: space-around;
   align-items: center;
 }
-img.on-boarding {
+div.on-boarding {
   width: 607px;
   height: 607px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+img.service-image {
+  transition: all .5s ease-in-out;
+  position: absolute; 
+  top: 0; 
+  left: 0;
 }
 div.service-icon-wrapper {
   display: flex;
@@ -96,26 +102,21 @@ div.service-icon-wrapper {
   align-items: center;
   justify-content: center;
 }
-div.service-icon-bar {
-  width: 4px;
-  height: 400px;
-  background-color: #f6f6f8;
-  position: absolute;
-}
 p.service-header-text {
   font-size: 26px;
   font-weight: bold;
   margin: 5px 0;
+  transition: all .3s ease-in-out;
 }
 p.service-text {
   font-size: 15px;
   margin: 5px 0;
 }
 div.service-text {
-  margin-bottom: 64px;
-  margin-top: 64px;
+  margin-bottom: 86px;
+  margin-top: 48px;
   position: relative;
-  bottom: 3px;
+  top: 24px;
 }
 div.team-info-wrapper {
   width: 200px;
@@ -127,6 +128,7 @@ p.header-text {
   font-size: 30px;
   font-weight: bold;
   text-align: left;
+  padding-top: 5vh;
 }
 section.team-wrapper {
   text-align: center;
@@ -224,10 +226,10 @@ p.footer-terms-fo-service {
   text-align: right;
 }
 section.partners-wrapper {
-  height: 700px;
+  height: 70vh;
 }
 section.contact-wrapper {
-  height: 400px;
+  height: 60vh;
   text-align: center;
 }
 p.contact-header-text {
@@ -260,24 +262,31 @@ div.mliestone-dot-wrapper {
   width: 1190px;
   display: flex;
   margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-between;
 }
 div.mliestone-timeline {
-  background-color: rgba(0, 0, 0, 0.2);
-  margin-top: 150px;
+  background-color: #cccccc;
   height: 1px;
   width: 100%;
+  top: 22vh;
   position: relative;
   .mliestone-line {
     position: absolute;
     height: 1px;
     background-color: #3679b5;
-    width: 50%;
-    left: 0;
+    width: 0px;
+  }
+  .mliestone-back-line {
+    position: absolute;
+    height: 1px;
+    background-color: #3679b5;
+    width: 100%;
   }
   .mliestone-dot {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     z-index: 99;
-    transition: 0.3s ease-in-out;
+    transition: 0.1s ease-in-out;
     width: 12px;
     height: 12px;
     border-radius: 2px;
@@ -286,38 +295,65 @@ div.mliestone-timeline {
     text-align: center;
     background-color: #fff;
     cursor: pointer;
-    &:nth-child(1) {
-      left: 0%;
-    }
-    &:nth-child(2) {
-      left: 33%;
-    }
-    &:nth-child(3) {
-      left: 66%;
-    }
-    &:nth-child(4) {
-      left: 100%;
-    }
     &:hover {
       background-color: #3679b5;
       box-shadow: 0px 6px 10px #2498ff9a;
     }
-    p {
-      font-family: roboto;
-      font-size: 1.1rem;
-      display: block;
-      position: relative;
-      top: -60px;
-      text-align: center;
-    }
-    span {
-      // display: inline-block;
-      display: none;
-      background-color: #3679b5;
-      width: 24px;
-      height: 24px;
-      border-radius: 5px;
-      box-shadow: 0px 3px 6px #2498ff9a;
-    }
+  }
+  p.mliestone-upper-text {
+    position: absolute;
+    bottom: 22PX;
+    color: #3679B5;
+    font-size: 15px;
+  }
+  p.mliestone-lower-text {
+    position: absolute;
+    top: 22PX;
+    color: #3679B5;
+    font-size: 15px;
+  }
+  h1.mliestone-upper-text {
+    position: absolute;
+    bottom: 70px;
+    width: 500px;
+    white-space: pre-line;
+    text-align: left;
+    color: #333333;
+    font-size: 20px;
+    display: none;
+  }
+  h1.mliestone-lower-text {
+    position: absolute;
+    top: 70px;
+    width: 400px;
+    white-space: pre-line;
+    text-align: left;
+    color: #333333;
+    font-size: 20px;
+    display: none;
+  }
+}
+p.mliestone-header-text {
+  width: 1190px;
+  margin: 0 auto;
+}
+button.top-botton {
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color:  #ffffff;
+  box-shadow: 1px 3px 8px #00000052;
+  color: #3679b5;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: all .5s ease-in-out;
+  &:hover {
+    color: white;
+    background-color: #3679b5;
   }
 }
