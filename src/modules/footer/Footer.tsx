@@ -10,15 +10,18 @@ import Twitter from '../../shared/image/twitter.png';
 import React, { FunctionComponent } from 'react';
 import i18n from '../../i18n/i18n';
 import '../../css/style.scss';
+import { useHistory } from 'react-router-dom';
 
 const Footer: FunctionComponent = () => {
+  const history = useHistory();
+
   return (
     <footer>
       <div className="footer-container">
         <div className="footer-wrapper">
           <div className="footer-container-left">
             <div className="footer-container-logo">
-              <img src={ElysiaLogoWhite} className="elysia-logo-white" alt="Elysia"/>
+              <img src={ElysiaLogoWhite} className="elysia-logo-white" alt="Elysia" />
               <p className="elysia-logo-text">{i18n.t("footer.logo_label")}</p>
             </div>
             <div className="footer-container-contact">
@@ -43,41 +46,44 @@ const Footer: FunctionComponent = () => {
               {i18n.t("footer.community")}
             </p>
             <a href="https://twitter.com/Elysia_HQ">
-              <img src={Twitter} className="footer-icon" alt="Elysia"/>   
+              <img src={Twitter} className="footer-icon" alt="Elysia" />
             </a>
             <a href="https://open.kakao.com/o/gUpSOwkb">
-            <img src={Kakaotalk} className="footer-icon" alt="Elysia"/>
+              <img src={Kakaotalk} className="footer-icon" alt="Elysia" />
             </a>
             <a href="https://t.me/elysia_official">
-              <img src={Telegram} className="footer-icon" alt="Elysia"/>
+              <img src={Telegram} className="footer-icon" alt="Elysia" />
             </a>
             <a href="https://github.com/elysia-land?tab=repositories">
-            <img src={Github} className="footer-icon" alt="Elysia"/>
+              <img src={Github} className="footer-icon" alt="Elysia" />
             </a>
             <a href="https://www.facebook.com/ElysiaHQ">
-              <img src={Fackbook} className="footer-icon" alt="Elysia"/>
+              <img src={Fackbook} className="footer-icon" alt="Elysia" />
             </a>
             <a href="https://www.weibo.com/u/7449962304">
-              <img src={Weibo} className="footer-icon" alt="Elysia"/>
+              <img src={Weibo} className="footer-icon" alt="Elysia" />
             </a>
             <a href="https://medium.com/@ELYSIA_HQ">
-            <img src={Medium} className="footer-icon" alt="Elysia"/>
+              <img src={Medium} className="footer-icon" alt="Elysia" />
             </a>
             <a href="https://blog.naver.com/elysia_platform">
-            <img src={Blog} className="footer-icon" alt="Elysia"/>
+              <img src={Blog} className="footer-icon" alt="Elysia" />
             </a>
           </div>
         </div>
       </div>
       <div className="footer-lower">
         <p className="footer-copyright">
-        {i18n.t("footer.copyright")}
+          {i18n.t("footer.copyright")}
         </p>
-        <p className="footer-privacy-policy">
-          {i18n.t("footer.privacy_policy")}
+        <p className="footer-privacy-policy" onClick={() => history.push("/privacyPolicy")}>
+          Privacy Policy
         </p>
-        <p className="footer-terms-fo-service">
-          {i18n.t("footer.terms_service")}
+        <p className="footer-terms-fo-service" onClick={() => history.push("/disclaimer")}>
+          Disclaimer
+        </p>
+        <p className="footer-terms-fo-service" onClick={() => history.push("/userAgreement")}>
+          User Agreement
         </p>
       </div>
     </footer>
