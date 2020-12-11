@@ -121,7 +121,7 @@ const Main = () => {
             <a onClick={() => Scroll(Partners)}>{t("main.partners")}</a>
           </p>
           <p className="header-link contect">
-            <a onClick={() => Scroll(Contact)}>{t("main.contact")}</a>
+            <a onClick={() => history.push("/contact")}>{t("main.contact")}</a>
           </p>
         </nav>
       </header>
@@ -130,7 +130,7 @@ const Main = () => {
         <div className="main-text-wrapper">
           {t('main.invest_label').split("\n").map((content, index) => {
             return (
-              <p className="main-text" key={`title_${index}`} style={{ margin: 0 }}>
+              <p className="main-text" key={`title_${index}`} style={{ margin: 0, whiteSpace: "nowrap" }}>
                 {content}
               </p>
             )
