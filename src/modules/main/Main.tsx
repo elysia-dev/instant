@@ -139,20 +139,20 @@ const Main = () => {
       <section className="service-wrapper contents-wrapper" id="service" ref={Service}>
         <ServiceComponent />
       </section>
-      <section className="mliestone-wrapper contents-wrapper" id="milestone" ref={Milestone}>
+      <section className="mliestone-wrapper contents-wrapper" id="milestone" ref={Milestone} style={{ height: 600 }}>
         <div>
           <p className="mliestone-header-text header-text">{t("mliestone.header_label")}</p>
           <div className="mliestone-timeline" style={{ ...(15 === (state.selectMliestone + 1) ? { backgroundColor: "#3679b5" } : { backgroundColor: "#cccccc" }) }}>
             <div className="mliestone-dot-wrapper">
-              <div className="mliestone-line" style={{ width: (1190 / (15- 1)) * state.selectMliestone }} />
+              <div className="mliestone-line" style={{ width: (1190 / (15 - 1)) * state.selectMliestone }} />
               {
                 Array(15).fill(0).map((_x, index) => {
                   return (
                     <>
-                      <div className={"mliestone-dot " + (state.selectMliestone === index ? 'mliestone-selected' : '')} id={"mliestone-" + index} 
+                      <div className={"mliestone-dot " + (state.selectMliestone === index ? 'mliestone-selected' : '')} id={"mliestone-" + index}
                         style={{ ...(state.selectMliestone > index && MliestoneActivation) }}
                         onClick={() => setState({ ...state, selectMliestone: index })}>
-                        <div style={{ ...(state.selectMliestone === index ? MliestoneSelected : MliestoneDisable ) }} />
+                        <div style={{ ...(state.selectMliestone === index ? MliestoneSelected : MliestoneDisable) }} />
                         <p className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')}>{t('mliestone.timeline.' + index)}</p>
                         <h1 className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')} style={{ ...(state.selectMliestone === index ? { display: "block" } : { display: "none" }) }}>{t('mliestone.timeline_contant.' + index)}</h1>
                       </div>
