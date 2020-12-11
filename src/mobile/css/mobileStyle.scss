@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../shared/fonts/Inter-VariableFont_slnt,wght.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("../../shared/fonts/Inter-Bold-slnt=0.ttf") format("truetype");
+}
+p,
+h3,
+h1 {
+  font-family: "Inter";
+  cursor: default;
+  color: #2c2c2c;
+}
+div.elysia {
+  width: 300px;
+  margin: 30px auto 0 auto;
+  background-color: #ffffff;
+}
+img.elysia-logo {
+  margin: 30px 10px 0px;
+}
+p.main-text {
+  font-size: 35px;
+  text-align: center;
+  white-space: pre-line;
+  font-family: "Inter-Bold";
+  font-weight: bold;
+  margin: 124px auto 65px auto;
+}
+img.app-store {
+  width: 125px;
+  height: 38px;
+}
+img.google-play {
+  width: 125px;
+  height: 38px;
+}
+div.main-image-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 270px;
+  margin: 0 auto;
+}
+img.elysia-app {
+  width: 100%;
+  margin-top: 50px;
+}
+img.service-square {
+  margin: 75px auto;
+  margin-bottom: 0px;
+  display: block;
+}
+section.contents-wrapper {
+  width: 100%;
+}
+p.service-header-label {
+  font-size: 24px;
+  text-align: center;
+  font-family: "Inter-Bold";
+  font-weight: bold;
+  margin-top: 35px;
+  margin-bottom: 11px;
+  text-align: center;
+}
+p.service-label {
+  font-size: 15px;
+  text-align: center;
+  font-family: "Inter";
+  margin: 0px;
+}

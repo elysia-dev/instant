@@ -3,6 +3,10 @@
   src: url("../shared/fonts/Inter-VariableFont_slnt,wght.ttf")
     format("truetype");
 }
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("../shared/fonts/Inter-Bold-slnt=0.ttf") format("truetype");
+}
 div.elysia {
   background-color: #ffffff;
   min-width: 1190px;
@@ -50,6 +54,8 @@ div.main-text-wrapper {
 p.main-text {
   font-size: 62px;
   font-weight: bolder;
+  white-space: pre-line;
+  font-family: "Inter-Bold";
 }
 section.main-wrapper {
   max-width: 1190px;
@@ -111,7 +117,7 @@ div.service-icon-wrapper {
 }
 p.service-header-text {
   font-size: 26px;
-  font-weight: bold;
+  font-family: "Inter-Bold";
   margin: 5px 0;
   transition: all 0.3s ease-in-out;
 }
@@ -133,7 +139,7 @@ div.team-info-wrapper {
 }
 p.header-text {
   font-size: 30px;
-  font-weight: bold;
+  font-family: "Inter-Bold";
   text-align: left;
   padding-top: 5vh;
 }
@@ -144,6 +150,7 @@ div.team-info-wrapper > h3 {
   margin: 20px 0px 10px 0px;
   text-align: left;
   font-size: 20px;
+  font-family: "Inter-Bold";
 }
 div.team-info-wrapper > p {
   margin: 0px;
@@ -252,7 +259,7 @@ section.contact-wrapper {
 }
 p.contact-header-text {
   font-size: 30px;
-  font-weight: bold;
+  font-family: "Inter-Bold";
   margin: 10px;
 }
 p.contact-text {

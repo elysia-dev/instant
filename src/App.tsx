@@ -1,38 +1,44 @@
 import React from 'react';
-import '../src/css/style.scss';
+import '../src/mobile/css/mobileStyle.scss';
 import {
   Switch,
   Route,
   BrowserRouter as Router,
 } from "react-router-dom";
-import Main from './modules/main/Main';
-import Contact from './modules/contact/Contact';
-import UserAgreement from './modules/UserAgreement';
-import PrivacyPolicy from './modules/PrivacyPolicy';
-import Disclaimer from './modules/Disclaimer';
-import Footer from './modules/footer/Footer';
+// import Main from './mobile/modules/main/Main';
+// import Contact from './modules/contact/Contact';
+// import UserAgreement from './modules/UserAgreement';
+// import PrivacyPolicy from './modules/PrivacyPolicy';
+// import Disclaimer from './modules/Disclaimer';
+// import Footer from './modules/footer/Footer';
+import MainMobile from './mobile/modules/main/Main';
+import ContactMobile from './mobile/modules/contact/Contact';
+import UserAgreementMobile from './mobile/modules/UserAgreement';
+import PrivacyPolicyMobile from './mobile/modules/PrivacyPolicy';
+import DisclaimerMobile from './mobile/modules/Disclaimer';
+import FooterMobile from './mobile/modules/footer/Footer';
 
 const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/contact">
-          <Contact />
+        <Route path="/mobile/contact">
+          <ContactMobile />
         </Route>
-        <Route path="/userAgreement">
-          <UserAgreement />
+        <Route path="/mobile/userAgreement">
+          <UserAgreementMobile />
         </Route>
-        <Route path="/privacyPolicy">
-          <PrivacyPolicy />
+        <Route path="/mobile/privacyPolicy">
+          <PrivacyPolicyMobile />
         </Route>
-        <Route path="/disclaimer">
-          <Disclaimer />
+        <Route path="/mobile/disclaimer">
+          <DisclaimerMobile />
         </Route>
         <Route path="*">
-          <Main />
+          <MainMobile />
         </Route>
       </Switch>
-      <Footer />
+      <FooterMobile />
     </Router>
   );
 }
