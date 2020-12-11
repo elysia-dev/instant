@@ -11,23 +11,24 @@ import UserAgreement from './modules/UserAgreement';
 import PrivacyPolicy from './modules/PrivacyPolicy';
 import Disclaimer from './modules/Disclaimer';
 import Footer from './modules/footer/Footer';
+import RouteWithHeader from './modules/RouteWithHeader';
 
 const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/contact">
+        <RouteWithHeader path="/contact">
           <Contact />
-        </Route>
-        <Route path="/userAgreement">
+        </RouteWithHeader>
+        <RouteWithHeader path="/userAgreement">
           <UserAgreement />
-        </Route>
-        <Route path="/privacyPolicy">
+        </RouteWithHeader>
+        <RouteWithHeader path="/privacyPolicy">
           <PrivacyPolicy />
-        </Route>
-        <Route path="/disclaimer">
+        </RouteWithHeader>
+        <RouteWithHeader path="/disclaimer">
           <Disclaimer />
-        </Route>
+        </RouteWithHeader>
         <Route path="*">
           <Main />
         </Route>

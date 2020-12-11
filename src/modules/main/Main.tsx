@@ -48,7 +48,6 @@ import HOW from '../../shared/image/partners/how.png';
 import '../../css/style.scss';
 import i18n from '../../i18n/i18n';
 import { ServiceComponent } from '../../modules/service/ServiceComponent';
-import Footer from '../../modules/footer/Footer';
 import { useHistory } from 'react-router-dom';
 
 const Main = () => {
