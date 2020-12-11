@@ -82,9 +82,6 @@ const Footer: FunctionComponent = () => {
         <p className="footer-terms-fo-service" onClick={() => history.push("/disclaimer")}>
           Disclaimer
         </p>
-        <p className="footer-terms-fo-service" onClick={() => history.push("/userAgreement")}>
-          User Agreement
-        </p>
       </div>
     </footer>
   );
