@@ -48,7 +48,7 @@ import HOW from '../../shared/image/partners/how.png';
 import '../../css/style.scss';
 import i18n from '../../i18n/i18n';
 import { ServiceComponent } from '../../modules/service/ServiceComponent';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 const Main = () => {
   const [state, setState] = useState({
@@ -89,9 +89,9 @@ const Main = () => {
   return (
     <div className="elysia" ref={Top}>
       <header className="header-container">
-        <a href="https://elysia.land/">
+        <Link to="/">
           <img src={ElysiaLogo} className="elysia-logo" alt="Elysia" />
-        </a>
+        </Link>
         <nav className="header-link-wrapper">
           <p className="header-link service">
             <a onClick={() => Scroll(Service)}>{i18n.t("main.service")}</a>
