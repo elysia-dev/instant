@@ -46,17 +46,17 @@ import HUB from '../../shared/image/partners/hub.png';
 import HOW from '../../shared/image/partners/how.png';
 
 import '../../css/style.scss';
-import i18n from '../../i18n/i18n';
-import { ServiceComponent } from '../../modules/service/ServiceComponent';
+import ServiceComponent from '../../modules/service/ServiceComponent';
 import { useHistory, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Main = () => {
   const [state, setState] = useState({
     selectMliestone: -1,
     language: "ko",
   });
-  i18n.locale = state.language;
   const history = useHistory();
+  const { t } = useTranslation();
 
   const Service = React.createRef<HTMLDivElement>();
   const Milestone = React.createRef<HTMLDivElement>();
@@ -94,19 +94,19 @@ const Main = () => {
         </Link>
         <nav className="header-link-wrapper">
           <p className="header-link service">
-            <a onClick={() => Scroll(Service)}>{i18n.t("main.service")}</a>
+            <a onClick={() => Scroll(Service)}>{t("main.service")}</a>
           </p>
           <p className="header-link milestone">
-            <a onClick={() => Scroll(Milestone)}>{i18n.t("main.milestone")}</a>
+            <a onClick={() => Scroll(Milestone)}>{t("main.milestone")}</a>
           </p>
           <p className="header-link team">
-            <a onClick={() => Scroll(Team)}>{i18n.t("main.team")}</a>
+            <a onClick={() => Scroll(Team)}>{t("main.team")}</a>
           </p>
           <p className="header-link partners">
-            <a onClick={() => Scroll(Partners)}>{i18n.t("main.partners")}</a>
+            <a onClick={() => Scroll(Partners)}>{t("main.partners")}</a>
           </p>
           <p className="header-link contect">
-            <a onClick={() => Scroll(Contact)}>{i18n.t("main.contact")}</a>
+            <a onClick={() => Scroll(Contact)}>{t("main.contact")}</a>
           </p>
         </nav>
       </header>
@@ -114,7 +114,7 @@ const Main = () => {
       <section className="main-wrapper" id="main">
         <div className="main-text-wrapper">
           <p className="main-text">
-            {i18n.t('main.invest_label')}
+            {t('main.invest_label')}
           </p>
           <a href="https://apps.apple.com/us/app/elysia/id1536733411">
             <img src={AppStore} className="app-store" alt="Elysia" />
@@ -130,12 +130,12 @@ const Main = () => {
       </section>
       <section className="mliestone-wrapper contents-wrapper" id="milestone" ref={Milestone}>
         <div>
-          <p className="mliestone-header-text header-text">{i18n.t("mliestone.header_label")}</p>
-          <div className="mliestone-timeline" style={{ ...(i18n.t('mliestone.timeline').length === (state.selectMliestone + 1) ? { backgroundColor: "#3679b5" } : { backgroundColor: "#cccccc" }) }}>
+          <p className="mliestone-header-text header-text">{t("mliestone.header_label")}</p>
+          <div className="mliestone-timeline" style={{ ...(t('mliestone.timeline').length === (state.selectMliestone + 1) ? { backgroundColor: "#3679b5" } : { backgroundColor: "#cccccc" }) }}>
             <div className="mliestone-dot-wrapper">
-              <div className="mliestone-line" style={{ width: (1190 / (i18n.t('mliestone.timeline').length - 1)) * state.selectMliestone }} />
+              <div className="mliestone-line" style={{ width: (1190 / (t('mliestone.timeline').length - 1)) * state.selectMliestone }} />
               {
-                Array(i18n.t('mliestone.timeline').length).fill(0).map((_x, index) => {
+                Array(15).fill(0).map((_x, index) => {
                   return (
                     <>
                       <div className={"mliestone-dot " + (state.selectMliestone === index ? 'mliestone-selected' : '')} id={"mliestone-" + index} style={{
@@ -144,8 +144,8 @@ const Main = () => {
                           state.selectMliestone > index &&
                           MliestoneActivation)
                       }} onClick={() => setState({ ...state, selectMliestone: index })}>
-                        <p className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')}>{i18n.t('mliestone.timeline.' + index)}</p>
-                        <h1 className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')} style={{ ...(state.selectMliestone === index ? { display: "block" } : { display: "none" }) }}>{i18n.t('mliestone.timeline_contant.' + index)}</h1>
+                        <p className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')}>{t('mliestone.timeline.' + index)}</p>
+                        <h1 className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')} style={{ ...(state.selectMliestone === index ? { display: "block" } : { display: "none" }) }}>{t('mliestone.timeline_contant.' + index)}</h1>
                       </div>
                     </>
                   );
@@ -156,7 +156,7 @@ const Main = () => {
         </div>
       </section>
       <section className="team-wrapper contents-wrapper" id="team" ref={Team}>
-        <p className="team-header-text header-text">{i18n.t("team.header_label")}</p>
+        <p className="team-header-text header-text">{t("team.header_label")}</p>
         {
           [
             [Team1, Team1Hover],
@@ -178,15 +178,15 @@ const Main = () => {
                   <img src={team} className="team-picture" alt="Elysia" />
                   <img src={teamHover} className="team-picture hover" alt="Elysia" />
                 </div>
-                <h3>{i18n.t('team.name.' + index)}</h3>
-                <p>{i18n.t('team.dept.' + index)}</p>
+                <h3>{t('team.name.' + index)}</h3>
+                <p>{t('team.dept.' + index)}</p>
               </div>
             );
           })
         }
       </section>
       <section className="partners-wrapper contents-wrapper" id="partners" ref={Partners}>
-        <p className="pertners-header-text header-text">{i18n.t("partners.header_label")}</p>
+        <p className="pertners-header-text header-text">{t("partners.header_label")}</p>
         <div className="partners-container">
           {
             [
@@ -220,9 +220,9 @@ const Main = () => {
         </div>
       </section>
       <section className="contact-wrapper contents-wrapper" id="contact" ref={Contact}>
-        <p className="contact-header-text">{i18n.t("contact.info_header")}</p>
-        <p className="contact-text">{i18n.t("contact.info_label")}</p>
-        <button className="contact-button" onClick={() => history.push('/contact')}>{i18n.t("contact.contact_button")}</button>
+        <p className="contact-header-text">{t("contact.info_header")}</p>
+        <p className="contact-text">{t("contact.info_label")}</p>
+        <button className="contact-button" onClick={() => history.push('/contact')}>{t("contact.contact_button")}</button>
       </section>
     </div>
   );

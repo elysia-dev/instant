@@ -5,6 +5,7 @@ import {
   Route,
   BrowserRouter as Router,
 } from "react-router-dom";
+import "./i18n"
 import Main from './modules/main/Main';
 import Contact from './modules/contact/Contact';
 import PrivacyPolicy from './modules/PrivacyPolicy';
