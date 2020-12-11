@@ -1,12 +1,12 @@
 {
   "translation": {
     "main": {
-      "service": "서비스",
-      "milestone": "마일스톤",
-      "team": "팀",
-      "partners": "파트너",
-      "contact": "문의하기",
-      "invest_label": "세상에 없던\n새로운 부동산 투자"
+      "service": "Service",
+      "milestone": "Milestone",
+      "team": "Team",
+      "partners": "Partners",
+      "contact": "Contact",
+      "invest_label": "세상에 없던 \n 새로운 \n 부동산 투자"
     },
     "service": {
       "onboarding": "ONBOARDING",

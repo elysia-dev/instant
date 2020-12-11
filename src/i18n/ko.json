@@ -6,7 +6,7 @@
       "team": "팀",
       "partners": "파트너",
       "contact": "문의하기",
-      "invest_label": "세상에 없던\n새로운 부동산 투자"
+      "invest_label": "세상에 없던 \n 새로운 \n 부동산 투자"
     },
     "service": {
       "onboarding": "ONBOARDING",
@@ -17,7 +17,7 @@
       "defi_label": "부동산 토큰으로 DEFI에 참여해 보세요"
     },
     "mliestone": {
-      "header_label": "MILESTONE",
+      "header_label": "마일스톤",
       "timeline": [
         "2018.09",
         "2018.09",
@@ -54,7 +54,7 @@
       ]
     },
     "team": {
-      "header_label": "TEAM",
+      "header_label": "팀",
       "name": [
         "임정건",
         "차원준",
@@ -77,17 +77,17 @@
       ]
     },
     "partners": {
-      "header_label": "PARTNERS"
+      "header_label": "파트너"
     },
     "contact": {
-      "info_header": "Didn’t find what you’re looking for?",
-      "info_label": "We’re in the business of helping our customers stay ahead. We’d love to hear from you.",
+      "info_header": "혹시 문의할 내용이 있으신가요?",
+      "info_label": "여러분의 의견을 듣고 싶습니다.",
       "contact_button": "CONTACT",
       "form_header": "ELYSIA Contact",
-      "input_email": "Your email address",
-      "input_message": "Your message",
-      "request_label": "Please enter the details of your request. A member of our support staff will respond as soon as possible.",
-      "send_button": "SEND",
+      "input_email": "이메일 주소",
+      "input_message": "내용",
+      "request_label": "상세한 내용을 적어주세요. 서포트팀이 3 영업일 이내에 이메일로 답변을 드리겠습니다.",
+      "send_button": "보내기",
       "success": "성공적으로 문의 내용을 제출했습니다. 3 영업일 이내에 이메일로 답변을 드리겠습니다.",
       "fail": "제출에 실패했습니다. 다시 제출해주세요."
     },
@@ -95,7 +95,6 @@
       "logo_label": "ELYSIA PLATFORM PTE. LTD",
       "contact": "CONTACT",
       "email": "cs@elysia.land",
-      "whitepaper": "WhitePaper (old)",
       "community": "COMMUNITY",
       "copyright": "ELYSIA ⓒ 2018-2020. All rights reserved.",
       "privacy_policy": "Privacy Policy",
