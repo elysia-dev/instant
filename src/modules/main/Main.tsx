@@ -44,6 +44,7 @@ import Bithumb from '../../shared/image/partners/bithumb.png';
 import BithumbGlobal from '../../shared/image/partners/bithumbglobal.png';
 import HUB from '../../shared/image/partners/hub.png';
 import HOW from '../../shared/image/partners/how.png';
+import Alphanonce from '../../shared/image/partners/alphanonce.png';
 
 import '../../css/style.scss';
 import ServiceComponent from '../../modules/service/ServiceComponent';
@@ -216,7 +217,8 @@ const Main = () => {
               Bithumb,
               BithumbGlobal,
               HUB,
-              HOW
+              HOW,
+              Alphanonce
             ].map((image) => {
               return (
                 <img src={image} className="partners-picture" alt="Elysia" />
