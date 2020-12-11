@@ -37,15 +37,13 @@ const Contact = () => {
         </nav>
       </header>
         <section className="contact-page-wrapper">
-          <h2>{i18n.t("contact.form_header")}</h2>
-          
-          <p>{i18n.t("contact.form_header")}</p>
-          <input type="text" name="user_id" />
-          <p>{i18n.t("contact.form_header")}</p>
-          <textarea name="inputstr2" />
-          <p>{i18n.t("contact.form_header")}</p>
-
-          <button className="contact-button" >{i18n.t("contact.contact_button")}</button>
+          <h1 className="contact-page-header">{i18n.t("contact.form_header")}</h1>
+          <p className="contact-page-email-label">{i18n.t("contact.input_email")}<span className="contact-required-point"> *</span></p>
+          <input type="text" name="user_id" className="contact-page-email-input" />
+          <p className="contact-page-message-label">{i18n.t("contact.input_message")}<span className="contact-required-point"> *</span></p>
+          <textarea className="contact-page-message-input" name="inputstr2" />
+          <p className="contact-page-message-info">{i18n.t("contact.request_label")}</p>
+          <button className="contact-page-button" >{i18n.t("contact.send_button")}</button>
         </section>
         <Footer />
     </div>
