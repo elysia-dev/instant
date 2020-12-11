@@ -168,14 +168,10 @@ const Main = () => {
                         <div
                           className={"mliestone-dot " + (selectedMilestone === index ? 'mliestone-selected' : '')}
                           id={"mliestone-" + index}
-                          style={{
-                            ...(selectedMilestone === index ?
-                              MliestoneSelected :
-                              selectedMilestone > index &&
-                              MliestoneActivation)
-                          }}
-                          onClick={() => { setSelectedMilestone(index); }}
+                          style={{ ...(selectedMilestone > index && MliestoneActivation) }}
+                          onClick={() => setSelectedMilestone(index)}
                         >
+                          <div style={{ ...(selectedMilestone === index ? MliestoneSelected : MliestoneDisable) }} />
                           <p className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')}>
                             {t('mliestone.timeline.' + index)}
                           </p>
