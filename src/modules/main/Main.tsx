@@ -113,15 +113,21 @@ const Main = () => {
       <button className="top-botton" title="Top" id="top-button" onClick={() => Scroll(Top)}>▲</button>
       <section className="main-wrapper" id="main">
         <div className="main-text-wrapper">
-          <p className="main-text">
-            {t('main.invest_label')}
-          </p>
-          <a href="https://apps.apple.com/us/app/elysia/id1536733411">
-            <img src={AppStore} className="app-store" alt="Elysia" />
-          </a>
-          <a href="https://play.google.com/store/apps/details?id=land.elysia">
-            <img src={GooglePlay} className="google-play" alt="Elysia" />
-          </a>
+          {t('main.invest_label').split("\n").map((content, index) => {
+            return (
+              <p className="main-text" key={`title_${index}`} style={{ margin: 0 }}>
+                {content}
+              </p>
+            )
+          })}
+          <div style={{ marginTop: 50 }}>
+            <a href="https://apps.apple.com/us/app/elysia/id1536733411">
+              <img src={AppStore} className="app-store" alt="Elysia" />
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=land.elysia">
+              <img src={GooglePlay} className="google-play" alt="Elysia" />
+            </a>
+          </div>
         </div>
         <img src={ElysiaApp} className="elysia-app" alt="Elysia" />
       </section>

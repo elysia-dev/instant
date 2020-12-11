@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next';
 
 const Footer: FunctionComponent = () => {
   const history = useHistory();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <footer>
@@ -25,20 +25,23 @@ const Footer: FunctionComponent = () => {
               <img src={ElysiaLogoWhite} style={{ cursor: "pointer" }} className="elysia-logo-white" alt="Elysia" onClick={() => { history.push('/') }} />
               <p className="elysia-logo-text">{t("footer.logo_label")}</p>
             </div>
-            <div className="footer-container-contact">
+            <div className="footer-container-contact" style={{ marginLeft: "auto" }}>
               <p className="footer-header-text">
                 {t("footer.contact")}
               </p>
               <p className="footer-text">
                 {t("footer.email")}
               </p>
+            </div>
+            <div className="footer-container-contact" style={{ marginLeft: 100 }}>
               <p className="footer-header-text">
-                {t("footer.whitepaper")}
+                LANGUAGE
               </p>
-              <p className="footer-text">
-                <a href="https://drive.google.com/file/d/1Sxu8-jIIJlVUZoVhtX4QG8kS73vXr3Cs/view" style={{ color: "#fff" }}>
-                  https://drive.google.com/file/d/1Sxu8-jIIJlVUZoVhtX4QG8kS73vXr3Cs/view
-                </a>
+              <p className="footer-text" onClick={() => { i18n.changeLanguage("en") }}>
+                English
+              </p>
+              <p className="footer-text" onClick={() => { i18n.changeLanguage("ko") }}>
+                한국어
               </p>
             </div>
           </div>
@@ -77,6 +80,11 @@ const Footer: FunctionComponent = () => {
         <p className="footer-copyright">
           {t("footer.copyright")}
         </p>
+        <p className="footer-privacy-policy">
+          <a href="https://drive.google.com/file/d/1Sxu8-jIIJlVUZoVhtX4QG8kS73vXr3Cs/view">
+            Whitepaper
+          </a>
+        </p>
         <p className="footer-privacy-policy" onClick={() => history.push("/privacyPolicy")}>
           Privacy Policy
         </p>
@@ -84,7 +92,7 @@ const Footer: FunctionComponent = () => {
           Disclaimer
         </p>
       </div>
-    </footer>
+    </footer >
   );
 }
 

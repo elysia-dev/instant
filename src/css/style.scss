@@ -211,7 +211,8 @@ p.footer-text {
   font-size: 15px;
   color: #b7b7b7;
   margin: 0;
-  margin-bottom: 45px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 div.footer-container-contact > p {
   text-align: right;
@@ -243,7 +244,7 @@ section.partners-wrapper {
   height: 100vh;
 }
 section.contact-wrapper {
-  height: 100vh;
+  height: 500px;
   text-align: center;
   align-items: center;
   display: flex;
