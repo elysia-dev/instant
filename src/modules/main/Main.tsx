@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ElysiaLogo from '../../shared/image/Elysia_Logo.png';
 import AppStore from '../../shared/image/app_store.png';
 import GooglePlay from '../../shared/image/google_play.png';
@@ -52,10 +52,7 @@ import { useHistory, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const Main = () => {
-  const [state, setState] = useState({
-    selectMliestone: -1,
-    language: "ko",
-  });
+  const [selectedMilestone, setSelectedMilestone] = useState(0);
   const history = useHistory();
   const { t } = useTranslation();
 
@@ -65,6 +62,7 @@ const Main = () => {
   const Partners = React.createRef<HTMLDivElement>();
   const Contact = React.createRef<HTMLDivElement>();
   const Top = React.createRef<HTMLDivElement>();
+  const milestoneLength = 15;
 
   const Scroll = (ref: any) => {
     ref.current.scrollIntoView({ behavior: 'smooth' })
@@ -90,6 +88,18 @@ const Main = () => {
   const MliestoneDisable = {
     display: "none"
   } as React.CSSProperties;
+
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      setSelectedMilestone(
+        (selectedMilestone + 1) % milestoneLength,
+      )
+    }, 1500)
+
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [selectedMilestone])
 
   return (
     <div className="elysia" ref={Top}>
@@ -142,24 +152,45 @@ const Main = () => {
       <section className="mliestone-wrapper contents-wrapper" id="milestone" ref={Milestone} style={{ height: 600 }}>
         <div>
           <p className="mliestone-header-text header-text">{t("mliestone.header_label")}</p>
-          <div className="mliestone-timeline" style={{ ...(15 === (state.selectMliestone + 1) ? { backgroundColor: "#3679b5" } : { backgroundColor: "#cccccc" }) }}>
-            <div className="mliestone-dot-wrapper">
-              <div className="mliestone-line" style={{ width: (1190 / (15 - 1)) * state.selectMliestone }} />
-              {
-                Array(15).fill(0).map((_x, index) => {
-                  return (
-                    <>
-                      <div className={"mliestone-dot " + (state.selectMliestone === index ? 'mliestone-selected' : '')} id={"mliestone-" + index}
-                        style={{ ...(state.selectMliestone > index && MliestoneActivation) }}
-                        onClick={() => setState({ ...state, selectMliestone: index })}>
-                        <div style={{ ...(state.selectMliestone === index ? MliestoneSelected : MliestoneDisable) }} />
-                        <p className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')}>{t('mliestone.timeline.' + index)}</p>
-                        <h1 className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')} style={{ ...(state.selectMliestone === index ? { display: "block" } : { display: "none" }) }}>{t('mliestone.timeline_contant.' + index)}</h1>
-                      </div>
-                    </>
-                  );
-                })
-              }
+          <div style={{ marginTop: 50 }}>
+            <div
+              className="mliestone-timeline"
+              style={{
+                ...(milestoneLength === (selectedMilestone + 1) ? { backgroundColor: "#3679b5" } : { backgroundColor: "#cccccc" })
+              }}
+            >
+              <div className="mliestone-dot-wrapper">
+                <div className="mliestone-line" style={{ width: (1190 / (milestoneLength - 1)) * selectedMilestone }} />
+                {
+                  Array(milestoneLength).fill(0).map((_x, index) => {
+                    return (
+                      <>
+                        <div
+                          className={"mliestone-dot " + (selectedMilestone === index ? 'mliestone-selected' : '')}
+                          id={"mliestone-" + index}
+                          style={{
+                            ...(selectedMilestone === index ?
+                              MliestoneSelected :
+                              selectedMilestone > index &&
+                              MliestoneActivation)
+                          }}
+                          onClick={() => { setSelectedMilestone(index); }}
+                        >
+                          <p className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')}>
+                            {t('mliestone.timeline.' + index)}
+                          </p>
+                          <h1
+                            className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')}
+                            style={{ ...(selectedMilestone === index ? { display: "block" } : { display: "none" }) }}
+                          >
+                            {t('mliestone.timeline_contant.' + index)}
+                          </h1>
+                        </div>
+                      </>
+                    );
+                  })
+                }
+              </div>
             </div>
           </div>
         </div>
