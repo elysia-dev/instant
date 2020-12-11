@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
-import ElysiaLogo from '../../shared/image/Elysia_Logo.png';
-import '../../css/style.scss';
-import i18n from '../../i18n/i18n';
-import Footer from '../footer/Footer';
-import { useNavigation } from '@react-navigation/native';
+import ElysiaLogo from '../shared/image/Elysia_Logo.png';
+import '../css/style.scss';
+import i18n from '../i18n/i18n';
+import Footer from './footer/Footer';
 
-const Contact = () => {
+const Disclaimer = () => {
   const [state, setState] = useState({
     language: "ko",
   });
   i18n.locale = state.language;
-  const navigation = useNavigation();
-
+  
   return (
     <div className="elysia">
       <header className="header-container">
-        <a onClick={() => navigation.navigate('Main')}>
+        <a href="https://elysia.land/">
           <img src={ElysiaLogo} className="elysia-logo" alt="Elysia" />
         </a>
         <nav className="header-link-wrapper">
@@ -36,15 +34,13 @@ const Contact = () => {
           </p>
         </nav>
       </header>
-        <section className="contact-page-wrapper">
-          <h2>{i18n.t("contact.form_header")}</h2>
-          
-          <p>{i18n.t("contact.form_header")}</p>
+        <section>
           <input type="text" name="user_id" />
-          <p>{i18n.t("contact.form_header")}</p>
+        </section>
+        <section>
           <textarea name="inputstr2" />
-          <p>{i18n.t("contact.form_header")}</p>
-
+        </section>
+        <section>
           <button className="contact-button" >{i18n.t("contact.contact_button")}</button>
         </section>
         <Footer />
@@ -52,4 +48,4 @@ const Contact = () => {
   );
 }
 
-export default Contact;
+export default Disclaimer;

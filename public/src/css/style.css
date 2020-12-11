@@ -1,0 +1,651 @@
+@font-face {
+  font-family: "CODE Light";
+  src: url("../shared/assets/fonts/CODE Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "CODE Bold";
+  src: url("../shared/assets/fonts/CODE Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Helvetica Rounded Condensed Bold";
+  src: url("../shared/assets/fonts/HelveticaRoundedCondensedBold.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("../shared/assets/fonts/Helvetica Condensed.ttf") format("truetype");
+}
+body {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #888;
+}
+button {
+  outline: none;
+  cursor: pointer;
+}
+input {
+  outline: none;
+}
+div.header-container {
+  padding: 40px 40px 0px 40px;
+  margin: 0 auto;
+}
+header.header-wrapper {
+  line-height: 60px;
+}
+h3.header-title {
+  font-size: 40px;
+  display: inline;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+p.menu-link {
+  margin: 0 30px;
+  letter-spacing: 1px;
+  font-size: 20px;
+  display: inline;
+  cursor: pointer;
+}
+nav.menu-link-wrapper {
+  float: right;
+}
+main.main-container {
+  padding: 3em 0rem 1.5em 0rem;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ffffffbe, 0 0 20px #ffffffbe, 0 0 30px #ffffffbe,
+      0 0 40px #fff, 0 0 50px #ffffffbe, 0 0 60px #ffffffbe, 0 0 70px #ffffffbe;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff9751d2,
+      0 0 50px #ff9751d2, 0 0 60px #ff9751d2, 0 0 70px #ff9751d2,
+      0 0 80px #ff9751d2;
+  }
+}
+div.footer-container {
+  padding: 15px 0;
+  text-align: center;
+  font-family: "Helvetica Rounded Condensed Bold";
+}
+p.footer-upper-text {
+  font-size: 18px;
+  display: inline-block;
+  margin: 10px 40px;
+  font-weight: bold;
+  transition: all 0.4s ease;
+}
+p.footer-upper-text > a:hover {
+  text-shadow: 0px 0px 15px #1c1d39;
+  transition: all 0.4s ease;
+}
+p.footer-lower-text {
+  font-size: 15px;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+div.main-token-value-wrapper {
+  margin-top: 42px;
+  width: 300px;
+  height: 93px;
+  display: none;
+  background: #404050 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 6px #00000029;
+  border-radius: 5px;
+}
+p.main-token-comment {
+  font-size: 15px;
+  font-family: "CODE light";
+  letter-spacing: 2px;
+}
+p.main-token-value-back {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 6px #00000029;
+  border-radius: 5px;
+  width: 260px;
+  height: 33px;
+  margin: 0 auto;
+}
+span.main-token-value {
+  color: #101010;
+  font-size: 18px;
+  line-height: 31px;
+  font-family: "Helvetica Rounded Condensed Bold";
+}
+
+/* about */
+h2.about-header-commnet {
+  font-size: 25px;
+  font-family: "Helvetica Rounded Condensed Bold";
+  margin: 0;
+  opacity: 0;
+  animation: fadeOut 1.5s 0s linear alternate;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+}
+
+p.about-header-commnet {
+  font-size: 20px;
+  font-family: "Helvetica Rounded Condensed Bold";
+  text-align: right;
+  font-weight: 100;
+  margin: 0 4em 3em 0;
+  opacity: 0;
+  animation: fadeOut2 1.5s 1s linear alternate;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeOut2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-30px);
+  }
+}
+
+p.about-details-header {
+  font-size: 30px;
+  font-family: "Helvetica Rounded Condensed Bold";
+  margin: 55px 0 0 0;
+}
+
+p.about-details {
+  font-size: 15px;
+  font-family: "Helvetica Rounded Condensed Bold";
+  margin: 24px 0 11px 0;
+  font-weight: 100;
+  line-height: 170%;
+}
+button.about-button {
+  width: 180px;
+  height: 42px;
+  margin: 47px auto;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 6px #00000029;
+  border-radius: 10px;
+  border: none;
+  color: #343434;
+  text-decoration: none;
+  line-height: 42px;
+  font-size: 17px;
+  letter-spacing: 0.85px;
+  font-family: "CODE bold";
+  transition: all 0.4s ease;
+}
+button.about-button:hover {
+  box-shadow: 0px 0px 25px #1c1d39;
+  transition: all 0.4s ease;
+}
+/* cocktails */
+div.cocktails-wrapper {
+  transition: all 0.3s ease;
+  width: 350px;
+  height: 270px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 6px #00000029;
+  border-radius: 5px;
+  text-align: left;
+  color: #4e4e4e;
+  margin: 7.5px;
+  display: inline-block;
+}
+div.cocktails-wrapper:hover {
+  box-shadow: 0px 0px 25px #1c1d39;
+  transition: all 0.3s ease;
+}
+p.cocktails-percent-wrapper {
+  width: 33px;
+  height: 33px;
+  background: #1c1d39 0% 0% no-repeat padding-box;
+  border-radius: 0 5px;
+  font-size: 15px;
+  line-height: 33px;
+  float: right;
+  margin: 0px;
+  text-align: center;
+  color: #fff;
+  font-family: "Helvetica Rounded Condensed Bold";
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+img.cocktails-image {
+  margin-left: 80px;
+  margin-top: 20px;
+  width: 163px;
+  height: 97px;
+}
+span.cocktails-comment {
+  font-size: 15px;
+  margin-top: 10px;
+  text-align: center;
+  display: block;
+  font-family: "Helvetica Rounded Condensed Bold";
+  font-weight: 400;
+  color: #4e4e4e;
+}
+div.cocktails-apy-wrapper {
+  width: 260px;
+  height: 33px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 6px #00000029;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #101010;
+  margin: 11px auto 0px auto;
+  line-height: 33px;
+}
+span.cocktails-apy {
+  margin: 14px;
+}
+p.cocktails-apy-value {
+  margin: 0 8px 0 0;
+  float: right;
+  display: block;
+}
+input.cocktails-btn {
+  font-size: 17px;
+  width: 80px;
+  height: 42px;
+  background: #f05052 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 6px #00000029;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  line-height: 42px;
+  display: inline-block;
+  margin: 12px 10px;
+  border: none;
+  font-family: "CODE bold";
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+input.cocktails-btn:hover {
+  background: #b05052;
+  transition: all 0.3s ease;
+}
+form.cocktails-btn-form {
+  display: inline;
+}
+button.cocktails-btn {
+  font-size: 17px;
+  width: 80px;
+  height: 42px;
+  background: #f05052 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 6px #00000029;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  line-height: 42px;
+  display: inline-block;
+  margin: 12px 10px;
+  border: none;
+  font-family: "CODE bold";
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+button.cocktails-btn:hover {
+  background: #b05052;
+  transition: all 0.3s ease;
+}
+div.cocktails-btn-wrapper {
+  text-align: center;
+}
+/* drink */
+
+p.drink-header-text {
+  font-size: 35px;
+  font-family: "CODE bold";
+  font-weight: 200;
+  margin: 21px 0 11px 0;
+  letter-spacing: 1px;
+}
+p.drink-text {
+  font-size: 15px;
+  font-family: "Helvetica Rounded Condensed Bold";
+  font-weight: 100;
+  margin: 0 0 48px 0;
+}
+div.drink-container {
+  display: none;
+}
+div.drink-wrapper {
+  width: 300px;
+  height: 320px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 6px #00000029;
+  border-radius: 5px;
+  text-align: center;
+  color: #1c1d39;
+  margin: 15px;
+  display: inline-block;
+  background-attachment: fixed;
+}
+div.drink-wrapper:hover {
+  box-shadow: 0px 0px 30px #1c1d39;
+  transition: all 0.3s ease;
+}
+p.drink-header-text {
+  font-size: 35px;
+  margin: 22px 0 11px 0;
+}
+p.drink-text {
+  font-size: 15px;
+}
+img.drink-image {
+  margin: 34px 56px 0 0;
+  height: 110px;
+}
+img.drink-image.plate {
+  margin-left: 30px;
+}
+p.drink-value {
+  font-size: 33px;
+  margin: 10px 0 5px 0;
+}
+p.drink-form-text {
+  font-size: 15px;
+  margin: 0px;
+  margin-bottom: 22px;
+  font-family: "Helvetica";
+}
+p.already-text {
+  font-size: 15px;
+  margin-top: 2px;
+  font-family: "Helvetica";
+  cursor: pointer;
+}
+button.drink-collect-button {
+  font-family: "Helvetica Rounded Condensed Bold";
+  font-weight: 200;
+  letter-spacing: 1px;
+  font-size: 15px;
+  width: 245px;
+  height: 42px;
+  background: #f05052 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 6px #00000029;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  display: inline-block;
+  margin: 0px;
+  border: none;
+}
+button.drink-collect-button:hover {
+  background: #b05052 0% 0% no-repeat padding-box;
+}
+button.drink-collect-button.disable {
+  background: #ffa3a5 0% 0% no-repeat padding-box !important;
+}
+/* popup */
+.popup_btn a {
+  display: inline-block;
+  padding: 20px;
+  background: darkred;
+  color: #fff;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 900;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup-wrapper {
+  position: fixed;
+  width: 100%;
+  padding: 50px 20px;
+  max-width: 550px;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  -webkit-transition: opacity 0.5s, visibility 0s linear 0.5s;
+  transition: opacity 0.5s, visibility 0s linear 0.5s;
+  z-index: 1;
+  text-align: center;
+}
+p.popup-message-header {
+  font-size: 17px;
+  font-family: "Helvetica Rounded Condensed Bold";
+  font-weight: bold;
+  margin: 5px;
+}
+p.popup-message {
+  font-size: 17px;
+  font-family: "Helvetica Rounded Condensed Bold";
+  margin: 0;
+}
+p.popup-button {
+  margin: 70px auto 20px auto;
+  color: #fff;
+  transition: color 0.3s;
+  font-size: 17px;
+  line-height: 42px;
+  background: #f05052 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 6px #00000029;
+  border-radius: 10px;
+  opacity: 1;
+  width: 181px;
+  height: 42px;
+  font-family: "CODE light";
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: all 0.4s ease;
+}
+p.popup-button:hover {
+  box-shadow: 0px 0px 6px #1c1d39;
+  transition: all 0.4s ease;
+}
+.popup-wrapper:target {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.popup-wrapper .close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  padding: 5px;
+  color: #000;
+  transition: color 0.3s;
+  font-size: 2em;
+  line-height: 0.6em;
+  font-weight: bold;
+}
+.popup-wrapper .close:hover {
+  color: #00e5ee;
+}
+p.popup-message-header.balance {
+  margin-bottom: 30px;
+}
+input.popup-balance-input {
+  padding: 1.5%;
+  height: 33px;
+  display: inline-block;
+  width: 70%;
+  border: 1px solid #1c1d39;
+  border-radius: 8px;
+  margin: 10px;
+}
+input.popup-balance-max {
+  width: 17%;
+  height: 35px;
+  padding: 1.5%;
+  background: #f05052 0 0 no-repeat padding-box;
+  box-shadow: 0 0 6px #00000029;
+  border-radius: 8px;
+  color: #fff;
+  font-family: CODE bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border: none;
+}
+div.popup-balance-value-wrapper > p.popup-message {
+  font-size: 17px;
+  font-family: "Helvetica";
+  margin-bottom: 20px;
+}
+div.popup-balance-btn-wrapper {
+  width: 90%;
+  margin: 2em auto 0;
+  text-align: start;
+}
+input.popup-balance-deposit-button {
+  font-size: 17px;
+  width: 45%;
+  height: 42px;
+  background: #1c1d39 0 0 no-repeat padding-box;
+  box-shadow: 0 0 6px #00000029;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  line-height: 42px;
+  border: none;
+  font-family: CODE bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+input.popup-balance-deposit-button.confirm {
+  float: right;
+  background: #f05052;
+}
+input.popup-balance-deposit-button:hover {
+  background: #4c4d79 0% 0% no-repeat padding-box;
+}
+
+input.popup-balance-deposit-button.confirm:hover {
+  background: #b05052 0% 0% no-repeat padding-box;
+}
+input.popup-balance-max:hover {
+  background: #b05052 0% 0% no-repeat padding-box;
+}
+
+/* body connected display control */
+body.connected > div > main > button.enableEthereumButton {
+  display: none;
+}
+body.connected > div > main > div > div.main-token-value-wrapper {
+  display: inline-block;
+}
+body.connected > div > main > button.about-button {
+  display: none;
+}
+body.connected > div > main > div.drink-container {
+  display: inline-flex;
+}
+
+button.drink-approved {
+  font-family: "Helvetica Rounded Condensed Bold";
+  font-weight: 200;
+  letter-spacing: 1px;
+  font-size: 15px;
+  width: 112px;
+  height: 42px;
+  background: #f05052 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 6px #00000029;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  display: none;
+  margin: 0px;
+  border: none;
+}
+body.approved > div > main > div > div > button.drink-collect-button.staked {
+  display: none;
+}
+body.approved > div > main > div > div > button.drink-approved {
+  display: inline-block;
+  position: relative;
+  bottom: 17px;
+}
+body.approved > div > main > div > div > p.already-text.approved {
+  display: none;
+}
+
+#footer-outer,
+#nectar_fullscreen_rows > #footer-outer.wpb_row .full-page-inner-wrap {
+  padding: 50 96;
+  color: #ccc;
+  position: relative;
+  z-index: 10;
+  background-color: #252525;
+}
+
+div.footer-row {
+  display: flex;
+}
+
+div.footer-col {
+  flex: 1;
+  margin-left: 14px;
+}
+
+div.about-member {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+div.about-name {
+  margin-top: 50px;
+  color: #676767;
+  text-align: left;
+  font-size: 22px;
+}
+
+div.about-desc {
+  margin-top: 10px;
+  padding: 15px;
+  background: #f7f7f7 !important;
+  border-radius: 24px !important;
+  color: #676767;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  width: 570px;
+}
+
+img.about-img {
+  width: 145;
+  height: 166px;
+}
+
+div.about-content {
+  margin-left: 20px;
+}
+
+div.about-desc-element {
+  margin: 5px 0px;
+}

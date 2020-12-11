@@ -8,17 +8,53 @@ import ElysiaLogo from '../../shared/image/Elysia_Logo.png';
 import AppStore from '../../shared/image/app_store.png';
 import GooglePlay from '../../shared/image/google_play.png';
 import ElysiaApp from '../../shared/image/Elysia_app.png';
-import Temp from '../../shared/image/black.png';
-import Iconloop from '../../shared/image/iconloop.png';
-import Hexlant from '../../shared/image/hexlant.png';
-import Bishijie from '../../shared/image/bishijie.png';
-import Xangle from '../../shared/image/xangle.png';
-import Chainlink from '../../shared/image/chainlink.png';
+
+/* Team Image */
+import Team1 from '../../shared/image/Team1.png';
+import Team2 from '../../shared/image/Team2.png';
+import Team3 from '../../shared/image/Team3.png';
+import Team4 from '../../shared/image/Team4.png';
+import Team5 from '../../shared/image/Team5.png';
+import Team6 from '../../shared/image/Team6.png';
+import Team7 from '../../shared/image/Team7.png';
+import Team8 from '../../shared/image/Team8.png';
+import Team1Hover from '../../shared/image/Team1_hover.png';
+import Team2Hover from '../../shared/image/Team2_hover.png';
+import Team3Hover from '../../shared/image/Team3_hover.png';
+import Team4Hover from '../../shared/image/Team4_hover.png';
+import Team5Hover from '../../shared/image/Team5_hover.png';
+import Team6Hover from '../../shared/image/Team6_hover.png';
+import Team7Hover from '../../shared/image/Team7_hover.png';
+import Team8Hover from '../../shared/image/Team8_hover.png';
+
+/* Partners Image */
+import Iconloop from '../../shared/image/partners/iconloop.png';
+import Hexlant from '../../shared/image/partners/hexlant.png';
+import Bishijie from '../../shared/image/partners/bishijie.png';
+import Xangle from '../../shared/image/partners/xangle.png';
+import Chainlink from '../../shared/image/partners/chainlink.png';
+import HahmShout from '../../shared/image/partners/hahmshout.png';
+import Cider from '../../shared/image/partners/cider.png';
+import BKL from '../../shared/image/partners/bkl.png';
+import TSMP from '../../shared/image/partners/tsmp.png';
+import FocusLawAsia from '../../shared/image/partners/focuslawasia.png';
+import HiBlocks from '../../shared/image/partners/hiblocks.png';
+import Argos from '../../shared/image/partners/argos.png';
+import PropWave from '../../shared/image/partners/propwave.png';
+import Velic from '../../shared/image/partners/velic.png';
+import SRC from '../../shared/image/partners/src.png';
+import Daybit from '../../shared/image/partners/daybit.png';
+import Gopax from '../../shared/image/partners/gopax.png';
+import Bithumb from '../../shared/image/partners/bithumb.png';
+import BithumbGlobal from '../../shared/image/partners/bithumbglobal.png';
+import HUB from '../../shared/image/partners/hub.png';
+import HOW from '../../shared/image/partners/how.png';
+
 import '../../css/style.scss';
 import i18n from '../../i18n/i18n';
 import { ServiceComponent } from '../../modules/service/ServiceComponent';
 import Footer from '../../modules/footer/Footer';
-import { NavigationContainer } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 const Main = () => {
   const [state, setState] = useState({
@@ -33,6 +69,8 @@ const Main = () => {
   const Partners = React.createRef<HTMLDivElement>();
   const Contact = React.createRef<HTMLDivElement>();
   const Top = React.createRef<HTMLDivElement>();
+
+  const navigation = useNavigation();
 
   const Scroll = (ref: any) => {
     ref.current.scrollIntoView({behavior: 'smooth'})
@@ -70,12 +108,63 @@ const Main = () => {
     );
   });
   const TeamListing = Array(i18n.t('team.name').length).fill(0).map((_x, index) => {
+    const TeamArray = [
+      Team1,
+      Team2,
+      Team3,
+      Team4,
+      Team5,
+      Team6,
+      Team7,
+      Team8
+    ];
+    const TeamHoverArray = [
+      Team1Hover,
+      Team2Hover,
+      Team3Hover,
+      Team4Hover,
+      Team5Hover,
+      Team6Hover,
+      Team7Hover,
+      Team8Hover
+    ];
     return (
       <div className="team-info-wrapper">
-        <img src={Temp} className="team-picture" alt="Elysia" />
+        <div style={{position: "relative" }} >
+          <img src={TeamArray[index]} className="team-picture" alt="Elysia" />
+          <img src={TeamHoverArray[index]} className="team-picture hover" alt="Elysia" />
+        </div>
         <h3>{i18n.t('team.name.' + index)}</h3>
         <p>{i18n.t('team.dept.' + index)}</p>
       </div>
+    );
+  });
+  const PartnersArray = [
+    Iconloop,
+    Hexlant,
+    Bishijie,
+    Xangle,
+    Chainlink,
+    HahmShout,
+    Cider,
+    BKL,
+    TSMP,
+    FocusLawAsia,
+    HiBlocks,
+    Argos,
+    PropWave,
+    Velic,
+    SRC,
+    Daybit,
+    Gopax,
+    Bithumb,
+    BithumbGlobal,
+    HUB,
+    HOW 
+  ];
+  const PartnersListing = Array(PartnersArray.length).fill(0).map((_x, index) => {
+    return (
+      <img src={PartnersArray[index]} className="partners-picture" alt="Elysia" />
     );
   });
 
@@ -139,17 +228,13 @@ const Main = () => {
         <section className="partners-wrapper contents-wrapper" id="partners" ref={Partners}>
           <p className="pertners-header-text header-text">{i18n.t("partners.header_label")}</p>
           <div className="partners-container">
-            <img src={Iconloop} className="partners-picture" alt="Elysia" />
-            <img src={Hexlant} className="partners-picture" alt="Elysia" />
-            <img src={Bishijie} className="partners-picture" alt="Elysia" />
-            <img src={Xangle} className="partners-picture" alt="Elysia" />
-            <img src={Chainlink} className="partners-picture" alt="Elysia" />
+            {PartnersListing}
           </div>
         </section>
         <section className="contact-wrapper contents-wrapper" id="contact" ref={Contact}>
           <p className="contact-header-text">{i18n.t("contact.info_header")}</p>
           <p className="contact-text">{i18n.t("contact.info_label")}</p>
-          <button className="contact-button" >{i18n.t("contact.contact_button")}</button>
+          <button className="contact-button" onClick={() => navigation.navigate('Contact')}>{i18n.t("contact.contact_button")}</button>
         </section>
         <Footer />
     </div>

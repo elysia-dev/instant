@@ -4,16 +4,18 @@
     format("truetype");
 }
 div.elysia {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
-p, h3, h1 {
+p,
+h3,
+h1 {
   font-family: "Inter";
   cursor: default;
-  color: #2C2C2C;
+  color: #2c2c2c;
 }
 a {
   text-decoration: none;
-  color: #2C2C2C;
+  color: #2c2c2c;
   font-family: "Inter";
 }
 header.header-container {
@@ -53,7 +55,7 @@ section.main-wrapper {
   margin: 0 auto;
   padding: 30px;
   margin-top: 10vh;
-  height: 80vh;
+  height: 100vh;
 }
 img.app-store {
   margin-right: 30px;
@@ -62,7 +64,7 @@ img.elysia-app {
   float: right;
 }
 section.contents-wrapper {
-  height: 80vh;
+  height: 100vh;
   max-width: 1190px;
   margin: 0 auto;
 }
@@ -73,10 +75,10 @@ div.service-text-wrapper {
 img.service-square {
   display: inline-block;
   z-index: 2;
-  position: relative; 
-  top: 0; 
+  position: relative;
+  top: 0;
   left: 0;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 div.service-text {
   display: inline-block;
@@ -95,9 +97,9 @@ div.on-boarding {
   text-align: center;
 }
 img.service-image {
-  transition: all .5s ease-in-out;
-  position: absolute; 
-  top: 0; 
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
   left: 0;
 }
 div.service-icon-wrapper {
@@ -110,7 +112,7 @@ p.service-header-text {
   font-size: 26px;
   font-weight: bold;
   margin: 5px 0;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 p.service-text {
   font-size: 15px;
@@ -149,9 +151,6 @@ div.team-info-wrapper > p {
   color: #888888;
 }
 div.partners-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   margin-top: 100px;
 }
@@ -159,11 +158,11 @@ footer {
   color: #fff !important;
   background-color: #1a1a1a !important;
 }
-div.footer-lower > p{
+div.footer-lower > p {
   color: #fff !important;
   cursor: pointer;
 }
-div.footer-lower > p.footer-copyright{
+div.footer-lower > p.footer-copyright {
   cursor: default;
 }
 div.footer-container {
@@ -240,11 +239,15 @@ p.footer-terms-fo-service {
   text-align: right;
 }
 section.partners-wrapper {
-  height: 70vh;
+  height: 100vh;
 }
 section.contact-wrapper {
-  height: 60vh;
+  height: 100vh;
   text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 p.contact-header-text {
   font-size: 30px;
@@ -317,14 +320,14 @@ div.mliestone-timeline {
   }
   p.mliestone-upper-text {
     position: absolute;
-    bottom: 22PX;
-    color: #3679B5;
+    bottom: 22px;
+    color: #3679b5;
     font-size: 15px;
   }
   p.mliestone-lower-text {
     position: absolute;
-    top: 22PX;
-    color: #3679B5;
+    top: 22px;
+    color: #3679b5;
     font-size: 15px;
   }
   h1.mliestone-upper-text {
@@ -333,7 +336,7 @@ div.mliestone-timeline {
     width: 500px;
     white-space: pre-line;
     text-align: left;
-    color: #2C2C2C;
+    color: #2c2c2c;
     font-size: 20px;
     display: none;
     cursor: default;
@@ -344,7 +347,7 @@ div.mliestone-timeline {
     width: 400px;
     white-space: pre-line;
     text-align: left;
-    color: #2C2C2C;
+    color: #2c2c2c;
     font-size: 20px;
     display: none;
     cursor: default;
@@ -361,16 +364,45 @@ button.top-botton {
   z-index: 99;
   border: none;
   outline: none;
-  background-color:  #ffffff;
+  background-color: #ffffff;
   box-shadow: 1px 3px 8px #00000052;
   color: #3679b5;
   cursor: pointer;
   padding: 15px;
   border-radius: 10px;
   font-size: 18px;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   &:hover {
     color: white;
     background-color: #3679b5;
   }
+}
+img.team-picture.hover {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  display: inline-block;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
+}
+img.partners-picture {
+  display: inline-block;
+  margin: 20px 28px;
+  width: 182px;
+  height: 90px;
+}
+
+/* Contact Page */
+
+section.contact-page-wrapper {
+  max-width: 1190px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 15vh;
+  height: 100vh;
 }
