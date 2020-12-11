@@ -2,12 +2,10 @@ import React, { useState, useEffect, useRef, Component } from 'react';
 import Onboarding from '../../../shared/image/onboarding.png';
 import Defi from '../../../shared/image/Defi.png';
 import ElysiaMobile from '../../../shared/image/elysia_mobile.png';
-import ElysiaIcon from '../../../shared/image/square-elysia-off.png';
-import DefiIcon from '../../../shared/image/square-defi-off.png';
-import OnboardingIcon from '../../../shared/image/square-onboarding-off.png';
 import '../../css/mobileStyle.scss';
 import i18n from '../../../i18n/i18n';
 import Slider from './Slider';
+
 
 
 export class ServiceComponent extends Component {
@@ -23,13 +21,14 @@ export class ServiceComponent extends Component {
   render() {
     return (
       <>
-        <img src={ElysiaIcon} className="service-square" alt="Elysia" />
+        {/* <img src={ElysiaIcon} className="service-square" alt="Elysia" />
         <p className="service-header-label">
           {i18n.t('service.onboarding')}
         </p>
         <p className="service-label">
           {i18n.t('service.onboarding_label')}
-        </p>
+        </p> */}
+        
         <Slider />
         {/* <div className="on-boarding">
           <img src={Onboarding} className="service-image" alt="Elysia" style={{ opacity: (this.state.Focusing === 1 ? 1 : 0) }}/>
@@ -70,8 +69,8 @@ export class ServiceComponent extends Component {
             <p className="service-text">{i18n.t('service.defi_label')}</p>
           </div>
         </div> */}
-
       </>
     );
+    
   }
 }

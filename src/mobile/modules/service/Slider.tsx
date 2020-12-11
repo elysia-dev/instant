@@ -1,41 +1,39 @@
-import React, { useState, useEffect, useRef } from "react";
-import Onboarding from '../../../shared/image/onboarding.png';
-import Defi from '../../../shared/image/Defi.png';
-import ElysiaMobile from '../../../shared/image/elysia_mobile.png';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import React from 'react';
+import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
+import ElysiaIcon from '../../../shared/image/square-elysia-off.png';
+import DefiIcon from '../../../shared/image/square-defi-off.png';
+import OnboardingIcon from '../../../shared/image/square-onboarding-off.png';
 
+import 'swiper/swiper.scss';
 
-const TOTAL_SLIDES = 3;
-export default function Slider() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slideRef = React.createRef<HTMLDivElement>();
-  const nextSlide = () => {
-    if (currentSlide >= TOTAL_SLIDES) {
-      setCurrentSlide(0);
-    } else {
-      setCurrentSlide(currentSlide + 1);
-    }
-  };
-  const prevSlide = () => {
-    if (currentSlide === 0) {
-      setCurrentSlide(TOTAL_SLIDES);
-    } else {
-      setCurrentSlide(currentSlide - 1);
-    }
-  };
-  useEffect(() => {
-    slideRef.current!.style.transition = "all 0.5s ease-in-out";
-    slideRef.current!.style.transform = `translateX(-${currentSlide}00%)`; // 백틱을 사용하여 슬라이드로 이동하는 애니메이션을 만듭니다.
-  }, [currentSlide, slideRef]);
-return (
-    <div style={{ width: "60%", overflow: "hidden" }}>
-      {currentSlide}
-      <div style={{ width: "100%", display: "flex"}} ref={slideRef}>
-        <img src={Onboarding} alt="elysia" />
-        <img src={Defi} alt="elysia" />
-        <img src={ElysiaMobile} alt="elysia" />
-      </div>
-      {/* <Button onClick={prevSlide}>Previous Slide</Button>
-      <Button onClick={nextSlide}>Next Slide</Button> */}
-    </div>
-  );
-};
+const Slider: React.FC = () => {
+  SwiperCore.use([Navigation, Pagination, Autoplay]);
+  return ( 
+    <Swiper style={{height:'376px'}} 
+      spaceBetween={50}
+      loop={true}
+      slidesPerView={3} 
+      onSlideChange={() => console.log('slide change')} > 
+      <SwiperSlide>
+        <div>
+          <img src={ElysiaIcon} alt="elysia" />
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div>
+          <img src={DefiIcon} alt="elysia" />
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div>
+          <img src={OnboardingIcon} alt="elysia" />
+        </div>
+      </SwiperSlide>
+    </Swiper> 
+  ); 
+}; 
+
+export default Slider;
