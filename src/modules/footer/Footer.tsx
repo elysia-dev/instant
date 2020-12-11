@@ -80,10 +80,13 @@ const Footer: FunctionComponent = () => {
         <p className="footer-copyright">
           {t("footer.copyright")}
         </p>
-        <p className="footer-privacy-policy">
-          <a href="https://drive.google.com/file/d/1Sxu8-jIIJlVUZoVhtX4QG8kS73vXr3Cs/view">
-            Whitepaper
-          </a>
+        <p
+          className="footer-privacy-policy"
+          onClick={() => {
+            window.location.replace("https://drive.google.com/file/d/1Sxu8-jIIJlVUZoVhtX4QG8kS73vXr3Cs/view")
+          }}
+        >
+          Whitepaper
         </p>
         <p className="footer-privacy-policy" onClick={() => history.push("/privacyPolicy")}>
           Privacy Policy
