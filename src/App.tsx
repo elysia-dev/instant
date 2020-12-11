@@ -7,21 +7,19 @@ import {
 } from "react-router-dom";
 import Main from './modules/main/Main';
 import Contact from './modules/contact/Contact';
-import UserAgreement from './modules/UserAgreement';
 import PrivacyPolicy from './modules/PrivacyPolicy';
 import Disclaimer from './modules/Disclaimer';
 import Footer from './modules/footer/Footer';
 import RouteWithHeader from './modules/RouteWithHeader';
+import ScrollToTop from './modules/ScrollToTop';
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Switch>
         <RouteWithHeader path="/contact">
           <Contact />
-        </RouteWithHeader>
-        <RouteWithHeader path="/userAgreement">
-          <UserAgreement />
         </RouteWithHeader>
         <RouteWithHeader path="/privacyPolicy">
           <PrivacyPolicy />
