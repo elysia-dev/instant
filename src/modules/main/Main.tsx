@@ -137,7 +137,7 @@ const Main = () => {
         <img src={ElysiaApp} className="elysia-app" alt="Elysia" />
       </section>
       <section className="service-wrapper contents-wrapper" id="service" ref={Service}>
-        <ServiceComponent Timer={4000} />
+        <ServiceComponent />
       </section>
       <section className="mliestone-wrapper contents-wrapper" id="milestone" ref={Milestone}>
         <div>
