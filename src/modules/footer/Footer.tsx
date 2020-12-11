@@ -21,7 +21,7 @@ const Footer: FunctionComponent = () => {
         <div className="footer-wrapper">
           <div className="footer-container-left">
             <div className="footer-container-logo">
-              <img src={ElysiaLogoWhite} className="elysia-logo-white" alt="Elysia" />
+              <img src={ElysiaLogoWhite} className="elysia-logo-white" alt="Elysia" onClick={() => { history.push('/') }} />
               <p className="elysia-logo-text">{i18n.t("footer.logo_label")}</p>
             </div>
             <div className="footer-container-contact">

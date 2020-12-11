@@ -10,6 +10,7 @@ import Contact from './modules/contact/Contact';
 import UserAgreement from './modules/UserAgreement';
 import PrivacyPolicy from './modules/PrivacyPolicy';
 import Disclaimer from './modules/Disclaimer';
+import Footer from './modules/footer/Footer';
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
           <Main />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }
