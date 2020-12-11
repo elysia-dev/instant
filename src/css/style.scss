@@ -3,6 +3,14 @@
   src: url("../shared/fonts/Inter-VariableFont_slnt,wght.ttf")
     format("truetype");
 }
+@font-face {
+  font-family: "Inter-Bolder";
+  src: url("../shared/fonts/Inter-Bold-slnt=0.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("../shared/fonts/Inter-Medium-slnt=0.ttf") format("truetype");
+}
 div.elysia {
   background-color: #ffffff;
   min-width: 1190px;
@@ -338,6 +346,7 @@ div.mliestone-timeline {
     top: 22px;
     color: #3679b5;
     font-size: 15px;
+    font-family: "noto-sans";
   }
   h1.mliestone-upper-text {
     position: absolute;
@@ -367,6 +376,7 @@ div.mliestone-timeline {
 p.mliestone-header-text {
   width: 1190px;
   margin: 0 auto;
+  font-family: "Inter-Bold";
 }
 button.top-botton {
   position: fixed;
