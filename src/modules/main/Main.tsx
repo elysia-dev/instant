@@ -73,12 +73,13 @@ const Main = () => {
   const MliestoneSelected = {
     width: 24,
     height: 24,
-    top: -12,
+    top: -6,
+    right: 6,
     position: "relative",
     backgroundColor: "#3679b5",
     borderRadius: 5,
     boxShadow: "0px 3px 6px #3679b5"
-  }
+  } as React.CSSProperties;
   const MliestoneActivation = {
     width: 12,
     height: 12,
@@ -86,6 +87,9 @@ const Main = () => {
     borderRadius: 2,
     boxShadow: "0px 6px 10px #2498ff9a"
   }
+  const MliestoneDisable = {
+    display: "none"
+  } as React.CSSProperties;
 
   return (
     <div className="elysia" ref={Top}>
@@ -132,19 +136,17 @@ const Main = () => {
       <section className="mliestone-wrapper contents-wrapper" id="milestone" ref={Milestone}>
         <div>
           <p className="mliestone-header-text header-text">{t("mliestone.header_label")}</p>
-          <div className="mliestone-timeline" style={{ ...(t('mliestone.timeline').length === (state.selectMliestone + 1) ? { backgroundColor: "#3679b5" } : { backgroundColor: "#cccccc" }) }}>
+          <div className="mliestone-timeline" style={{ ...(15 === (state.selectMliestone + 1) ? { backgroundColor: "#3679b5" } : { backgroundColor: "#cccccc" }) }}>
             <div className="mliestone-dot-wrapper">
-              <div className="mliestone-line" style={{ width: (1190 / (t('mliestone.timeline').length - 1)) * state.selectMliestone }} />
+              <div className="mliestone-line" style={{ width: (1190 / (15- 1)) * state.selectMliestone }} />
               {
                 Array(15).fill(0).map((_x, index) => {
                   return (
                     <>
-                      <div className={"mliestone-dot " + (state.selectMliestone === index ? 'mliestone-selected' : '')} id={"mliestone-" + index} style={{
-                        ...(state.selectMliestone === index ?
-                          MliestoneSelected :
-                          state.selectMliestone > index &&
-                          MliestoneActivation)
-                      }} onClick={() => setState({ ...state, selectMliestone: index })}>
+                      <div className={"mliestone-dot " + (state.selectMliestone === index ? 'mliestone-selected' : '')} id={"mliestone-" + index} 
+                        style={{ ...(state.selectMliestone > index && MliestoneActivation) }}
+                        onClick={() => setState({ ...state, selectMliestone: index })}>
+                        <div style={{ ...(state.selectMliestone === index ? MliestoneSelected : MliestoneDisable ) }} />
                         <p className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')}>{t('mliestone.timeline.' + index)}</p>
                         <h1 className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')} style={{ ...(state.selectMliestone === index ? { display: "block" } : { display: "none" }) }}>{t('mliestone.timeline_contant.' + index)}</h1>
                       </div>
