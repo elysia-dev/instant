@@ -10,22 +10,22 @@ import GooglePlay from '../../shared/image/google_play.png';
 import ElysiaApp from '../../shared/image/Elysia_app.png';
 
 /* Team Image */
-import Team1 from '../../shared/image/Team1.png';
-import Team2 from '../../shared/image/Team2.png';
-import Team3 from '../../shared/image/Team3.png';
-import Team4 from '../../shared/image/Team4.png';
-import Team5 from '../../shared/image/Team5.png';
-import Team6 from '../../shared/image/Team6.png';
-import Team7 from '../../shared/image/Team7.png';
-import Team8 from '../../shared/image/Team8.png';
-import Team1Hover from '../../shared/image/Team1_hover.png';
-import Team2Hover from '../../shared/image/Team2_hover.png';
-import Team3Hover from '../../shared/image/Team3_hover.png';
-import Team4Hover from '../../shared/image/Team4_hover.png';
-import Team5Hover from '../../shared/image/Team5_hover.png';
-import Team6Hover from '../../shared/image/Team6_hover.png';
-import Team7Hover from '../../shared/image/Team7_hover.png';
-import Team8Hover from '../../shared/image/Team8_hover.png';
+import Team1 from '../../shared/image/team/Team1.png';
+import Team2 from '../../shared/image/team/Team2.png';
+import Team3 from '../../shared/image/team/Team3.png';
+import Team4 from '../../shared/image/team/Team4.png';
+import Team5 from '../../shared/image/team/Team5.png';
+import Team6 from '../../shared/image/team/Team6.png';
+import Team7 from '../../shared/image/team/Team7.png';
+import Team8 from '../../shared/image/team/Team8.png';
+import Team1Hover from '../../shared/image/team/Team1_hover.png';
+import Team2Hover from '../../shared/image/team/Team2_hover.png';
+import Team3Hover from '../../shared/image/team/Team3_hover.png';
+import Team4Hover from '../../shared/image/team/Team4_hover.png';
+import Team5Hover from '../../shared/image/team/Team5_hover.png';
+import Team6Hover from '../../shared/image/team/Team6_hover.png';
+import Team7Hover from '../../shared/image/team/Team7_hover.png';
+import Team8Hover from '../../shared/image/team/Team8_hover.png';
 
 /* Partners Image */
 import Iconloop from '../../shared/image/partners/iconloop.png';
@@ -130,7 +130,11 @@ const Main = () => {
     ];
     return (
       <div className="team-info-wrapper">
-        <div style={{position: "relative" }} >
+        <div style={{
+            position: "relative",
+            width: 180,
+            height: 180
+          }} >
           <img src={TeamArray[index]} className="team-picture" alt="Elysia" />
           <img src={TeamHoverArray[index]} className="team-picture hover" alt="Elysia" />
         </div>

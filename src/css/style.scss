@@ -5,6 +5,7 @@
 }
 div.elysia {
   background-color: #ffffff;
+  min-width: 1190px;
 }
 p,
 h3,
@@ -140,12 +141,12 @@ section.team-wrapper {
   text-align: center;
 }
 div.team-info-wrapper > h3 {
-  margin: 5px 12px;
+  margin: 20px 0px 10px 0px;
   text-align: left;
   font-size: 20px;
 }
 div.team-info-wrapper > p {
-  margin: 5px 12px;
+  margin: 0px;
   text-align: left;
   font-size: 15px;
   color: #888888;
@@ -377,6 +378,11 @@ button.top-botton {
     background-color: #3679b5;
   }
 }
+img.team-picture {
+  width: 180px;
+  height: 180px;
+  border-radius: 5px;
+}
 img.team-picture.hover {
   position: absolute;
   opacity: 0;
@@ -386,6 +392,10 @@ img.team-picture.hover {
   top: 0;
   left: 0;
   transition: all 0.3s ease-in-out;
+  width: 180px;
+  height: 180px;
+  border-radius: 5px;
+  box-shadow: 0px 6px 10px #00000052;
   &:hover {
     opacity: 1;
   }
