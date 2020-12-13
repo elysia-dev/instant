@@ -96,6 +96,10 @@
       "community": "COMMUNITY",
       "copyright": "ELYSIA ⓒ 2018-2020. All rights reserved.",
       "privacy_policy": "Privacy Policy",
-      "terms_service": "Terms of Service"
+      "terms_service": "Terms of Service",
+      "language": "LANGUAGE",
+      "language_en": "English",
+      "language_ko": "한국어",
+      "language_zh-hans": "중국어"
     }
 }

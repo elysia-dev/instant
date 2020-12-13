@@ -22,16 +22,16 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/mobile/contact">
+        <Route path="/contact">
           <ContactMobile />
         </Route>
-        <Route path="/mobile/userAgreement">
+        <Route path="/userAgreement">
           <UserAgreementMobile />
         </Route>
-        <Route path="/mobile/privacyPolicy">
+        <Route path="/privacyPolicy">
           <PrivacyPolicyMobile />
         </Route>
-        <Route path="/mobile/disclaimer">
+        <Route path="/disclaimer">
           <DisclaimerMobile />
         </Route>
         <Route path="*">
