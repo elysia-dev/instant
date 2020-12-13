@@ -258,7 +258,6 @@ const Main = () => {
       </section>
       <section className="contact-wrapper contents-wrapper" id="contact" ref={Contact}>
         <p className="contact-header-text">{t("contact.info_header")}</p>
-        <p className="contact-text">{t("contact.info_label")}</p>
         <button className="contact-button" onClick={() => history.push('/contact')}>{t("contact.contact_button")}</button>
       </section>
     </div>
