@@ -9062,7 +9062,7 @@ prompts@2.4.0, prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -9307,6 +9307,13 @@ react-is@^17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
+
+react-native-bit-swiper@^1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/react-native-bit-swiper/-/react-native-bit-swiper-1.1.8.tgz#3a63dac1799303553bc93ccdbc1301438498c361"
+  integrity sha512-UcG3NKlClg95qIL5xLe2fHkBaUWcqoGv62895vUosIejAK4vV9Ti8WcWFitTOw42/3CMpcjJhjW3gBC7csmE5w==
+  dependencies:
+    prop-types "^15.6.1"
 
 react-native-iphone-x-helper@^1.3.0:
   version "1.3.1"

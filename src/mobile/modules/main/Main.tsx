@@ -47,7 +47,8 @@ import HOW from '../../../shared/image/partners/how.png';
 
 import '../../css/mobileStyle.scss';
 import i18n from '../../../i18n/i18n';
-import { ServiceComponent } from '../../modules/service/ServiceComponent';
+import Slider from '../slider/Slider';
+import MlieStoneSlider from '../slider/MlieStoneSlider';
 import Footer from '../../modules/footer/Footer';
 import { useHistory } from 'react-router-dom';
 
@@ -98,38 +99,13 @@ const Main = () => {
         <img src={ElysiaApp} className="elysia-app" alt="Elysia" />
       </section>
       <section className="service-wrapper contents-wrapper" id="service">
-        <ServiceComponent />
+        <Slider />
       </section>
-      {/* 
       <section className="mliestone-wrapper contents-wrapper" id="milestone">
-        <div>
-          <p className="mliestone-header-text header-text">{i18n.t("mliestone.header_label")}</p>
-          <div className="mliestone-timeline" style={{ ...(i18n.t('mliestone.timeline').length === (state.selectMliestone + 1) ? { backgroundColor: "#3679b5" } : { backgroundColor: "#cccccc" }) }}>
-            <div className="mliestone-dot-wrapper">
-              <div className="mliestone-line" style={{ width: (1190 / (i18n.t('mliestone.timeline').length - 1)) * state.selectMliestone }} />
-              {
-                Array(i18n.t('mliestone.timeline').length).fill(0).map((_x, index) => {
-                  return (
-                    <>
-                      <div className={"mliestone-dot " + (state.selectMliestone === index ? 'mliestone-selected' : '')} id={"mliestone-" + index} style={{
-                        ...(state.selectMliestone === index ?
-                          MliestoneSelected :
-                          state.selectMliestone > index &&
-                          MliestoneActivation)
-                      }} onClick={() => setState({ ...state, selectMliestone: index })}>
-                        <p className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')}>{i18n.t('mliestone.timeline.' + index)}</p>
-                        <h1 className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')} style={{ ...(state.selectMliestone === index ? { display: "block" } : { display: "none" }) }}>{i18n.t('mliestone.timeline_contant.' + index)}</h1>
-                      </div>
-                    </>
-                  );
-                })
-              }
-            </div>
-          </div>
-        </div>
+        <MlieStoneSlider />
       </section>
       <section className="team-wrapper contents-wrapper" id="team">
-        <p className="team-header-text header-text">{i18n.t("team.header_label")}</p>
+        <p className="team-header-text header-label">{i18n.t("team.header_label")}</p>
         {
           [
             [Team1, Team1Hover],
@@ -142,11 +118,12 @@ const Main = () => {
             [Team8, Team8Hover],
           ].map(([team, teamHover], index) => {
             return (
-              <div className="team-info-wrapper">
+              <div className="team-info-wrapper" style={((index % 2 === 0) ? { float: "right" } : {})}>
                 <div style={{
                   position: "relative",
-                  width: 180,
-                  height: 180
+                  width: 120,
+                  height: 120,
+                  marginTop: 13
                 }} >
                   <img src={team} className="team-picture" alt="Elysia" />
                   <img src={teamHover} className="team-picture hover" alt="Elysia" />
@@ -159,7 +136,7 @@ const Main = () => {
         }
       </section>
       <section className="partners-wrapper contents-wrapper" id="partners">
-        <p className="pertners-header-text header-text">{i18n.t("partners.header_label")}</p>
+        <p className="pertners-header-text header-label">{i18n.t("partners.header_label")}</p>
         <div className="partners-container">
           {
             [
@@ -184,9 +161,9 @@ const Main = () => {
               BithumbGlobal,
               HUB,
               HOW
-            ].map((image) => {
+            ].map((image, index) => {
               return (
-                <img src={image} className="partners-picture" alt="Elysia" />
+                <img src={image} className="partners-picture" alt="Elysia"  style={((index % 2 === 0) ? { float: "right" } : {})}/>
               );
             })
           }
@@ -194,9 +171,9 @@ const Main = () => {
       </section>
       <section className="contact-wrapper contents-wrapper" id="contact">
         <p className="contact-header-text">{i18n.t("contact.info_header")}</p>
-        <p className="contact-text">{i18n.t("contact.info_label")}</p>
+        {/* <p className="contact-text">{i18n.t("contact.info_label")}</p> */}
         <button className="contact-button" onClick={() => history.push('/contact')}>{i18n.t("contact.contact_button")}</button>
-      </section> */}
+      </section>
     </div>
   );
 }
