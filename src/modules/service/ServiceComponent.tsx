@@ -13,32 +13,19 @@ import { useTranslation } from 'react-i18next';
 
 function ServiceComponent() {
   const [counter, setCounter] = useState<number>(0);
-  const [stage, setStage] = useState<number>(0);
-  const [reset, setReset] = useState<boolean>(false);
   const { t } = useTranslation();
 
   useEffect(() => {
-    if (reset) {
-      setCounter(0);
-      setReset(false);
-      return;
-    }
-
-    if (counter === 100) {
-      setStage((stage + 1) % 3);
-    }
-
-    setTimeout(() => {
-      setCounter((counter + 1) % 101)
+    let timer = setTimeout(() => {
+      setCounter((counter + 1) % 300)
     }, 40)
+
+    return () => {
+      clearTimeout(timer)
+    }
   }, [counter])
 
-  const resetState = (stage: number) => {
-    setReset(true);
-    setTimeout(() => {
-      setStage(stage);
-    }, 40)
-  }
+  const stage = Math.floor(counter / 100);
 
   return (
     <>
@@ -53,21 +40,21 @@ function ServiceComponent() {
         />
       </div>
       <div className="service-icon-wrapper">
-        <div style={{ position: "relative", cursor: "pointer" }} onClick={() => resetState(0)}>
+        <div style={{ position: "relative", cursor: "pointer" }} onClick={() => setCounter(0)}>
           <img src={OnboardingOff} className="service-on-boarding service-square" alt="Elysia" />
           <img src={OnboardingOn} className="service-on-boarding service-square" alt="Elysia" style={{ position: "absolute", opacity: (stage === 0 ? 1 : 0) }} />
         </div>
         <div className="service-backbar" style={{ height: 130, width: 5, backgroundColor: "#f6f6f8" }} >
           <div className="service-prograss" style={{ height: ((stage === 0 ? counter : 0) + "%"), width: 5, backgroundColor: "#3679b5" }} />
         </div>
-        <div style={{ position: "relative", cursor: "pointer" }} onClick={() => resetState(1)}>
+        <div style={{ position: "relative", cursor: "pointer" }} onClick={() => setCounter(100)}>
           <img src={ElysiaOff} className="service-on-boarding service-square" alt="Elysia" />
           <img src={ElysiaOn} className="service-on-boarding service-square" alt="Elysia" style={{ position: "absolute", opacity: (stage === 1 ? 1 : 0) }} />
         </div>
         <div className="service-backbar" style={{ height: 130, width: 5, backgroundColor: "#f6f6f8" }} >
-          <div className="service-prograss" style={{ height: ((stage === 1 ? counter : 0) + "%"), width: 5, backgroundColor: "#3679b5" }} />
+          <div className="service-prograss" style={{ height: ((stage === 1 ? counter - 100 : 0) + "%"), width: 5, backgroundColor: "#3679b5" }} />
         </div>
-        <div style={{ position: "relative", cursor: "pointer" }} onClick={() => resetState(2)}>
+        <div style={{ position: "relative", cursor: "pointer" }} onClick={() => setCounter(200)}>
           <img src={DefiOff} className="service-on-boarding service-square" alt="Elysia" />
           <img src={DefiOn} className="service-on-boarding service-square" alt="Elysia" style={{ position: "absolute", opacity: (stage === 2 ? 1 : 0) }} />
         </div>
