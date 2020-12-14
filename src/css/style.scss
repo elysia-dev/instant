@@ -35,6 +35,10 @@ header.header-container {
 img.elysia-logo {
   display: inline;
   cursor: pointer;
+  width: 150px;
+}
+img.elysia-logo-white {
+  width: 150px;
 }
 nav.header-link-wrapper {
   float: right;
@@ -71,6 +75,7 @@ img.app-store {
   margin-right: 30px;
 }
 img.elysia-app {
+  height: 630px;
   float: right;
 }
 section.contents-wrapper {
