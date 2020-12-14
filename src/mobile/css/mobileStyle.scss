@@ -94,15 +94,15 @@ div.mobile-slider-wrapper {
 span.swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background: #F0F0F1 0% 0% no-repeat padding-box;
+  background: #f0f0f1 0% 0% no-repeat padding-box;
   border-radius: 1px;
   opacity: 1;
 }
 span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   width: 10px;
   height: 10px;
-  background: #3679B5 0% 0% no-repeat padding-box;
-  box-shadow: 0px 2px 3px #2498FF99;
+  background: #3679b5 0% 0% no-repeat padding-box;
+  box-shadow: 0px 2px 3px #2498ff99;
   border-radius: 1px;
 }
 div.mobile-mliestone-label-wrapper {
@@ -119,7 +119,7 @@ h1.mobile-mliestone-label {
 }
 p.mobile-mliestone-label {
   font-size: 12px;
-  color: #3679B5;
+  color: #3679b5;
   text-align: center;
   vertical-align: bottom;
 }
@@ -130,28 +130,29 @@ div.mobile-mliestone-slider-container {
 div.mobile-mliestone-slider-dot {
   width: 20px;
   height: 20px;
-  background: #3679B5;
-  box-shadow: 0px 3px 6px #2498FF9A;
+  background: #3679b5;
+  box-shadow: 0px 3px 6px #2498ff9a;
   border-radius: 5px;
   margin: 0 auto;
 }
 div.swiper-button-next {
   width: 12px;
   height: 12px;
-  background: #FFFFFF 0% 0% no-repeat padding-box;
-box-shadow: 1px 2px 3px #00000026;
-border-radius: 2px;
-opacity: 1;
-}
-div.swiper-button-prev {
-  width: 12px;
-  height: 12px;
-  background: #FFFFFF 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 1px 2px 3px #00000026;
   border-radius: 2px;
   opacity: 1;
 }
-.swiper-button-prev:after, .swiper-button-next:after {
+div.swiper-button-prev {
+  width: 12px;
+  height: 12px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 1px 2px 3px #00000026;
+  border-radius: 2px;
+  opacity: 1;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
   display: none;
 }
 div.mobile-mliestone-slider-line {
@@ -237,8 +238,8 @@ p.mobile-contact-header-text {
 button.mobile-contact-button {
   width: 127px;
   height: 45px;
-  background: #3679B5;
-  box-shadow: 0px 3px 6px #2498FF99;
+  background: #3679b5;
+  box-shadow: 0px 3px 6px #2498ff99;
   border-radius: 5px;
   margin: 0 auto;
   color: #fff;
@@ -247,7 +248,6 @@ button.mobile-contact-button {
   font-family: "Inter";
   cursor: pointer;
 }
-
 
 footer {
   background-color: #1a1a1a !important;
@@ -260,12 +260,13 @@ div.mobile-footer-wrapper {
   width: 300px;
   margin: 0 auto;
 }
-div.mobile-footer-container-contact > p , p.mobile-footer-header-text {
-  color: #FFFFFF;
+div.mobile-footer-container-contact > p,
+p.mobile-footer-header-text {
+  color: #ffffff;
   font-size: 15px;
 }
 div.mobile-footer-container-contact > p.mobile-footer-text {
-  color: #B7B7B7;
+  color: #b7b7b7;
   font-size: 13px;
 }
 div.mobile-footer-container-icon {
@@ -282,7 +283,7 @@ p.mobile-footer-header-text {
 img.mobile-footer-icon {
   margin: 0px;
 }
-div.mobile-footer-container-icon > div{
+div.mobile-footer-container-icon > div {
   flex: 1;
   display: flex;
   flex-direction: row;
@@ -298,12 +299,12 @@ div.mobile-footer-container-logo {
 }
 p.mobile-elysia-logo-text {
   font-size: 13px;
-  color: #B7B7B7;
+  color: #b7b7b7;
 }
 p.mobile-footer-link {
   text-decoration: underline;
   font-size: 13px;
-  color: #FFF;
+  color: #fff;
 }
 div.mobile-footer-link-wrapper {
   flex: auto;
@@ -314,7 +315,7 @@ div.mobile-footer-link-wrapper {
   justify-content: space-between;
 }
 p.mobile-footer-copyright {
-  color: #B7B7B7;
+  color: #b7b7b7;
   font-size: 13px;
   margin: 0;
 }
@@ -322,26 +323,23 @@ div.mobile-modal {
   background-color: rgb(255, 255, 255);
   z-index: 999;
   width: 100%;
-  height: 100%;
   position: fixed;
   top: 0;
-  height: 100%;
-  min-height: 100%;
+  height: 100vh;
   overflow: hidden !important;
   touch-action: none;
 }
 section.mobile-contact-modal-wrapper {
   display: block;
-  padding-top: 40px;
-  margin: 0 auto;
-  width: 300px;
+  padding: 5%;
+  margin: 10px auto;
   text-align: center;
 }
 a.mobile-modal-quit {
   float: right;
 }
 h1.mobile-contact-modal-header {
-  margin-top: 85px;
+  margin-top: 8vh;
   font-family: "Inter-bold";
 }
 input.mobile-contact-modal-email-input {
@@ -350,7 +348,6 @@ input.mobile-contact-modal-email-input {
   border-radius: 5px;
   width: 100%;
   height: 35px;
-  padding: 0px 6px;
   font-family: "Inter";
   font-size: 14px;
 }
@@ -359,9 +356,8 @@ textarea.mobile-contact-modal-message-input {
   border: 1px solid #b7b7b7;
   border-radius: 5px;
   width: 100%;
-  height: 254px;
+  height: 30vh;
   resize: none;
-  padding: 8px 6px;
   font-family: "Inter";
   font-size: 14px;
 }
@@ -393,4 +389,9 @@ button.mobile-contact-modal-button {
   border: none;
   font-family: "Inter";
   cursor: pointer;
+  position: absolute;
+  bottom: 4vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
