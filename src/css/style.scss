@@ -80,6 +80,7 @@ section.contents-wrapper {
 div.service-text-wrapper {
   display: flex;
   flex-direction: column;
+  max-width: 300px;
 }
 img.service-square {
   display: inline-block;

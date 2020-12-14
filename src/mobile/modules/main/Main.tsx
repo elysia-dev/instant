@@ -101,7 +101,6 @@ const Main = () => {
       </div>
     );
   }
-  const history = useHistory();
   const { t, i18n } = useTranslation();
 
   return (
@@ -109,9 +108,9 @@ const Main = () => {
       <ContactModal />
       <div className="elysia-mobile">
         <header className="mobile-header-container">
-          <a href="https://elysia.land/">
-            <img src={ElysiaLogo} className="mobile-elysia-logo" alt="Elysia" />
-          </a>
+          <Link to="/">
+            <img src={ElysiaLogo} className="elysia-logo" alt="Elysia" />
+          </Link>
         </header>
         <section className="mobile-main-wrapper" id="main">
           <p className="mobile-main-text">
