@@ -45,6 +45,7 @@ import BithumbGlobal from '../../shared/image/partners/bithumbglobal.png';
 import HUB from '../../shared/image/partners/hub.png';
 import HOW from '../../shared/image/partners/how.png';
 import Alphanonce from '../../shared/image/partners/alphanonce.png';
+import Anjuke from '../../shared/image/partners/anjuke.png';
 
 import '../../css/style.scss';
 import ServiceComponent from '../../modules/service/ServiceComponent';
@@ -229,6 +230,7 @@ const Main = () => {
               Iconloop,
               Hexlant,
               Bishijie,
+              Anjuke,
               Xangle,
               Chainlink,
               HahmShout,
