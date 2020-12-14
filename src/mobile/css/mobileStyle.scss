@@ -370,6 +370,7 @@ input.mobile-contact-email-input {
   height: 35px;
   font-family: "Inter";
   font-size: 14px;
+  box-sizing: border-box;
 }
 textarea.mobile-contact-message-input {
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -380,6 +381,7 @@ textarea.mobile-contact-message-input {
   resize: none;
   font-family: "Inter";
   font-size: 14px;
+  box-sizing: border-box;
 }
 p.mobile-contact-email-label,
 p.mobile-contact-message-label {
