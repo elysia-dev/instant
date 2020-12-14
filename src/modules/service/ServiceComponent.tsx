@@ -43,9 +43,14 @@ function ServiceComponent() {
   return (
     <>
       <div className="on-boarding">
-        <img src={Onboarding} className="service-image" alt="Elysia" style={{ opacity: (stage === 0 ? 1 : 0) }} />
-        <img src={ElysiaMobile} className="service-image" alt="Elysia" style={{ left: "20%", top: "-6%", opacity: (stage === 1 ? 1 : 0) }} />
-        <img src={Defi} className="service-image" alt="Elysia" style={{ opacity: (stage === 2 ? 1 : 0) }} />
+        <img
+          src={
+            stage === 0 ? Onboarding :
+              stage === 1 ? ElysiaMobile : Defi
+          }
+          className="service-image"
+          alt="Elysia"
+        />
       </div>
       <div className="service-icon-wrapper">
         <div style={{ position: "relative", cursor: "pointer" }} onClick={() => resetState(0)}>
