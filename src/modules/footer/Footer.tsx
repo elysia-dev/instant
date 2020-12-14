@@ -17,7 +17,7 @@ const Footer: FunctionComponent = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <footer>
+    <footer className="footer">
       <div className="footer-container">
         <div className="footer-wrapper">
           <div className="footer-container-left">

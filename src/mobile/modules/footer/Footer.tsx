@@ -17,7 +17,7 @@ const Footer: FunctionComponent = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <footer>
+    <footer className="mobile-footer">
       <div className="mobile-footer-container">
         <div className="mobile-footer-wrapper">
           <div className="mobile-footer-container-contact">

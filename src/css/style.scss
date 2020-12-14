@@ -74,11 +74,12 @@ img.elysia-app {
 }
 section.contents-wrapper {
   height: 100vh;
-  width: 1190px;
+  max-width: 1190px;
   margin: 0 auto;
 }
 div.service-text-wrapper {
   display: flex;
+  width: 385px;
   flex-direction: column;
   max-width: 300px;
 }
@@ -169,7 +170,8 @@ div.partners-container {
   align-items: center;
   margin-top: 100px;
 }
-footer {
+footer.footer {
+  min-width: 1190px;
   color: #fff !important;
   background-color: #1a1a1a !important;
 }
@@ -269,6 +271,7 @@ p.contact-header-text {
   font-size: 30px;
   font-family: "Inter-Bold";
   margin: 10px;
+  margin-bottom: 66px;
 }
 p.contact-text {
   font-size: 15px;
