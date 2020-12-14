@@ -154,7 +154,8 @@ const Main = () => {
                     <div style={{
                       width: 120,
                       height: 120,
-                      marginTop: 13
+                      marginTop: 13,
+                      position: "relative",
                     }} >
                       <img src={team} className="mobile-team-picture" alt="Elysia" />
                       <img src={teamHover} className="mobile-team-picture hover" alt="Elysia" />

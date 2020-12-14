@@ -27,7 +27,7 @@ p.mobile-main-text {
   white-space: pre-line;
   font-family: "Inter-Bold";
   font-weight: bold;
-  margin: 124px auto 65px auto;
+  margin: 75px auto 65px auto;
 }
 img.mobile-app-store {
   width: 125px;
@@ -55,6 +55,7 @@ div.mobile-swiper-container {
   display: inline-block;
 }
 div.mobile-slider-handler {
+  width: 100%;
   margin-top: 215px;
   display: inline-block;
 }
@@ -246,6 +247,7 @@ section.mobile-contact-wrapper {
 p.mobile-contact-header-text {
   font-size: 30px;
   font-family: "Inter-Bold";
+  margin-bottom: 50px;
 }
 button.mobile-contact-button {
   width: 127px;
