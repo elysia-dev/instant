@@ -341,26 +341,23 @@ div.mobile-modal {
   background-color: rgb(255, 255, 255);
   z-index: 999;
   width: 100%;
-  height: 100%;
   position: fixed;
   top: 0;
-  height: 100%;
-  min-height: 100%;
+  height: 100vh;
   overflow: hidden !important;
   touch-action: none;
 }
 section.mobile-contact-modal-wrapper {
   display: block;
-  padding-top: 40px;
-  margin: 0 auto;
-  width: 300px;
+  padding: 5%;
+  margin: 10px auto;
   text-align: center;
 }
 a.mobile-modal-quit {
   float: right;
 }
 h1.mobile-contact-modal-header {
-  margin-top: 85px;
+  margin-top: 8vh;
   font-family: "Inter-bold";
 }
 input.mobile-contact-modal-email-input {
@@ -369,7 +366,6 @@ input.mobile-contact-modal-email-input {
   border-radius: 5px;
   width: 100%;
   height: 35px;
-  padding: 0px 6px;
   font-family: "Inter";
   font-size: 14px;
 }
@@ -378,9 +374,8 @@ textarea.mobile-contact-modal-message-input {
   border: 1px solid #b7b7b7;
   border-radius: 5px;
   width: 100%;
-  height: 254px;
+  height: 30vh;
   resize: none;
-  padding: 8px 6px;
   font-family: "Inter";
   font-size: 14px;
 }
@@ -412,4 +407,9 @@ button.mobile-contact-modal-button {
   border: none;
   font-family: "Inter";
   cursor: pointer;
+  position: absolute;
+  bottom: 4vh;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
