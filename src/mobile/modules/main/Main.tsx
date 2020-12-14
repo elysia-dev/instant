@@ -49,63 +49,15 @@ import HOW from '../../../shared/image/partners/how.png';
 import '../../css/mobileStyle.scss';
 import Slider from '../slider/Slider';
 import MlieStoneSlider from '../slider/MlieStoneSlider';
-import Footer from '../../modules/footer/Footer';
-import { useHistory, Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import axios from 'axios';
-
 const Main = () => {
-  const [modalHandler, setModal] = useState<boolean>(false)
-
-  const ContactModal = () => {
-    const [state, setState] = useState<{ email: string, content: string }>({ email: "", content: "" });
-    const sendContact = () => {
-      axios.post(
-        "https://api.elysia.land/land/contact",
-        {
-          email: state.email,
-          content: state.content
-        }
-      ).then(() => {
-        alert(t("contact.success"));
-        setState({
-          email: "",
-          content: "",
-        })
-      }).catch(() => {
-        alert(t("contact.fail"));
-      })
-    }
-    return (
-      <div className="mobile-modal" style={
-        modalHandler ? { display: "block" } : { display: "none" }
-      }>
-        <section className="mobile-contact-modal-wrapper">
-          <a className="mobile-modal-quit" onClick={() => setModal(false)}>
-            <img src={Quit} className="mobile-modal-quit" alt="Elysia" />
-          </a>
-          <h1 className="mobile-contact-modal-header">{t("contact.form_header")}</h1>
-          <p className="mobile-contact-modal-email-label">{t("contact.input_email")}<span className="mobile-contact-required-point"> *</span></p>
-          <input type="text" name="user_id" className="mobile-contact-modal-email-input" value={state.email} onChange={(event) => { setState({ ...state, email: event.target.value }) }} />
-          <p className="mobile-contact-modal-message-label">{t("contact.input_message")}<span className="mobile-contact-required-point"> *</span></p>
-          <textarea className="mobile-contact-modal-message-input" name="inputstr2" value={state.content} onChange={(event) => { setState({ ...state, content: event.target.value }) }} />
-          <p className="mobile-contact-modal-message-info">{t("contact.request_label")}</p>
-          <button
-            className="mobile-contact-modal-button"
-            onClick={sendContact}
-          >
-            {t("contact.send_button")}
-          </button>
-        </section>
-      </div>
-    );
-  }
-  const { t, i18n } = useTranslation();
+  const history = useHistory();
+  const { t } = useTranslation();
 
   return (
     <>
-      <ContactModal />
       <div className="elysia-mobile">
         <header className="mobile-header-container">
           <Link to="/">
@@ -114,7 +66,7 @@ const Main = () => {
         </header>
         <section className="mobile-main-wrapper" id="main">
           <p className="mobile-main-text">
-            {i18n.t('main.invest_label')}
+            {t('main.invest_label')}
           </p>
           <div className="mobile-main-image-wrapper">
             <a href="https://apps.apple.com/us/app/elysia/id1536733411">
@@ -133,7 +85,7 @@ const Main = () => {
           <MlieStoneSlider />
         </section>
         <section className="mobile-team-wrapper contents-mobile-wrapper" id="team">
-          <p className="mobile-team-header-text mobile-header-label">{i18n.t("team.header_label")}</p>
+          <p className="mobile-team-header-text mobile-header-label">{t("team.header_label")}</p>
           <div className="mobile-team-container">
             {
               [
@@ -160,8 +112,8 @@ const Main = () => {
                       <img src={team} className="mobile-team-picture" alt="Elysia" />
                       <img src={teamHover} className="mobile-team-picture hover" alt="Elysia" />
                     </div>
-                    <h3>{i18n.t('team.name.' + index)}</h3>
-                    <p>{i18n.t('team.dept.' + index)}</p>
+                    <h3>{t('team.name.' + index)}</h3>
+                    <p>{t('team.dept.' + index)}</p>
                   </div>
                 );
               })
@@ -169,7 +121,7 @@ const Main = () => {
           </div>
         </section>
         <section className="mobile-partners-wrapper mobile-contents-mobile-wrapper" id="partners">
-          <p className="mobile-pertners-header-text mobile-header-label">{i18n.t("partners.header_label")}</p>
+          <p className="mobile-pertners-header-text mobile-header-label">{t("partners.header_label")}</p>
           <div className="mobile-partners-container">
             {
               [
@@ -205,8 +157,8 @@ const Main = () => {
           </div>
         </section>
         <section className="mobile-contact-wrapper mobile-contents-mobile-wrapper" id="contact">
-          <p className="mobile-contact-header-text">{i18n.t("contact.info_header")}</p>
-          <button className="mobile-contact-button" onClick={() => setModal(true)}>{i18n.t("contact.contact_button")}</button>
+          <p className="mobile-contact-header-text">{t("contact.info_header")}</p>
+          <button className="mobile-contact-button" onClick={() => history.push("/contact")}>{t("contact.contact_button")}</button>
         </section>
       </div>
     </>

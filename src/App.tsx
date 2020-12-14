@@ -18,7 +18,7 @@ import ScrollToTop from './modules/ScrollToTop';
 
 /*mobile */
 import MainMobile from './mobile/modules/main/Main';
-import UserAgreementMobile from './mobile/modules/UserAgreement';
+import ContactMobile from './mobile/modules/contact/Contact';
 import PrivacyPolicyMobile from './mobile/modules/PrivacyPolicy';
 import DisclaimerMobile from './mobile/modules/Disclaimer';
 import FooterMobile from './mobile/modules/footer/Footer';
@@ -71,9 +71,9 @@ const App = () => {
       <Router>
         <ScrollToTop />
         <Switch>
-          <Route path="/userAgreement">
-            <UserAgreementMobile />
-          </Route>
+          <RouteWithHeader path="/contact">
+            <ContactMobile />
+          </RouteWithHeader>
           <Route path="/privacyPolicy">
             <PrivacyPolicyMobile />
           </Route>
