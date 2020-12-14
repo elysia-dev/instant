@@ -19,7 +19,7 @@ const Slider: React.FunctionComponent = () => {
     SelectedSliders: 0,
   })
   SwiperCore.use([Navigation, Pagination, Autoplay]);
-  
+
   const { t, i18n } = useTranslation();
 
   const slides = [];
@@ -29,11 +29,13 @@ const Slider: React.FunctionComponent = () => {
   for (let i = 0; i < 3; i++) {
     slides.push(
       <SwiperSlide key={`slide-${i}`} tag="li">
-        <img src={ImageArray[i]} alt="elysia" style={{ width: 310, height: 310, listStyle: 'none' }}/>
+        <div>
+          <img src={ImageArray[i]} alt="elysia" style={{ height: 310, listStyle: 'none', margin: "auto" }} />
+        </div>
       </SwiperSlide>
     );
   }
-  return ( 
+  return (
     <>
       <div className="mobile-slider-container">
         {[
@@ -45,8 +47,8 @@ const Slider: React.FunctionComponent = () => {
             <div className="mobile-slider-wrapper" style={{
               ...(state.SelectedSliders === index ?
                 { opacity: 1 } : { opacity: 0 })
-              }}
-            >   
+            }}
+            >
               <img src={SliderIcon} className="mobile-slider-square" alt="Elysia" />
               <p className="mobile-service-header-label mobile-header-label">
                 {i18n.t('service.' + HeaderLabel)}
@@ -59,21 +61,21 @@ const Slider: React.FunctionComponent = () => {
         })}
       </div>
       <div className="mobile-slider-handler">
-        <Swiper style={{ width: 300, height: 350 }} 
+        <Swiper style={{ width: 300, height: 350 }}
           spaceBetween={200}
           loop={true}
           autoplay={true}
-          slidesPerView={1} 
+          slidesPerView={1}
           pagination={{ clickable: true }}
           onSlideChange={(slides) => setState({ ...state, SelectedSliders: slides.realIndex })}
-          >
+        >
           {slides}
-        </Swiper> 
+        </Swiper>
       </div>
     </>
-    
-    
-  ); 
-}; 
+
+
+  );
+};
 
 export default Slider;

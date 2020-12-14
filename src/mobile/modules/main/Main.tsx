@@ -57,7 +57,7 @@ import axios from 'axios';
 
 const Main = () => {
   const [modalHandler, setModal] = useState<boolean>(false)
-  
+
   const ContactModal = () => {
     const [state, setState] = useState<{ email: string, content: string }>({ email: "", content: "" });
     const sendContact = () => {
@@ -80,7 +80,7 @@ const Main = () => {
     return (
       <div className="mobile-modal" style={
         modalHandler ? { display: "block" } : { display: "none" }
-        }>
+      }>
         <section className="mobile-contact-modal-wrapper">
           <a className="mobile-modal-quit" onClick={() => setModal(false)}>
             <img src={Quit} className="mobile-modal-quit" alt="Elysia" />
@@ -114,9 +114,9 @@ const Main = () => {
           </a>
         </header>
         <section className="mobile-main-wrapper" id="main">
-            <p className="mobile-main-text">
-              {i18n.t('main.invest_label')}
-            </p>
+          <p className="mobile-main-text">
+            {i18n.t('main.invest_label')}
+          </p>
           <div className="mobile-main-image-wrapper">
             <a href="https://apps.apple.com/us/app/elysia/id1536733411">
               <img src={AppStore} className="mobile-app-store" alt="Elysia" />
@@ -192,7 +192,7 @@ const Main = () => {
                 HOW
               ].map((image, index) => {
                 return (
-                  <img src={image} className="mobile-partners-picture" alt="Elysia"  style={((index % 2 === 0) ? { float: "right" } : {})}/>
+                  <img src={image} className="mobile-partners-picture" alt="Elysia" style={((index % 2 === 0) ? { float: "right" } : {})} />
                 );
               })
             }

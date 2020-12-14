@@ -23,7 +23,6 @@ import PrivacyPolicyMobile from './mobile/modules/PrivacyPolicy';
 import DisclaimerMobile from './mobile/modules/Disclaimer';
 import FooterMobile from './mobile/modules/footer/Footer';
 
-import MediaQuery from "react-responsive";
 import { useMediaQuery } from "react-responsive";
 import { useTranslation } from 'react-i18next';
 
@@ -32,9 +31,6 @@ const App = () => {
   const { i18n } = useTranslation();
   const isPc = useMediaQuery({
     query: "(min-width: 768px)"
-  });
-  const isMobile = useMediaQuery({
-    query: "(max-width: 767px)"
   });
 
   useEffect(() => {
@@ -73,6 +69,7 @@ const App = () => {
   const MobileRouter = () => {
     return (
       <Router>
+        <ScrollToTop />
         <Switch>
           <Route path="/userAgreement">
             <UserAgreementMobile />
