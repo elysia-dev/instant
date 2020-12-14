@@ -134,34 +134,39 @@ const Main = () => {
         </section>
         <section className="mobile-team-wrapper contents-mobile-wrapper" id="team">
           <p className="mobile-team-header-text mobile-header-label">{i18n.t("team.header_label")}</p>
-          {
-            [
-              [Team1, Team1Hover],
-              [Team2, Team2Hover],
-              [Team3, Team3Hover],
-              [Team4, Team4Hover],
-              [Team5, Team5Hover],
-              [Team6, Team6Hover],
-              [Team7, Team7Hover],
-              [Team8, Team8Hover],
-            ].map(([team, teamHover], index) => {
-              return (
-                <div className="mobile-team-info-wrapper" style={((index % 2 === 0) ? { float: "right" } : {})}>
-                  <div style={{
-                    position: "relative",
-                    width: 120,
-                    height: 120,
-                    marginTop: 13
-                  }} >
-                    <img src={team} className="mobile-team-picture" alt="Elysia" />
-                    <img src={teamHover} className="mobile-team-picture hover" alt="Elysia" />
+          <div className="mobile-team-container">
+            {
+              [
+                [Team1, Team1Hover],
+                [Team2, Team2Hover],
+                [Team3, Team3Hover],
+                [Team4, Team4Hover],
+                [Team5, Team5Hover],
+                [Team6, Team6Hover],
+                [Team7, Team7Hover],
+                [Team8, Team8Hover],
+              ].map(([team, teamHover], index) => {
+                return (
+                  <div
+                    className="mobile-team-info-wrapper"
+                    style={index % 2 === 1 ? { marginLeft: "auto" } : {}}
+                  >
+                    <div style={{
+                      width: 120,
+                      height: 120,
+                      marginTop: 13,
+                      position: "relative",
+                    }} >
+                      <img src={team} className="mobile-team-picture" alt="Elysia" />
+                      <img src={teamHover} className="mobile-team-picture hover" alt="Elysia" />
+                    </div>
+                    <h3>{i18n.t('team.name.' + index)}</h3>
+                    <p>{i18n.t('team.dept.' + index)}</p>
                   </div>
-                  <h3>{i18n.t('team.name.' + index)}</h3>
-                  <p>{i18n.t('team.dept.' + index)}</p>
-                </div>
-              );
-            })
-          }
+                );
+              })
+            }
+          </div>
         </section>
         <section className="mobile-partners-wrapper mobile-contents-mobile-wrapper" id="partners">
           <p className="mobile-pertners-header-text mobile-header-label">{i18n.t("partners.header_label")}</p>
@@ -191,7 +196,9 @@ const Main = () => {
                 HOW
               ].map((image, index) => {
                 return (
-                  <img src={image} className="mobile-partners-picture" alt="Elysia" style={((index % 2 === 0) ? { float: "right" } : {})} />
+                  <div className="mobile-partners-item" style={{ textAlign: "center" }}>
+                    <img src={image} className="mobile-partners-picture" alt="Elysia" />
+                  </div>
                 );
               })
             }

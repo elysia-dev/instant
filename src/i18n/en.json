@@ -6,7 +6,7 @@
       "team": "Team",
       "partners": "Partners",
       "contact": "Contact",
-      "invest_label": "Real estate opportunities \nat your fingertips"
+      "invest_label": "Marketplace for\ntokenized real estate"
     },
     "service": {
       "onboarding": "Onboarding",
@@ -46,11 +46,11 @@
         "Anjuke partnership",
         "Android and IOS App release",
         "ELYSIA 2.0",
-        "- Asset securitization protocol update \n- Automated listing function\n- Tx Balance and PnL UI",
-        "- Singapore MAS license\n- International property listings\n- More than 50 listed properties",
-        "- Oracle solutions for real estate market prices\n- US Reg.D license acquisition",
-        "- Decentralized peer-to-peer real estate exchange platform launch\n- Automated B2B, B2P, P2P transactions",
-        "- ELYSIA DEX"
+        "· Asset securitization protocol update \n· Automated listing function\n· Tx Balance and PnL UI",
+        "· Singapore MAS license\n· International property listings\n· More than 50 listed properties",
+        "· Oracle solutions for real estate market prices\n· US Reg.D license acquisition",
+        "· Decentralized peer·to·peer real estate exchange platform launch\n· Automated B2B, B2P, P2P transactions",
+        "· ELYSIA DEX"
       ]
     },
     "team": {
@@ -94,13 +94,13 @@
       "email": "cs@elysia.land",
       "whitepaper": "WhitePaper (old)",
       "community": "COMMUNITY",
-      "copyright": "ELYSIA ⓒ 2018-2020. All rights reserved.",
+      "copyright": "ELYSIA ⓒ 2018·2020. All rights reserved.",
       "privacy_policy": "Privacy Policy",
       "terms_service": "Terms of Service",
       "language": "LANGUAGE",
       "language_en": "English",
       "language_ko": "한국어",
-      "language_zh-hans": "중국어"
+      "language_zh·hans": "중국어"
     }
   }
 }

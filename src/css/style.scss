@@ -4,12 +4,8 @@
     format("truetype");
 }
 @font-face {
-  font-family: "Inter-Bolder";
-  src: url("../shared/fonts/Inter-Bold-slnt=0.ttf") format("truetype");
-}
-@font-face {
   font-family: "Inter-Bold";
-  src: url("../shared/fonts/Inter-Medium-slnt=0.ttf") format("truetype");
+  src: url("../shared/fonts/Inter-Bold-slnt=0.ttf") format("truetype");
 }
 div.elysia {
   background-color: #ffffff;
@@ -35,6 +31,10 @@ header.header-container {
 img.elysia-logo {
   display: inline;
   cursor: pointer;
+  width: 150px;
+}
+img.elysia-logo-white {
+  width: 150px;
 }
 nav.header-link-wrapper {
   float: right;
@@ -56,7 +56,8 @@ div.main-text-wrapper {
   padding-top: 200px;
 }
 p.main-text {
-  font-size: 62px;
+  font-family: "Inter-Bold";
+  font-size: 55px;
   font-weight: bolder;
   white-space: pre-line;
 }
@@ -70,6 +71,7 @@ img.app-store {
   margin-right: 30px;
 }
 img.elysia-app {
+  height: 630px;
   float: right;
 }
 section.contents-wrapper {
@@ -149,6 +151,7 @@ p.header-text {
   font-size: 30px;
   font-family: "Inter-Bold";
   text-align: left;
+  font-weight: bold;
   padding-top: 5vh;
 }
 section.team-wrapper {
@@ -271,7 +274,8 @@ p.contact-header-text {
   font-size: 30px;
   font-family: "Inter-Bold";
   margin: 10px;
-  margin-bottom: 66px;
+  margin-bottom: 50px;
+  font-weight: bold;
 }
 p.contact-text {
   font-size: 15px;

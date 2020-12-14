@@ -15,20 +15,23 @@ h1 {
   color: #2c2c2c;
 }
 div.elysia-mobile {
-  width: 300px;
-  margin: 30px auto 0 auto;
+  margin: 30px 20px;
   background-color: #ffffff;
 }
 img.mobile-elysia-logo {
+  width: 150px;
   margin: 30px 10px 0px;
 }
+img.mobile-elysia-logo-white {
+  width: 150px;
+}
 p.mobile-main-text {
-  font-size: 35px;
+  font-size: 30px;
   text-align: center;
   white-space: pre-line;
   font-family: "Inter-Bold";
   font-weight: bold;
-  margin: 124px auto 65px auto;
+  margin: 75px auto 65px auto;
 }
 img.mobile-app-store {
   width: 125px;
@@ -56,6 +59,7 @@ div.mobile-swiper-container {
   display: inline-block;
 }
 div.mobile-slider-handler {
+  width: 100%;
   margin-top: 215px;
   display: inline-block;
 }
@@ -166,6 +170,12 @@ div.mobile-mliestone-slider-line {
 div.mobile-mliestone-slider-handler {
   position: relative;
 }
+
+div.mobile-team-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 10px;
+}
 img.mobile-team-picture {
   width: 120px;
   height: 120px;
@@ -190,9 +200,7 @@ img.mobile-team-picture.hover {
   }
 }
 div.mobile-team-info-wrapper {
-  display: inline-block;
   width: 120px;
-  height: 160px;
 }
 section.mobile-team-wrapper {
   text-align: left;
@@ -221,9 +229,18 @@ p.mobile-pertners-header-text {
 }
 img.mobile-partners-picture {
   display: inline-block;
-  width: 135px;
   height: 68px;
-  margin: 10px auto 10px;
+  margin-bottom: 10px;
+}
+div.mobile-partners-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  div.mobile-partners-item {
+    flex: 0 50%;
+    box-sizing: border-box;
+    width: 135px;
+  }
 }
 
 section.mobile-contact-wrapper {
@@ -234,6 +251,8 @@ section.mobile-contact-wrapper {
 p.mobile-contact-header-text {
   font-size: 30px;
   font-family: "Inter-Bold";
+  margin-bottom: 50px;
+  font-weight: bold;
 }
 button.mobile-contact-button {
   width: 127px;
