@@ -1,0 +1,106 @@
+{
+  "translation": {
+    "main": {
+      "service": "Services",
+      "milestone": "Milestone",
+      "team": "Team",
+      "partners": "Partners",
+      "contact": "Contact",
+      "invest_label": "Marketplace for\ntokenized real estate"
+    },
+    "service": {
+      "onboarding": "Onboarding",
+      "onboarding_label": "Add liquidity to your real estate",
+      "elysia_app": "ELYSIA 2.0",
+      "elysia_app_label": "Buy fractions of real estate and receive equal ownership benefits",
+      "defi": "Collateralized loans powered by blockchain ",
+      "defi_label": "Use real estate to borrow digital assets"
+    },
+    "mliestone": {
+      "header_label": "MILESTONE",
+      "timeline": [
+        "2018.09",
+        "2018.09",
+        "2018.10",
+        "2019.03",
+        "2019.04",
+        "2020.03",
+        "2020.05",
+        "2020.08",
+        "2020.10",
+        "2020.11",
+        "2020.12",
+        "2021 Q1",
+        "2021 Q2",
+        "2021 Q3",
+        "2021 Q4"
+      ],
+      "timeline_contant": [
+        "Incorporation in Singapore",
+        "Debut at COEX exhibition",
+        "First tokenized property sold",
+        "Branch office in South Korea",
+        "Featured on NH Bank digital challenge",
+        "More than 10 properties sold on elysia.land",
+        "First commercial property listings",
+        "Anjuke partnership",
+        "Android and IOS App release",
+        "ELYSIA 2.0",
+        "· Asset securitization protocol update \n· Automated listing function\n· Tx Balance and PnL UI",
+        "· Singapore MAS license\n· International property listings\n· More than 50 listed properties",
+        "· Oracle solutions for real estate market prices\n· US Reg.D license acquisition",
+        "· Decentralized peer·to·peer real estate exchange platform launch\n· Automated B2B, B2P, P2P transactions",
+        "· ELYSIA DEX"
+      ]
+    },
+    "team": {
+      "header_label": "TEAM",
+      "name": [
+        "JungGun Lim",
+        "Wonjoon Cha",
+        "Yoon Kin",
+        "Donguk Seo",
+        "Hyuno Bae",
+        "Heesoo Han",
+        "Shiliang Feng",
+        "Jacob Lee"
+      ],
+      "dept": [
+        "CEO",
+        "CSO",
+        "CMO",
+        "CTO",
+        "Developer",
+        "Designer",
+        "CHINA Marketing",
+        "Bees' Compony CEO"
+      ]
+    },
+    "partners": {
+      "header_label": "PARTNERS"
+    },
+    "contact": {
+      "info_header": "Didn’t find what you were looking for?",
+      "contact_button": "CONTACT",
+      "form_header": "ELYSIA Contact",
+      "input_email": "Your email address",
+      "input_message": "Your message",
+      "request_label": "Please enter the details of your request. A member of our support team will respond as soon as possible.",
+      "send_button": "SEND"
+    },
+    "footer": {
+      "logo_label": "ELYSIA PLATFORM PTE. LTD",
+      "contact": "CONTACT",
+      "email": "cs@elysia.land",
+      "whitepaper": "WhitePaper (old)",
+      "community": "COMMUNITY",
+      "copyright": "ELYSIA ⓒ 2018·2020. All rights reserved.",
+      "privacy_policy": "Privacy Policy",
+      "terms_service": "Terms of Service",
+      "language": "LANGUAGE",
+      "language_en": "English",
+      "language_ko": "한국어",
+      "language_zh·hans": "중국어"
+    }
+  }
+}

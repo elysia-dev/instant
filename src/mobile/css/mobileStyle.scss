@@ -1,0 +1,415 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../shared/fonts/Inter-VariableFont_slnt,wght.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("../../shared/fonts/Inter-Bold-slnt=0.ttf") format("truetype");
+}
+p,
+h3,
+h1 {
+  font-family: "Inter";
+  cursor: default;
+  color: #2c2c2c;
+}
+div.elysia-mobile {
+  margin: 30px 20px;
+  background-color: #ffffff;
+}
+img.mobile-elysia-logo {
+  width: 150px;
+  margin: 30px 10px 0px;
+}
+img.mobile-elysia-logo-white {
+  width: 150px;
+}
+p.mobile-main-text {
+  font-size: 30px;
+  text-align: center;
+  white-space: pre-line;
+  font-family: "Inter-Bold";
+  font-weight: bold;
+  margin: 75px auto 65px auto;
+}
+img.mobile-app-store {
+  width: 125px;
+  height: 38px;
+}
+img.mobile-google-play {
+  width: 125px;
+  height: 38px;
+}
+div.mobile-main-image-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 270px;
+  margin: 0 auto;
+}
+img.mobile-elysia-app {
+  width: 100%;
+  margin-top: 50px;
+}
+div.mobile-slider-container {
+  margin-top: 75px;
+}
+div.mobile-swiper-container {
+  display: inline-block;
+}
+div.mobile-slider-handler {
+  width: 100%;
+  margin-top: 215px;
+  display: inline-block;
+}
+img.mobile-slider-square {
+  margin: 0px auto;
+  margin-bottom: 0px;
+  display: block;
+}
+section.mobile-contents-mobile-wrapper {
+  width: 100%;
+}
+p.mobile-header-label {
+  font-size: 24px;
+  text-align: center;
+  font-family: "Inter-Bold";
+  font-weight: bold;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 35px;
+  margin-bottom: 11px;
+  text-align: center;
+}
+p.mobile-service-label {
+  font-size: 14px;
+  text-align: center;
+  font-family: "Inter";
+  width: 300px;
+  margin: 0 auto;
+}
+div.mobile-slider-wrapper {
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+span.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #f0f0f1 0% 0% no-repeat padding-box;
+  border-radius: 1px;
+  opacity: 1;
+}
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 10px;
+  height: 10px;
+  background: #3679b5 0% 0% no-repeat padding-box;
+  box-shadow: 0px 2px 3px #2498ff99;
+  border-radius: 1px;
+}
+div.mobile-mliestone-label-wrapper {
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+div.mobile-mliestone-label {
+  font-size: 18px;
+  color: #333333;
+  text-align: center;
+  vertical-align: bottom;
+}
+p.mobile-mliestone-label {
+  font-size: 12px;
+  color: #3679b5;
+  text-align: center;
+  vertical-align: bottom;
+}
+div.mobile-mliestone-slider-container {
+  height: 300px;
+  margin-top: 115px;
+}
+div.mobile-mliestone-slider-dot {
+  width: 20px;
+  height: 20px;
+  background: #3679b5;
+  box-shadow: 0px 3px 6px #2498ff9a;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+div.swiper-button-next {
+  width: 12px;
+  height: 12px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 1px 2px 3px #00000026;
+  border-radius: 2px;
+  opacity: 1;
+}
+div.swiper-button-prev {
+  width: 12px;
+  height: 12px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 1px 2px 3px #00000026;
+  border-radius: 2px;
+  opacity: 1;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  display: none;
+}
+div.mobile-mliestone-slider-line {
+  position: absolute;
+  height: 1px;
+  background-color: #3679b5;
+  width: 100%;
+  margin-top: 9px;
+  left: 0;
+}
+div.mobile-mliestone-slider-handler {
+  position: relative;
+}
+
+div.mobile-team-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 10px;
+}
+img.mobile-team-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+  display: block;
+}
+img.mobile-team-picture.hover {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  display: inline-block;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+  box-shadow: 0px 6px 10px #00000052;
+  &:hover {
+    opacity: 1;
+  }
+}
+div.mobile-team-info-wrapper {
+  width: 120px;
+}
+section.mobile-team-wrapper {
+  text-align: left;
+}
+p.mobile-team-header-text {
+  margin: 100px auto 50px auto;
+}
+div.mobile-team-info-wrapper > h3 {
+  margin: 12px 0px 5px 0px;
+  text-align: left;
+  font-size: 15px;
+  font-family: "Inter-Bold";
+}
+div.mobile-team-info-wrapper > p {
+  margin: 0px;
+  text-align: left;
+  font-size: 13px;
+  color: #888888;
+}
+
+section.mobile-partners-wrapper {
+  margin-top: 150px;
+}
+p.mobile-pertners-header-text {
+  margin-bottom: 50px;
+}
+img.mobile-partners-picture {
+  display: inline-block;
+  height: 68px;
+  margin-bottom: 10px;
+}
+div.mobile-partners-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  div.mobile-partners-item {
+    flex: 0 50%;
+    box-sizing: border-box;
+    width: 135px;
+  }
+}
+
+section.mobile-contact-wrapper {
+  margin-top: 250px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+p.mobile-contact-header-text {
+  font-size: 24px;
+  font-family: "Inter-Bold";
+  margin-top: 100px;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+button.mobile-contact-button {
+  width: 127px;
+  height: 45px;
+  background: #3679b5;
+  box-shadow: 0px 3px 6px #2498ff99;
+  border-radius: 5px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  font-family: "Inter";
+  cursor: pointer;
+}
+
+
+footer.mobile-footer {
+  background-color: #1a1a1a !important;
+}
+div.mobile-footer-container {
+  background-color: #333333;
+}
+div.mobile-footer-wrapper {
+  padding-top: 36px;
+  width: 300px;
+  margin: 0 auto;
+}
+div.mobile-footer-container-contact > p,
+p.mobile-footer-header-text {
+  color: #ffffff;
+  font-size: 15px;
+}
+div.mobile-footer-container-contact > p.mobile-footer-text {
+  color: #b7b7b7;
+  font-size: 13px;
+}
+div.mobile-footer-container-icon {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 120px;
+  margin-top: 25px;
+  padding-bottom: 30px;
+}
+p.mobile-footer-header-text {
+  margin-top: 30px;
+}
+img.mobile-footer-icon {
+  margin: 0px;
+}
+div.mobile-footer-container-icon > div {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+div.mobile-footer-lower {
+  width: 300px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+div.mobile-footer-container-logo {
+  margin: 40px auto 30px;
+}
+p.mobile-elysia-logo-text {
+  font-size: 13px;
+  color: #b7b7b7;
+}
+p.mobile-footer-link {
+  text-decoration: underline;
+  font-size: 13px;
+  color: #fff;
+}
+div.mobile-footer-link-wrapper {
+  flex: auto;
+  flex-direction: row;
+  margin-bottom: 20px;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+p.mobile-footer-copyright {
+  color: #b7b7b7;
+  font-size: 13px;
+  margin: 0;
+}
+div.mobile-modal {
+  background-color: rgb(255, 255, 255);
+  z-index: 999;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  overflow: hidden !important;
+  touch-action: none;
+}
+section.mobile-contact-wrapper {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+}
+a.mobile-modal-quit {
+  float: right;
+}
+h1.mobile-contact-header {
+  margin-top: 8vh;
+  font-family: "Inter-bold";
+}
+input.mobile-contact-email-input {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #b7b7b7;
+  border-radius: 5px;
+  width: 100%;
+  height: 35px;
+  font-family: "Inter";
+  font-size: 14px;
+  box-sizing: border-box;
+}
+textarea.mobile-contact-message-input {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #b7b7b7;
+  border-radius: 5px;
+  width: 100%;
+  height: 30vh;
+  resize: none;
+  font-family: "Inter";
+  font-size: 14px;
+  box-sizing: border-box;
+}
+p.mobile-contact-email-label,
+p.mobile-contact-message-label {
+  font-size: 13px;
+  text-align: left;
+  margin-bottom: 7.5px;
+  margin-top: 20px;
+}
+span.mobile-contact-required-point {
+  color: #b53636;
+}
+p.mobile-contact-message-info {
+  font-size: 10px;
+  color: #888888;
+  text-align: left;
+  margin-top: 7.5px;
+  margin-bottom: 65px;
+}
+button.mobile-contact-button {
+  width: 127px;
+  height: 45px;
+  background: #3679b5;
+  box-shadow: 1px 3px 8px #00000052;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  font-family: "Inter";
+  cursor: pointer;
+  margin: 20 auto;
+}
