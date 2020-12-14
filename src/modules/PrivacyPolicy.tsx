@@ -3,7 +3,7 @@ import '../css/style.scss';
 
 const PrivacyPolicy = () => {
       return (
-            <div className="privacy-policy" style={{ maxWidth: 1190, margin: '0 auto', padding: 30, marginTop: '15vh' }}>
+            <div className="privacy-policy" style={{ maxWidth: 1190, margin: '15vh auto', padding: 30 }}>
                   <h1>Privacy Policy of ELYSIA PTE. LTD.</h1>
 In order to protect the personal information of data subjects and to handle complaints related to the personal information swiftly and smoothly according to the Article 30 (Establishment and Disclosure of Privacy Policy) of [PERSONAL INFORMATION PROTECTION ACT], we hereby establish and disclose the Privacy Policy as follows.
                   <h2>Article 1 (Purpose of Personal Information Processing)</h2>

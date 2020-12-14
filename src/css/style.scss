@@ -4,12 +4,8 @@
     format("truetype");
 }
 @font-face {
-  font-family: "Inter-Bolder";
-  src: url("../shared/fonts/Inter-Bold-slnt=0.ttf") format("truetype");
-}
-@font-face {
   font-family: "Inter-Bold";
-  src: url("../shared/fonts/Inter-Medium-slnt=0.ttf") format("truetype");
+  src: url("../shared/fonts/Inter-Bold-slnt=0.ttf") format("truetype");
 }
 div.elysia {
   background-color: #ffffff;
@@ -154,6 +150,7 @@ p.header-text {
   font-size: 30px;
   font-family: "Inter-Bold";
   text-align: left;
+  font-weight: bold;
   padding-top: 5vh;
 }
 section.team-wrapper {
@@ -276,6 +273,7 @@ p.contact-header-text {
   font-family: "Inter-Bold";
   margin: 10px;
   margin-bottom: 50px;
+  font-weight: bold;
 }
 p.contact-text {
   font-size: 15px;
