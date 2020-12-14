@@ -29,7 +29,7 @@ const Slider: React.FunctionComponent = () => {
   for (let i = 0; i < 3; i++) {
     slides.push(
       <SwiperSlide key={`slide-${i}`} tag="li">
-        <div>
+        <div style={{ textAlign: "center" }}>
           <img src={ImageArray[i]} alt="elysia" style={{ height: 310, listStyle: 'none', margin: "auto" }} />
         </div>
       </SwiperSlide>

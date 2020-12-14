@@ -36,14 +36,11 @@ const Footer: FunctionComponent = () => {
             <p className="mobile-footer-text" onClick={() => { i18n.changeLanguage("ko") }}>
               {i18n.t("footer.language_ko")}
             </p>
-            <p className="mobile-footer-text" onClick={() => { i18n.changeLanguage("zhHans") }}>
-              {i18n.t("footer.language_zh-hans")}
-            </p>
           </div>
-          
+
           <p className="mobile-footer-header-text">
-              {i18n.t("footer.community")}
-            </p>
+            {i18n.t("footer.community")}
+          </p>
           <div className="mobile-footer-container-icon">
             <div>
               <a className="mobile-footer-icon" href="https://twitter.com/Elysia_HQ">
@@ -88,10 +85,10 @@ const Footer: FunctionComponent = () => {
           <p className="mobile-footer-terms-fo-service mobile-footer-link" onClick={() => history.push("/disclaimer")}>
             Disclaimer
           </p>
-          <p className="mobile-footer-terms-fo-service mobile-footer-link" 
+          <p className="mobile-footer-terms-fo-service mobile-footer-link"
             onClick={() => {
               window.location.replace("https://drive.google.com/file/d/1Sxu8-jIIJlVUZoVhtX4QG8kS73vXr3Cs/view")
-          }}>
+            }}>
             Whitepaper
           </p>
         </div>
