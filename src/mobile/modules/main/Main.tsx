@@ -66,7 +66,7 @@ const Main = () => {
           </Link>
         </header>
         <section className="mobile-main-wrapper" id="main">
-          <p className="mobile-main-text" style={{ marginBottom: i18n.language === 'en' ? 15 : 65 }}>
+          <p className="mobile-main-text" style={{ marginBottom: i18n.language === 'en' ? 10 : 65 }}>
             {t('main.invest_label')}
           </p>
           {
