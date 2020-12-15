@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next';
 
 const Footer: FunctionComponent = () => {
   const history = useHistory();
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   return (
     <footer className="mobile-footer">
@@ -31,10 +31,13 @@ const Footer: FunctionComponent = () => {
               {i18n.t("footer.language")}
             </p>
             <p className="mobile-footer-text" onClick={() => { i18n.changeLanguage("en") }}>
-              {i18n.t("footer.language_en")}
+              English
+            </p>
+            <p className="footer-text" onClick={() => { i18n.changeLanguage("zhHans") }}>
+              中文
             </p>
             <p className="mobile-footer-text" onClick={() => { i18n.changeLanguage("ko") }}>
-              {i18n.t("footer.language_ko")}
+              한국어
             </p>
           </div>
 

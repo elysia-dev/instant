@@ -35,10 +35,13 @@ const Footer: FunctionComponent = () => {
             </div>
             <div className="footer-container-contact" style={{ marginLeft: 100 }}>
               <p className="footer-header-text">
-                LANGUAGE
+                {i18n.t("footer.language")}
               </p>
               <p className="footer-text" onClick={() => { i18n.changeLanguage("en") }}>
                 English
+              </p>
+              <p className="footer-text" onClick={() => { i18n.changeLanguage("zhHans") }}>
+                中文
               </p>
               <p className="footer-text" onClick={() => { i18n.changeLanguage("ko") }}>
                 한국어
