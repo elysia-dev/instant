@@ -346,7 +346,6 @@ div.mliestone-timeline {
     position: absolute;
     bottom: 22px;
     color: #3679b5;
-    font-size: 15px;
   }
   p.mliestone-lower-text {
     white-space: nowrap;
@@ -354,7 +353,6 @@ div.mliestone-timeline {
     top: 22px;
     color: #3679b5;
     font-size: 15px;
-    font-family: "noto-sans";
   }
   h1.mliestone-upper-text {
     position: absolute;
@@ -363,10 +361,12 @@ div.mliestone-timeline {
     white-space: pre-line;
     text-align: left;
     color: #2c2c2c;
-    font-size: 18px;
+    font-size: 16px;
     display: none;
     cursor: default;
     font-weight: 400;
+    font-size: 15px;
+    font-family: "Inter";
   }
   h1.mliestone-lower-text {
     font-weight: 400;
@@ -376,9 +376,11 @@ div.mliestone-timeline {
     white-space: pre-line;
     text-align: left;
     color: #2c2c2c;
-    font-size: 18px;
+    font-size: 16px;
     display: none;
     cursor: default;
+    font-family: "Inter";
+    color: #2c2c2c;
   }
 }
 p.mliestone-header-text {
