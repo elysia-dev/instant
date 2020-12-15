@@ -55,7 +55,7 @@ import { useTranslation } from 'react-i18next';
 
 const Main = () => {
   const history = useHistory();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <>
@@ -66,9 +66,26 @@ const Main = () => {
           </Link>
         </header>
         <section className="mobile-main-wrapper" id="main">
-          <p className="mobile-main-text">
+          <p className="mobile-main-text" style={{ marginBottom: i18n.language === 'en' ? 15 : 65 }}>
             {t('main.invest_label')}
           </p>
+          {
+            i18n.language === 'en' && t('main.invest_sublabel').split("\n").map((content, index) => {
+              return (
+                <p
+                  className="mobile-main-subtext"
+                  key={`subtitle_${index}`}
+                  style={{
+                    whiteSpace: "nowrap",
+                    margin: 0,
+                    marginBottom: index === 1 ? 45 : 0
+                  }}
+                >
+                  {content}
+                </p>
+              )
+            })
+          }
           <div className="mobile-main-image-wrapper">
             <a href="https://apps.apple.com/us/app/elysia/id1536733411">
               <img src={AppStore} className="mobile-app-store" alt="Elysia" />

@@ -33,6 +33,13 @@ p.mobile-main-text {
   font-weight: bold;
   margin: 75px auto 65px auto;
 }
+p.mobile-main-subtext {
+  font-family: "Inter";
+  cursor: default;
+  color: #747474;
+  font-size: 15px;
+  text-align: center;
+}
 img.mobile-app-store {
   width: 125px;
   height: 38px;
@@ -268,7 +275,6 @@ button.mobile-contact-button {
   font-family: "Inter";
   cursor: pointer;
 }
-
 
 footer.mobile-footer {
   background-color: #1a1a1a !important;

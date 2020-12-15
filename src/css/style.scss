@@ -53,13 +53,20 @@ div.main-text-wrapper {
   width: 600px;
   display: inline-block;
   position: absolute;
-  padding-top: 200px;
+  padding-top: 150px;
 }
 p.main-text {
   font-family: "Inter-Bold";
   font-size: 55px;
   font-weight: bolder;
   white-space: pre-line;
+}
+p.main-subtext {
+  font-family: "Inter";
+  cursor: default;
+  color: #747474;
+  font-size: 20px;
+  margin-bottom: 5px;
 }
 section.main-wrapper {
   max-width: 1190px;

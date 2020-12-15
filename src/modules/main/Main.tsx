@@ -55,7 +55,7 @@ import { useTranslation } from 'react-i18next';
 const Main = () => {
   const [selectedMilestone, setSelectedMilestone] = useState(0);
   const history = useHistory();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const Service = React.createRef<HTMLDivElement>();
   const Milestone = React.createRef<HTMLDivElement>();
@@ -128,7 +128,7 @@ const Main = () => {
       </header>
       <button className="top-botton" title="Top" id="top-button" onClick={() => Scroll(Top)}>▲</button>
       <section className="main-wrapper" id="main">
-        <div className="main-text-wrapper">
+        <div className="main-text-wrapper" style={{ paddingTop: i18n.language === "en" ? 150 : 200 }}>
           {t('main.invest_label').split("\n").map((content, index) => {
             return (
               <p className="main-text" key={`title_${index}`} style={{ margin: 0, whiteSpace: "nowrap" }}>
@@ -136,6 +136,18 @@ const Main = () => {
               </p>
             )
           })}
+          {
+            i18n.language === 'en' && t('main.invest_sublabel').split("\n").map((content, index) => {
+              return (
+                <p
+                  className="main-subtext"
+                  key={`subtitle_${index}`}
+                  style={{ margin: 0, whiteSpace: "nowrap", marginTop: index === 0 ? 15 : 0 }}>
+                  {content}
+                </p>
+              )
+            })
+          }
           <div style={{ marginTop: 50 }}>
             <a href="https://apps.apple.com/us/app/elysia/id1536733411">
               <img src={AppStore} className="app-store" alt="Elysia" />
