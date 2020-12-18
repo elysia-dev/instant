@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ElysiaLogo from '../../../shared/image/Elysia_Logo.png';
 import AppStore from '../../../shared/image/app_store.png';
 import GooglePlay from '../../../shared/image/google_play.png';
 import ElysiaApp from '../../../shared/image/Elysia_app.png';
-import Quit from '../../../shared/image/quitbutton.png';
 
 /* Team Image */
 import Team1 from '../../../shared/image/team/Team1.png';
@@ -57,6 +56,36 @@ const Main = () => {
   const history = useHistory();
   const { t, i18n } = useTranslation();
 
+  const Typewriter = () => {
+    const srcString = t("main.invest_label");
+    const [state, setState] = useState({
+      content: '',
+      carriage: 0
+    })
+
+    useEffect(() => {
+      if(state.carriage == srcString.length) return
+      const delay = setTimeout(() => {
+        setState({ content: state.content + srcString[state.carriage], carriage: state.carriage + 1 })
+        clearTimeout(delay)
+      }, 
+      2000 / srcString.length
+      )
+    }, [state.content])
+    
+    return (
+      <p className="mobile-main-text" style={{
+        height: 110,
+        marginBottom: i18n.language === 'en' ? 10 : 65
+      }}>{state.content}
+        <span className="cursor" style={{
+          fontWeight: 100,
+          fontFamily: "Inter"
+        }}>|</span>
+      </p>
+    );
+  }
+
   return (
     <>
       <div className="elysia-mobile">
@@ -66,9 +95,7 @@ const Main = () => {
           </Link>
         </header>
         <section className="mobile-main-wrapper" id="main">
-          <p className="mobile-main-text" style={{ marginBottom: i18n.language === 'en' ? 10 : 65 }}>
-            {t('main.invest_label')}
-          </p>
+          {Typewriter()}
           {
             i18n.language === 'en' && t('main.invest_sublabel').split("\n").map((content, index) => {
               return (

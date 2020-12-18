@@ -83,7 +83,7 @@ img.elysia-app {
 }
 section.contents-wrapper {
   height: 100vh;
-  max-width: 1190px;
+  width: 1190px;
   margin: 0 auto;
 }
 div.service-text-wrapper {
@@ -525,5 +525,67 @@ div.privacy-policy {
     font-weight: 900;
     font-size: 18px;
     color: #2c2c2c;
+  }
+}
+
+
+.cursor {
+  animation:1s blink step-end infinite
+}
+@keyframes blink {
+  from, to {
+    color:transparent
+  }
+  50% {
+    color:#333333;
+  }
+}
+@-moz-keyframes blink {
+  from, to {
+    color:transparent
+  } 
+  50% {
+    color:#333333;
+  }
+}
+@-webkit-keyframes blink {
+  from, to {
+    color:transparent
+  }
+  50% {
+    color:#333333;
+  }
+}
+@-ms-keyframes blink {
+  from, to {
+    color:transparent
+  }
+  50% {
+    color:#333333;
+  }
+}
+@-o-keyframes blink {
+  from, to {
+    color:transparent
+  }
+  50% {
+    color:#333333;
+  }
+}
+p.main-subtext {
+  opacity: 0;
+  animation: 1s fadein;
+  animation-delay: 2.4s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadein {
+  from, to {
+    opacity: transparent;
+  }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

@@ -69,6 +69,37 @@ const Main = () => {
     ref.current.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const Typewriter = () => {
+    const srcString = t("main.invest_label");
+    const [state, setState] = useState({
+      content: '',
+      carriage: 0
+    })
+
+    useEffect(() => {
+      if(state.carriage == srcString.length) return
+      const delay = setTimeout(() => {
+        setState({ content: state.content + srcString[state.carriage], carriage: state.carriage + 1 })
+        clearTimeout(delay)
+      }, 
+      2000 / srcString.length
+      )
+    }, [state.content])
+    
+    return (
+      <p className="main-text" style={{
+        height: 150,
+        margin: 0
+      }}>{state.content}
+        <span className="cursor" style={{
+          fontWeight: 100,
+          fontFamily: "Inter"
+        }}>|</span>
+      </p>
+    );
+  }
+
+
   const MliestoneSelected = {
     width: 24,
     height: 24,
@@ -129,13 +160,9 @@ const Main = () => {
       <button className="top-botton" title="Top" id="top-button" onClick={() => Scroll(Top)}>▲</button>
       <section className="main-wrapper" id="main">
         <div className="main-text-wrapper" style={{ paddingTop: i18n.language === "en" ? 150 : 200 }}>
-          {t('main.invest_label').split("\n").map((content, index) => {
-            return (
-              <p className="main-text" key={`title_${index}`} style={{ margin: 0, whiteSpace: "nowrap" }}>
-                {content}
-              </p>
-            )
-          })}
+          {Typewriter()}
+          <p className="result1" style={{fontSize: 30}} />
+          <p className="result2" style={{fontSize: 30}} />
           {
             i18n.language === 'en' && t('main.invest_sublabel').split("\n").map((content, index) => {
               return (
