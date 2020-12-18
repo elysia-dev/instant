@@ -63,7 +63,7 @@ const Main = () => {
   const Partners = React.createRef<HTMLDivElement>();
   const Contact = React.createRef<HTMLDivElement>();
   const Top = React.createRef<HTMLDivElement>();
-  const milestoneLength = 15;
+  const milestoneLength = 13;
 
   const Scroll = (ref: any) => {
     ref.current.scrollIntoView({ behavior: 'smooth' })

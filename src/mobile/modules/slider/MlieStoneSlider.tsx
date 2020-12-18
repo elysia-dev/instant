@@ -11,6 +11,7 @@ import 'swiper/swiper.scss';
 const MlieStoneSlider: React.FunctionComponent = () => {
   const [state, setState] = useState({
     SelectedMlieStoneSliders: 0,
+    milestoneLength: 13,
   })
   SwiperCore.use([Navigation, Pagination, Autoplay]);
   const { t } = useTranslation();
@@ -20,7 +21,7 @@ const MlieStoneSlider: React.FunctionComponent = () => {
       <div className="mobile-mliestone-slider-container">
         <p className="mobile-team-header-text mobile-header-label">{t("mliestone.header_label")}</p>
         {
-          Array(15).fill(0).map((_x, index) => {
+          Array(state.milestoneLength).fill(0).map((_x, index) => {
             return (
               <>
                 <div className={"mobile-mliestone-label-wrapper"} id={"mliestone-" + index} style={{
@@ -54,7 +55,7 @@ const MlieStoneSlider: React.FunctionComponent = () => {
           onSlideChange={(slides) => setState({ ...state, SelectedMlieStoneSliders: slides.realIndex })}
         >
           {
-            Array(15).fill(0).map((_x, index) => {
+            Array(state.milestoneLength).fill(0).map((_x, index) => {
               return (
                 <>
                   <SwiperSlide key={`slide-${index}`} tag="li">
