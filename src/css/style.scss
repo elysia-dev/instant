@@ -2,10 +2,24 @@
   font-family: "Inter";
   src: url("../shared/fonts/Inter-VariableFont_slnt,wght.ttf")
     format("truetype");
+  unicode-range: U+0041-005A, U+0061-007A;
 }
 @font-face {
   font-family: "Inter-Bold";
   src: url("../shared/fonts/Inter-Bold-slnt=0.ttf") format("truetype");
+  unicode-range: U+0041-005A, U+0061-007A;
+}
+
+@font-face {
+  font-family: "NotoSansKr";
+  src: url("../shared/fonts/NotoSansKR-Regular.otf")
+    format("opentype");
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF, U+0030-0039;
+}
+@font-face {
+  font-family: "NotoSansKr-Bold";
+  src: url("../shared/fonts/NotoSansKR-Bold.otf") format("opentype");
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF, U+0030-0039;
 }
 div.elysia {
   background-color: #ffffff;
@@ -13,15 +27,13 @@ div.elysia {
 }
 p,
 h3,
-h1 {
-  font-family: "Inter";
-  cursor: default;
+h1,
+a {
+  font-family: "NotoSansKr", "Inter";
   color: #2c2c2c;
 }
 a {
   text-decoration: none;
-  color: #2c2c2c;
-  font-family: "Inter";
 }
 header.header-container {
   max-width: 1190px;
@@ -30,7 +42,7 @@ header.header-container {
 }
 img.elysia-logo {
   display: inline;
-  cursor: pointer;
+  cursor: pointer !important;
   width: 150px;
 }
 img.elysia-logo-white {
@@ -44,7 +56,7 @@ p.header-link {
   font-size: 15px;
   line-height: 18px;
   display: inline;
-  cursor: pointer;
+  cursor: pointer !important;
 }
 p.contect {
   font-weight: bold;
@@ -56,13 +68,12 @@ div.main-text-wrapper {
   padding-top: 150px;
 }
 p.main-text {
-  font-family: "Inter-Bold";
+  font-family: "Inter-Bold", "NotoSansKr-Bold";
   font-size: 55px;
   font-weight: bolder;
   white-space: pre-line;
 }
 p.main-subtext {
-  font-family: "Inter";
   cursor: default;
   color: #747474;
   font-size: 20px;
@@ -76,6 +87,7 @@ section.main-wrapper {
 }
 img.app-store {
   margin-right: 30px;
+  cursor: pointer !important;
 }
 img.elysia-app {
   height: 630px;
@@ -134,7 +146,7 @@ div.service-icon-wrapper {
 }
 p.service-header-text {
   font-size: 26px;
-  font-family: "Inter-Bold";
+  font-family: "Inter-Bold", "NotoSansKr-Bold";
   margin: 5px 0;
   transition: all 0.3s ease-in-out;
 }
@@ -156,7 +168,7 @@ div.team-info-wrapper {
 }
 p.header-text {
   font-size: 30px;
-  font-family: "Inter-Bold";
+  font-family: "Inter-Bold", "NotoSansKr-Bold";
   text-align: left;
   font-weight: bold;
   padding-top: 5vh;
@@ -168,7 +180,7 @@ div.team-info-wrapper > h3 {
   margin: 20px 0px 10px 0px;
   text-align: left;
   font-size: 20px;
-  font-family: "Inter-Bold";
+  font-family: "Inter-Bold", "NotoSansKr-Bold";
 }
 div.team-info-wrapper > p {
   margin: 0px;
@@ -279,7 +291,7 @@ section.contact-wrapper {
 }
 p.contact-header-text {
   font-size: 30px;
-  font-family: "Inter-Bold";
+  font-family: "Inter-Bold", "NotoSansKr-Bold";
   margin: 10px;
   margin-bottom: 50px;
   font-weight: bold;
@@ -299,12 +311,12 @@ button.contact-button {
   color: #fff;
   font-size: 15px;
   border: none;
-  font-family: "Inter";
+  font-family: "Inter", "NotoSansKr";
   cursor: pointer;
 }
 /* mliestone */
 section.mliestone-wrapper {
-  max-width: 100%;
+  width: 100%;
 }
 div.mliestone-dot-wrapper {
   width: 1190px;
@@ -373,7 +385,6 @@ div.mliestone-timeline {
     cursor: default;
     font-weight: 400;
     font-size: 15px;
-    font-family: "Inter";
   }
   h1.mliestone-lower-text {
     font-weight: 400;
@@ -386,14 +397,13 @@ div.mliestone-timeline {
     font-size: 15px;
     display: none;
     cursor: default;
-    font-family: "Inter";
     color: #2c2c2c;
   }
 }
 p.mliestone-header-text {
   width: 1190px;
   margin: 0 auto;
-  font-family: "Inter-Bold";
+  font-family: "Inter-Bold", "NotoSansKr-Bold";
 }
 button.top-botton {
   position: fixed;
@@ -478,7 +488,7 @@ input.contact-page-email-input {
   width: 100%;
   height: 35px;
   padding: 0px 6px;
-  font-family: "Inter";
+  font-family: "Inter", "NotoSansKr";
   font-size: 14px;
 }
 textarea.contact-page-message-input {
@@ -489,7 +499,7 @@ textarea.contact-page-message-input {
   height: 400px;
   resize: none;
   padding: 8px 6px;
-  font-family: "Inter";
+  font-family: "Inter", "NotoSansKr";
   font-size: 14px;
 }
 button.contact-page-button {
@@ -502,7 +512,7 @@ button.contact-page-button {
   color: #fff;
   font-size: 15px;
   border: none;
-  font-family: "Inter";
+  font-family: "Inter", "NotoSansKr";
   cursor: pointer;
 }
 span.contact-required-point {
@@ -510,7 +520,7 @@ span.contact-required-point {
 }
 
 div.privacy-policy {
-  font-family: "Inter";
+  font-family: "Inter", "NotoSansKr";
   font-size: 15px;
   line-height: 2;
   color: #2c2c2c;
