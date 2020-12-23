@@ -7,6 +7,9 @@ const Contact = () => {
   const [state, setState] = useState<{ email: string, content: string }>({ email: "", content: "" });
   const { t } = useTranslation();
 
+  var root = window.document.getElementById("root");
+  root!.style.background = "#FFFFFF";
+
   const sendContact = () => {
     axios.post(
       "https://api.elysia.land/land/contact",

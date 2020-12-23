@@ -6,12 +6,10 @@ import EventSlider from './slider/EventSlider';
 import { Link, useHistory } from 'react-router-dom';
 
 const EventPage = () => {
-  var root = window.document.getElementById("root");
-  root!.style.background = "linear-gradient(rgb(132, 13, 6) 95px, rgb(132, 13, 6) 567px, rgb(81, 18, 13) 509px, rgb(81, 18, 13) 677px, rgb(255, 255, 255) 670px)";
-
   const history = useHistory();
   return (
-    <div className="eventpage-container__mobile" style={{ width: 300, margin: '0px auto', backgroundColor: "#FFF", paddingBottom: 90 }}>
+    <div className="background__event__mobile">
+      <div className="eventpage-container__mobile" style={{ width: 300, margin: '0px auto', backgroundColor: "#FFF", paddingBottom: 90 }}>
       <img src={ImageEvent_01} className="image__header__mobile" alt="Elysia"/>
       <div className="container__image--bottom">
       * 본 이벤트는 엘리시아 재단과<br />소속 법인인 ELYSIA PLATFORM PTE. LTD에서<br />기획하고 진행하였으며 책임 소재는 재단에게 있습니다.
@@ -110,6 +108,7 @@ const EventPage = () => {
       <div style={{ textAlign: "center"}}>
         <button className="mobile-contact-button" onClick={() => history.push("/contact")}>문의하기</button>
       </div>
+    </div>
     </div>
   );
 }

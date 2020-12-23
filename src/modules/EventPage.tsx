@@ -9,14 +9,14 @@ import BuildingImg06 from '../shared/image/event/BuildingImg06.png';
 import ImageEvent_01 from '../shared/image/event/image_event_01.png';
 import { Link, useHistory } from 'react-router-dom';
 import EventSlider from './slider/EventSlider';
+import Header from './Header';
 
 const EventPage = () => {
-  var root = window.document.getElementById("root");
-  root!.style.background = "linear-gradient(rgb(255, 255, 255) 95px,rgb(132, 13, 6) 95px, rgb(132, 13, 6) 778px, rgb(81, 18, 13) 780px, rgb(81, 18, 13) 892px, rgb(255, 255, 255) 894px)";
-
   const history = useHistory();
   return (
-    <div className="eventpage-container" style={{ maxWidth: 1160, margin: '20px auto', backgroundColor: "#FFF", paddingBottom: 90 }}>
+    <div className="background__event">
+      <Header />
+      <div className="eventpage-container" style={{ maxWidth: 1160, margin: '20px auto', backgroundColor: "#FFF", paddingBottom: 90 }}>
       <img src={ImageEvent_01} className="image__header" alt="Elysia" />
       <div className="container__slider-wrapper">
         <EventSlider />
@@ -117,6 +117,7 @@ const EventPage = () => {
       <div style={{ textAlign: "center"}}>
         <button className="button__contact" onClick={() => history.push("/contact")}>문의하기</button>
       </div>
+    </div>
     </div>
   );
 }

@@ -225,6 +225,8 @@ div.mobile-team-info-wrapper {
 }
 section.mobile-team-wrapper {
   text-align: left;
+  width: 300px;
+  margin: 0 auto;
 }
 p.mobile-team-header-text {
   margin: 100px auto 50px auto;
@@ -608,4 +610,7 @@ div.container__image--bottom {
   line-height: 25px;
   padding: 15px 0px;
   margin: 0;
+}
+div.background__event__mobile {
+  background: linear-gradient(rgb(132, 13, 6) 95px, rgb(132, 13, 6) 567px, rgb(81, 18, 13) 509px, rgb(81, 18, 13) 677px, rgb(255, 255, 255) 670px);
 }

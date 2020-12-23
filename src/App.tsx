@@ -60,9 +60,9 @@ const App = () => {
           <RouteWithHeader path="/disclaimer">
             <Disclaimer />
           </RouteWithHeader>
-          <RouteWithHeader path="/eventPage">
+          <Route path="/eventPage">
             <EventPage />
-          </RouteWithHeader>
+          </Route>
           <Route path="*">
             <Main />
           </Route>
