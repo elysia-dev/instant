@@ -25,6 +25,11 @@ div.elysia {
   background-color: #ffffff;
   min-width: 1190px;
 }
+.bold {
+  font-family: "NotoSansKr-Bold", "Inter-Bold";
+  color: #2c2c2c;
+  font-weight: bold;
+}
 p,
 h3,
 h1,
@@ -598,4 +603,96 @@ p.main-subtext {
   100% {
     opacity: 1;
   }
+}
+.text--header {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.text--header__label {
+  color:#333333;
+  font-size: 20px;
+  margin-bottom: 70px;
+  margin-top: 0;
+  text-align: center;
+}
+.container__building-image {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 10px;
+  margin-bottom: 72px;
+}
+.img--building {
+  width: 550px;
+  margin-bottom: 24px;
+}
+.img--building__right {
+  margin-left: auto;
+  margin-bottom: 24px;
+}
+div.Dot--Text {
+  width: 20px;
+  height: 20px;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 5px;
+  background-color: #3679B5;
+  display: inline-block;
+}
+h1.Text__Dot-header {
+  font-size: 30px;
+  margin-left: 25px;
+  display: inline-block;
+}
+div.Text-wrapper {
+  border: 1px solid #B7B7B7;
+  border-radius: 5px;
+  background: #FAFAFA;
+  padding: 20px 24px;
+  margin-left: 35px;
+  margin-bottom: 66px;
+}
+p.Text__insert {
+  font-size: 25px;
+  color: #333333;
+  margin: 10px 0px;
+}
+p.Text__insert-label {
+  font-size: 20px;
+  color: #333333;
+  margin: 0px 30px 20px;
+}
+p.Text__hyperlink {
+  font-size: 20px;
+  color: #3679B5;
+  margin-left: 30px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+p.Text__hyperlink > a {
+  color: #3679B5;
+}
+p.Text__label {
+  font-size: 20px;
+  margin-left: 35px;
+}
+p.Text__label--footer {
+  font-size: 20px;
+  text-align: right;
+}
+p.QNA--label {
+  font-size: 20px;
+  margin-left: 35px;
+  line-height: 45px;
+}
+h1.text--header__contact {
+  margin-top: 120px;
+  margin-bottom: 38px;
+  text-align: center;
+}
+div.Text-wrapper--footer {
+  margin: 0;
+  margin-left: 35px;
+}
+span.QNA__bold {
+  font-family: "Inter-Bold";
 }

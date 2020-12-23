@@ -15,6 +15,7 @@ import Disclaimer from './modules/Disclaimer';
 import Footer from './modules/footer/Footer';
 import RouteWithHeader from './modules/RouteWithHeader';
 import ScrollToTop from './modules/ScrollToTop';
+import EventPage from './modules/EventPage';
 
 /*mobile */
 import MainMobile from './mobile/modules/main/Main';
@@ -22,6 +23,7 @@ import ContactMobile from './mobile/modules/contact/Contact';
 import PrivacyPolicyMobile from './mobile/modules/PrivacyPolicy';
 import DisclaimerMobile from './mobile/modules/Disclaimer';
 import FooterMobile from './mobile/modules/footer/Footer';
+import EventPageMobile from './mobile/modules/EventPage';
 
 import { useMediaQuery } from "react-responsive";
 import { useTranslation } from 'react-i18next';
@@ -58,6 +60,9 @@ const App = () => {
           <RouteWithHeader path="/disclaimer">
             <Disclaimer />
           </RouteWithHeader>
+          <RouteWithHeader path="/eventPage">
+            <EventPage />
+          </RouteWithHeader>
           <Route path="*">
             <Main />
           </Route>
@@ -79,6 +84,9 @@ const App = () => {
           </Route>
           <Route path="/disclaimer">
             <DisclaimerMobile />
+          </Route>
+          <Route path="/eventPage">
+            <EventPageMobile />
           </Route>
           <Route path="*">
             <MainMobile />

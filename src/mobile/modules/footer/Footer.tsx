@@ -33,7 +33,7 @@ const Footer: FunctionComponent = () => {
             <p className="mobile-footer-text" onClick={() => { i18n.changeLanguage("en") }}>
               English
             </p>
-            <p className="footer-text" onClick={() => { i18n.changeLanguage("zhHans") }}>
+            <p className="mobile-footer-text" onClick={() => { i18n.changeLanguage("zhHans") }}>
               中文
             </p>
             <p className="mobile-footer-text" onClick={() => { i18n.changeLanguage("ko") }}>
