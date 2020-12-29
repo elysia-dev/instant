@@ -155,6 +155,11 @@ const Main = () => {
           <p className="header-link contect">
             <a onClick={() => history.push("/contact")}>{t("main.contact")}</a>
           </p>
+          <p className="header-link markets">
+            <a onClick={() => {
+              window.open("https://coinmarketcap.com/currencies/elysia/markets/", "_blank")
+            }}>{t("main.markets")}</a>
+          </p>
         </nav>
       </header>
       <button className="top-botton" title="Top" id="top-button" onClick={() => Scroll(Top)}>▲</button>

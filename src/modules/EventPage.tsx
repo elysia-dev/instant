@@ -24,7 +24,10 @@ const EventPage = () => {
       <table className="table--event-page" style={{ marginBottom: 10 }}>
         <tr>
           <td><h1 className="text__td--first">지급 방식</h1></td>
-          <td colSpan={2}>부담부 증여</td>
+          <td colSpan={2}>
+            (주) 엘리시아에서 경품 당첨자로 매물 소유권 100% 이전<br />
+            <p className="text--footer">* 임대보증금 포함한 부동산 증여 (명의 이전)</p>
+          </td>
         </tr>
         <tr>
           <td rowSpan={3}><h1 className="text__td--first">부동산 정보</h1></td>
@@ -40,13 +43,13 @@ const EventPage = () => {
           <td>
             <div>
               <span className="bold" style={{ fontSize: 25 }}>시세</span>
-              <br /><span  style={{ fontSize: 24 }}>2억원</span>
+              <br /><span  style={{ fontSize: 24 }}>약 2억원</span>
             </div>
           </td>
           <td>
             <div>
               <span className="bold" style={{ fontSize: 25 }}>임대보증금</span>
-              <br /><span  style={{ fontSize: 24 }}>1.6억원</span>
+              <br /><span  style={{ fontSize: 24 }}>1.6억원 (재단이 보증금 지원예정)</span>
             </div>
           </td>
         </tr>
@@ -69,7 +72,7 @@ const EventPage = () => {
         </tr>
       </table>
       <p className="Text__label--footer">
-        * 등기과정에서의 법무사비용 및 고지된 세목 이외의 세금발생시 엘리시아 재단에서 부담합니다.
+        * 등기과정에서 법무사비용 및 고지된 세목 이외의 세금발생시 엘리시아 재단에서 부담합니다.
       </p>
 
       <table className="table--event-page">
@@ -85,7 +88,7 @@ const EventPage = () => {
           <td>
           <span className="bold" style={{ fontSize: 25 }}>전세계약서</span>
             <br />
-            <a href="https://drive.google.com/file/d/1g4xqw8eBbKC24QgXyIW_rkqaugeCh7Nk/view?usp=sharing" target='_blank' className="Text__link">
+            <a href="https://drive.google.com/file/d/1jYfShxU5ktkYOnulN8OQdFVv5qUbDN6e/view?usp=sharing" target='_blank' className="Text__link">
               <p className="button__hyperlink">바로가기</p>
             </a>
           </td>
@@ -94,7 +97,7 @@ const EventPage = () => {
 
       <table className="table--event-page" style={{ marginBottom: 80 }}>
         <tr>
-          <td rowSpan={3}><h1 className="text__td--first">FAQ</h1></td>
+          <td rowSpan={4}><h1 className="text__td--first">FAQ</h1></td>
           <td colSpan={2}>
             <p className="QNA--label">
               <span className="QNA__bold">Q)</span> 임차인 관리는 어떻게 하나요? <br /><span className="QNA__bold">A)</span> 파트너 부동산을 통해 잔여 임대기간동안 관리해드립니다.
@@ -109,6 +112,11 @@ const EventPage = () => {
         <tr>
           <td colSpan={2}><p className="QNA--label">
           <span className="QNA__bold">Q)</span> 바로 매각하고 싶은데 어떻게 하면 되나요? <br /><span className="QNA__bold">A)</span> 파트너 부동산을 통해 매각절차진행을 도와드립니다.
+        </p></td>
+        </tr>
+        <tr>
+          <td colSpan={2}><p className="QNA--label">
+          <span className="QNA__bold">Q)</span> 경품수령처리는 어디에서 담당하시나요?<br /><span className="QNA__bold">A)</span> 경품수령후 모든 사후처리는 엘리시아 재단에서 직접 지원 예정입니다.
         </p></td>
         </tr>
       </table>

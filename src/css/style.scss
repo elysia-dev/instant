@@ -66,6 +66,9 @@ p.header-link {
 p.contect {
   font-weight: bold;
 }
+p.markets {
+  font-weight: bold;
+}
 div.main-text-wrapper {
   width: 600px;
   display: inline-block;
@@ -757,6 +760,7 @@ span.line-height {
   text-align: center;
   border-radius: 12px;
   margin-top: 10px;
+  cursor: pointer;
 }
 button.button__contact {
   width: 155px;
