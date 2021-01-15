@@ -30,15 +30,15 @@ const Contact = () => {
 
   return (
     <div className="elysia">
-      <section className="contact-page-wrapper">
-        <h1 className="contact-page-header">{t("contact.form_header")}</h1>
-        <p className="contact-page-email-label">{t("contact.input_email")}<span className="contact-required-point"> *</span></p>
-        <input type="text" name="user_id" className="contact-page-email-input" value={state.email} onChange={(event) => { setState({ ...state, email: event.target.value }) }} />
-        <p className="contact-page-message-label">{t("contact.input_message")}<span className="contact-required-point"> *</span></p>
-        <textarea className="contact-page-message-input" name="inputstr2" value={state.content} onChange={(event) => { setState({ ...state, content: event.target.value }) }} />
-        <p className="contact-page-message-info">{t("contact.request_label")}</p>
+      <section className="contact-page">
+        <h1 className="contact-page__header-text">{t("contact.form_header")}</h1>
+        <p className="contact-page__email-label">{t("contact.input_email")}<span className="contact-page__required-point"> *</span></p>
+        <input type="text" name="user_id" className="contact-page__email-input" value={state.email} onChange={(event) => { setState({ ...state, email: event.target.value }) }} />
+        <p className="contact-page__message-label">{t("contact.input_message")}<span className="contact-page__required-point"> *</span></p>
+        <textarea className="contact-page__message-textarea" name="inputstr2" value={state.content} onChange={(event) => { setState({ ...state, content: event.target.value }) }} />
+        <p className="contact-page__info-text">{t("contact.request_label")}</p>
         <button
-          className="contact-page-button"
+          className="contact-page__page-button"
           onClick={sendContact}
         >
           {t("contact.send_button")}

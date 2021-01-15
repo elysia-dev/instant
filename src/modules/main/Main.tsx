@@ -87,11 +87,11 @@ const Main = () => {
     }, [state.content])
     
     return (
-      <p className="main-text" style={{
+      <p className="main__text" style={{
         height: 150,
         margin: 0
       }}>{state.content}
-        <span className="cursor" style={{
+        <span className="main__text--cursor" style={{
           fontWeight: 100,
           fontFamily: "Inter"
         }}>|</span>
@@ -135,44 +135,42 @@ const Main = () => {
 
   return (
     <div className="elysia" ref={Top}>
-      <header className="header-container">
+      <header className="header">
         <Link to="/">
           <img src={ElysiaLogo} className="elysia-logo" alt="Elysia" />
         </Link>
-        <nav className="header-link-wrapper">
-          <p className="header-link service">
+        <nav className="header__link-wrapper">
+          <p className="header__link--service header-link">
             <a onClick={() => Scroll(Service)}>{t("main.service")}</a>
           </p>
-          <p className="header-link milestone">
+          <p className="header__link--milestone header-link">
             <a onClick={() => Scroll(Milestone)}>{t("main.milestone")}</a>
           </p>
-          <p className="header-link team">
+          <p className="header__link--team header-link">
             <a onClick={() => Scroll(Team)}>{t("main.team")}</a>
           </p>
-          <p className="header-link partners">
+          <p className="header__link--partners header-link">
             <a onClick={() => Scroll(Partners)}>{t("main.partners")}</a>
           </p>
-          <p className="header-link contect">
+          <p className="header__link--contect header-link">
             <a onClick={() => history.push("/contact")}>{t("main.contact")}</a>
           </p>
-          <p className="header-link markets">
+          <p className="header__link--markets header-link">
             <a onClick={() => {
               window.open("https://coinmarketcap.com/currencies/elysia/markets/", "_blank")
             }}>{t("main.markets")}</a>
           </p>
         </nav>
       </header>
-      <button className="top-botton" title="Top" id="top-button" onClick={() => Scroll(Top)}>▲</button>
-      <section className="main-wrapper" id="main">
-        <div className="main-text-wrapper" style={{ paddingTop: i18n.language === "en" ? 150 : 200 }}>
+      <button className="top-scroll" title="Top" id="top-button" onClick={() => Scroll(Top)}>▲</button>
+      <section className="main" id="main">
+        <div className="main__text-wrapper" style={{ paddingTop: i18n.language === "en" ? 150 : 200 }}>
           {Typewriter()}
-          <p className="result1" style={{fontSize: 30}} />
-          <p className="result2" style={{fontSize: 30}} />
           {
             i18n.language === 'en' && t('main.invest_sublabel').split("\n").map((content, index) => {
               return (
                 <p
-                  className="main-subtext"
+                  className="main__text--sub"
                   key={`subtitle_${index}`}
                   style={{ margin: 0, whiteSpace: "nowrap", marginTop: index === 0 ? 15 : 0 }}>
                   {content}
@@ -180,48 +178,48 @@ const Main = () => {
               )
             })
           }
-          <div style={{ marginTop: 50 }}>
+          <div className="main__image-wrapper">
             <a href="https://apps.apple.com/us/app/elysia/id1536733411">
-              <img src={AppStore} className="app-store" alt="Elysia" />
+              <img src={AppStore} className="main__image__app-store" alt="Elysia" />
             </a>
             <a href="https://play.google.com/store/apps/details?id=land.elysia">
-              <img src={GooglePlay} className="google-play" alt="Elysia" />
+              <img src={GooglePlay} className="main__image__google-play" alt="Elysia" />
             </a>
           </div>
         </div>
-        <img src={ElysiaApp} className="elysia-app" alt="Elysia" />
+        <img src={ElysiaApp} className="main__image__elysia-app" alt="Elysia" />
       </section>
-      <section className="service-wrapper contents-wrapper" id="service" ref={Service}>
+      <section className="service contents-container" id="service" ref={Service}>
         <ServiceComponent />
       </section>
-      <section className="mliestone-wrapper contents-wrapper" id="milestone" ref={Milestone} style={{ height: 600 }}>
-        <div>
-          <p className="mliestone-header-text header-text">{t("mliestone.header_label")}</p>
-          <div style={{ marginTop: 50 }}>
+      <section className="mliestone contents-container" id="milestone" ref={Milestone} >
+        <div className="mliestone__container">
+          <h1 className="mliestone__header-text header-text">{t("mliestone.header_label")}</h1>
+          <div className="mliestone__timeline__container">
             <div
-              className="mliestone-timeline"
+              className="mliestone__timeline"
               style={{
                 ...(milestoneLength === (selectedMilestone + 1) ? { backgroundColor: "#3679b5" } : { backgroundColor: "#cccccc" })
               }}
             >
-              <div className="mliestone-dot-wrapper">
-                <div className="mliestone-line" style={{ width: (1190 / (milestoneLength - 1)) * selectedMilestone }} />
+              <div className="mliestone__dot-wrapper">
+                <div className="mliestone--fill-line" style={{ width: (1190 / (milestoneLength - 1)) * selectedMilestone }} />
                 {
                   Array(milestoneLength).fill(0).map((_x, index) => {
                     return (
                       <>
                         <div
-                          className={"mliestone-dot " + (selectedMilestone === index ? 'mliestone-selected' : '')}
-                          id={"mliestone-" + index}
+                          className={"mliestone__dot" + (selectedMilestone === index ? '--selected' : '')}
+                          id={"mliestone__dot--" + index}
                           style={{ ...(selectedMilestone > index && MliestoneActivation) }}
                           onClick={() => setSelectedMilestone(index)}
                         >
                           <div style={{ ...(selectedMilestone === index ? MliestoneSelected : MliestoneDisable) }} />
-                          <p className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')}>
+                          <p className={"mliestone__dot--" + (index % 2 === 0 ? 'upper-text' : 'lower-text')}>
                             {t('mliestone.timeline.' + index)}
                           </p>
                           <h1
-                            className={"mliestone-" + (index % 2 === 0 ? 'upper-text' : 'lower-text')}
+                            className={"mliestone__dot--bold--" + (index % 2 === 0 ? 'upper-text' : 'lower-text')}
                             style={{ ...(selectedMilestone === index ? { display: "block" } : { display: "none" }) }}
                           >
                             {t('mliestone.timeline_contant.' + index)}
@@ -236,8 +234,8 @@ const Main = () => {
           </div>
         </div>
       </section>
-      <section className="team-wrapper contents-wrapper" id="team" ref={Team}>
-        <p className="team-header-text header-text">{t("team.header_label")}</p>
+      <section className="team contents-container" id="team" ref={Team}>
+        <p className="team__header-text header-text">{t("team.header_label")}</p>
         {
           [
             [Team1, Team1Hover],
@@ -250,25 +248,21 @@ const Main = () => {
             [Team8, Team8Hover],
           ].map(([team, teamHover], index) => {
             return (
-              <div className="team-info-wrapper">
-                <div style={{
-                  position: "relative",
-                  width: 180,
-                  height: 180
-                }} >
-                  <img src={team} className="team-picture" alt="Elysia" />
-                  <img src={teamHover} className="team-picture hover" alt="Elysia" />
+              <div className="team__container">
+                <div className="team__wrapper">
+                  <img src={team} className="team__picture" alt="Elysia" />
+                  <img src={teamHover} className="team__picture--hover" alt="Elysia" />
                 </div>
-                <h3>{t('team.name.' + index)}</h3>
-                <p>{t('team.dept.' + index)}</p>
+                <h3 className="team__text--bold">{t('team.name.' + index)}</h3>
+                <p className="team__text">{t('team.dept.' + index)}</p>
               </div>
             );
           })
         }
       </section>
-      <section className="partners-wrapper contents-wrapper" id="partners" ref={Partners}>
-        <p className="pertners-header-text header-text">{t("partners.header_label")}</p>
-        <div className="partners-container">
+      <section className="partners contents-container" id="partners" ref={Partners}>
+        <h1 className="pertners__header-text header-text">{t("partners.header_label")}</h1>
+        <div className="partners__wrapper">
           {
             [
               Iconloop,
@@ -296,15 +290,15 @@ const Main = () => {
               Alphanonce
             ].map((image) => {
               return (
-                <img src={image} className="partners-picture" alt="Elysia" />
+                <img src={image} className="partners__picture" alt="Elysia" />
               );
             })
           }
         </div>
       </section>
-      <section className="contact-wrapper contents-wrapper" id="contact" ref={Contact}>
-        <p className="contact-header-text">{t("contact.info_header")}</p>
-        <button className="contact-button" onClick={() => history.push('/contact')}>{t("contact.contact_button")}</button>
+      <section className="contact contents-container" id="contact" ref={Contact}>
+        <h1 className="contact__header-text header-text">{t("contact.info_header")}</h1>
+        <button className="contact__button" onClick={() => history.push('/contact')}>{t("contact.contact_button")}</button>
       </section>
     </div>
   );

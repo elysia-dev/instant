@@ -29,48 +29,48 @@ function ServiceComponent() {
 
   return (
     <>
-      <div className="on-boarding">
+      <div className="service__image-wrapper">
         <img
           src={
             stage === 0 ? Onboarding :
               stage === 1 ? ElysiaMobile : Defi
           }
-          className="service-image"
+          className="service__image"
           alt="Elysia"
         />
       </div>
-      <div className="service-icon-wrapper">
-        <div style={{ position: "relative", cursor: "pointer" }} onClick={() => setCounter(0)}>
-          <img src={OnboardingOff} className="service-on-boarding service-square" alt="Elysia" />
-          <img src={OnboardingOn} className="service-on-boarding service-square" alt="Elysia" style={{ position: "absolute", opacity: (stage === 0 ? 1 : 0) }} />
+      <div className="service__icon-container">
+        <div className="service__icon-wrapper" onClick={() => setCounter(0)}>
+          <img src={OnboardingOff} className="service__square--off" alt="Elysia" />
+          <img src={OnboardingOn} className="service__square" alt="Elysia" style={{ position: "absolute", opacity: (stage === 0 ? 1 : 0) }} />
         </div>
-        <div className="service-backbar" style={{ height: 130, width: 5, backgroundColor: "#f6f6f8" }} >
-          <div className="service-prograss" style={{ height: ((stage === 0 ? counter : 0) + "%"), width: 5, backgroundColor: "#3679b5" }} />
+        <div className="service__backbar">
+          <div className="service__backbar--prograss" style={{ height: ((stage === 0 ? counter : 0) + "%") }} />
         </div>
-        <div style={{ position: "relative", cursor: "pointer" }} onClick={() => setCounter(100)}>
-          <img src={ElysiaOff} className="service-on-boarding service-square" alt="Elysia" />
-          <img src={ElysiaOn} className="service-on-boarding service-square" alt="Elysia" style={{ position: "absolute", opacity: (stage === 1 ? 1 : 0) }} />
+        <div className="service__icon-wrapper" onClick={() => setCounter(100)}>
+          <img src={ElysiaOff} className="service__square--off" alt="Elysia" />
+          <img src={ElysiaOn} className="service__square" alt="Elysia" style={{ position: "absolute", opacity: (stage === 1 ? 1 : 0) }} />
         </div>
-        <div className="service-backbar" style={{ height: 130, width: 5, backgroundColor: "#f6f6f8" }} >
-          <div className="service-prograss" style={{ height: ((stage === 1 ? counter - 100 : 0) + "%"), width: 5, backgroundColor: "#3679b5" }} />
+        <div className="service__backbar">
+          <div className="service__backbar--prograss" style={{ height: ((stage === 1 ? counter - 100 : 0) + "%") }} />
         </div>
-        <div style={{ position: "relative", cursor: "pointer" }} onClick={() => setCounter(200)}>
-          <img src={DefiOff} className="service-on-boarding service-square" alt="Elysia" />
-          <img src={DefiOn} className="service-on-boarding service-square" alt="Elysia" style={{ position: "absolute", opacity: (stage === 2 ? 1 : 0) }} />
+        <div className="service__icon-wrapper" onClick={() => setCounter(200)}>
+          <img src={DefiOff} className="service__square--off" alt="Elysia" />
+          <img src={DefiOn} className="service__square" alt="Elysia" style={{ position: "absolute", opacity: (stage === 2 ? 1 : 0) }} />
         </div>
       </div>
-      <div className="service-text-wrapper">
-        <div className="service-onboarding-wrapper service-text">
-          <p className="service-header-text" style={{ color: (stage === 0 ? "#3679b5" : "#2C2C2C") }} >{t('service.onboarding')}</p>
-          <p className="service-text">{t('service.onboarding_label')}</p>
+      <div className="service__text-container">
+        <div className="service__text-wrapper">
+          <p className="service__text--bold" style={{ color: (stage === 0 ? "#3679b5" : "#2C2C2C") }} >{t('service.onboarding')}</p>
+          <p className="service__text">{t('service.onboarding_label')}</p>
         </div>
-        <div className="service-elysia-wrapper service-text">
-          <p className="service-header-text" style={{ color: (stage === 1 ? "#3679b5" : "#2C2C2C") }} >{t('service.elysia_app')}</p>
-          <p className="service-text">{t('service.elysia_app_label')}</p>
+        <div className="service__text-wrapper">
+          <p className="service__text--bold" style={{ color: (stage === 1 ? "#3679b5" : "#2C2C2C") }} >{t('service.elysia_app')}</p>
+          <p className="service__text">{t('service.elysia_app_label')}</p>
         </div>
-        <div className="service-defi-wrapper service-text">
-          <p className="service-header-text" style={{ color: (stage === 2 ? "#3679b5" : "#2C2C2C") }} >{t('service.defi')}</p>
-          <p className="service-text">{t('service.defi_label')}</p>
+        <div className="service__text-wrapper">
+          <p className="service__text--bold" style={{ color: (stage === 2 ? "#3679b5" : "#2C2C2C") }} >{t('service.defi')}</p>
+          <p className="service__text">{t('service.defi_label')}</p>
         </div>
       </div>
     </>
