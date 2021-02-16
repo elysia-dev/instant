@@ -224,7 +224,7 @@ button.top-scroll {
 /* mliestone */
 .mliestone {
   width: 100% !important;
-  height: 600px !important;
+  height: 800px !important;
 
   &__header-text {
     width: 1190px;
@@ -360,6 +360,17 @@ button.top-scroll {
     font-size: 15px;
     color: #888888;
   }
+  &__text-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:180px;
+  }
+  &__linkedin {
+    width: 20px;
+    height: 20px;
+    margin: 26px 0px 10px 0px;
+  }
 }
 
 /* partners */
@@ -380,7 +391,7 @@ button.top-scroll {
 
 /* contact */
 .contact {
-  height: 700px;
+  height: 700px !important;
   text-align: center;
   align-items: center;
   display: flex;

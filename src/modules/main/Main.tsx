@@ -3,6 +3,7 @@ import ElysiaLogo from '../../shared/image/Elysia_Logo.png';
 import AppStore from '../../shared/image/app_store.png';
 import GooglePlay from '../../shared/image/google_play.png';
 import ElysiaApp from '../../shared/image/Elysia_app.png';
+import LinkedIn from '../../shared/image/linkedin.png';
 
 /* Team Image */
 import Team1 from '../../shared/image/team/Team1.png';
@@ -238,22 +239,29 @@ const Main = () => {
         <p className="team__header-text header-text">{t("team.header_label")}</p>
         {
           [
-            [Team1, Team1Hover],
-            [Team2, Team2Hover],
-            [Team3, Team3Hover],
-            [Team4, Team4Hover],
-            [Team5, Team5Hover],
-            [Team6, Team6Hover],
-            [Team7, Team7Hover],
+            [Team1, Team1Hover, "https://www.linkedin.com/in/junggun-lim-2b1a1a137/"],
+            [Team2, Team2Hover, "https://www.linkedin.com/in/%EC%9B%90%EC%A4%80-%EC%B0%A8-1b707653/"],
+            [Team3, Team3Hover, "https://www.linkedin.com/in/yoon-kim-02228619/"],
+            [Team4, Team4Hover, "https://www.linkedin.com/in/donguk-seo-6483141b6/"],
+            [Team5, Team5Hover, "https://www.linkedin.com/in/hyuno-bae-6493141b6/"],
+            [Team6, Team6Hover, "https://www.linkedin.com/in/%ED%9D%AC%EC%88%98-%ED%95%9C-a158ba191/"],
+            [Team7, Team7Hover, "https://www.linkedin.com/in/%EC%82%AC%EB%9F%89-%ED%92%8D-aba01a205/"],
             [Team8, Team8Hover],
-          ].map(([team, teamHover], index) => {
+          ].map(([team, teamHover, isJoinLinkedIn], index) => {
             return (
               <div className="team__container">
                 <div className="team__wrapper">
                   <img src={team} className="team__picture" alt="Elysia" />
                   <img src={teamHover} className="team__picture--hover" alt="Elysia" />
                 </div>
-                <h3 className="team__text--bold">{t('team.name.' + index)}</h3>
+                <div className="team__text-wrapper">
+                  <h3 className="team__text--bold">{t('team.name.' + index)}</h3>
+                  <div className="team__linkedin-link-wrapper" style={isJoinLinkedIn === undefined ? {display: "none"} : {display: "block"}}>
+                    <a href={isJoinLinkedIn} target="_blink">
+                      <img src={LinkedIn} className="team__linkedin" />
+                    </a>
+                  </div>
+                </div>
                 <p className="team__text">{t('team.dept.' + index)}</p>
               </div>
             );
