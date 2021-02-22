@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ElysiaLogo from '../../shared/image/Elysia_Logo.png';
-import AppStore from '../../shared/image/app_store.png';
-import GooglePlay from '../../shared/image/google_play.png';
+import AppStore from '../../shared/image/app_store@2x.png';
+import GooglePlay from '../../shared/image/google_play@2x.png';
 import ElysiaApp from '../../shared/image/Elysia_app.png';
 import LinkedIn from '../../shared/image/linkedin.png';
 
@@ -78,7 +78,7 @@ const Main = () => {
     })
 
     useEffect(() => {
-      if(state.carriage == srcString.length) return
+      if(state.carriage === srcString.length) return
       const delay = setTimeout(() => {
         setState({ content: state.content + srcString[state.carriage], carriage: state.carriage + 1 })
         clearTimeout(delay)
@@ -138,7 +138,7 @@ const Main = () => {
     <div className="elysia" ref={Top}>
       <header className="header">
         <Link to="/">
-          <img src={ElysiaLogo} className="elysia-logo" alt="Elysia" />
+          <figure className="elysia-logo" style={{ backgroundImage: `url(${ElysiaLogo})` }}/>
         </Link>
         <nav className="header__link-wrapper">
           <p className="header__link--service header-link">
@@ -181,10 +181,10 @@ const Main = () => {
           }
           <div className="main__image-wrapper">
             <a href="https://apps.apple.com/us/app/elysia/id1536733411">
-              <img src={AppStore} className="main__image__app-store" alt="Elysia" />
+              <figure className="main__image__app-store" style={{ backgroundImage: `url(${AppStore})` }}/>
             </a>
             <a href="https://play.google.com/store/apps/details?id=land.elysia">
-              <img src={GooglePlay} className="main__image__google-play" alt="Elysia" />
+              <figure className="main__image__google-play" style={{ backgroundImage: `url(${GooglePlay})` }}/>
             </a>
           </div>
         </div>

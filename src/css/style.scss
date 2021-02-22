@@ -12,14 +12,15 @@
 
 @font-face {
   font-family: "NotoSansKr";
-  src: url("../shared/fonts/NotoSansKR-Regular.otf")
-    format("opentype");
-  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF, U+0030-0039;
+  src: url("../shared/fonts/NotoSansKR-Regular.otf") format("opentype");
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF,
+    U+0030-0039;
 }
 @font-face {
   font-family: "NotoSansKr-Bold";
   src: url("../shared/fonts/NotoSansKR-Bold.otf") format("opentype");
-  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF, U+0030-0039;
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF,
+    U+0030-0039;
 }
 
 /* public */
@@ -27,22 +28,31 @@ div.elysia {
   background-color: #ffffff;
   min-width: 1190px;
 }
-h3, h1 {
+h3,
+h1 {
   font-family: "NotoSansKr-Bold", "Inter-Bold";
-  color: #2c2c2c;
+  color: #000;
+  opacity: 0.88;
   font-weight: bold;
 }
-p, a {
+p,
+a {
   font-family: "NotoSansKr", "Inter";
-  color: #2c2c2c;
+  color: #000;
+  opacity: 0.88;
 }
 a {
   text-decoration: none;
 }
-img.elysia-logo {
+figure.elysia-logo {
   display: inline;
   cursor: pointer !important;
-  width: 150px;
+  width: 149px;
+  height: 31px;
+  background-size: 149px 31px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin: 0;
 }
 .header-text {
   font-size: 30px;
@@ -79,7 +89,6 @@ button.top-scroll {
   }
 }
 
-
 /* header */
 .header {
   max-width: 1190px;
@@ -89,7 +98,8 @@ button.top-scroll {
   &__link-wrapper {
     float: right;
   }
-  &__link--contect, &__link--markets {
+  &__link--contect,
+  &__link--markets {
     font-weight: bold;
   }
   &-link {
@@ -127,14 +137,31 @@ button.top-scroll {
     margin-bottom: 5px;
   }
   &__text--cursor {
-    animation:1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
     position: relative;
     bottom: 6px;
     left: 4px;
   }
   &__image__app-store {
-    margin-right: 30px;
     cursor: pointer !important;
+    width: 181px;
+    height: 55px;
+    background-size: 181px 55px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: 0;
+    margin-right: 30px;
+    opacity: 1;
+  }
+  &__image__google-play {
+    cursor: pointer !important;
+    width: 181px;
+    height: 55px;
+    background-size: 181px 55px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: 0;
+    opacity: 1;
   }
   &__image__elysia-app {
     height: 630px;
@@ -255,7 +282,8 @@ button.top-scroll {
     flex-direction: row;
     justify-content: space-between;
   }
-  &__dot, &__dot--selected {
+  &__dot,
+  &__dot--selected {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     z-index: 99;
     transition: 0.1s ease-in-out;
@@ -364,7 +392,7 @@ button.top-scroll {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width:180px;
+    width: 180px;
   }
   &__linkedin {
     width: 20px;
@@ -492,7 +520,9 @@ button.top-scroll {
     color: #fff !important;
     cursor: pointer;
   }
-  &__text--whitepaper, &__text--privacy-policy, &__text--terms-fo-service {
+  &__text--whitepaper,
+  &__text--privacy-policy,
+  &__text--terms-fo-service {
     flex: 1;
     text-align: right;
     color: #fff !important;
@@ -500,13 +530,12 @@ button.top-scroll {
   }
   &__top-image {
     width: 100%;
-    background-color: #FFF;
+    background-color: #fff;
     margin: 0 auto;
     position: relative;
     top: 4px;
   }
 }
-
 
 /* Contact Page */
 .contact-page {
@@ -520,7 +549,8 @@ button.top-scroll {
     font-size: 30px;
     margin-bottom: 50px;
   }
-  &__email-label, &__message-label {
+  &__email-label,
+  &__message-label {
     font-size: 15px;
     text-align: left;
     margin-bottom: 7.5px;
@@ -572,7 +602,6 @@ button.top-scroll {
   }
 }
 
-
 .privacy-policy {
   font-family: "Inter", "NotoSansKr";
   font-size: 15px;
@@ -596,7 +625,7 @@ button.top-scroll {
   margin-bottom: 30px;
 }
 .text--header__label {
-  color:#333333;
+  color: #333333;
   font-size: 20px;
   margin-bottom: 70px;
   margin-top: 0;
@@ -621,7 +650,7 @@ div.Dot--Text {
   height: 20px;
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 5px;
-  background-color: #3679B5;
+  background-color: #3679b5;
   display: inline-block;
 }
 h1.Text__Dot-header {
@@ -630,9 +659,9 @@ h1.Text__Dot-header {
   display: inline-block;
 }
 div.Text-wrapper {
-  border: 1px solid #B7B7B7;
+  border: 1px solid #b7b7b7;
   border-radius: 5px;
-  background: #FAFAFA;
+  background: #fafafa;
   padding: 20px 24px;
   margin-left: 35px;
   margin-bottom: 66px;
@@ -649,13 +678,13 @@ p.Text__insert-label {
 }
 p.Text__hyperlink {
   font-size: 20px;
-  color: #3679B5;
+  color: #3679b5;
   margin-left: 10px;
   text-decoration: underline;
   cursor: pointer;
 }
 p.Text__hyperlink > a {
-  color: #3679B5;
+  color: #3679b5;
 }
 p.Text__label {
   font-size: 20px;
@@ -706,10 +735,10 @@ table.table--event-page {
   width: 1000px;
   margin: 80px auto;
   border: 1px solid #ccc;
-  border-top: 5px solid #7E0C07;
-  border-bottom: 5px solid #7E0C07;
+  border-top: 5px solid #7e0c07;
+  border-bottom: 5px solid #7e0c07;
   border-collapse: collapse;
-  color: #1D1D1D;
+  color: #1d1d1d;
   font-family: "notoSansKr";
 }
 table > tr > td {
@@ -735,7 +764,7 @@ span.line-height {
   margin-top: 10px;
 }
 .button__hyperlink {
-  border: 2px solid #C01811;
+  border: 2px solid #c01811;
   margin: 0;
   width: 300px;
   height: 50px;
@@ -758,55 +787,67 @@ button.button__contact {
   cursor: pointer;
 }
 .background__event {
-  background: linear-gradient(rgb(255, 255, 255) 95px,rgb(132, 13, 6) 95px, rgb(132, 13, 6) 778px, rgb(81, 18, 13) 780px, rgb(81, 18, 13) 892px, rgb(255, 255, 255) 894px);
+  background: linear-gradient(
+    rgb(255, 255, 255) 95px,
+    rgb(132, 13, 6) 95px,
+    rgb(132, 13, 6) 778px,
+    rgb(81, 18, 13) 780px,
+    rgb(81, 18, 13) 892px,
+    rgb(255, 255, 255) 894px
+  );
 }
 
-
-/* animation */ 
+/* animation */
 
 @keyframes blink {
-  from, to {
-    color:transparent
+  from,
+  to {
+    color: transparent;
   }
   50% {
-    color:#333333;
+    color: #333333;
   }
 }
 @-moz-keyframes blink {
-  from, to {
-    color:transparent
-  } 
+  from,
+  to {
+    color: transparent;
+  }
   50% {
-    color:#333333;
+    color: #333333;
   }
 }
 @-webkit-keyframes blink {
-  from, to {
-    color:transparent
+  from,
+  to {
+    color: transparent;
   }
   50% {
-    color:#333333;
+    color: #333333;
   }
 }
 @-ms-keyframes blink {
-  from, to {
-    color:transparent
+  from,
+  to {
+    color: transparent;
   }
   50% {
-    color:#333333;
+    color: #333333;
   }
 }
 @-o-keyframes blink {
-  from, to {
-    color:transparent
+  from,
+  to {
+    color: transparent;
   }
   50% {
-    color:#333333;
+    color: #333333;
   }
 }
 
 @keyframes fadein {
-  from, to {
+  from,
+  to {
     opacity: transparent;
   }
   0% {
