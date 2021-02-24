@@ -1,55 +1,55 @@
 import React, { useEffect, useState } from 'react';
-import ElysiaLogo from '../../shared/image/Elysia_Logo.png';
-import AppStore from '../../shared/image/app_store@2x.png';
-import GooglePlay from '../../shared/image/google_play@2x.png';
-import ElysiaApp from '../../shared/image/Elysia_app.png';
-import LinkedIn from '../../shared/image/linkedin.png';
+import ElysiaLogo from '../../../shared/image/Elysia_Logo.png';
+import AppStore from '../../../shared/image/app_store@2x.png';
+import GooglePlay from '../../../shared/image/google_play@2x.png';
+import ElysiaApp from '../../../shared/image/Elysia_app.png';
+import LinkedIn from '../../../shared/image/linkedin.png';
 
 /* Team Image */
-import Team1 from '../../shared/image/team/Team1.png';
-import Team2 from '../../shared/image/team/Team2.png';
-import Team3 from '../../shared/image/team/Team3.png';
-import Team4 from '../../shared/image/team/Team4.png';
-import Team5 from '../../shared/image/team/Team5.png';
-import Team6 from '../../shared/image/team/Team6.png';
-import Team7 from '../../shared/image/team/Team7.png';
-import Team8 from '../../shared/image/team/Team8.png';
-import Team1Hover from '../../shared/image/team/Team1_hover.png';
-import Team2Hover from '../../shared/image/team/Team2_hover.png';
-import Team3Hover from '../../shared/image/team/Team3_hover.png';
-import Team4Hover from '../../shared/image/team/Team4_hover.png';
-import Team5Hover from '../../shared/image/team/Team5_hover.png';
-import Team6Hover from '../../shared/image/team/Team6_hover.png';
-import Team7Hover from '../../shared/image/team/Team7_hover.png';
-import Team8Hover from '../../shared/image/team/Team8_hover.png';
+import Team1 from '../../../shared/image/team/Team1.png';
+import Team2 from '../../../shared/image/team/Team2.png';
+import Team3 from '../../../shared/image/team/Team3.png';
+import Team4 from '../../../shared/image/team/Team4.png';
+import Team5 from '../../../shared/image/team/Team5.png';
+import Team6 from '../../../shared/image/team/Team6.png';
+import Team7 from '../../../shared/image/team/Team7.png';
+import Team8 from '../../../shared/image/team/Team8.png';
+import Team1Hover from '../../../shared/image/team/Team1_hover.png';
+import Team2Hover from '../../../shared/image/team/Team2_hover.png';
+import Team3Hover from '../../../shared/image/team/Team3_hover.png';
+import Team4Hover from '../../../shared/image/team/Team4_hover.png';
+import Team5Hover from '../../../shared/image/team/Team5_hover.png';
+import Team6Hover from '../../../shared/image/team/Team6_hover.png';
+import Team7Hover from '../../../shared/image/team/Team7_hover.png';
+import Team8Hover from '../../../shared/image/team/Team8_hover.png';
 
 /* Partners Image */
-import Iconloop from '../../shared/image/partners/iconloop.png';
-import Hexlant from '../../shared/image/partners/hexlant.png';
-import Bishijie from '../../shared/image/partners/bishijie.png';
-import Xangle from '../../shared/image/partners/xangle.png';
-import Chainlink from '../../shared/image/partners/chainlink.png';
-import HahmShout from '../../shared/image/partners/hahmshout.png';
-import Cider from '../../shared/image/partners/cider.png';
-import BKL from '../../shared/image/partners/bkl.png';
-import TSMP from '../../shared/image/partners/tsmp.png';
-import FocusLawAsia from '../../shared/image/partners/focuslawasia.png';
-import HiBlocks from '../../shared/image/partners/hiblocks.png';
-import Argos from '../../shared/image/partners/argos.png';
-import PropWave from '../../shared/image/partners/propwave.png';
-import Velic from '../../shared/image/partners/velic.png';
-import SRC from '../../shared/image/partners/src.png';
-import Daybit from '../../shared/image/partners/daybit.png';
-import Gopax from '../../shared/image/partners/gopax.png';
-import Bithumb from '../../shared/image/partners/bithumb.png';
-import BithumbGlobal from '../../shared/image/partners/bithumbglobal.png';
-import HUB from '../../shared/image/partners/hub.png';
-import HOW from '../../shared/image/partners/how.png';
-import Alphanonce from '../../shared/image/partners/alphanonce.png';
-import Anjuke from '../../shared/image/partners/anjuke.png';
+import Iconloop from '../../../shared/image/partners/iconloop.png';
+import Hexlant from '../../../shared/image/partners/hexlant.png';
+import Bishijie from '../../../shared/image/partners/bishijie.png';
+import Xangle from '../../../shared/image/partners/xangle.png';
+import Chainlink from '../../../shared/image/partners/chainlink.png';
+import HahmShout from '../../../shared/image/partners/hahmshout.png';
+import Cider from '../../../shared/image/partners/cider.png';
+import BKL from '../../../shared/image/partners/bkl.png';
+import TSMP from '../../../shared/image/partners/tsmp.png';
+import FocusLawAsia from '../../../shared/image/partners/focuslawasia.png';
+import HiBlocks from '../../../shared/image/partners/hiblocks.png';
+import Argos from '../../../shared/image/partners/argos.png';
+import PropWave from '../../../shared/image/partners/propwave.png';
+import Velic from '../../../shared/image/partners/velic.png';
+import SRC from '../../../shared/image/partners/src.png';
+import Daybit from '../../../shared/image/partners/daybit.png';
+import Gopax from '../../../shared/image/partners/gopax.png';
+import Bithumb from '../../../shared/image/partners/bithumb.png';
+import BithumbGlobal from '../../../shared/image/partners/bithumbglobal.png';
+import HUB from '../../../shared/image/partners/hub.png';
+import HOW from '../../../shared/image/partners/how.png';
+import Alphanonce from '../../../shared/image/partners/alphanonce.png';
+import Anjuke from '../../../shared/image/partners/anjuke.png';
 
-import '../../css/style.scss';
-import ServiceComponent from '../../modules/service/ServiceComponent';
+import '../css/style.scss';
+import ServiceComponent from '../service/ServiceComponent';
 import { useHistory, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -136,32 +136,37 @@ const Main = () => {
 
   return (
     <div className="elysia" ref={Top}>
-      <header className="header">
+      <header className="gnb">
         <Link to="/">
           <figure className="elysia-logo" style={{ backgroundImage: `url(${ElysiaLogo})` }}/>
         </Link>
-        <nav className="header__link-wrapper">
-          <p className="header__link--service header-link">
-            <a onClick={() => Scroll(Service)}>{t("main.service")}</a>
-          </p>
-          <p className="header__link--milestone header-link">
-            <a onClick={() => Scroll(Milestone)}>{t("main.milestone")}</a>
-          </p>
-          <p className="header__link--team header-link">
-            <a onClick={() => Scroll(Team)}>{t("main.team")}</a>
-          </p>
-          <p className="header__link--partners header-link">
-            <a onClick={() => Scroll(Partners)}>{t("main.partners")}</a>
-          </p>
-          <p className="header__link--contect header-link">
-            <a onClick={() => history.push("/contact")}>{t("main.contact")}</a>
-          </p>
-          <p className="header__link--markets header-link">
-            <a onClick={() => {
-              window.open("https://coinmarketcap.com/currencies/elysia/markets/", "_blank")
-            }}>{t("main.markets")}</a>
-          </p>
-        </nav>
+        <div className="gnb__navigation-wrapper">
+          <nav className="gnb__change-language-wrapper">
+            <p className="gnb__change-language" onClick={() => { i18n.changeLanguage("en") }}>
+              Eng
+            </p>
+            <p className="gnb__change-language" onClick={() => { i18n.changeLanguage("ko") }}>
+              Kor
+            </p>
+          </nav>
+          <nav className="gnb__link-wrapper">
+            <p className="gnb__link">
+              <a onClick={() => Scroll(Service)}>Seller</a>
+            </p>
+            <p className="gnb__link">
+              <a onClick={() => Scroll(Milestone)}>Buyer</a>
+            </p>
+            <p className="gnb__link">
+              <a onClick={() => Scroll(Team)}>고객보호센터</a>
+            </p>
+            <p className="gnb__link gnb--lnb">
+              <a onClick={() => Scroll(Partners)}>About us</a>
+            </p>
+            <p className="gnb__link gnb--login">
+              <a onClick={() => history.push("/contact")}>Sign up</a>
+            </p>
+          </nav>
+        </div>
       </header>
       <button className="top-scroll" title="Top" id="top-button" onClick={() => Scroll(Top)}>▲</button>
       <section className="main" id="main">
@@ -188,7 +193,7 @@ const Main = () => {
             </a>
           </div>
         </div>
-        <img src={ElysiaApp} className="main__image__elysia-app" alt="Elysia" />
+        <figure className="main__image__elysia-app" style={{ backgroundImage: `url(${ElysiaApp})` }}/>
       </section>
       <section className="service contents-container" id="service" ref={Service}>
         <ServiceComponent />

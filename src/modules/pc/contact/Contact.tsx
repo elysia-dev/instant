@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../css/style.scss';
+import '../css/style.scss';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 

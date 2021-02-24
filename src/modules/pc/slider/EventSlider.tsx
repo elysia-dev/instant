@@ -3,12 +3,12 @@ import React, { useEffect, useRef, useState, PropsWithChildren } from 'react';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
-import BuildingImg01 from '../../shared/image/event/BuildingImg01.png';
-import BuildingImg02 from '../../shared/image/event/BuildingImg02.png';
-import BuildingImg03 from '../../shared/image/event/BuildingImg03.png';
-import BuildingImg04 from '../../shared/image/event/BuildingImg04.png';
-import BuildingImg05 from '../../shared/image/event/BuildingImg05.png';
-import BuildingImg06 from '../../shared/image/event/BuildingImg06.png';
+import BuildingImg01 from '../../../shared/image/event/BuildingImg01.png';
+import BuildingImg02 from '../../../shared/image/event/BuildingImg02.png';
+import BuildingImg03 from '../../../shared/image/event/BuildingImg03.png';
+import BuildingImg04 from '../../../shared/image/event/BuildingImg04.png';
+import BuildingImg05 from '../../../shared/image/event/BuildingImg05.png';
+import BuildingImg06 from '../../../shared/image/event/BuildingImg06.png';
 import { useTranslation } from 'react-i18next';
 
 import 'swiper/swiper.scss';

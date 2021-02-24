@@ -1,12 +1,6 @@
 import React from 'react';
-import '../css/style.scss';
-import BuildingImg01 from '../shared/image/event/BuildingImg01.png';
-import BuildingImg02 from '../shared/image/event/BuildingImg02.png';
-import BuildingImg03 from '../shared/image/event/BuildingImg03.png';
-import BuildingImg04 from '../shared/image/event/BuildingImg04.png';
-import BuildingImg05 from '../shared/image/event/BuildingImg05.png';
-import BuildingImg06 from '../shared/image/event/BuildingImg06.png';
-import ImageEvent_01 from '../shared/image/event/image_event_01.png';
+import './css/style.scss';
+import ImageEvent_01 from '../../shared/image/event/image_event_01.png';
 import { Link, useHistory } from 'react-router-dom';
 import EventSlider from './slider/EventSlider';
 import Header from './Header';

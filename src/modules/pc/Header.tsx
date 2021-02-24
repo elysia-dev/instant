@@ -1,7 +1,7 @@
 
 import React from 'react';
-import ElysiaLogo from '../shared/image/Elysia_Logo.png';
-import '../css/style.scss';
+import ElysiaLogo from '../../shared/image/Elysia_Logo.png';
+import './css/style.scss';
 import { Link } from 'react-router-dom';
 
 const Header = () => {

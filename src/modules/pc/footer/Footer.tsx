@@ -1,15 +1,15 @@
-import ElysiaLogoWhite from '../../shared/image/Elysia_Logo_White.png';
-import Blog from '../../shared/image/blog.png';
-import Fackbook from '../../shared/image/facebook.png';
-import Github from '../../shared/image/github.png';
-import Kakaotalk from '../../shared/image/kakaotalk.png';
-import Medium from '../../shared/image/medium.png';
-import Telegram from '../../shared/image/telegram.png';
-import Weibo from '../../shared/image/weibo.png';
-import Twitter from '../../shared/image/twitter.png';
-import FooterImg from '../../shared/image/footer.png';
+import ElysiaLogoWhite from '../../../shared/image/Elysia_Logo_White.png';
+import Blog from '../../../shared/image/blog.png';
+import Fackbook from '../../../shared/image/facebook.png';
+import Github from '../../../shared/image/github.png';
+import Kakaotalk from '../../../shared/image/kakaotalk.png';
+import Medium from '../../../shared/image/medium.png';
+import Telegram from '../../../shared/image/telegram.png';
+import Weibo from '../../../shared/image/weibo.png';
+import Twitter from '../../../shared/image/twitter.png';
+import FooterImg from '../../../shared/image/footer.png';
 import React, { FunctionComponent } from 'react';
-import '../../css/style.scss';
+import '../css/style.scss';
 import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 

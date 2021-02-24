@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import Onboarding from '../../shared/image/onboarding.png';
-import Defi from '../../shared/image/Defi.png';
-import ElysiaMobile from '../../shared/image/elysia_mobile.png';
-import ElysiaOn from '../../shared/image/square-elysia-on.png';
-import DefiOn from '../../shared/image/square-defi-on.png';
-import OnboardingOn from '../../shared/image/square-onboarding-on.png';
-import ElysiaOff from '../../shared/image/square-elysia-off.png';
-import DefiOff from '../../shared/image/square-defi-off.png';
-import OnboardingOff from '../../shared/image/square-onboarding-off.png';
-import '../../css/style.scss';
+import Onboarding from '../../../shared/image/onboarding@2x.png';
+import Defi from '../../../shared/image/Defi@2x.png';
+import ElysiaMobile from '../../../shared/image/elysia_mobile@2x.png';
+import ElysiaOn from '../../../shared/image/square-elysia-on.png';
+import DefiOn from '../../../shared/image/square-defi-on.png';
+import OnboardingOn from '../../../shared/image/square-onboarding-on.png';
+import ElysiaOff from '../../../shared/image/square-elysia-off.png';
+import DefiOff from '../../../shared/image/square-defi-off.png';
+import OnboardingOff from '../../../shared/image/square-onboarding-off.png';
+import '../css/style.scss';
 import { useTranslation } from 'react-i18next';
 
 function ServiceComponent() {
@@ -30,14 +30,18 @@ function ServiceComponent() {
   return (
     <>
       <div className="service__image-wrapper">
-        <img
+        {/* <img
           src={
             stage === 0 ? Onboarding :
               stage === 1 ? ElysiaMobile : Defi
           }
           className="service__image"
           alt="Elysia"
-        />
+        /> */}
+        <figure className={ stage === 1 ? "service__image--mobile" : "service__image"} style={{ backgroundImage: `url(${
+          stage === 0 ? Onboarding :
+              stage === 1 ? ElysiaMobile : Defi
+          })` }}/>
       </div>
       <div className="service__icon-container">
         <div className="service__icon-wrapper" onClick={() => setCounter(0)}>
