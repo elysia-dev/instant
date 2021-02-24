@@ -60,8 +60,15 @@ figure.elysia-logo {
   font-weight: 700;
   padding-top: 5vh;
 }
-img.elysia-white-logo {
-  width: 150px;
+figure.elysia-white-logo {
+  display: inline;
+  cursor: pointer !important;
+  width: 149px;
+  height: 31px;
+  background-size: 149px 31px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin: 0;
 }
 section.contents-container {
   height: 100vh;
@@ -192,8 +199,20 @@ button.top-scroll {
     text-align: center;
   }
   &__image {
-    max-height: 644px;
-    transition: all 0.5s ease-in-out;
+    cursor: pointer !important;
+    width: 644px;
+    height: 644px;
+    background-size: 644px 644px;
+    background-repeat: no-repeat;
+    margin: 0;
+  }
+  &__image--moblie {
+    cursor: pointer !important;
+    width: 482px;
+    height: 552px;
+    background-size: 482px 552px;
+    background-repeat: no-repeat;
+    margin: 0;
   }
 
   &__icon-container {
@@ -207,6 +226,12 @@ button.top-scroll {
     cursor: pointer;
   }
   &__square {
+    cursor: pointer !important;
+    width: 68px;
+    height: 68px;
+    background-size: 68px 68px;
+    background-repeat: no-repeat;
+    margin: 0;
     display: inline-block;
     z-index: 2;
     position: relative;
@@ -505,6 +530,11 @@ button.top-scroll {
   &__icon {
     margin: 6px 0px 20px 26px;
     cursor: pointer;
+    width: 37px;
+    height: 37px;
+    background-size: 37px 37px;
+    background-repeat: no-repeat;
+    display: inline-block;
   }
   &__lower {
     max-width: 1190px;

@@ -1,12 +1,12 @@
 import ElysiaLogoWhite from '../../shared/image/Elysia_Logo_White.png';
-import Blog from '../../shared/image/blog.png';
-import Fackbook from '../../shared/image/facebook.png';
-import Github from '../../shared/image/github.png';
-import Kakaotalk from '../../shared/image/kakaotalk.png';
-import Medium from '../../shared/image/medium.png';
-import Telegram from '../../shared/image/telegram.png';
-import Weibo from '../../shared/image/weibo.png';
-import Twitter from '../../shared/image/twitter.png';
+import Blog from '../../shared/image/blog@2x.png';
+import Fackbook from '../../shared/image/facebook@2x.png';
+import Github from '../../shared/image/github@2x.png';
+import Kakaotalk from '../../shared/image/kakaotalk@2x.png';
+import Medium from '../../shared/image/medium@2x.png';
+import Telegram from '../../shared/image/telegram@2x.png';
+import Weibo from '../../shared/image/weibo@2x.png';
+import Twitter from '../../shared/image/twitter@2x.png';
 import FooterImg from '../../shared/image/footer.png';
 import React, { FunctionComponent } from 'react';
 import '../../css/style.scss';
@@ -25,7 +25,7 @@ const Footer: FunctionComponent = () => {
         <div className="footer__wrapper">
           <div className="footer__container--left">
             <div className="footer__logo__wrapper">
-              <img src={ElysiaLogoWhite} style={{ cursor: "pointer" }} className="elysia-white-logo" alt="Elysia" onClick={() => { history.push('/') }} />
+              <figure className="elysia-white-logo" style={{ backgroundImage: `url(${ElysiaLogoWhite})` }}/>
               <p className="footer__logo-text">{t("footer.logo_label")}</p>
             </div>
             <div className="footer__contact-container" style={{ marginLeft: "auto" }}>
@@ -56,28 +56,28 @@ const Footer: FunctionComponent = () => {
               {t("footer.community")}
             </p>
             <a href="https://twitter.com/Elysia_HQ">
-              <img src={Twitter} className="footer__icon" alt="Elysia" />
+              <figure className="footer__icon" style={{ backgroundImage: `url(${Twitter})` }}/>
             </a>
             <a href="https://open.kakao.com/o/gUpSOwkb">
-              <img src={Kakaotalk} className="footer__icon" alt="Elysia" />
+              <figure className="footer__icon" style={{ backgroundImage: `url(${Kakaotalk})` }}/>
             </a>
             <a href="https://t.me/elysia_official">
-              <img src={Telegram} className="footer__icon" alt="Elysia" />
+              <figure className="footer__icon" style={{ backgroundImage: `url(${Telegram})` }}/>
             </a>
             <a href="https://github.com/elysia-land?tab=repositories">
-              <img src={Github} className="footer__icon" alt="Elysia" />
+              <figure className="footer__icon" style={{ backgroundImage: `url(${Github})` }}/>
             </a>
             <a href="https://www.facebook.com/ElysiaHQ">
-              <img src={Fackbook} className="footer__icon" alt="Elysia" />
+              <figure className="footer__icon" style={{ backgroundImage: `url(${Fackbook})` }}/>
             </a>
             <a href="https://www.weibo.com/u/7449962304">
-              <img src={Weibo} className="footer__icon" alt="Elysia" />
+              <figure className="footer__icon" style={{ backgroundImage: `url(${Weibo})` }}/>
             </a>
             <a href="https://medium.com/@ELYSIA_HQ">
-              <img src={Medium} className="footer__icon" alt="Elysia" />
+              <figure className="footer__icon" style={{ backgroundImage: `url(${Medium})` }}/>
             </a>
             <a href="https://blog.naver.com/elysia_platform">
-              <img src={Blog} className="footer__icon" alt="Elysia" />
+              <figure className="footer__icon" style={{ backgroundImage: `url(${Blog})` }}/>
             </a>
           </div>
         </div>
