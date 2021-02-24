@@ -12,8 +12,7 @@ import Main from './modules/main/Main';
 import Contact from './modules/contact/Contact';
 import PrivacyPolicy from './modules/PrivacyPolicy';
 import Disclaimer from './modules/Disclaimer';
-import Footer from './modules/footer/Footer';
-import RouteWithHeader from './modules/RouteWithHeader';
+import RouteWithLayout from './modules/RouteWithLayout';
 import ScrollToTop from './modules/ScrollToTop';
 import EventPage from './modules/EventPage';
 
@@ -27,6 +26,7 @@ import EventPageMobile from './mobile/modules/EventPage';
 
 import { useMediaQuery } from "react-responsive";
 import { useTranslation } from 'react-i18next';
+import AppLink from './modules/AppLink';
 
 
 const App = () => {
@@ -51,23 +51,25 @@ const App = () => {
       <Router>
         <ScrollToTop />
         <Switch>
-          <RouteWithHeader path="/contact">
+          <RouteWithLayout path="/contact">
             <Contact />
-          </RouteWithHeader>
-          <RouteWithHeader path="/privacyPolicy">
+          </RouteWithLayout>
+          <RouteWithLayout path="/privacyPolicy">
             <PrivacyPolicy />
-          </RouteWithHeader>
-          <RouteWithHeader path="/disclaimer">
+          </RouteWithLayout>
+          <RouteWithLayout path="/disclaimer">
             <Disclaimer />
-          </RouteWithHeader>
-          <Route path="/eventPage">
+          </RouteWithLayout>
+          <RouteWithLayout header={false} path="/eventPage">
             <EventPage />
+          </RouteWithLayout>
+          <Route path="/app">
+            <AppLink />
           </Route>
-          <Route path="*">
+          <RouteWithLayout header={false} path="*">
             <Main />
-          </Route>
+          </RouteWithLayout >
         </Switch>
-        <Footer />
       </Router>
     );
   }
@@ -76,23 +78,25 @@ const App = () => {
       <Router>
         <ScrollToTop />
         <Switch>
-          <RouteWithHeader path="/contact">
+          <RouteWithLayout path="/contact" isPc={false}>
             <ContactMobile />
-          </RouteWithHeader>
-          <Route path="/privacyPolicy">
+          </RouteWithLayout>
+          <RouteWithLayout path="/privacyPolicy" isPc={false}>
             <PrivacyPolicyMobile />
-          </Route>
-          <Route path="/disclaimer">
+          </RouteWithLayout>
+          <RouteWithLayout path="/disclaimer" isPc={false}>
             <DisclaimerMobile />
-          </Route>
-          <Route path="/eventPage">
+          </RouteWithLayout>
+          <RouteWithLayout path="/eventPage" isPc={false}>
             <EventPageMobile />
+          </RouteWithLayout>
+          <Route path="/app">
+            <AppLink />
           </Route>
-          <Route path="*">
+          <RouteWithLayout path="*" isPc={false} header={false}>
             <MainMobile />
-          </Route>
+          </RouteWithLayout>
         </Switch>
-        <FooterMobile />
       </Router>
     );
   }

@@ -12,6 +12,7 @@
     "global": "^4.4.0",
     "i18next": "^19.8.4",
     "react": "^17.0.1",
+    "react-device-detect": "^1.15.0",
     "react-dom": "^17.0.1",
     "react-i18next": "^11.8.3",
     "react-responsive": "^8.2.0",

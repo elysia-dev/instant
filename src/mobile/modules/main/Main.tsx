@@ -64,15 +64,15 @@ const Main = () => {
     })
 
     useEffect(() => {
-      if(state.carriage == srcString.length) return
+      if (state.carriage == srcString.length) return
       const delay = setTimeout(() => {
         setState({ content: state.content + srcString[state.carriage], carriage: state.carriage + 1 })
         clearTimeout(delay)
-      }, 
-      2000 / srcString.length
+      },
+        2000 / srcString.length
       )
     }, [state.content])
-    
+
     return (
       <p className="mobile-main-text" style={{
         height: 110,
