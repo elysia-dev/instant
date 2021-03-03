@@ -7,7 +7,6 @@ import Medium from '../../../shared/image/medium.png';
 import Telegram from '../../../shared/image/telegram.png';
 import Weibo from '../../../shared/image/weibo.png';
 import Twitter from '../../../shared/image/twitter.png';
-import FooterImg from '../../../shared/image/footer.png';
 import React, { FunctionComponent } from 'react';
 import '../css/style.scss';
 import { useHistory } from 'react-router-dom';
@@ -19,7 +18,6 @@ const Footer: FunctionComponent = () => {
 
   return (
     <>
-    <img className="footer__top-image" src={FooterImg} alt="Elysia"/>
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__wrapper">
@@ -36,7 +34,7 @@ const Footer: FunctionComponent = () => {
                 {t("footer.email")}
               </p>
             </div>
-            <div className="footer__contact-container" style={{ marginLeft: 100 }}>
+            {/* <div className="footer__contact-container" style={{ marginLeft: 100 }}>
               <p className="footer__header-text">
                 {i18n.t("footer.language")}
               </p>
@@ -49,7 +47,7 @@ const Footer: FunctionComponent = () => {
               <p className="footer__text" onClick={() => { i18n.changeLanguage("ko") }}>
                 한국어
               </p>
-            </div>
+            </div> */}
           </div>
           <div className="footer__container--right">
             <p className="footer__header-text">

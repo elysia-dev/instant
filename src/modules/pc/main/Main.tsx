@@ -1,27 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import ElysiaLogo from '../../../shared/image/Elysia_Logo.png';
-import AppStore from '../../../shared/image/app_store@2x.png';
-import GooglePlay from '../../../shared/image/google_play@2x.png';
-import ElysiaApp from '../../../shared/image/Elysia_app.png';
-import LinkedIn from '../../../shared/image/linkedin.png';
+import ElysiaWhiteLogo from '../../../shared/image/Elysia_Logo_White.png';
+import MainBackground from '../../../shared/image/main-background.png';
+import GoogleLogo from '../../../shared/image/google-logo.png';
+import AppleLogo from '../../../shared/image/apple-logo.png';
+import DownArrow from '../../../shared/image/down-arrow.png';
+
+/* Service */
+import Service00 from '../../../shared/image/service00.png';
+import Service01 from '../../../shared/image/service01.png';
+import Service02 from '../../../shared/image/service02.png';
+import ButtonArrow from '../../../shared/image/button-arrow.png';
+
+/* Portfolio */
+import ElysiaAsset1 from '../../../shared/image/portfolio/elysia-asset-1.jpg';
+import ElysiaAsset2 from '../../../shared/image/portfolio/elysia-asset-2.png';
+import ElysiaAsset3 from '../../../shared/image/portfolio/elysia-asset-3.png';
+import ElysiaAsset4 from '../../../shared/image/portfolio/elysia-asset-4.png';
+import ElysiaAsset5 from '../../../shared/image/portfolio/elysia-asset-5.png';
+import ElysiaAsset6 from '../../../shared/image/portfolio/elysia-asset-6.png';
+import ElysiaAsset7 from '../../../shared/image/portfolio/elysia-asset-7.png';
+import ElysiaAssetRed1 from '../../../shared/image/portfolio/elysia-asset-red-1.png';
+import ElysiaAssetBlue1 from '../../../shared/image/portfolio/elysia-asset-blue-1.png';
 
 /* Team Image */
 import Team1 from '../../../shared/image/team/Team1.png';
 import Team2 from '../../../shared/image/team/Team2.png';
 import Team3 from '../../../shared/image/team/Team3.png';
 import Team4 from '../../../shared/image/team/Team4.png';
-import Team5 from '../../../shared/image/team/Team5.png';
-import Team6 from '../../../shared/image/team/Team6.png';
-import Team7 from '../../../shared/image/team/Team7.png';
-import Team8 from '../../../shared/image/team/Team8.png';
-import Team1Hover from '../../../shared/image/team/Team1_hover.png';
-import Team2Hover from '../../../shared/image/team/Team2_hover.png';
-import Team3Hover from '../../../shared/image/team/Team3_hover.png';
-import Team4Hover from '../../../shared/image/team/Team4_hover.png';
-import Team5Hover from '../../../shared/image/team/Team5_hover.png';
-import Team6Hover from '../../../shared/image/team/Team6_hover.png';
-import Team7Hover from '../../../shared/image/team/Team7_hover.png';
-import Team8Hover from '../../../shared/image/team/Team8_hover.png';
+import Team5 from '../../../shared/image/team/Team9.png';
+import Team6 from '../../../shared/image/team/Team8.png';
 
 /* Partners Image */
 import Iconloop from '../../../shared/image/partners/iconloop.png';
@@ -30,14 +38,12 @@ import Bishijie from '../../../shared/image/partners/bishijie.png';
 import Xangle from '../../../shared/image/partners/xangle.png';
 import Chainlink from '../../../shared/image/partners/chainlink.png';
 import HahmShout from '../../../shared/image/partners/hahmshout.png';
-import Cider from '../../../shared/image/partners/cider.png';
 import BKL from '../../../shared/image/partners/bkl.png';
 import TSMP from '../../../shared/image/partners/tsmp.png';
 import FocusLawAsia from '../../../shared/image/partners/focuslawasia.png';
 import HiBlocks from '../../../shared/image/partners/hiblocks.png';
 import Argos from '../../../shared/image/partners/argos.png';
 import PropWave from '../../../shared/image/partners/propwave.png';
-import Velic from '../../../shared/image/partners/velic.png';
 import SRC from '../../../shared/image/partners/src.png';
 import Daybit from '../../../shared/image/partners/daybit.png';
 import Gopax from '../../../shared/image/partners/gopax.png';
@@ -45,262 +51,312 @@ import Bithumb from '../../../shared/image/partners/bithumb.png';
 import BithumbGlobal from '../../../shared/image/partners/bithumbglobal.png';
 import HUB from '../../../shared/image/partners/hub.png';
 import HOW from '../../../shared/image/partners/how.png';
-import Alphanonce from '../../../shared/image/partners/alphanonce.png';
 import Anjuke from '../../../shared/image/partners/anjuke.png';
 
 import '../css/style.scss';
-import ServiceComponent from '../service/ServiceComponent';
 import { useHistory, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import ReCAPTCHA from "react-google-recaptcha";
+import axios from 'axios';
+import { getByPlaceholderText } from '@testing-library/react';
 
 const Main = () => {
-  const [selectedMilestone, setSelectedMilestone] = useState(0);
-  const history = useHistory();
+  // const history = useHistory();
   const { t, i18n } = useTranslation();
 
   const Service = React.createRef<HTMLDivElement>();
-  const Milestone = React.createRef<HTMLDivElement>();
+  const Portfolio = React.createRef<HTMLDivElement>();
   const Team = React.createRef<HTMLDivElement>();
   const Partners = React.createRef<HTMLDivElement>();
   const Contact = React.createRef<HTMLDivElement>();
   const Top = React.createRef<HTMLDivElement>();
-  const milestoneLength = 13;
-
-  const Scroll = (ref: any) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' })
+  const [state, setState] = useState({
+    isMoreAsset: false,
+    recaptcha: false,
+    onChecked: false,
+    fieldNull: false
+  })
+  const SwithcingState = () => {
+    setState({ ...state, isMoreAsset: !state.isMoreAsset });
+    console.log(state.isMoreAsset);
   }
 
-  const Typewriter = () => {
-    const srcString = t("main.invest_label");
-    const [state, setState] = useState({
-      content: '',
-      carriage: 0
-    })
+  const Scroll = (ref: string) => {
+    // ref.current.scrollIntoView({ behavior: 'smooth' })
+    var element = document.getElementById(ref);
+    const offset = 85;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element!.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
 
-    useEffect(() => {
-      if(state.carriage === srcString.length) return
-      const delay = setTimeout(() => {
-        setState({ content: state.content + srcString[state.carriage], carriage: state.carriage + 1 })
-        clearTimeout(delay)
-      }, 
-      2000 / srcString.length
-      )
-    }, [state.content])
-    
-    return (
-      <p className="main__text" style={{
-        height: 150,
-        margin: 0
-      }}>{state.content}
-        <span className="main__text--cursor" style={{
-          fontWeight: 100,
-          fontFamily: "Inter"
-        }}>|</span>
-      </p>
-    );
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
   }
-
-
-  const MliestoneSelected = {
-    width: 24,
-    height: 24,
-    top: -6,
-    right: 6,
-    position: "relative",
-    backgroundColor: "#3679b5",
-    borderRadius: 5,
-    boxShadow: "0px 3px 6px #3679b5"
-  } as React.CSSProperties;
-  const MliestoneActivation = {
-    width: 12,
-    height: 12,
-    backgroundColor: "#3679b5",
-    borderRadius: 2,
-    boxShadow: "0px 6px 10px #2498ff9a"
-  }
-  const MliestoneDisable = {
-    display: "none"
-  } as React.CSSProperties;
-
+  
+  const [scrolling, setScrolling] = useState(false);
+  const [scrollTop, setScrollTop] = useState(0);
+  
   useEffect(() => {
-    let timer = setTimeout(() => {
-      setSelectedMilestone(
-        (selectedMilestone + 1) % milestoneLength,
-      )
-    }, 1500)
-
-    return () => {
-      clearTimeout(timer)
+    function onScroll() {
+      let currentPosition = window.pageYOffset;
+      if (currentPosition > scrollTop) {
+        setScrolling(false);
+      } else {
+        setScrolling(true);
+      }
+      setScrollTop(currentPosition <= 0 ? 0 : currentPosition);
     }
-  }, [selectedMilestone])
+
+    window.addEventListener("scroll", onScroll);
+    console.log(scrollTop);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [scrollTop]);
+
+  const [contactState, setContactState] = useState<{ 
+    name: string,
+    phone: string,
+    email: string,
+    company: string,
+    content: string 
+  }>({ 
+    name: "",
+    phone: "",
+    email: "",
+    company: "",
+    content: "" 
+   });
+
+  const sendContact = () => {
+    setState({ ...state, fieldNull: false })
+    if(contactState.email === "") {
+      setState({ ...state, fieldNull: true })
+      return;
+    } 
+    if (contactState.name === "") {
+      setState({ ...state, fieldNull: true })
+      return;
+    } 
+    if (contactState.content === "") {
+      setState({ ...state, fieldNull: true })
+      return;
+    }
+    axios.post(
+      "https://api.elysia.land/land/contact",
+      {
+        email: contactState.email,
+        content: "\nname : " + contactState.name + "\nphone : " + contactState.phone + "\ncompany : " + contactState.company + "\nmessage : " + contactState.content
+      }
+    ).then(() => {
+      alert(t("contact.success"));
+      setContactState({
+        ...contactState,
+        name: "",
+        phone: "",
+        email: "",
+        company: "",
+        content: "" 
+      })
+    }).catch(() => {
+      alert(t("contact.fail"));
+    })
+  }
 
   return (
-    <div className="elysia" ref={Top}>
-      <header className="gnb">
-        <Link to="/">
-          <figure className="elysia-logo" style={{ backgroundImage: `url(${ElysiaLogo})` }}/>
-        </Link>
-        <div className="gnb__navigation-wrapper">
-          <nav className="gnb__change-language-wrapper">
-            <p className="gnb__change-language" onClick={() => { i18n.changeLanguage("en") }}>
-              Eng
-            </p>
-            <p className="gnb__change-language" onClick={() => { i18n.changeLanguage("ko") }}>
-              Kor
-            </p>
+    <div className="elysia" id="top" ref={Top}>
+      <section className="main" id="main" style={{ backgroundImage: `url(${MainBackground})` }} >
+        <header className="main__gnb" style={{ backgroundColor: `${scrollTop >= 100 ? "#FFFFFF" : "transparent"}` }} >
+          <nav className="main__gnb__link-container">
+            
+            <figure className="elysia-logo" onClick={() => Scroll("top")} style={{ backgroundImage: `url(${scrollTop >= 100 ? ElysiaLogo : ElysiaWhiteLogo})` }}/>
+            
+            <div className="main__gnb__link-wrapper">
+              <p className="main__gnb__link" onClick={() => Scroll("service")}
+                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}`}}>
+                  Service
+              </p>
+              <p className="main__gnb__link" onClick={() => Scroll("portfolio")}
+                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}`}}>
+                  Portfolio
+              </p>
+              <p className="main__gnb__link" onClick={() => Scroll("partners")}
+                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}`}}>
+                  Partners
+              </p>
+              <p className="main__gnb__link" onClick={() => Scroll("team")}
+                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}`}}>
+                  Team
+              </p>
+              <p className="main__gnb__link main__gnb--bold" onClick={() => Scroll("contact")}
+                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}`}}>
+                  Contact
+              </p>
+            </div>
           </nav>
-          <nav className="gnb__link-wrapper">
-            <p className="gnb__link">
-              <a onClick={() => Scroll(Service)}>Seller</a>
-            </p>
-            <p className="gnb__link">
-              <a onClick={() => Scroll(Milestone)}>Buyer</a>
-            </p>
-            <p className="gnb__link">
-              <a onClick={() => Scroll(Team)}>고객보호센터</a>
-            </p>
-            <p className="gnb__link gnb--lnb">
-              <a onClick={() => Scroll(Partners)}>About us</a>
-            </p>
-            <p className="gnb__link gnb--login">
-              <a onClick={() => history.push("/contact")}>Sign up</a>
-            </p>
-          </nav>
+        </header>
+        <div className="main__content-container">
+          <h1 className="main__content-text--bold">
+            DIGITAL INFRASTRUCTURE FOR<br />REAL ESTATE INVESTING
+          </h1>
+          <p className="main__content-text">
+            ELYSIA provide the latest technology to bridge the gap between<br />traditional real estate and global investors
+          </p>
+          <a className="main__store__button" href="https://play.google.com/store/apps/details?id=land.elysia">
+            <figure className="main__image__google-play" style={{ backgroundImage: `url(${GoogleLogo})` }}/>
+            <span className="main__image__text">Google Play</span>
+          </a>
+          <a className="main__store__button" href="https://apps.apple.com/us/app/elysia/id1536733411">
+            <figure className="main__image__app-store" style={{ backgroundImage: `url(${AppleLogo})` }}/>
+            <span className="main__image__text">App Store</span>
+          </a>
         </div>
-      </header>
-      <button className="top-scroll" title="Top" id="top-button" onClick={() => Scroll(Top)}>▲</button>
-      <section className="main" id="main">
-        <div className="main__text-wrapper" style={{ paddingTop: i18n.language === "en" ? 150 : 200 }}>
-          {Typewriter()}
-          {
-            i18n.language === 'en' && t('main.invest_sublabel').split("\n").map((content, index) => {
-              return (
-                <p
-                  className="main__text--sub"
-                  key={`subtitle_${index}`}
-                  style={{ margin: 0, whiteSpace: "nowrap", marginTop: index === 0 ? 15 : 0 }}>
-                  {content}
-                </p>
-              )
-            })
-          }
-          <div className="main__image-wrapper">
-            <a href="https://apps.apple.com/us/app/elysia/id1536733411">
-              <figure className="main__image__app-store" style={{ backgroundImage: `url(${AppStore})` }}/>
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=land.elysia">
-              <figure className="main__image__google-play" style={{ backgroundImage: `url(${GooglePlay})` }}/>
-            </a>
-          </div>
+        <div className="main__down-arrow-wrapper">
+          <img className="main__down-arrow" src={DownArrow} alt="" onClick={() => Scroll("service")} />
         </div>
-        <figure className="main__image__elysia-app" style={{ backgroundImage: `url(${ElysiaApp})` }}/>
       </section>
       <section className="service contents-container" id="service" ref={Service}>
-        <ServiceComponent />
-      </section>
-      <section className="mliestone contents-container" id="milestone" ref={Milestone} >
-        <div className="mliestone__container">
-          <h1 className="mliestone__header-text header-text">{t("mliestone.header_label")}</h1>
-          <div className="mliestone__timeline__container">
-            <div
-              className="mliestone__timeline"
-              style={{
-                ...(milestoneLength === (selectedMilestone + 1) ? { backgroundColor: "#3679b5" } : { backgroundColor: "#cccccc" })
-              }}
-            >
-              <div className="mliestone__dot-wrapper">
-                <div className="mliestone--fill-line" style={{ width: (1190 / (milestoneLength - 1)) * selectedMilestone }} />
-                {
-                  Array(milestoneLength).fill(0).map((_x, index) => {
-                    return (
-                      <>
-                        <div
-                          className={"mliestone__dot" + (selectedMilestone === index ? '--selected' : '')}
-                          id={"mliestone__dot--" + index}
-                          style={{ ...(selectedMilestone > index && MliestoneActivation) }}
-                          onClick={() => setSelectedMilestone(index)}
-                        >
-                          <div style={{ ...(selectedMilestone === index ? MliestoneSelected : MliestoneDisable) }} />
-                          <p className={"mliestone__dot--" + (index % 2 === 0 ? 'upper-text' : 'lower-text')}>
-                            {t('mliestone.timeline.' + index)}
-                          </p>
-                          <h1
-                            className={"mliestone__dot--bold--" + (index % 2 === 0 ? 'upper-text' : 'lower-text')}
-                            style={{ ...(selectedMilestone === index ? { display: "block" } : { display: "none" }) }}
-                          >
-                            {t('mliestone.timeline_contant.' + index)}
-                          </h1>
-                        </div>
-                      </>
-                    );
-                  })
-                }
+        <h1 className="section__text">
+          What is ELYSIA
+        </h1>
+        <h1 className="section__text--bold">
+          Real Estate Platform for everything
+        </h1>
+        <div className="service__container">
+          <img className="service__image" src={Service00} alt="" />
+          <div className="service__text-wrapper">
+            <h1 className="service__header-text">
+              For Seller
+            </h1>
+            <h1 className="service__header-text--bold">
+              Tokenize your real estate with Elysia
+            </h1>
+            <p className="service__text">
+              Blockchain technology of ELYSIA gives<br />immutable representation to your assets.<br />Your assets will be an attractive product<br />for global investors. Meet instant global liquidity.
+            </p>
+            <p className="button" onClick={() => Scroll("contact")}>
+              ONBOARDING NOW
+              <div className="button__arrow-wrapper">
+                <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
               </div>
-            </div>
+            </p>
+          </div>
+        </div>
+        <div className="service__container">
+          <div className="service__text-wrapper">
+            <h1 className="service__header-text">
+              For Buyer
+            </h1>
+            <h1 className="service__header-text--bold">
+              Have fun in a global marketplace<br />with your mobile.
+            </h1>
+            <p className="service__text">
+              Find real estate opportunities around the world<br />and settle transactions with almost no intermediary costs
+            </p>
+            <p className="button" onClick={() => {
+                window.location.replace("https://play.google.com/store/apps/details?id=land.elysia")
+              }}>
+              Experience it now
+              <div className="button__arrow-wrapper">
+                <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
+              </div>
+            </p>
+          </div>
+          <img className="service__image" src={Service01} alt="" />
+        </div>
+        <div className="service__container">
+          <img className="service__image" src={Service02} alt="" />
+          <div className="service__text-wrapper">
+            <h1 className="service__header-text">
+              For Asset liquidity
+            </h1>
+            <h1 className="service__header-text--bold">
+              Future of finance
+            </h1>
+            <p className="service__text">
+              Demand driven lending markets using traditional assets<br />as collateral will be the next step for decentralized applications.
+            </p>
+            <p className="button--disable">
+              COMING SOON
+              <div className="button--disable__arrow-wrapper">
+                <figure className="button--disable__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
+              </div>
+            </p>
           </div>
         </div>
       </section>
-      <section className="team contents-container" id="team" ref={Team}>
-        <p className="team__header-text header-text">{t("team.header_label")}</p>
-        {
-          [
-            [Team1, Team1Hover, "https://www.linkedin.com/in/junggun-lim-2b1a1a137/"],
-            [Team2, Team2Hover, "https://www.linkedin.com/in/%EC%9B%90%EC%A4%80-%EC%B0%A8-1b707653/"],
-            [Team3, Team3Hover, "https://www.linkedin.com/in/yoon-kim-02228619/"],
-            [Team4, Team4Hover, "https://www.linkedin.com/in/donguk-seo-6483141b6/"],
-            [Team5, Team5Hover, "https://www.linkedin.com/in/hyuno-bae-6493141b6/"],
-            [Team6, Team6Hover, "https://www.linkedin.com/in/%ED%9D%AC%EC%88%98-%ED%95%9C-a158ba191/"],
-            [Team7, Team7Hover, "https://www.linkedin.com/in/%EC%82%AC%EB%9F%89-%ED%92%8D-aba01a205/"],
-            [Team8, Team8Hover],
-          ].map(([team, teamHover, isJoinLinkedIn], index) => {
-            return (
-              <div className="team__container">
-                <div className="team__wrapper">
-                  <img src={team} className="team__picture" alt="Elysia" />
-                  <img src={teamHover} className="team__picture--hover" alt="Elysia" />
-                </div>
-                <div className="team__text-wrapper">
-                  <h3 className="team__text--bold">{t('team.name.' + index)}</h3>
-                  <div className="team__linkedin-link-wrapper" style={isJoinLinkedIn === undefined ? {display: "none"} : {display: "block"}}>
-                    <a href={isJoinLinkedIn} target="_blink">
-                      <img src={LinkedIn} className="team__linkedin" />
-                    </a>
+      <section className="portfolio contents-container" id="portfolio" ref={Portfolio} >
+        <div className="portfolio__container">
+          <h1 className="portfolio__text section__text">
+            ELYSIA Opportunities
+          </h1>
+          <h1 className="portfolio__text--bold section__text--bold">
+            OUR PORTFOLIO
+          </h1>
+          <div className="portfolio__wrapper">
+            {
+              [
+                [ElysiaAssetBlue1, "Elysia Asset Blue #1", "426075", "1-4, Sadang-ro 16sa-gil, Dongjak-gu, Seoul"],
+                [ElysiaAssetRed1, "Elysia Asset Red #1", "181704", "Yeoksam-dong, Gangnam-gu, Seoul"],
+                [ElysiaAsset7, "Elysia Asset #7", "823045", "1-1 Bangbae-dong, Seocho-gu, Seoul"],
+                [ElysiaAsset6, "Elysia Asset #6", "1182180", "Sadang-dong, Dongjak-gu, Seoul"],
+                [ElysiaAsset5, "Elysia Asset #5", "1040950", "Bongcheon-dong, Gwanak-gu, Seoul"],
+                [ElysiaAsset4, "Elysia Asset #4", "814810", "73-12 Sadang-dong, Dongjak-gu, Seoul"],
+                [ElysiaAsset3, "Elysia Asset #3", "1041150", "141-120 Sadang-dong, Dongjak-gu, Seoul"]
+              ].map(([AssetImage, AssetName, AssetFunded, AssetAddress], index) => {
+                return (
+                  <div className="portfolio__asset__container" style={{ 
+                    opacity: `${(index >= 6 && !state.isMoreAsset) ? 0 : 1}`,
+                    display: `${(index >= 6 && !state.isMoreAsset) ? "none" : "block"}`
+                  }}>
+                    <div className="portfolio__asset-funded">Funded</div>
+                    <img src={AssetImage} className="portfolio__asset-picture" alt="Elysia Asset" />
+                    <h1 className="portfolio__asset-name">{AssetName}</h1>
+                    <p className="portfolio__asset-info funded">
+                      Funded <span className="portfolio__asset-value">${AssetFunded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
+                    </p>
+                    <p className="portfolio__asset-info Address">
+                      Address <span className="portfolio__asset-value">{AssetAddress}</span>
+                    </p>
                   </div>
-                </div>
-                <p className="team__text">{t('team.dept.' + index)}</p>
-              </div>
-            );
-          })
-        }
+                );
+              })
+            }
+          </div>  
+        </div>
+        <h1 className="portfolio__see-more" onClick={SwithcingState}>{!state.isMoreAsset ? "See More >" : "Close <"}</h1>
       </section>
       <section className="partners contents-container" id="partners" ref={Partners}>
-        <h1 className="pertners__header-text header-text">{t("partners.header_label")}</h1>
+        <h1 className="partners__text section__text">
+          ELYSIA Partners
+        </h1>
+        <h1 className="partners__text--bold section__text--bold">
+          PARTNERS
+        </h1>
         <div className="partners__wrapper">
           {
             [
               Iconloop,
               Hexlant,
               Bishijie,
-              Anjuke,
               Xangle,
               Chainlink,
               HahmShout,
-              Cider,
+              HUB,
               BKL,
               TSMP,
               FocusLawAsia,
               HiBlocks,
               Argos,
               PropWave,
-              Velic,
+              Anjuke,
               SRC,
               Daybit,
               Gopax,
               Bithumb,
               BithumbGlobal,
-              HUB,
-              HOW,
-              Alphanonce
+              HOW
             ].map((image) => {
               return (
                 <img src={image} className="partners__picture" alt="Elysia" />
@@ -309,9 +365,164 @@ const Main = () => {
           }
         </div>
       </section>
+      <section className="team contents-container" id="team" ref={Team}>
+        <h1 className="section__text">
+          ELYSIA Team
+        </h1>
+        <h1 className="section__text--bold">
+          EXECUTIVE TEAM
+        </h1>
+        <div className="team__info-wrapper" >
+          {
+            [
+              [Team1, "JungGun Lim", "CEO", `Mr. Lim is the CEO of Elysia. After studying chemical and biological engineering at Seoul National University, he has worked with multinational corporations including Samsung SDI. An expert in Ruby/React JS development, he has worked with many different projects in the past and is particularly interested in smart contract applications operating on the Ethereum network.`],
+              [Team2, "WonJoon Cha", "CSO", "While attending Seoul National University, Mr. Cha was a freelance web/android developer for major IT companies for more than 7 years. He found Elysia with Mr. Lim in 2018 after realizing the potential of tokenizing traditional assets. Mr. Cha is particularly interested in cryptocurrency applications and designed the token economics for EL tokens."],
+              [Team3, "Yoon Kim", "CMO", "Mr. Kim recently joined Elysia as a business development executive for partnerships and overseas operations. He has over 10 years of experience in sales and marketing at global companies and has most recently worked on crypto projects at ICONLOOP and VELIC"],
+              [Team4, "DongUk Seo", "CTO", "Mr. Donguk Seo is currently the Chief Technology Officer at Elysia and is in charge of blockchain architecture and software engineering. He has developed various tools to scale the Ethereum network, including automated deposit tracking and on-chain data sharing. Before joining Elysia, he developed internal and composite APIs for multinational corporations and uses five different programming languages to produce optimal results."],
+              [Team5, "Michael Chung", "COO", "KAIST National University\n　Industrial engineering\n　KTB Investment & securities\n　Prop Trading, FRM\n　ICONLOOP\n　Business Development\n　Mr.Chung manages operations and fianance at Elysia."],
+              [Team6, "Jacob Lee", "Bees’ Company CEO", "・ Seoul National University,\n　Dept. of naval architecture\n　& ocean engineering\n・ DEMB basic design\n　department\n・ The 27th certified realtor"],
+            ].map(([TeamImage, TeamName, TeamDept, TeamHover], index) => {
+              return (
+                <div className="team__container">
+                  <div className="team__wrapper">
+                    <img src={TeamImage} className="team__picture" alt="Elysia" />
+                    <p className="team__hover-infomation">
+                      {TeamHover.split('\n').map(line => {
+                        return (<span>{line}<br/></span>)
+                      })}
+                    </p> 
+                  </div>
+                  <div className="team__text-wrapper">
+                    <h1 className="team__text--bold">{TeamName}</h1>
+                    <p className="team__text">{TeamDept}</p>
+                  </div>
+                </div>
+              );
+            })
+          }
+        </div>
+      </section>
       <section className="contact contents-container" id="contact" ref={Contact}>
-        <h1 className="contact__header-text header-text">{t("contact.info_header")}</h1>
-        <button className="contact__button" onClick={() => history.push('/contact')}>{t("contact.contact_button")}</button>
+        <h1 className="section__text">
+          Contact
+        </h1>
+        <h1 className="section__text--bold" style={{ paddingBottom: 0 }}>
+          Didn’t find what you were looking for?
+        </h1>
+        <p className="contact__section__text" >
+          Shoot us an email with your request and we will contact you within one business day.
+        </p>
+        <div className="contact__form-container">
+          <div className="contact__input-wrapper">
+            <input 
+              type="text" 
+              className={
+                (state.fieldNull === true && contactState.name === "")
+                ? "contact__input--required"
+                : "contact__input"
+              }
+              placeholder="Name"
+              value={contactState.name}
+              onChange={(event) => { 
+                setContactState({ ...contactState, name: event.target.value }) 
+              }}
+            />
+            <span className="contact__required-point">*</span>
+          </div>
+          <div className="contact__input-wrapper">
+            <input 
+              type="text" 
+              className="contact__input"
+              placeholder="Phone"
+              value={contactState.phone}
+              onChange={(event) => { 
+                setContactState({ ...contactState, phone: event.target.value }) 
+              }} 
+            />
+          </div>
+          <div className="contact__input-wrapper">
+            <input 
+              type="text" 
+              className={
+                (state.fieldNull === true && contactState.email === "")
+                ? "contact__input--required"
+                : "contact__input"
+              }
+              placeholder="E-mail" 
+              value={contactState.email} 
+              onChange={(event) => { 
+                setContactState({ ...contactState, email: event.target.value }) 
+              }}
+            />
+            <span className="contact__required-point">*</span>
+          </div>
+          <div className="contact__input-wrapper">
+            <input 
+              type="text" 
+              className="contact__input" 
+              placeholder="Company" 
+              value={contactState.company} 
+              onChange={(event) => { 
+                setContactState({ ...contactState, company: event.target.value }) 
+              }}
+            />
+          </div>
+          <div className="contact__input-wrapper" style={{ gridColumn: 'span 2' }}>
+            <textarea 
+              className={
+                (state.fieldNull === true && contactState.content === "")
+                ? "contact__textarea--required"
+                : "contact__textarea"
+              }
+              placeholder="Message" 
+              value={contactState.content} 
+              onChange={(event) => { 
+                setContactState({ ...contactState, content: event.target.value }) 
+              }}
+            />
+            <span className="contact__required-point">*</span>
+          </div>
+        </div>
+        <div className="contact__submit-container">
+          <div className="contact__recaptcha-wrapper">
+            <ReCAPTCHA 
+              sitekey={"6LdAI24aAAAAAG0QIW1ZdyfsQMHrW3uwskzlVTH7"}
+              onChange={() => setState({ ...state, recaptcha: true })}
+              onExpired={() => setState({ ...state, recaptcha: false })}
+            />
+          </div>
+          <div className="contact__checkbox-wrapper">
+            <input className="contact__checkbox" 
+              type="checkbox" 
+              name="check" 
+              value="check"
+              onClick={() => {
+                setState({ ...state, onChecked: !state.onChecked })
+              }}
+            />
+            <p className="contact__checkbox-text">
+              I consent to Aetsoft JSC processing my personal information as set out in the Privacy Policy and Cookie Policy and that, given the global nature of Aetsoft JSC’s business, such processing may take place outside of my home jurisdiction.
+            </p>
+          </div>
+        </div>
+        <div className="contact__button-wrapper">
+          {(state.onChecked && state.recaptcha) ? (
+            <p className="button" onClick={sendContact}>
+              CONTACT
+              <div className="button__arrow-wrapper">
+                <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
+              </div>
+            </p>
+          ) : (
+            <p className="button--disable">
+              리캡챠를 하세용
+              <div className="button--disable__arrow-wrapper">
+                <figure className="button--disable__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
+              </div>
+            </p>
+          )}
+        </div>
+          <p className="contact__required-message" style={{ display: `${state.fieldNull === true ? ("inline-block") : ("none")}`}}>이름, 이메일주소, 내용은 필수 입력 사항입니다!!</p>
       </section>
     </div>
   );
