@@ -12,6 +12,7 @@ import Disclaimer from './modules/pc/Disclaimer';
 import Footer from './modules/pc/footer/Footer';
 import RouteWithHeader from './modules/pc/RouteWithHeader';
 import ScrollToTop from './modules/pc/ScrollToTop';
+import AppPage from './modules/AppLink';
 
 
 import { useMediaQuery } from "react-responsive";
@@ -52,6 +53,9 @@ const App = () => {
           {/* <Route path="/eventPage">
             <EventPage />
           </Route> */}
+          <Route path="/AppLink">
+            <AppPage />
+          </Route>
           <Route path="*">
             <Main />
           </Route>

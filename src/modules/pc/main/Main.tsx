@@ -281,14 +281,16 @@ const Main = () => {
             <p className="service__text">
               Find real estate opportunities around the world<br />and settle transactions with almost no intermediary costs
             </p>
-            <p className="button" onClick={() => {
-                window.location.replace("https://play.google.com/store/apps/details?id=land.elysia")
-              }}>
-              Experience it now
-              <div className="button__arrow-wrapper">
-                <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
-              </div>
-            </p>
+            <Link to="/AppLink">
+              <p className="button" onClick={() => {
+                  window.location.replace("https://play.google.com/store/apps/details?id=land.elysia")
+                }}>
+                Experience it now
+                <div className="button__arrow-wrapper">
+                  <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
+                </div>
+              </p>
+            </Link>
           </div>
           <img className="service__image scroll-animation scroll-animation--left" src={Service01} alt="" />
         </div>
