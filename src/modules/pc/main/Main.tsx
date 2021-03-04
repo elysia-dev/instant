@@ -13,8 +13,6 @@ import Service02 from '../../../shared/image/service02.png';
 import ButtonArrow from '../../../shared/image/button-arrow.png';
 
 /* Portfolio */
-import ElysiaAsset1 from '../../../shared/image/portfolio/elysia-asset-1.jpg';
-import ElysiaAsset2 from '../../../shared/image/portfolio/elysia-asset-2.png';
 import ElysiaAsset3 from '../../../shared/image/portfolio/elysia-asset-3.png';
 import ElysiaAsset4 from '../../../shared/image/portfolio/elysia-asset-4.png';
 import ElysiaAsset5 from '../../../shared/image/portfolio/elysia-asset-5.png';
@@ -58,7 +56,6 @@ import { useHistory, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
-import { getByPlaceholderText } from '@testing-library/react';
 
 const Main = () => {
   // const history = useHistory();
@@ -76,6 +73,7 @@ const Main = () => {
     onChecked: false,
     fieldNull: false
   })
+
   const SwithcingState = () => {
     setState({ ...state, isMoreAsset: !state.isMoreAsset });
     console.log(state.isMoreAsset);
@@ -111,7 +109,6 @@ const Main = () => {
     }
 
     window.addEventListener("scroll", onScroll);
-    console.log(scrollTop);
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrollTop]);
 
@@ -164,14 +161,41 @@ const Main = () => {
     })
   }
 
+  const ScrollAnimationDefaultMargin = 100;
+  let ScrollAnimationTriggerMargin = 0;
+  let ScrollAnimationTriggerHeight = 0;
+  const ScrollAnimationElementList = document.querySelectorAll('.scroll-animation');
+
+  const ScrollAnimationFunc = function() {
+    for (const element of ScrollAnimationElementList as any) {
+      if (!element.classList.contains('show')) {
+        if (element.dataset.saMargin) {
+          ScrollAnimationTriggerMargin = parseInt(element.dataset.saMargin);
+        } else {
+          ScrollAnimationTriggerMargin = ScrollAnimationDefaultMargin;
+        }
+
+        if (element.dataset.saTrigger) {
+          ScrollAnimationTriggerHeight = document.querySelector(element.dataset.saTrigger).getBoundingClientRect().top + ScrollAnimationTriggerMargin;
+        } else {
+          ScrollAnimationTriggerHeight = element.getBoundingClientRect().top + ScrollAnimationTriggerMargin;
+        }
+
+        if (window.innerHeight > ScrollAnimationTriggerHeight) {
+          element.classList.add('show');
+        }
+      }
+    }
+  }
+  window.addEventListener('load', ScrollAnimationFunc);
+  window.addEventListener('scroll', ScrollAnimationFunc);
+
   return (
     <div className="elysia" id="top" ref={Top}>
       <section className="main" id="main" style={{ backgroundImage: `url(${MainBackground})` }} >
         <header className="main__gnb" style={{ backgroundColor: `${scrollTop >= 100 ? "#FFFFFF" : "transparent"}` }} >
           <nav className="main__gnb__link-container">
-            
             <figure className="elysia-logo" onClick={() => Scroll("top")} style={{ backgroundImage: `url(${scrollTop >= 100 ? ElysiaLogo : ElysiaWhiteLogo})` }}/>
-            
             <div className="main__gnb__link-wrapper">
               <p className="main__gnb__link" onClick={() => Scroll("service")}
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}`}}>
@@ -216,16 +240,16 @@ const Main = () => {
           <img className="main__down-arrow" src={DownArrow} alt="" onClick={() => Scroll("service")} />
         </div>
       </section>
-      <section className="service contents-container" id="service" ref={Service}>
-        <h1 className="section__text">
+      <section className="service contents-container" id="service" ref={Service} >
+        <h1 className="section__text section__text scroll-animation scroll-animation--up">
           What is ELYSIA
         </h1>
-        <h1 className="section__text--bold">
+        <h1 className="section__text--bold scroll-animation scroll-animation--up"> 
           Real Estate Platform for everything
         </h1>
         <div className="service__container">
-          <img className="service__image" src={Service00} alt="" />
-          <div className="service__text-wrapper">
+          <img className="service__image scroll-animation scroll-animation--right" src={Service00} alt="" />
+          <div className="service__text-wrapper scroll-animation">
             <h1 className="service__header-text">
               For Seller
             </h1>
@@ -244,7 +268,7 @@ const Main = () => {
           </div>
         </div>
         <div className="service__container">
-          <div className="service__text-wrapper">
+          <div className="service__text-wrapper scroll-animation">
             <h1 className="service__header-text">
               For Buyer
             </h1>
@@ -263,11 +287,11 @@ const Main = () => {
               </div>
             </p>
           </div>
-          <img className="service__image" src={Service01} alt="" />
+          <img className="service__image scroll-animation scroll-animation--left" src={Service01} alt="" />
         </div>
         <div className="service__container">
-          <img className="service__image" src={Service02} alt="" />
-          <div className="service__text-wrapper">
+          <img className="service__image  scroll-animation scroll-animation--right" src={Service02} alt="" />
+          <div className="service__text-wrapper scroll-animation">
             <h1 className="service__header-text">
               For Asset liquidity
             </h1>
@@ -288,10 +312,10 @@ const Main = () => {
       </section>
       <section className="portfolio contents-container" id="portfolio" ref={Portfolio} >
         <div className="portfolio__container">
-          <h1 className="portfolio__text section__text">
+          <h1 className="portfolio__text section__text scroll-animation scroll-animation--up">
             ELYSIA Opportunities
           </h1>
-          <h1 className="portfolio__text--bold section__text--bold">
+          <h1 className="portfolio__text--bold section__text--bold scroll-animation scroll-animation--up">
             OUR PORTFOLIO
           </h1>
           <div className="portfolio__wrapper">
@@ -306,10 +330,12 @@ const Main = () => {
                 [ElysiaAsset3, "Elysia Asset #3", "1041150", "141-120 Sadang-dong, Dongjak-gu, Seoul"]
               ].map(([AssetImage, AssetName, AssetFunded, AssetAddress], index) => {
                 return (
-                  <div className="portfolio__asset__container" style={{ 
+                  <div className="portfolio__asset__container scroll-animation scroll-animation--up" style={{ 
                     opacity: `${(index >= 6 && !state.isMoreAsset) ? 0 : 1}`,
                     display: `${(index >= 6 && !state.isMoreAsset) ? "none" : "block"}`
-                  }}>
+                  }}
+                    data-sa-margin={index * 15}
+                  >
                     <div className="portfolio__asset-funded">Funded</div>
                     <img src={AssetImage} className="portfolio__asset-picture" alt="Elysia Asset" />
                     <h1 className="portfolio__asset-name">{AssetName}</h1>
@@ -327,11 +353,11 @@ const Main = () => {
         </div>
         <h1 className="portfolio__see-more" onClick={SwithcingState}>{!state.isMoreAsset ? "See More >" : "Close <"}</h1>
       </section>
-      <section className="partners contents-container" id="partners" ref={Partners}>
-        <h1 className="partners__text section__text">
+      <section className="partners contents-container scroll-animation scroll-animation--up" id="partners" ref={Partners}>
+        <h1 className="partners__text section__text scroll-animation scroll-animation--up">
           ELYSIA Partners
         </h1>
-        <h1 className="partners__text--bold section__text--bold">
+        <h1 className="partners__text--bold section__text--bold scroll-animation scroll-animation--up">
           PARTNERS
         </h1>
         <div className="partners__wrapper">
@@ -357,30 +383,72 @@ const Main = () => {
               Bithumb,
               BithumbGlobal,
               HOW
-            ].map((image) => {
+            ].map((image, index) => {
               return (
-                <img src={image} className="partners__picture" alt="Elysia" />
+                <img src={image} className="partners__picture scroll-animation scroll-animation--up" alt="Elysia" data-sa-margin={index * 5}/>
               );
             })
           }
         </div>
       </section>
-      <section className="team contents-container" id="team" ref={Team}>
-        <h1 className="section__text">
+      <section className="team contents-container scroll-animation scroll-animation--up" id="team" ref={Team}>
+        <h1 className="section__text scroll-animation scroll-animation--up">
           ELYSIA Team
         </h1>
-        <h1 className="section__text--bold">
+        <h1 className="section__text--bold scroll-animation scroll-animation--up">
           EXECUTIVE TEAM
         </h1>
-        <div className="team__info-wrapper" >
+        <div className="team__info-wrapper scroll-animation scroll-animation--up" >
           {
             [
-              [Team1, "JungGun Lim", "CEO", `Mr. Lim is the CEO of Elysia. After studying chemical and biological engineering at Seoul National University, he has worked with multinational corporations including Samsung SDI. An expert in Ruby/React JS development, he has worked with many different projects in the past and is particularly interested in smart contract applications operating on the Ethereum network.`],
-              [Team2, "WonJoon Cha", "CSO", "While attending Seoul National University, Mr. Cha was a freelance web/android developer for major IT companies for more than 7 years. He found Elysia with Mr. Lim in 2018 after realizing the potential of tokenizing traditional assets. Mr. Cha is particularly interested in cryptocurrency applications and designed the token economics for EL tokens."],
-              [Team3, "Yoon Kim", "CMO", "Mr. Kim recently joined Elysia as a business development executive for partnerships and overseas operations. He has over 10 years of experience in sales and marketing at global companies and has most recently worked on crypto projects at ICONLOOP and VELIC"],
-              [Team4, "DongUk Seo", "CTO", "Mr. Donguk Seo is currently the Chief Technology Officer at Elysia and is in charge of blockchain architecture and software engineering. He has developed various tools to scale the Ethereum network, including automated deposit tracking and on-chain data sharing. Before joining Elysia, he developed internal and composite APIs for multinational corporations and uses five different programming languages to produce optimal results."],
-              [Team5, "Michael Chung", "COO", "KAIST National University\n　Industrial engineering\n　KTB Investment & securities\n　Prop Trading, FRM\n　ICONLOOP\n　Business Development\n　Mr.Chung manages operations and fianance at Elysia."],
-              [Team6, "Jacob Lee", "Bees’ Company CEO", "・ Seoul National University,\n　Dept. of naval architecture\n　& ocean engineering\n・ DEMB basic design\n　department\n・ The 27th certified realtor"],
+              [Team1, "JungGun Lim", "CEO", 
+              `・Seoul National University, Dept.
+                　of chemical & biological
+                　engineering
+                ・Samsung SDI
+                ・Specializes in Ruby/React JS\n\n
+                Mr. Lim is the CEO of Elysia. Provides overall development support and Elysia's direction.`],
+              [Team2, "WonJoon Cha", "CSO", 
+              `・Seoul National University,
+                　School of mechanical &
+                　aerospace engineering
+                ・CEO of BTbridge lnc.
+                ・Specializes in Big data
+                　development\n\n
+                Mr. Cha is reviews the overall planning and legal regulations for the business.`],
+              [Team3, "Yoon Kim", "CMO", 
+              `・ Pepperdine University B.A.
+                ・Business Development at STX
+                　O&S and Hanjin
+                ・Business Development at
+                　ICONLOOP\n\n
+                Mr. Kim manages sales and marketing operations at Elysia`],
+              [Team4, "DongUk Seo", "CTO", 
+              `・ Seoul National University,
+                　Computer Science & Engineering
+                ・Backend Lead Developer at
+                　HCG
+                ・Backend Development Intern
+                　at Naver
+                ・IOS Development Intern at
+                　Woowa Brothers\n\n
+                Mr. Seo is currently the Chief Technology Officer at Elysia and is in charge of blockchain architecture and software engineering.`],
+              [Team5, "Michael Chung", "COO", 
+              `・KAIST National University
+                ・Industrial engineering
+                ・KTB Investment & securities
+                ・Prop Trading, FRM
+                ・ICONLOOP
+                ・Business Development\n\n
+                Mr.Chung manages operations and fianance at Elysia.`],
+              [Team6, "Jacob Lee", "Bees’ Company CEO", 
+              `・Seoul National University,
+                　Dept. of naval architecture
+                　& ocean engineering
+                ・DEMB basic design
+                　department
+                ・The 27th certified realtor\n\n
+                Mr.Lee is responsible for the partnership with elysia and a variety of real estate advice.`],
             ].map(([TeamImage, TeamName, TeamDept, TeamHover], index) => {
               return (
                 <div className="team__container">
@@ -402,18 +470,18 @@ const Main = () => {
           }
         </div>
       </section>
-      <section className="contact contents-container" id="contact" ref={Contact}>
-        <h1 className="section__text">
+      <section className="contact contents-container scroll-animation scroll-animation--up" id="contact" ref={Contact}>
+        <h1 className="section__text scroll-animation scroll-animation--up">
           Contact
         </h1>
-        <h1 className="section__text--bold" style={{ paddingBottom: 0 }}>
+        <h1 className="section__text--bold scroll-animation scroll-animation--up" style={{ paddingBottom: 0 }}>
           Didn’t find what you were looking for?
         </h1>
-        <p className="contact__section__text" >
+        <p className="contact__section__text scroll-animation scroll-animation--up" >
           Shoot us an email with your request and we will contact you within one business day.
         </p>
-        <div className="contact__form-container">
-          <div className="contact__input-wrapper">
+        <div className="contact__form-container scroll-animation scroll-animation--up">
+          <div className="contact__input-wrapper scroll-animation scroll-animation--right">
             <input 
               type="text" 
               className={
@@ -429,7 +497,7 @@ const Main = () => {
             />
             <span className="contact__required-point">*</span>
           </div>
-          <div className="contact__input-wrapper">
+          <div className="contact__input-wrapper scroll-animation scroll-animation--left">
             <input 
               type="text" 
               className="contact__input"
@@ -440,7 +508,7 @@ const Main = () => {
               }} 
             />
           </div>
-          <div className="contact__input-wrapper">
+          <div className="contact__input-wrapper scroll-animation scroll-animation--right">
             <input 
               type="text" 
               className={
@@ -456,7 +524,7 @@ const Main = () => {
             />
             <span className="contact__required-point">*</span>
           </div>
-          <div className="contact__input-wrapper">
+          <div className="contact__input-wrapper scroll-animation scroll-animation--left">
             <input 
               type="text" 
               className="contact__input" 
@@ -467,7 +535,7 @@ const Main = () => {
               }}
             />
           </div>
-          <div className="contact__input-wrapper" style={{ gridColumn: 'span 2' }}>
+          <div className="contact__input-wrapper scroll-animation scroll-animation--up" style={{ gridColumn: 'span 2' }}>
             <textarea 
               className={
                 (state.fieldNull === true && contactState.content === "")
@@ -483,7 +551,7 @@ const Main = () => {
             <span className="contact__required-point">*</span>
           </div>
         </div>
-        <div className="contact__submit-container">
+        <div className="contact__submit-container scroll-animation">
           <div className="contact__recaptcha-wrapper">
             <ReCAPTCHA 
               sitekey={"6LdAI24aAAAAAG0QIW1ZdyfsQMHrW3uwskzlVTH7"}
@@ -505,7 +573,7 @@ const Main = () => {
             </p>
           </div>
         </div>
-        <div className="contact__button-wrapper">
+        <div className="contact__button-wrapper scroll-animation">
           {(state.onChecked && state.recaptcha) ? (
             <p className="button" onClick={sendContact}>
               CONTACT
@@ -515,14 +583,14 @@ const Main = () => {
             </p>
           ) : (
             <p className="button--disable">
-              리캡챠를 하세용
+              CONTACT
               <div className="button--disable__arrow-wrapper">
                 <figure className="button--disable__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
               </div>
             </p>
           )}
         </div>
-          <p className="contact__required-message" style={{ display: `${state.fieldNull === true ? ("inline-block") : ("none")}`}}>이름, 이메일주소, 내용은 필수 입력 사항입니다!!</p>
+          <p className="contact__required-message" style={{ display: `${state.fieldNull === true ? ("inline-block") : ("none")}`}}>Name, E-mail address, and Content field is Required</p>
       </section>
     </div>
   );
