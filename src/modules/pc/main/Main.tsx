@@ -182,7 +182,10 @@ const Main = () => {
         }
 
         if (window.innerHeight > ScrollAnimationTriggerHeight) {
-          element.classList.add('show');
+          let delay = (element.dataset.saDelay) ? element.dataset.saDelay : 0;
+          setTimeout(function() {
+            element.classList.add('show');
+          }, delay);
         }
       }
     }
@@ -244,12 +247,12 @@ const Main = () => {
         <h1 className="section__text section__text scroll-animation scroll-animation--up">
           What is ELYSIA
         </h1>
-        <h1 className="section__text--bold scroll-animation scroll-animation--up"> 
+        <h1 className="section__text--bold scroll-animation scroll-animation--up" data-sa-delay="200"> 
           Real Estate Platform for everything
         </h1>
         <div className="service__container">
           <img className="service__image scroll-animation scroll-animation--right" src={Service00} alt="" />
-          <div className="service__text-wrapper scroll-animation">
+          <div className="service__text-wrapper scroll-animation" data-sa-delay="200">
             <h1 className="service__header-text">
               For Seller
             </h1>
@@ -268,7 +271,7 @@ const Main = () => {
           </div>
         </div>
         <div className="service__container">
-          <div className="service__text-wrapper scroll-animation">
+          <div className="service__text-wrapper scroll-animation" data-sa-delay="200">
             <h1 className="service__header-text">
               For Buyer
             </h1>
@@ -291,7 +294,7 @@ const Main = () => {
         </div>
         <div className="service__container">
           <img className="service__image  scroll-animation scroll-animation--right" src={Service02} alt="" />
-          <div className="service__text-wrapper scroll-animation">
+          <div className="service__text-wrapper scroll-animation" data-sa-delay="200">
             <h1 className="service__header-text">
               For Asset liquidity
             </h1>
@@ -315,7 +318,7 @@ const Main = () => {
           <h1 className="portfolio__text section__text scroll-animation scroll-animation--up">
             ELYSIA Opportunities
           </h1>
-          <h1 className="portfolio__text--bold section__text--bold scroll-animation scroll-animation--up">
+          <h1 className="portfolio__text--bold section__text--bold scroll-animation scroll-animation--up" data-sa-delay="200">
             OUR PORTFOLIO
           </h1>
           <div className="portfolio__wrapper">
@@ -357,7 +360,7 @@ const Main = () => {
         <h1 className="partners__text section__text scroll-animation scroll-animation--up">
           ELYSIA Partners
         </h1>
-        <h1 className="partners__text--bold section__text--bold scroll-animation scroll-animation--up">
+        <h1 className="partners__text--bold section__text--bold scroll-animation scroll-animation--up" data-sa-delay="100">
           PARTNERS
         </h1>
         <div className="partners__wrapper">
@@ -395,7 +398,7 @@ const Main = () => {
         <h1 className="section__text scroll-animation scroll-animation--up">
           ELYSIA Team
         </h1>
-        <h1 className="section__text--bold scroll-animation scroll-animation--up">
+        <h1 className="section__text--bold scroll-animation scroll-animation--up" data-sa-delay="200">
           EXECUTIVE TEAM
         </h1>
         <div className="team__info-wrapper scroll-animation scroll-animation--up" >
@@ -474,10 +477,10 @@ const Main = () => {
         <h1 className="section__text scroll-animation scroll-animation--up">
           Contact
         </h1>
-        <h1 className="section__text--bold scroll-animation scroll-animation--up" style={{ paddingBottom: 0 }}>
+        <h1 className="section__text--bold scroll-animation scroll-animation--up" style={{ paddingBottom: 0 }} data-sa-delay="200">
           Didn’t find what you were looking for?
         </h1>
-        <p className="contact__section__text scroll-animation scroll-animation--up" >
+        <p className="contact__section__text scroll-animation scroll-animation--up" data-sa-delay="400">
           Shoot us an email with your request and we will contact you within one business day.
         </p>
         <div className="contact__form-container scroll-animation scroll-animation--up">
