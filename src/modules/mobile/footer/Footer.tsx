@@ -8,7 +8,7 @@ import Telegram from '../../../shared/image/telegram.png';
 import Weibo from '../../../shared/image/weibo.png';
 import Twitter from '../../../shared/image/twitter.png';
 import React, { FunctionComponent } from 'react';
-import '../../css/mobileStyle.scss';
+import '../css/mobileStyle.scss';
 import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -26,18 +26,6 @@ const Footer: FunctionComponent = () => {
             </p>
             <p className="mobile-footer-text">
               {i18n.t("footer.email")}
-            </p>
-            <p className="mobile-footer-header-text">
-              {i18n.t("footer.language")}
-            </p>
-            <p className="mobile-footer-text" onClick={() => { i18n.changeLanguage("en") }}>
-              English
-            </p>
-            <p className="mobile-footer-text" onClick={() => { i18n.changeLanguage("zhHans") }}>
-              中文
-            </p>
-            <p className="mobile-footer-text" onClick={() => { i18n.changeLanguage("ko") }}>
-              한국어
             </p>
           </div>
 

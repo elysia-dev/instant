@@ -14,6 +14,8 @@ import RouteWithHeader from './modules/pc/RouteWithHeader';
 import ScrollToTop from './modules/pc/ScrollToTop';
 import AppPage from './modules/AppLink';
 
+import MainMobile from './modules/mobile/main/Main';
+import FooterMobile from './modules/mobile/footer/Footer';
 
 import { useMediaQuery } from "react-responsive";
 import { useTranslation } from 'react-i18next';
@@ -41,18 +43,12 @@ const App = () => {
       <Router>
         <ScrollToTop />
         <Switch>
-          {/* <RouteWithHeader path="/contact">
-            <Contact />
-          </RouteWithHeader> */}
           <RouteWithHeader path="/privacyPolicy">
             <PrivacyPolicy />
           </RouteWithHeader>
           <RouteWithHeader path="/disclaimer">
             <Disclaimer />
           </RouteWithHeader>
-          {/* <Route path="/eventPage">
-            <EventPage />
-          </Route> */}
           <Route path="/AppLink">
             <AppPage />
           </Route>
@@ -64,37 +60,36 @@ const App = () => {
       </Router>
     );
   }
-  // const MobileRouter = () => {
-  //   return (
-  //     <Router>
-  //       <ScrollToTop />
-  //       <Switch>
-  //         <RouteWithHeader path="/contact">
-  //           <ContactMobile />
-  //         </RouteWithHeader>
-  //         <Route path="/privacyPolicy">
-  //           <PrivacyPolicyMobile />
-  //         </Route>
-  //         <Route path="/disclaimer">
-  //           <DisclaimerMobile />
-  //         </Route>
-  //         <Route path="/eventPage">
-  //           <EventPageMobile />
-  //         </Route>
-  //         <Route path="*">
-  //           <MainMobile />
-  //         </Route>
-  //       </Switch>
-  //       <FooterMobile />
-  //     </Router>
-  //   );
-  // }
+  const MobileRouter = () => {
+    return (
+      <Router>
+        <ScrollToTop />
+        <Switch>
+          {/* <RouteWithHeader path="/contact">
+            <ContactMobile />
+          </RouteWithHeader>
+          <Route path="/privacyPolicy">
+            <PrivacyPolicyMobile />
+          </Route>
+          <Route path="/disclaimer">
+            <DisclaimerMobile />
+          </Route>
+          <Route path="/eventPage">
+            <EventPageMobile />
+          </Route> */}
+          <Route path="*">
+            <MainMobile />
+          </Route>
+        </Switch>
+        <FooterMobile />
+      </Router>
+    );
+  }
   return (
-    // isPc ?
-    //   <PcRouter />
-    //   :
-    //   <MobileRouter />
-    <PcRouter />
+    isPc ?
+      <PcRouter />
+      :
+      <MobileRouter />
   );
 }
 

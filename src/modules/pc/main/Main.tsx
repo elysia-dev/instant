@@ -74,11 +74,13 @@ const Main = () => {
     fieldNull: false
   })
 
+  /* See More을 핸들링하는 함수입니다 */
   const SwithcingState = () => {
     setState({ ...state, isMoreAsset: !state.isMoreAsset });
     console.log(state.isMoreAsset);
   }
 
+  /* 색션마다 선언된 인자값을 받아 해당 위치로 이동하는 함수입니다 */
   const Scroll = (ref: string) => {
     // ref.current.scrollIntoView({ behavior: 'smooth' })
     var element = document.getElementById(ref);
@@ -94,9 +96,9 @@ const Main = () => {
     });
   }
   
+  /* 현재 스크롤값을 실시간으로 계산해 상단 GNB를 변환시킬 함수입니다 */
   const [scrolling, setScrolling] = useState(false);
   const [scrollTop, setScrollTop] = useState(0);
-  
   useEffect(() => {
     function onScroll() {
       let currentPosition = window.pageYOffset;
@@ -112,6 +114,8 @@ const Main = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrollTop]);
 
+
+  /* slack api를 호출합니다 */
   const [contactState, setContactState] = useState<{ 
     name: string,
     phone: string,
@@ -161,6 +165,11 @@ const Main = () => {
     })
   }
 
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
+
+  /* 클래스에 scroll-animation 지정한 블록들에 애니메이션을 추가합니다 */
   const ScrollAnimationDefaultMargin = 100;
   let ScrollAnimationTriggerMargin = 0;
   let ScrollAnimationTriggerHeight = 0;
@@ -225,10 +234,10 @@ const Main = () => {
         </header>
         <div className="main__content-container">
           <h1 className="main__content-text--bold">
-            DIGITAL INFRASTRUCTURE FOR<br />REAL ESTATE INVESTING
+            DIGITAL INFRASTRUCTURE FOR<br />REAL ESTATE ASSETS
           </h1>
           <p className="main__content-text">
-            ELYSIA provide the latest technology to bridge the gap between<br />traditional real estate and global investors
+            Elysia provides the latest technology to bridge the gap between<br />traditional real estate participants and global investors
           </p>
           <a className="main__store__button" href="https://play.google.com/store/apps/details?id=land.elysia">
             <figure className="main__image__google-play" style={{ backgroundImage: `url(${GoogleLogo})` }}/>
@@ -245,25 +254,25 @@ const Main = () => {
       </section>
       <section className="service contents-container" id="service" ref={Service} >
         <h1 className="section__text section__text scroll-animation scroll-animation--up">
-          What is ELYSIA
+          What is ELYSIA?
         </h1>
         <h1 className="section__text--bold scroll-animation scroll-animation--up" data-sa-delay="200"> 
-          Real Estate Platform for everything
+          We help digitalize real estate ownership to provide direct access to secondary markets on a global scale
         </h1>
         <div className="service__container">
           <img className="service__image scroll-animation scroll-animation--right" src={Service00} alt="" />
           <div className="service__text-wrapper scroll-animation" data-sa-delay="200">
             <h1 className="service__header-text">
-              For Seller
+              For Owners
             </h1>
             <h1 className="service__header-text--bold">
               Tokenize your real estate with Elysia
             </h1>
             <p className="service__text">
-              Blockchain technology of ELYSIA gives<br />immutable representation to your assets.<br />Your assets will be an attractive product<br />for global investors. Meet instant global liquidity.
+              Use blockchain technology to create immutable<br />representation of your assets. Meet instant global liquidity
             </p>
             <p className="button" onClick={() => Scroll("contact")}>
-              ONBOARDING NOW
+              Contact us
               <div className="button__arrow-wrapper">
                 <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
               </div>
@@ -273,19 +282,19 @@ const Main = () => {
         <div className="service__container">
           <div className="service__text-wrapper scroll-animation" data-sa-delay="200">
             <h1 className="service__header-text">
-              For Buyer
+              For Buyers
             </h1>
             <h1 className="service__header-text--bold">
-              Have fun in a global marketplace<br />with your mobile.
+              Real estate investing at your fingertips
             </h1>
             <p className="service__text">
-              Find real estate opportunities around the world<br />and settle transactions with almost no intermediary costs
+              Find real estate opportunities around the world and<br />settle transactions with almost no intermediary costs
             </p>
             <Link to="/AppLink">
               <p className="button" onClick={() => {
                   window.location.replace("https://play.google.com/store/apps/details?id=land.elysia")
                 }}>
-                Experience it now
+                Download the app
                 <div className="button__arrow-wrapper">
                   <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
                 </div>
@@ -298,16 +307,16 @@ const Main = () => {
           <img className="service__image  scroll-animation scroll-animation--right" src={Service02} alt="" />
           <div className="service__text-wrapper scroll-animation" data-sa-delay="200">
             <h1 className="service__header-text">
-              For Asset liquidity
+              For Participants
             </h1>
             <h1 className="service__header-text--bold">
-              Future of finance
+              Decentralized Applications
             </h1>
             <p className="service__text">
-              Demand driven lending markets using traditional assets<br />as collateral will be the next step for decentralized applications.
+              Demand driven peer-to-peer lending markets using real estate<br />tokens as collateral will be the next step for personal finance
             </p>
             <p className="button--disable">
-              COMING SOON
+              Coming soon
               <div className="button--disable__arrow-wrapper">
                 <figure className="button--disable__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
               </div>
@@ -317,23 +326,20 @@ const Main = () => {
       </section>
       <section className="portfolio contents-container" id="portfolio" ref={Portfolio} >
         <div className="portfolio__container">
-          <h1 className="portfolio__text section__text scroll-animation scroll-animation--up">
-            ELYSIA Opportunities
-          </h1>
-          <h1 className="portfolio__text--bold section__text--bold scroll-animation scroll-animation--up" data-sa-delay="200">
-            OUR PORTFOLIO
+          <h1 className="portfolio__text--bold section__text--bold scroll-animation scroll-animation--up" style={{ paddingTop: 70 }}>
+            Our Track Record
           </h1>
           <div className="portfolio__wrapper">
             {
               [
-                [ElysiaAssetBlue1, "Elysia Asset Blue #1", "426075", "1-4, Sadang-ro 16sa-gil, Dongjak-gu, Seoul"],
-                [ElysiaAssetRed1, "Elysia Asset Red #1", "181704", "Yeoksam-dong, Gangnam-gu, Seoul"],
-                [ElysiaAsset7, "Elysia Asset #7", "823045", "1-1 Bangbae-dong, Seocho-gu, Seoul"],
-                [ElysiaAsset6, "Elysia Asset #6", "1182180", "Sadang-dong, Dongjak-gu, Seoul"],
-                [ElysiaAsset5, "Elysia Asset #5", "1040950", "Bongcheon-dong, Gwanak-gu, Seoul"],
-                [ElysiaAsset4, "Elysia Asset #4", "814810", "73-12 Sadang-dong, Dongjak-gu, Seoul"],
-                [ElysiaAsset3, "Elysia Asset #3", "1041150", "141-120 Sadang-dong, Dongjak-gu, Seoul"]
-              ].map(([AssetImage, AssetName, AssetFunded, AssetAddress], index) => {
+                [ElysiaAssetBlue1, "Elysia Asset Blue #1", "426075"],
+                [ElysiaAssetRed1, "Elysia Asset Red #1", "181704"],
+                [ElysiaAsset7, "Elysia Asset #7", "823045"],
+                [ElysiaAsset6, "Elysia Asset #6", "1182180"],
+                [ElysiaAsset5, "Elysia Asset #5", "1040950"],
+                [ElysiaAsset4, "Elysia Asset #4", "814810"],
+                [ElysiaAsset3, "Elysia Asset #3", "1041150"]
+              ].map(([AssetImage, AssetName, AssetFunded], index) => {
                 return (
                   <div className="portfolio__asset__container scroll-animation scroll-animation--up" style={{ 
                     opacity: `${(index >= 6 && !state.isMoreAsset) ? 0 : 1}`,
@@ -347,9 +353,6 @@ const Main = () => {
                     <p className="portfolio__asset-info funded">
                       Funded <span className="portfolio__asset-value">${AssetFunded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
                     </p>
-                    <p className="portfolio__asset-info Address">
-                      Address <span className="portfolio__asset-value">{AssetAddress}</span>
-                    </p>
                   </div>
                 );
               })
@@ -358,11 +361,8 @@ const Main = () => {
         </div>
         <h1 className="portfolio__see-more" onClick={SwithcingState}>{!state.isMoreAsset ? "See More >" : "Close <"}</h1>
       </section>
-      <section className="partners contents-container scroll-animation scroll-animation--up" id="partners" ref={Partners}>
-        <h1 className="partners__text section__text scroll-animation scroll-animation--up">
-          ELYSIA Partners
-        </h1>
-        <h1 className="partners__text--bold section__text--bold scroll-animation scroll-animation--up" data-sa-delay="100">
+      <section className="partners contents-container" id="partners" ref={Partners}>
+        <h1 className="partners__text--bold section__text--bold scroll-animation scroll-animation--up" style={{ paddingTop: 70 }}>
           PARTNERS
         </h1>
         <div className="partners__wrapper">
@@ -396,48 +396,39 @@ const Main = () => {
           }
         </div>
       </section>
-      <section className="team contents-container scroll-animation scroll-animation--up" id="team" ref={Team}>
-        <h1 className="section__text scroll-animation scroll-animation--up">
-          ELYSIA Team
-        </h1>
-        <h1 className="section__text--bold scroll-animation scroll-animation--up" data-sa-delay="200">
+      <section className="team contents-container" id="team" ref={Team}>
+        <h1 className="section__text--bold scroll-animation scroll-animation--up" style={{ paddingTop: 70 }}>
           EXECUTIVE TEAM
         </h1>
         <div className="team__info-wrapper scroll-animation scroll-animation--up" >
           {
             [
               [Team1, "JungGun Lim", "CEO", 
-              `・Seoul National University, Dept.
-                　of chemical & biological
-                　engineering
+              `・Seoul National University, Dept. of
+                　chemical & biological engineering
                 ・Samsung SDI
                 ・Specializes in Ruby/React JS\n\n
-                Mr. Lim is the CEO of Elysia. Provides overall development support and Elysia's direction.`],
+                Mr. Lim is the CEO of Elysia. He outlines the direction of the foundation and manages the overall operations and resources of Elysia`],
               [Team2, "WonJoon Cha", "CSO", 
-              `・Seoul National University,
-                　School of mechanical &
-                　aerospace engineering
+              `・Seoul National University, School of
+                　mechanical & aerospace engineering
                 ・CEO of BTbridge lnc.
-                ・Specializes in Big data
-                　development\n\n
-                Mr. Cha is reviews the overall planning and legal regulations for the business.`],
+                ・Specializes in Big data development\n\n
+                Mr. Cha reviews the overall planning and legal regulations for the business`],
               [Team3, "Yoon Kim", "CMO", 
-              `・ Pepperdine University B.A.
-                ・Business Development at STX
-                　O&S and Hanjin
-                ・Business Development at
-                　ICONLOOP\n\n
+              `・Pepperdine University B.A.
+                ・Business Development at STX O&S
+                　and Hanjin
+                ・Business Development at ICONLOOP\n\n
                 Mr. Kim manages sales and marketing operations at Elysia`],
               [Team4, "DongUk Seo", "CTO", 
-              `・ Seoul National University,
+              `・Seoul National University, 
                 　Computer Science & Engineering
-                ・Backend Lead Developer at
-                　HCG
-                ・Backend Development Intern
-                　at Naver
+                ・Backend Lead Developer at HCG
+                ・Backend Development Intern at Naver
                 ・IOS Development Intern at
                 　Woowa Brothers\n\n
-                Mr. Seo is currently the Chief Technology Officer at Elysia and is in charge of blockchain architecture and software engineering.`],
+                Mr. Seo is currently the Chief Technology Officer at Elysia and is in charge of blockchain architecture and software engineering`],
               [Team5, "Michael Chung", "COO", 
               `・KAIST National University
                 ・Industrial engineering
@@ -445,15 +436,14 @@ const Main = () => {
                 ・Prop Trading, FRM
                 ・ICONLOOP
                 ・Business Development\n\n
-                Mr.Chung manages operations and fianance at Elysia.`],
+                Mr.Chung manages operations and finance at Elysia`],
               [Team6, "Jacob Lee", "Bees’ Company CEO", 
-              `・Seoul National University,
-                　Dept. of naval architecture
-                　& ocean engineering
-                ・DEMB basic design
-                　department
+              `・Seoul National University, Dept. of
+                　naval architecture & ocean
+                　engineering
+                ・DEMB basic design department
                 ・The 27th certified realtor\n\n
-                Mr.Lee is responsible for the partnership with elysia and a variety of real estate advice.`],
+                Mr.Lee is responsible for industry partnerships and advises real estate operations`],
             ].map(([TeamImage, TeamName, TeamDept, TeamHover], index) => {
               return (
                 <div className="team__container">
@@ -466,8 +456,8 @@ const Main = () => {
                     </p> 
                   </div>
                   <div className="team__text-wrapper">
-                    <h1 className="team__text--bold">{TeamName}</h1>
-                    <p className="team__text">{TeamDept}</p>
+                    <h1 className="team__text--bold" style={{ whiteSpace: "nowrap" }}>{TeamName}</h1>
+                    <p className="team__text" style={{ whiteSpace: "nowrap" }}>{TeamDept}</p>
                   </div>
                 </div>
               );
@@ -574,7 +564,7 @@ const Main = () => {
               }}
             />
             <p className="contact__checkbox-text">
-              I consent to Aetsoft JSC processing my personal information as set out in the Privacy Policy and Cookie Policy and that, given the global nature of Aetsoft JSC’s business, such processing may take place outside of my home jurisdiction.
+              I consent to ELYSIA PLATFORM PTE. LTD processing my personal information as set out in the Privacy Policy and Cookie Policy and that, given the global nature of ELYSIA PLATFORM PTE. LTD's business, such processing may take place outside of my home jurisdiction.
             </p>
           </div>
         </div>

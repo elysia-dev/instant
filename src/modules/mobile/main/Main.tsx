@@ -1,26 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import ElysiaLogo from '../../../shared/image/Elysia_Logo.png';
-import AppStore from '../../../shared/image/app_store.png';
-import GooglePlay from '../../../shared/image/google_play.png';
-import ElysiaApp from '../../../shared/image/Elysia_app.png';
+import ElysiaWhiteLogo from '../../../shared/image/Elysia_Logo_White.png';
+import MainBackground from '../../../shared/image/main-background.png';
+import GoogleLogo from '../../../shared/image/google-logo.png';
+import AppleLogo from '../../../shared/image/apple-logo.png';
+import DownArrow from '../../../shared/image/down-arrow.png';
+
+/* Service */
+import Service00 from '../../../shared/image/service00.png';
+import Service01 from '../../../shared/image/service01.png';
+import Service02 from '../../../shared/image/service02.png';
+import ButtonArrow from '../../../shared/image/button-arrow.png';
 
 /* Team Image */
 import Team1 from '../../../shared/image/team/Team1.png';
 import Team2 from '../../../shared/image/team/Team2.png';
 import Team3 from '../../../shared/image/team/Team3.png';
 import Team4 from '../../../shared/image/team/Team4.png';
-import Team5 from '../../../shared/image/team/Team5.png';
-import Team6 from '../../../shared/image/team/Team6.png';
-import Team7 from '../../../shared/image/team/Team7.png';
-import Team8 from '../../../shared/image/team/Team8.png';
-import Team1Hover from '../../../shared/image/team/Team1_hover.png';
-import Team2Hover from '../../../shared/image/team/Team2_hover.png';
-import Team3Hover from '../../../shared/image/team/Team3_hover.png';
-import Team4Hover from '../../../shared/image/team/Team4_hover.png';
-import Team5Hover from '../../../shared/image/team/Team5_hover.png';
-import Team6Hover from '../../../shared/image/team/Team6_hover.png';
-import Team7Hover from '../../../shared/image/team/Team7_hover.png';
-import Team8Hover from '../../../shared/image/team/Team8_hover.png';
+import Team5 from '../../../shared/image/team/Team9.png';
+import Team6 from '../../../shared/image/team/Team8.png';
 
 /* Partners Image */
 import Iconloop from '../../../shared/image/partners/iconloop.png';
@@ -29,14 +27,12 @@ import Bishijie from '../../../shared/image/partners/bishijie.png';
 import Xangle from '../../../shared/image/partners/xangle.png';
 import Chainlink from '../../../shared/image/partners/chainlink.png';
 import HahmShout from '../../../shared/image/partners/hahmshout.png';
-import Cider from '../../../shared/image/partners/cider.png';
 import BKL from '../../../shared/image/partners/bkl.png';
 import TSMP from '../../../shared/image/partners/tsmp.png';
 import FocusLawAsia from '../../../shared/image/partners/focuslawasia.png';
 import HiBlocks from '../../../shared/image/partners/hiblocks.png';
 import Argos from '../../../shared/image/partners/argos.png';
 import PropWave from '../../../shared/image/partners/propwave.png';
-import Velic from '../../../shared/image/partners/velic.png';
 import SRC from '../../../shared/image/partners/src.png';
 import Daybit from '../../../shared/image/partners/daybit.png';
 import Gopax from '../../../shared/image/partners/gopax.png';
@@ -46,168 +42,481 @@ import HUB from '../../../shared/image/partners/hub.png';
 import HOW from '../../../shared/image/partners/how.png';
 import Anjuke from '../../../shared/image/partners/anjuke.png';
 
-import '../../css/mobileStyle.scss';
+import '../css/mobileStyle.scss';
 import Slider from '../slider/Slider';
-import MlieStoneSlider from '../slider/MlieStoneSlider';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import ReCAPTCHA from "react-google-recaptcha";
+import axios from 'axios';
 
 const Main = () => {
-  const history = useHistory();
   const { t, i18n } = useTranslation();
+  
+  const [state, setState] = useState({
+    isMoreAsset: false,
+    recaptcha: false,
+    onChecked: false,
+    fieldNull: false
+  })
 
-  const Typewriter = () => {
-    const srcString = t("main.invest_label");
-    const [state, setState] = useState({
-      content: '',
-      carriage: 0
+  /* slack api를 호출합니다 */
+  const [contactState, setContactState] = useState<{ 
+    name: string,
+    phone: string,
+    email: string,
+    company: string,
+    content: string 
+  }>({ 
+    name: "",
+    phone: "",
+    email: "",
+    company: "",
+    content: "" 
+    });
+
+  const sendContact = () => {
+    setState({ ...state, fieldNull: false })
+    if(contactState.email === "") {
+      setState({ ...state, fieldNull: true })
+      return;
+    } 
+    if (contactState.name === "") {
+      setState({ ...state, fieldNull: true })
+      return;
+    } 
+    if (contactState.content === "") {
+      setState({ ...state, fieldNull: true })
+      return;
+    }
+    axios.post(
+      "https://api.elysia.land/land/contact",
+      {
+        email: contactState.email,
+        content: "\nname : " + contactState.name + "\nphone : " + contactState.phone + "\ncompany : " + contactState.company + "\nmessage : " + contactState.content
+      }
+    ).then(() => {
+      alert(t("contact.success"));
+      setContactState({
+        ...contactState,
+        name: "",
+        phone: "",
+        email: "",
+        company: "",
+        content: "" 
+      })
+    }).catch(() => {
+      alert(t("contact.fail"));
     })
-
-    useEffect(() => {
-      if(state.carriage == srcString.length) return
-      const delay = setTimeout(() => {
-        setState({ content: state.content + srcString[state.carriage], carriage: state.carriage + 1 })
-        clearTimeout(delay)
-      }, 
-      2000 / srcString.length
-      )
-    }, [state.content])
-    
-    return (
-      <p className="mobile-main-text" style={{
-        height: 110,
-        marginBottom: i18n.language === 'en' ? 10 : 65
-      }}>{state.content}
-        <span className="cursor" style={{
-          fontWeight: 100,
-          fontFamily: "Inter"
-        }}>|</span>
-      </p>
-    );
   }
 
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
+
+  /* 현재 스크롤값을 실시간으로 계산해 상단 GNB를 변환시킬 함수입니다 */
+  const [scrolling, setScrolling] = useState(false);
+  const [scrollTop, setScrollTop] = useState(0);
+  const [getHeight, setHeight] = useState(0);
+  useEffect(() => {
+    function onScroll() {
+      let currentPosition = window.pageYOffset;
+      if (currentPosition > scrollTop) {
+        setScrolling(false);
+      } else {
+        setScrolling(true);
+      }
+      setScrollTop(currentPosition <= 0 ? 0 : currentPosition);
+    }
+    setHeight(document.getElementById('main')?.clientHeight!);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [scrollTop]);
+
+  /* 색션마다 선언된 인자값을 받아 해당 위치로 이동하는 함수입니다 */
+  const Scroll = (ref: string) => {
+    // ref.current.scrollIntoView({ behavior: 'smooth' })
+    var element = document.getElementById(ref);
+    const offset = 0;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element!.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+
+    /* 클래스에 scroll-animation 지정한 블록들에 애니메이션을 추가합니다 */
+    const ScrollAnimationDefaultMargin = 100;
+    let ScrollAnimationTriggerMargin = 0;
+    let ScrollAnimationTriggerHeight = 0;
+    const ScrollAnimationElementList = document.querySelectorAll('.scroll-animation');
+  
+    const ScrollAnimationFunc = function() {
+      for (const element of ScrollAnimationElementList as any) {
+        if (!element.classList.contains('show')) {
+          if (element.dataset.saMargin) {
+            ScrollAnimationTriggerMargin = parseInt(element.dataset.saMargin);
+          } else {
+            ScrollAnimationTriggerMargin = ScrollAnimationDefaultMargin;
+          }
+  
+          if (element.dataset.saTrigger) {
+            ScrollAnimationTriggerHeight = document.querySelector(element.dataset.saTrigger).getBoundingClientRect().top + ScrollAnimationTriggerMargin;
+          } else {
+            ScrollAnimationTriggerHeight = element.getBoundingClientRect().top + ScrollAnimationTriggerMargin;
+          }
+  
+          if (window.innerHeight > ScrollAnimationTriggerHeight) {
+            let delay = (element.dataset.saDelay) ? element.dataset.saDelay : 0;
+            setTimeout(function() {
+              element.classList.add('show');
+            }, delay);
+          }
+        }
+      }
+    }
+    window.addEventListener('load', ScrollAnimationFunc);
+    window.addEventListener('scroll', ScrollAnimationFunc);
+  
+
   return (
-    <>
-      <div className="elysia-mobile">
-        <header className="mobile-header-container">
-          <Link to="/">
-            <img src={ElysiaLogo} className="elysia-logo" alt="Elysia" />
-          </Link>
+    <div className="elysia--mobile" id="top">
+      <section className="main" id="main" style={{ backgroundImage: `url(${MainBackground})` }}>
+        <header className="main__nav" style={{ backgroundColor: `${scrollTop >= (getHeight - 35) ? "#FFFFFF" : "transparent"}` }} >
+          <figure className="elysia-logo" style={{ backgroundImage: `url(${scrollTop >= (getHeight - 35) ? ElysiaLogo : ElysiaWhiteLogo})` }}/>
         </header>
-        <section className="mobile-main-wrapper" id="main">
-          {Typewriter()}
+        <div className="main__content-container">
+          <h1 className="main__content-text--bold">
+            DIGITAL<br/>INFRASTRUCTURE<br/>FOR REAL<br/>ESTATE ASSETS
+          </h1>
+          <p className="main__content-text">
+            Elysia provides the latest technology<br/>to bridge the gap between<br/>traditional real estate participants<br/>and global investors
+          </p>
+          <a className="main__store__button" href="https://play.google.com/store/apps/details?id=land.elysia">
+            <figure className="main__image__google-play" style={{ backgroundImage: `url(${GoogleLogo})` }}/>
+            <span className="main__image__text">Google Play</span>
+          </a>
+          <a className="main__store__button" href="https://apps.apple.com/us/app/elysia/id1536733411">
+            <figure className="main__image__app-store" style={{ backgroundImage: `url(${AppleLogo})` }}/>
+            <span className="main__image__text">App Store</span>
+          </a>
+        </div>
+        <div className="main__down-arrow-wrapper">
+          <img className="main__down-arrow" src={DownArrow} alt="" onClick={() => Scroll("service")} />
+        </div>
+      </section>
+      <section className="service" id="service">
+        <h1 className="section__text scroll-animation scroll-animation--up">
+          What is ELYSIA?
+        </h1>
+        <h1 className="section__text--bold scroll-animation scroll-animation--up" data-sa-delay="200"> 
+          We help digitalize<br/>real estate ownership<br/>to provide direct access<br/>to secondary markets<br/>on a global scale
+        </h1>
+        <div className="service__container">
+          <img className="service__image scroll-animation scroll-animation--up" src={Service00} alt="" />
+          <div className="service__text-wrapper scroll-animation scroll-animation--up">
+            <h1 className="service__header-text">
+              For Owners
+            </h1>
+            <h1 className="service__header-text--bold">
+              Tokenize your real estate with Elysia
+            </h1>
+            <p className="service__text">
+              Use blockchain technology to create immutable<br />representation of your assets. Meet instant global liquidity
+            </p>
+            <p className="button" onClick={() => Scroll("contact")}>
+              Contact us
+              <div className="button__arrow-wrapper">
+                <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
+              </div>
+            </p>
+          </div>
+        </div>
+        <div className="service__container">
+          <img className="service__image scroll-animation scroll-animation--up" src={Service01} alt="" />
+          <div className="service__text-wrapper scroll-animation scroll-animation--up">
+            <h1 className="service__header-text">
+              For Buyers
+            </h1>
+            <h1 className="service__header-text--bold">
+              Real estate investing<br />at your fingertips
+            </h1>
+            <p className="service__text">
+              Find real estate opportunities around the world and settle transactions with almost no intermediary costs
+            </p>
+            <Link to="/AppLink">
+              <p className="button" onClick={() => {
+                  window.location.replace("https://play.google.com/store/apps/details?id=land.elysia")
+                }}>
+                Download the app
+                <div className="button__arrow-wrapper">
+                  <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
+                </div>
+              </p>
+            </Link>
+          </div>
+        </div>
+        <div className="service__container">
+          <img className="service__image scroll-animation scroll-animation--up" src={Service02} alt="" />
+          <div className="service__text-wrapper scroll-animation scroll-animation--up">
+            <h1 className="service__header-text">
+              For Participants
+            </h1>
+            <h1 className="service__header-text--bold">
+              Decentralized Applications
+            </h1>
+            <p className="service__text">
+            Demand driven peer-to-peer lending markets using real estate tokens as collateral will be the next step for personal finance
+            </p>
+            <p className="button--disable">
+              Coming soon
+              <div className="button--disable__arrow-wrapper">
+                <figure className="button--disable__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
+              </div>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="portfolio" id="milestone">
+        <h1 className="section__text--bold scroll-animation scroll-animation--up" style={{ paddingTop: 70, paddingBottom: 30 }}> 
+          Our Track Record
+        </h1>
+        <div className="portfolio__slider-container scroll-animation scroll-animation--up">
+          <Slider />
+        </div>
+      </section>
+      <section className="partners" id="partners">
+        <h1 className="partners__text--bold section__text--bold scroll-animation scroll-animation--up" style={{ paddingTop: 70 }}>
+          PARTNERS
+        </h1>
+        <div className="partners__container">
           {
-            i18n.language === 'en' && t('main.invest_sublabel').split("\n").map((content, index) => {
+            [
+              Iconloop,
+              Hexlant,
+              Bishijie,
+              Xangle,
+              Chainlink,
+              HahmShout,
+              HUB,
+              BKL,
+              TSMP,
+              FocusLawAsia,
+              HiBlocks,
+              Argos,
+              PropWave,
+              Anjuke,
+              SRC,
+              Daybit,
+              Gopax,
+              Bithumb,
+              BithumbGlobal,
+              HOW
+            ].map((image, index) => {
               return (
-                <p
-                  className="mobile-main-subtext"
-                  key={`subtitle_${index}`}
-                  style={{
-                    whiteSpace: "nowrap",
-                    margin: 0,
-                    marginBottom: index === 1 ? 45 : 0
-                  }}
-                >
-                  {content}
-                </p>
-              )
+                <div className="partners__item">
+                  <img src={image} className="partners__image scroll-animation scroll-animation--up" alt="" />
+                </div>
+              );
             })
           }
-          <div className="mobile-main-image-wrapper">
-            <a href="https://apps.apple.com/us/app/elysia/id1536733411">
-              <img src={AppStore} className="mobile-app-store" alt="Elysia" />
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=land.elysia">
-              <img src={GooglePlay} className="mobile-google-play" alt="Elysia" />
-            </a>
-          </div>
-          <img src={ElysiaApp} className="mobile-elysia-app" alt="Elysia" />
-        </section>
-        <section className="mobile-service-wrapper contents-mobile-wrapper" id="service">
-          <Slider />
-        </section>
-        <section className="mobile-mliestone-wrapper contents-mobile-wrapper" id="milestone">
-          <MlieStoneSlider />
-        </section>
-        <section className="mobile-team-wrapper contents-mobile-wrapper" id="team">
-          <p className="mobile-team-header-text mobile-header-label">{t("team.header_label")}</p>
-          <div className="mobile-team-container">
-            {
-              [
-                [Team1, Team1Hover],
-                [Team2, Team2Hover],
-                [Team3, Team3Hover],
-                [Team4, Team4Hover],
-                [Team5, Team5Hover],
-                [Team6, Team6Hover],
-                [Team7, Team7Hover],
-                [Team8, Team8Hover],
-              ].map(([team, teamHover], index) => {
-                return (
-                  <div
-                    className="mobile-team-info-wrapper"
-                    style={index % 2 === 1 ? { marginLeft: "auto" } : {}}
-                  >
-                    <div style={{
-                      width: 120,
-                      height: 120,
-                      marginTop: 13,
-                      position: "relative",
-                    }} >
-                      <img src={team} className="mobile-team-picture" alt="Elysia" />
-                      <img src={teamHover} className="mobile-team-picture hover" alt="Elysia" />
-                    </div>
-                    <h3>{t('team.name.' + index)}</h3>
-                    <p>{t('team.dept.' + index)}</p>
+        </div>
+      </section>
+      <section className="team" id="team">
+        <h1 className="partners__text--bold section__text--bold scroll-animation scroll-animation--up" style={{ paddingTop: 70 }}>
+          EXECUTIVE TEAM
+        </h1>
+          <div className="team__info-wrapper scroll-animation scroll-animation--up" >
+          {
+            [
+              [Team1, "JungGun Lim", "CEO", 
+              `・Seoul National University, Dept. of
+                　chemical & biological engineering
+                ・Samsung SDI
+                ・Specializes in Ruby/React JS\n\n
+                Mr. Lim is the CEO of Elysia. He outlines the direction of the foundation and manages the overall operations and resources of Elysia`],
+              [Team2, "WonJoon Cha", "CSO", 
+              `・Seoul National University, School of
+                　mechanical & aerospace engineering
+                ・CEO of BTbridge lnc.
+                ・Specializes in Big data development\n\n
+                Mr. Cha reviews the overall planning and legal regulations for the business`],
+              [Team3, "Yoon Kim", "CMO", 
+              `・Pepperdine University B.A.
+                ・Business Development at STX O&S
+                　and Hanjin
+                ・Business Development at ICONLOOP\n\n
+                Mr. Kim manages sales and marketing operations at Elysia`],
+              [Team4, "DongUk Seo", "CTO", 
+              `・Seoul National University, 
+                　Computer Science & Engineering
+                ・Backend Lead Developer at HCG
+                ・Backend Development Intern at Naver
+                ・IOS Development Intern at
+                　Woowa Brothers\n\n
+                Mr. Seo is currently the Chief Technology Officer at Elysia and is in charge of blockchain architecture and software engineering`],
+              [Team5, "Michael Chung", "COO", 
+              `・KAIST National University
+                ・Industrial engineering
+                ・KTB Investment & securities
+                ・Prop Trading, FRM
+                ・ICONLOOP
+                ・Business Development\n\n
+                Mr.Chung manages operations and finance at Elysia`],
+              [Team6, "Jacob Lee", "Bees’ Company CEO", 
+              `・Seoul National University, Dept. of
+                　naval architecture & ocean
+                　engineering
+                ・DEMB basic design department
+                ・The 27th certified realtor\n\n
+                Mr.Lee is responsible for industry partnerships and advises real estate operations`],
+            ].map(([TeamImage, TeamName, TeamDept, TeamHover], index) => {
+              return (
+                <div className="team__container">
+                  <div className="team__wrapper">
+                    <img src={TeamImage} className="team__picture" alt="Elysia" />
+                    <p className="team__hover-infomation">
+                      {TeamHover.split('\n').map(line => {
+                        return (<span>{line}<br/></span>)
+                      })}
+                    </p> 
                   </div>
-                );
-              })
-            }
-          </div>
-        </section>
-        <section className="mobile-partners-wrapper mobile-contents-mobile-wrapper" id="partners">
-          <p className="mobile-pertners-header-text mobile-header-label">{t("partners.header_label")}</p>
-          <div className="mobile-partners-container">
-            {
-              [
-                Iconloop,
-                Hexlant,
-                Bishijie,
-                Anjuke,
-                Xangle,
-                Chainlink,
-                HahmShout,
-                Cider,
-                BKL,
-                TSMP,
-                FocusLawAsia,
-                HiBlocks,
-                Argos,
-                PropWave,
-                Velic,
-                SRC,
-                Daybit,
-                Gopax,
-                Bithumb,
-                BithumbGlobal,
-                HUB,
-                HOW
-              ].map((image, index) => {
-                return (
-                  <div className="mobile-partners-item" style={{ textAlign: "center" }}>
-                    <img src={image} className="mobile-partners-picture" alt="Elysia" />
+                  <div className="team__text-wrapper">
+                    <h1 className="team__text--bold" style={{ whiteSpace: "nowrap" }}>{TeamName}</h1>
+                    <p className="team__text" style={{ whiteSpace: "nowrap" }}>{TeamDept}</p>
                   </div>
-                );
-              })
-            }
+                </div>
+              );
+            })
+          }
+        </div>
+      </section>
+      <section className="contact scroll-animation scroll-animation--up" id="contact">
+        <h1 className="section__text scroll-animation scroll-animation--up">
+          Contact
+        </h1>
+        <h1 className="section__text--bold scroll-animation scroll-animation--up" style={{ paddingBottom: 0 }} data-sa-delay="200">
+          Didn’t find what you were looking for?
+        </h1>
+        <p className="contact__section__text scroll-animation scroll-animation--up" data-sa-delay="400">
+          Shoot us an email with your request and we will contact you within one business day.
+        </p>
+        <div className="contact__form-container scroll-animation scroll-animation--up">
+          <div className="contact__input-wrapper scroll-animation scroll-animation--up">
+            <input 
+              type="text" 
+              className={
+                (state.fieldNull === true && contactState.name === "")
+                ? "contact__input--required"
+                : "contact__input"
+              }
+              placeholder="Name"
+              value={contactState.name}
+              onChange={(event) => { 
+                setContactState({ ...contactState, name: event.target.value }) 
+              }}
+            />
+            <span className="contact__required-point">*</span>
           </div>
-        </section>
-        <section className="mobile-contact-wrapper mobile-contents-mobile-wrapper" id="contact">
-          <p className="mobile-contact-header-text">{t("contact.info_header")}</p>
-          <button className="mobile-contact-button" onClick={() => history.push("/contact")}>{t("contact.contact_button")}</button>
-        </section>
-      </div>
-    </>
+          <div className="contact__input-wrapper scroll-animation scroll-animation--up">
+            <input 
+              type="text" 
+              className="contact__input"
+              placeholder="Phone"
+              value={contactState.phone}
+              onChange={(event) => { 
+                setContactState({ ...contactState, phone: event.target.value }) 
+              }} 
+            />
+          </div>
+          <div className="contact__input-wrapper scroll-animation scroll-animation--up">
+            <input 
+              type="text" 
+              className={
+                (state.fieldNull === true && contactState.email === "")
+                ? "contact__input--required"
+                : "contact__input"
+              }
+              placeholder="E-mail" 
+              value={contactState.email} 
+              onChange={(event) => { 
+                setContactState({ ...contactState, email: event.target.value }) 
+              }}
+            />
+            <span className="contact__required-point">*</span>
+          </div>
+          <div className="contact__input-wrapper scroll-animation scroll-animation--up">
+            <input 
+              type="text" 
+              className="contact__input" 
+              placeholder="Company" 
+              value={contactState.company} 
+              onChange={(event) => { 
+                setContactState({ ...contactState, company: event.target.value }) 
+              }}
+            />
+          </div>
+          <div className="contact__input-wrapper scroll-animation scroll-animation--up" style={{ gridColumn: 'span 2' }}>
+            <textarea 
+              className={
+                (state.fieldNull === true && contactState.content === "")
+                ? "contact__textarea--required"
+                : "contact__textarea"
+              }
+              placeholder="Message" 
+              value={contactState.content} 
+              onChange={(event) => { 
+                setContactState({ ...contactState, content: event.target.value }) 
+              }}
+            />
+            <span className="contact__required-point">*</span>
+          </div>
+        </div>
+        <div className="contact__submit-container scroll-animation">
+          <div className="contact__recaptcha-wrapper">
+            <ReCAPTCHA 
+              sitekey={"6LdAI24aAAAAAG0QIW1ZdyfsQMHrW3uwskzlVTH7"}
+              onChange={() => setState({ ...state, recaptcha: true })}
+              onExpired={() => setState({ ...state, recaptcha: false })}
+            />
+          </div>
+          <div className="contact__checkbox-wrapper">
+            <input className="contact__checkbox" 
+              type="checkbox" 
+              name="check" 
+              value="check"
+              onClick={() => {
+                setState({ ...state, onChecked: !state.onChecked })
+              }}
+            />
+            <p className="contact__checkbox-text">
+              I consent to ELYSIA PLATFORM PTE. LTD processing my personal information as set out in the Privacy Policy and Cookie Policy and that, given the global nature of ELYSIA PLATFORM PTE. LTD's business, such processing may take place outside of my home jurisdiction.
+            </p>
+          </div>
+        </div>
+        <p className="contact__required-message" style={{ display: `${state.fieldNull === true ? ("inline-block") : ("none")}`}}>Name, E-mail address, and Content field is Required</p>
+        <div className="contact__button-wrapper scroll-animation">
+          {(state.onChecked && state.recaptcha) ? (
+            <p className="button" onClick={sendContact}>
+              CONTACT
+              <div className="button__arrow-wrapper">
+                <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
+              </div>
+            </p>
+          ) : (
+            <p className="button--disable">
+              CONTACT
+              <div className="button--disable__arrow-wrapper">
+                <figure className="button--disable__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
+              </div>
+            </p>
+          )}
+        </div>
+      </section>
+    </div>
   );
 }
 
