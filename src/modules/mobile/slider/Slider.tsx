@@ -77,7 +77,7 @@ const Slider: React.FunctionComponent = () => {
                 >
                   <h1 className="portfolio__asset-name">{AssetName}</h1>
                   <p className="portfolio__asset-info funded">
-                    Funded <span className="portfolio__asset-value">${AssetFunded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
+                    Total <span className="portfolio__asset-value">${AssetFunded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
                   </p>
                 </div>
               </div>

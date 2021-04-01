@@ -43,7 +43,7 @@ import HiBlocks from '../../../shared/image/partners/hiblocks.png';
 import Argos from '../../../shared/image/partners/argos.png';
 import PropWave from '../../../shared/image/partners/propwave.png';
 import SRC from '../../../shared/image/partners/src.png';
-import Daybit from '../../../shared/image/partners/daybit.png';
+import Fang from '../../../shared/image/partners/fang.png';
 import Gopax from '../../../shared/image/partners/gopax.png';
 import Bithumb from '../../../shared/image/partners/bithumb.png';
 import BithumbGlobal from '../../../shared/image/partners/bithumbglobal.png';
@@ -351,7 +351,7 @@ const Main = () => {
                     <img src={AssetImage} className="portfolio__asset-picture" alt="Elysia Asset" />
                     <h1 className="portfolio__asset-name">{AssetName}</h1>
                     <p className="portfolio__asset-info funded">
-                      Funded <span className="portfolio__asset-value">${AssetFunded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
+                      Total <span className="portfolio__asset-value">${AssetFunded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
                     </p>
                   </div>
                 );
@@ -383,7 +383,7 @@ const Main = () => {
               PropWave,
               Anjuke,
               SRC,
-              Daybit,
+              Fang,
               Gopax,
               Bithumb,
               BithumbGlobal,
@@ -438,11 +438,11 @@ const Main = () => {
                 ・Business Development\n\n
                 Mr.Chung manages operations and finance at Elysia`],
               [Team6, "Jacob Lee", "Bees’ Company CEO", 
-              `・Seoul National University, Dept. of
-                　naval architecture & ocean
-                　engineering
-                ・DEMB basic design department
-                ・The 27th certified realtor\n\n
+              `・ Hanyang University, Dept. of
+                　mechanical engineering
+                ・ STX Co.junior engineer
+                ・ Specializes in rental management
+                　and consulting\n\n
                 Mr.Lee is responsible for industry partnerships and advises real estate operations`],
             ].map(([TeamImage, TeamName, TeamDept, TeamHover], index) => {
               return (
