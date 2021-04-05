@@ -95,7 +95,7 @@ const Main = () => {
       behavior: 'smooth'
     });
   }
-  
+
   /* 현재 스크롤값을 실시간으로 계산해 상단 GNB를 변환시킬 함수입니다 */
   const [scrolling, setScrolling] = useState(false);
   const [scrollTop, setScrollTop] = useState(0);
@@ -116,30 +116,30 @@ const Main = () => {
 
 
   /* slack api를 호출합니다 */
-  const [contactState, setContactState] = useState<{ 
+  const [contactState, setContactState] = useState<{
     name: string,
     phone: string,
     email: string,
     company: string,
-    content: string 
-  }>({ 
+    content: string
+  }>({
     name: "",
     phone: "",
     email: "",
     company: "",
-    content: "" 
-   });
+    content: ""
+  });
 
   const sendContact = () => {
     setState({ ...state, fieldNull: false })
-    if(contactState.email === "") {
+    if (contactState.email === "") {
       setState({ ...state, fieldNull: true })
       return;
-    } 
+    }
     if (contactState.name === "") {
       setState({ ...state, fieldNull: true })
       return;
-    } 
+    }
     if (contactState.content === "") {
       setState({ ...state, fieldNull: true })
       return;
@@ -158,7 +158,7 @@ const Main = () => {
         phone: "",
         email: "",
         company: "",
-        content: "" 
+        content: ""
       })
     }).catch(() => {
       alert(t("contact.fail"));
@@ -175,7 +175,7 @@ const Main = () => {
   let ScrollAnimationTriggerHeight = 0;
   const ScrollAnimationElementList = document.querySelectorAll('.scroll-animation');
 
-  const ScrollAnimationFunc = function() {
+  const ScrollAnimationFunc = function () {
     for (const element of ScrollAnimationElementList as any) {
       if (!element.classList.contains('show')) {
         if (element.dataset.saMargin) {
@@ -192,7 +192,7 @@ const Main = () => {
 
         if (window.innerHeight > ScrollAnimationTriggerHeight) {
           let delay = (element.dataset.saDelay) ? element.dataset.saDelay : 0;
-          setTimeout(function() {
+          setTimeout(function () {
             element.classList.add('show');
           }, delay);
         }
@@ -207,27 +207,27 @@ const Main = () => {
       <section className="main" id="main" style={{ backgroundImage: `url(${MainBackground})` }} >
         <header className="main__gnb" style={{ backgroundColor: `${scrollTop >= 100 ? "#FFFFFF" : "transparent"}` }} >
           <nav className="main__gnb__link-container">
-            <figure className="elysia-logo" onClick={() => Scroll("top")} style={{ backgroundImage: `url(${scrollTop >= 100 ? ElysiaLogo : ElysiaWhiteLogo})` }}/>
+            <figure className="elysia-logo" onClick={() => Scroll("top")} style={{ backgroundImage: `url(${scrollTop >= 100 ? ElysiaLogo : ElysiaWhiteLogo})` }} />
             <div className="main__gnb__link-wrapper">
               <p className="main__gnb__link" onClick={() => Scroll("service")}
-                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}`}}>
-                  Service
+                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
+                Service
               </p>
               <p className="main__gnb__link" onClick={() => Scroll("portfolio")}
-                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}`}}>
-                  Portfolio
+                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
+                Portfolio
               </p>
               <p className="main__gnb__link" onClick={() => Scroll("partners")}
-                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}`}}>
-                  Partners
+                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
+                Partners
               </p>
               <p className="main__gnb__link" onClick={() => Scroll("team")}
-                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}`}}>
-                  Team
+                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
+                Team
               </p>
               <p className="main__gnb__link main__gnb--bold" onClick={() => Scroll("contact")}
-                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}`}}>
-                  Contact
+                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
+                Contact
               </p>
             </div>
           </nav>
@@ -240,11 +240,11 @@ const Main = () => {
             Elysia provides the latest technology to bridge the gap between<br />traditional real estate participants and global investors
           </p>
           <a className="main__store__button" href="https://play.google.com/store/apps/details?id=land.elysia">
-            <figure className="main__image__google-play" style={{ backgroundImage: `url(${GoogleLogo})` }}/>
+            <figure className="main__image__google-play" style={{ backgroundImage: `url(${GoogleLogo})` }} />
             <span className="main__image__text">Google Play</span>
           </a>
           <a className="main__store__button" href="https://apps.apple.com/us/app/elysia/id1536733411">
-            <figure className="main__image__app-store" style={{ backgroundImage: `url(${AppleLogo})` }}/>
+            <figure className="main__image__app-store" style={{ backgroundImage: `url(${AppleLogo})` }} />
             <span className="main__image__text">App Store</span>
           </a>
         </div>
@@ -256,7 +256,7 @@ const Main = () => {
         <h1 className="section__text section__text scroll-animation scroll-animation--up">
           What is ELYSIA?
         </h1>
-        <h1 className="section__text--bold scroll-animation scroll-animation--up" data-sa-delay="200"> 
+        <h1 className="section__text--bold scroll-animation scroll-animation--up" data-sa-delay="200">
           We help digitalize real estate ownership to provide direct access to secondary markets on a global scale
         </h1>
         <div className="service__container">
@@ -274,7 +274,7 @@ const Main = () => {
             <p className="button" onClick={() => Scroll("contact")}>
               Contact us
               <div className="button__arrow-wrapper">
-                <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
+                <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }} />
               </div>
             </p>
           </div>
@@ -292,11 +292,11 @@ const Main = () => {
             </p>
             <Link to="/AppLink">
               <p className="button" onClick={() => {
-                  window.location.replace("https://play.google.com/store/apps/details?id=land.elysia")
-                }}>
+                window.location.replace("https://play.google.com/store/apps/details?id=land.elysia")
+              }}>
                 Download the app
                 <div className="button__arrow-wrapper">
-                  <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
+                  <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }} />
                 </div>
               </p>
             </Link>
@@ -318,7 +318,7 @@ const Main = () => {
             <p className="button--disable">
               Coming soon
               <div className="button--disable__arrow-wrapper">
-                <figure className="button--disable__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
+                <figure className="button--disable__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }} />
               </div>
             </p>
           </div>
@@ -341,7 +341,7 @@ const Main = () => {
                 [ElysiaAsset3, "Elysia Asset #3", "1041150"]
               ].map(([AssetImage, AssetName, AssetFunded], index) => {
                 return (
-                  <div className="portfolio__asset__container scroll-animation scroll-animation--up" style={{ 
+                  <div className="portfolio__asset__container scroll-animation scroll-animation--up" style={{
                     opacity: `${(index >= 6 && !state.isMoreAsset) ? 0 : 1}`,
                     display: `${(index >= 6 && !state.isMoreAsset) ? "none" : "block"}`
                   }}
@@ -357,7 +357,7 @@ const Main = () => {
                 );
               })
             }
-          </div>  
+          </div>
         </div>
         <h1 className="portfolio__see-more" onClick={SwithcingState}>{!state.isMoreAsset ? "See More >" : "Close <"}</h1>
       </section>
@@ -390,7 +390,7 @@ const Main = () => {
               HOW
             ].map((image, index) => {
               return (
-                <img src={image} className="partners__picture scroll-animation scroll-animation--up" alt="Elysia" data-sa-margin={index * 5}/>
+                <img src={image} className="partners__picture scroll-animation scroll-animation--up" alt="Elysia" data-sa-margin={index * 5} />
               );
             })
           }
@@ -403,47 +403,64 @@ const Main = () => {
         <div className="team__info-wrapper scroll-animation scroll-animation--up" >
           {
             [
-              [Team1, "JungGun Lim", "CEO", 
-              `・Seoul National University, Dept. of
+              [
+                Team1,
+                "JungGun Lim", "CEO",
+                `・Seoul National University, Dept. of
                 　chemical & biological engineering
                 ・Samsung SDI
                 ・Specializes in Ruby/React JS\n\n
-                Mr. Lim is the CEO of Elysia. He outlines the direction of the foundation and manages the overall operations and resources of Elysia`],
-              [Team2, "WonJoon Cha", "CSO", 
-              `・Seoul National University, School of
+                Mr. Lim is the CEO of Elysia. He outlines the direction of the foundation and manages the overall operations and resources of Elysia`
+              ],
+              [
+                Team2,
+                "WonJoon Cha", "CSO",
+                `・Seoul National University, School of
                 　mechanical & aerospace engineering
                 ・CEO of BTbridge lnc.
                 ・Specializes in Big data development\n\n
-                Mr. Cha reviews the overall planning and legal regulations for the business`],
-              [Team3, "Yoon Kim", "CMO", 
-              `・Pepperdine University B.A.
+                Mr. Cha reviews the overall planning and legal regulations for the business`
+              ],
+              [
+                Team3,
+                "Yoon Kim", "CMO",
+                `・Pepperdine University B.A.
                 ・Business Development at STX O&S
                 　and Hanjin
                 ・Business Development at ICONLOOP\n\n
-                Mr. Kim manages sales and marketing operations at Elysia`],
-              [Team4, "DongUk Seo", "CTO", 
-              `・Seoul National University, 
+                Mr. Kim manages sales and marketing operations at Elysia`
+              ],
+              [
+                Team4, "DongUk Seo", "CTO",
+                `・Seoul National University,
                 　Computer Science & Engineering
                 ・Backend Lead Developer at HCG
                 ・Backend Development Intern at Naver
                 ・IOS Development Intern at
                 　Woowa Brothers\n\n
-                Mr. Seo is currently the Chief Technology Officer at Elysia and is in charge of blockchain architecture and software engineering`],
-              [Team5, "Michael Chung", "COO", 
-              `・KAIST National University
+                Mr. Seo is currently the Chief Technology Officer at Elysia and is in charge of blockchain architecture and software engineering`
+              ],
+              [
+                Team5,
+                "Michael Chung", "COO",
+                `・KAIST National University
                 ・Industrial engineering
                 ・KTB Investment & securities
                 ・Prop Trading, FRM
                 ・ICONLOOP
                 ・Business Development\n\n
-                Mr.Chung manages operations and finance at Elysia`],
-              [Team6, "Jacob Lee", "Bees’ Company CEO", 
-              `・ Hanyang University, Dept. of
+                Mr.Chung manages operations and finance at Elysia`
+              ],
+              [
+                Team6,
+                "Jacob Lee", "Bees’ Company CEO",
+                `・ Hanyang University, Dept. of
                 　mechanical engineering
                 ・ STX Co.junior engineer
                 ・ Specializes in rental management
                 　and consulting\n\n
-                Mr.Lee is responsible for industry partnerships and advises real estate operations`],
+                Mr.Lee is responsible for industry partnerships and advises real estate operations`
+              ],
             ].map(([TeamImage, TeamName, TeamDept, TeamHover], index) => {
               return (
                 <div className="team__container">
@@ -451,9 +468,9 @@ const Main = () => {
                     <img src={TeamImage} className="team__picture" alt="Elysia" />
                     <p className="team__hover-infomation">
                       {TeamHover.split('\n').map(line => {
-                        return (<span>{line}<br/></span>)
+                        return (<span>{line}<br /></span>)
                       })}
-                    </p> 
+                    </p>
                   </div>
                   <div className="team__text-wrapper">
                     <h1 className="team__text--bold" style={{ whiteSpace: "nowrap" }}>{TeamName}</h1>
@@ -477,70 +494,70 @@ const Main = () => {
         </p>
         <div className="contact__form-container scroll-animation scroll-animation--up">
           <div className="contact__input-wrapper scroll-animation scroll-animation--right">
-            <input 
-              type="text" 
+            <input
+              type="text"
               className={
                 (state.fieldNull === true && contactState.name === "")
-                ? "contact__input--required"
-                : "contact__input"
+                  ? "contact__input--required"
+                  : "contact__input"
               }
               placeholder="Name"
               value={contactState.name}
-              onChange={(event) => { 
-                setContactState({ ...contactState, name: event.target.value }) 
+              onChange={(event) => {
+                setContactState({ ...contactState, name: event.target.value })
               }}
             />
             <span className="contact__required-point">*</span>
           </div>
           <div className="contact__input-wrapper scroll-animation scroll-animation--left">
-            <input 
-              type="text" 
+            <input
+              type="text"
               className="contact__input"
               placeholder="Phone"
               value={contactState.phone}
-              onChange={(event) => { 
-                setContactState({ ...contactState, phone: event.target.value }) 
-              }} 
+              onChange={(event) => {
+                setContactState({ ...contactState, phone: event.target.value })
+              }}
             />
           </div>
           <div className="contact__input-wrapper scroll-animation scroll-animation--right">
-            <input 
-              type="text" 
+            <input
+              type="text"
               className={
                 (state.fieldNull === true && contactState.email === "")
-                ? "contact__input--required"
-                : "contact__input"
+                  ? "contact__input--required"
+                  : "contact__input"
               }
-              placeholder="E-mail" 
-              value={contactState.email} 
-              onChange={(event) => { 
-                setContactState({ ...contactState, email: event.target.value }) 
+              placeholder="E-mail"
+              value={contactState.email}
+              onChange={(event) => {
+                setContactState({ ...contactState, email: event.target.value })
               }}
             />
             <span className="contact__required-point">*</span>
           </div>
           <div className="contact__input-wrapper scroll-animation scroll-animation--left">
-            <input 
-              type="text" 
-              className="contact__input" 
-              placeholder="Company" 
-              value={contactState.company} 
-              onChange={(event) => { 
-                setContactState({ ...contactState, company: event.target.value }) 
+            <input
+              type="text"
+              className="contact__input"
+              placeholder="Company"
+              value={contactState.company}
+              onChange={(event) => {
+                setContactState({ ...contactState, company: event.target.value })
               }}
             />
           </div>
           <div className="contact__input-wrapper scroll-animation scroll-animation--up" style={{ gridColumn: 'span 2' }}>
-            <textarea 
+            <textarea
               className={
                 (state.fieldNull === true && contactState.content === "")
-                ? "contact__textarea--required"
-                : "contact__textarea"
+                  ? "contact__textarea--required"
+                  : "contact__textarea"
               }
-              placeholder="Message" 
-              value={contactState.content} 
-              onChange={(event) => { 
-                setContactState({ ...contactState, content: event.target.value }) 
+              placeholder="Message"
+              value={contactState.content}
+              onChange={(event) => {
+                setContactState({ ...contactState, content: event.target.value })
               }}
             />
             <span className="contact__required-point">*</span>
@@ -548,16 +565,16 @@ const Main = () => {
         </div>
         <div className="contact__submit-container scroll-animation">
           <div className="contact__recaptcha-wrapper">
-            <ReCAPTCHA 
+            <ReCAPTCHA
               sitekey={"6LdAI24aAAAAAG0QIW1ZdyfsQMHrW3uwskzlVTH7"}
               onChange={() => setState({ ...state, recaptcha: true })}
               onExpired={() => setState({ ...state, recaptcha: false })}
             />
           </div>
           <div className="contact__checkbox-wrapper">
-            <input className="contact__checkbox" 
-              type="checkbox" 
-              name="check" 
+            <input className="contact__checkbox"
+              type="checkbox"
+              name="check"
               value="check"
               onClick={() => {
                 setState({ ...state, onChecked: !state.onChecked })
@@ -573,19 +590,19 @@ const Main = () => {
             <p className="button" onClick={sendContact}>
               CONTACT
               <div className="button__arrow-wrapper">
-                <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
+                <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }} />
               </div>
             </p>
           ) : (
             <p className="button--disable">
               CONTACT
               <div className="button--disable__arrow-wrapper">
-                <figure className="button--disable__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }}/>
+                <figure className="button--disable__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }} />
               </div>
             </p>
           )}
         </div>
-          <p className="contact__required-message" style={{ display: `${state.fieldNull === true ? ("inline-block") : ("none")}`}}>Name, E-mail address, and Content field is Required</p>
+        <p className="contact__required-message" style={{ display: `${state.fieldNull === true ? ("inline-block") : ("none")}` }}>Name, E-mail address, and Content field is Required</p>
       </section>
     </div>
   );
