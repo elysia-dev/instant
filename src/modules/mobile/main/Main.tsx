@@ -20,6 +20,8 @@ import Team4 from '../../../shared/image/team/Team4.png';
 import Team5 from '../../../shared/image/team/Team9.png';
 import Team6 from '../../../shared/image/team/Team8.png';
 
+import LinkedIn from '../../../shared/image/linkedin.png';
+
 /* Partners Image */
 import Iconloop from '../../../shared/image/partners/iconloop.png';
 import Hexlant from '../../../shared/image/partners/hexlant.png';
@@ -332,53 +334,82 @@ const Main = () => {
         <div className="team__info-wrapper scroll-animation scroll-animation--up" >
           {
             [
-              [Team1, "JungGun Lim", "CEO",
+              [
+                Team1,
+                "JungGun Lim", "CEO",
                 `・Seoul National University, Dept. of
-                　chemical & biological engineering
-                ・Samsung SDI
-                ・Specializes in Ruby/React JS\n\n
-                Mr. Lim is the CEO of Elysia. He outlines the direction of the foundation and manages the overall operations and resources of Elysia`],
-              [Team2, "WonJoon Cha", "CSO",
+                  　chemical & biological engineering
+                  ・Samsung SDI
+                  ・Specializes in Ruby/React JS\n
+                  Mr. Lim is the CEO of Elysia. He outlines the direction of the foundation and manages the overall operations and resources of Elysia`,
+                "https://www.linkedin.com/in/junggun-lim-2b1a1a137/",
+              ],
+              [
+                Team2,
+                "WonJoon Cha", "CSO",
                 `・Seoul National University, School of
-                　mechanical & aerospace engineering
-                ・CEO of BTbridge lnc.
-                ・Specializes in Big data development\n\n
-                Mr. Cha reviews the overall planning and legal regulations for the business`],
-              [Team3, "Yoon Kim", "CMO",
+                  　mechanical & aerospace engineering
+                  ・CEO of BTbridge lnc.
+                  ・Specializes in Big data development\n
+                  Mr. Cha reviews the overall planning and legal regulations for the business`,
+                "https://www.linkedin.com/in/%EC%9B%90%EC%A4%80-%EC%B0%A8-1b707653/",
+              ],
+              [
+                Team3,
+                "Yoon Kim", "CMO",
                 `・Pepperdine University B.A.
-                ・Business Development at STX O&S
-                　and Hanjin
-                ・Business Development at ICONLOOP\n\n
-                Mr. Kim manages sales and marketing operations at Elysia`],
-              [Team4, "DongUk Seo", "CTO",
+                  ・Business Development at STX O&S
+                  　and Hanjin
+                  ・Business Development at ICONLOOP\n
+                  Mr. Kim manages sales and marketing operations at Elysia`,
+                "https://www.linkedin.com/in/yoon-kim-02228619/"
+              ],
+              [
+                Team4, "DongUk Seo", "CTO",
                 `・Seoul National University,
-                　Computer Science & Engineering
-                ・Backend Lead Developer at HCG
-                ・Backend Development Intern at Naver
-                ・IOS Development Intern at
-                　Woowa Brothers\n\n
-                Mr. Seo is currently the Chief Technology Officer at Elysia and is in charge of blockchain architecture and software engineering`],
-              [Team5, "Michael Chung", "COO",
+                  　Computer Science & Engineering
+                  ・Backend Lead Developer at HCG
+                  ・Backend Development Intern at Naver\n
+                  Mr. Seo is currently the Chief Technology Officer at Elysia and is in charge of blockchain architecture and software engineering`,
+                "https://www.linkedin.com/in/donguk-seo-6483141b6/"
+              ],
+              [
+                Team5,
+                "Michael Chung", "COO",
                 `・KAIST National University
-                ・Industrial engineering
-                ・KTB Investment & securities
-                ・Prop Trading, FRM
-                ・ICONLOOP
-                ・Business Development\n\n
-                Mr.Chung manages operations and finance at Elysia`],
-              [Team6, "Jacob Lee", "Bees’ Company CEO",
+                  ・Industrial engineering
+                  ・KTB Investment & securities
+                  ・Prop Trading, FRM
+                  ・ICONLOOP
+                  ・Business Development\n
+                  Mr.Chung manages operations and finance at Elysia`
+              ],
+              /*
+              [
+                Team6,
+                "Jacob Lee",
+                "Bees’ Company CEO",
                 `・ Hanyang University, Dept. of
-                　mechanical engineering
+                 mechanical engineering
                 ・ STX Co.junior engineer
                 ・ Specializes in rental management
-                　and consulting\n\n
-                Mr.Lee is responsible for industry partnerships and advises real estate operations`],
-            ].map(([TeamImage, TeamName, TeamDept, TeamHover], index) => {
+                 and consulting\n
+                Mr.Lee is responsible for industry partnerships and advises real estate operations`
+              ],
+              */
+            ].map(([TeamImage, TeamName, TeamDept, TeamHover, linkedInUrl], index) => {
               return (
                 <div className="team__container">
                   <div className="team__wrapper">
                     <img src={TeamImage} className="team__picture" alt="Elysia" />
                     <p className="team__hover-infomation">
+                      {
+                        linkedInUrl && <div>
+                          <a href={linkedInUrl} target="_blank" rel="noopener">
+                            <img src={LinkedIn} alt='LinkiedIn' />
+                          </a>
+                        </div>
+                      }
                       {TeamHover.split('\n').map(line => {
                         return (<span>{line}<br /></span>)
                       })}

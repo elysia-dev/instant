@@ -27,6 +27,12 @@ const Footer: FunctionComponent = () => {
             <p className="mobile-footer-text">
               {i18n.t("footer.email")}
             </p>
+            <p className="mobile-footer-header-text" style={{ marginTop: 10 }}>
+              CONTRACT
+              </p>
+            <a className="mobile-footer-text" target="_blank" rel="noreferrer" href='https://etherscan.io/token/0x2781246fe707bb15cee3e5ea354e2154a2877b16'>
+              Elysia(EL)
+            </a>
           </div>
 
           <p className="mobile-footer-header-text">
