@@ -231,6 +231,12 @@ const Main = () => {
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
                 Contact
               </p>
+              <p className="main__gnb__link main__gnb--bold" onClick={() => {
+                window.open("https://defi.elysia.land", '_blank')
+              }}
+                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
+                ELYFI<span className="main__gnb__link--span">beta</span>
+              </p>
             </div>
           </nav>
         </header>
