@@ -453,7 +453,8 @@ const Main = () => {
                 ・Prop Trading, FRM
                 ・ICONLOOP
                 ・Business Development\n
-                Mr.Chung manages operations and finance at Elysia`
+                Mr.Chung manages operations and finance at Elysia`,
+                "https://www.linkedin.com/in/jaehun-chung-538a52174/",
               ],
               /*
               [
