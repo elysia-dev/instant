@@ -400,7 +400,6 @@ const Main = () => {
                   Mr.Chung manages operations and finance at Elysia`,
                 "https://www.linkedin.com/in/jaehun-chung-538a52174/"
               ],
-              /*
               [
                 Team6,
                 "Jacob Lee",
@@ -412,7 +411,6 @@ const Main = () => {
                  and consulting\n
                 Mr.Lee is responsible for industry partnerships and advises real estate operations`
               ],
-              */
             ].map(([TeamImage, TeamName, TeamDept, TeamHover, linkedInUrl], index) => {
               return (
                 <div className="team__container">
