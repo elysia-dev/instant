@@ -303,10 +303,6 @@ const Main = () => {
               Xangle,
               Chainlink,
               HahmShout,
-              HUB,
-              BKL,
-              TSMP,
-              FocusLawAsia,
               HiBlocks,
               Argos,
               PropWave,
@@ -315,7 +311,26 @@ const Main = () => {
               Fang,
               Gopax,
               Bithumb,
-              BithumbGlobal,
+              BithumbGlobal
+            ].map((image, index) => {
+              return (
+                <div className="partners__item">
+                  <img src={image} className="partners__image scroll-animation scroll-animation--up" alt="" />
+                </div>
+              );
+            })
+          }
+        </div>
+        <h1 className="partners__text--bold section__text--bold scroll-animation scroll-animation--up" style={{ paddingTop: 70 }}>
+          LEGAL ADVISORS
+        </h1>
+        <div className="partners__container">
+          {
+            [
+              HUB,
+              BKL,
+              TSMP,
+              FocusLawAsia,
               HOW
             ].map((image, index) => {
               return (

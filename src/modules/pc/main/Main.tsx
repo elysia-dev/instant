@@ -382,10 +382,6 @@ const Main = () => {
               Xangle,
               Chainlink,
               HahmShout,
-              HUB,
-              BKL,
-              TSMP,
-              FocusLawAsia,
               HiBlocks,
               Argos,
               PropWave,
@@ -394,11 +390,28 @@ const Main = () => {
               Fang,
               Gopax,
               Bithumb,
-              BithumbGlobal,
-              HOW
+              BithumbGlobal
             ].map((image, index) => {
               return (
                 <img src={image} className="partners__picture scroll-animation scroll-animation--up" alt="Elysia" data-sa-margin={index * 5} />
+              );
+            })
+          }
+        </div>
+        <h1 className="partners__text--bold section__text--bold scroll-animation scroll-animation--up" style={{ paddingTop: 70 }}>
+          LEGAL ADVISORS
+        </h1>
+        <div className="partners__wrapper">
+          {
+            [
+              BKL,
+              HUB,
+              TSMP,
+              FocusLawAsia,
+              HOW
+            ].map((image, index) => {
+              return (
+                <img src={image} className="partners__picture scroll-animation scroll-animation--up" alt="Elysia" data-sa-margin={index * 5} style={{ margin: "20px 107px"}} />
               );
             })
           }
