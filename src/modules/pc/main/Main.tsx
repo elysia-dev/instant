@@ -52,6 +52,7 @@ import BithumbGlobal from '../../../shared/image/partners/bithumbglobal.png';
 import HUB from '../../../shared/image/partners/hub.png';
 import HOW from '../../../shared/image/partners/how.png';
 import Anjuke from '../../../shared/image/partners/anjuke.png';
+import SaeJong from '../../../shared/image/partners/shinkim.jpg';
 
 import '../css/style.scss';
 import { useHistory, Link } from 'react-router-dom';
@@ -227,7 +228,7 @@ const Main = () => {
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
                 Team
               </p>
-              <p className="main__gnb__link main__gnb--bold" onClick={() => Scroll("contact")}
+              <p className="main__gnb__link" onClick={() => Scroll("contact")}
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
                 Contact
               </p>
@@ -404,11 +405,12 @@ const Main = () => {
         <div className="partners__wrapper">
           {
             [
+              SaeJong,
               BKL,
-              HUB,
-              TSMP,
               FocusLawAsia,
-              HOW
+              HUB,
+              HOW,
+              TSMP,
             ].map((image, index) => {
               return (
                 <img src={image} className="partners__picture scroll-animation scroll-animation--up" alt="Elysia" data-sa-margin={index * 5} style={{ margin: "20px 107px"}} />

@@ -43,6 +43,7 @@ import BithumbGlobal from '../../../shared/image/partners/bithumbglobal.png';
 import HUB from '../../../shared/image/partners/hub.png';
 import HOW from '../../../shared/image/partners/how.png';
 import Anjuke from '../../../shared/image/partners/anjuke.png';
+import SaeJong from '../../../shared/image/partners/shinkim.jpg';
 
 import '../css/mobileStyle.scss';
 import Slider from '../slider/Slider';
@@ -327,11 +328,12 @@ const Main = () => {
         <div className="partners__container">
           {
             [
-              HUB,
+              SaeJong,
               BKL,
-              TSMP,
               FocusLawAsia,
-              HOW
+              HUB,
+              HOW,
+              TSMP,
             ].map((image, index) => {
               return (
                 <div className="partners__item">
