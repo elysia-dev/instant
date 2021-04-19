@@ -49,7 +49,7 @@ const Footer: FunctionComponent = () => {
               <a className="mobile-footer-icon" href="https://t.me/elysia_official">
                 <img src={Telegram} className="mobile-footer-icon" alt="Elysia" />
               </a>
-              <a className="mobile-footer-icon" href="https://github.com/elysia-land?tab=repositories">
+              <a className="mobile-footer-icon" href="https://github.com/elysia-dev">
                 <img src={Github} className="mobile-footer-icon" alt="Elysia" />
               </a>
             </div>

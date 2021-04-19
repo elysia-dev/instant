@@ -54,7 +54,7 @@ const Footer: FunctionComponent = () => {
               <a href="https://t.me/elysia_official">
                 <img src={Telegram} className="footer__icon" alt="Elysia" />
               </a>
-              <a href="https://github.com/elysia-land?tab=repositories">
+              <a href="https://github.com/elysia-dev">
                 <img src={Github} className="footer__icon" alt="Elysia" />
               </a>
               <a href="https://www.facebook.com/ElysiaHQ">
