@@ -233,6 +233,12 @@ const Main = () => {
                 Contact
               </p>
               <p className="main__gnb__link main__gnb--bold" onClick={() => {
+                window.open("https://elysia.gitbook.io/elysia-guide/", '_blank')
+              }}
+                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
+                Help Desk
+              </p>
+              <p className="main__gnb__link main__gnb--bold" onClick={() => {
                 window.open("https://defi.elysia.land", '_blank')
               }}
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>

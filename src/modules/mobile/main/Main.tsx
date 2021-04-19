@@ -59,7 +59,8 @@ const Main = () => {
     isMoreAsset: false,
     recaptcha: false,
     onChecked: false,
-    fieldNull: false
+    fieldNull: false,
+    hamburgerBar: false
   })
 
   /* slack api를 호출합니다 */
@@ -188,8 +189,28 @@ const Main = () => {
   return (
     <div className="elysia--mobile" id="top">
       <section className="main" id="main" style={{ backgroundImage: `url(${MainBackground})` }}>
-        <header className="main__nav" style={{ backgroundColor: `${scrollTop >= (getHeight - 35) ? "#FFFFFF" : "transparent"}` }} >
-          <figure className="elysia-logo" style={{ backgroundImage: `url(${scrollTop >= (getHeight - 35) ? ElysiaLogo : ElysiaWhiteLogo})` }} />
+        <header className="main__nav" style={{ backgroundColor: `${scrollTop >= (getHeight - 35) ? "#FFFFFF" : "#1c1c1c"}` }} >
+          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+            <figure className="elysia-logo" style={{ backgroundImage: `url(${scrollTop >= (getHeight - 35) ? ElysiaLogo : ElysiaWhiteLogo})` }} />
+            <div className={`navTrigger ${state.hamburgerBar && "active"}`} 
+              onClick={() => { setState({ ...state, hamburgerBar: !state.hamburgerBar })}}>
+              <i style={{backgroundColor: `${scrollTop >= (getHeight - 35) ? "#1c1c1c" : "#ffffff"}` }} />
+              <i style={{backgroundColor: `${scrollTop >= (getHeight - 35) ? "#1c1c1c" : "#ffffff"}` }} />
+              <i style={{backgroundColor: `${scrollTop >= (getHeight - 35) ? "#1c1c1c" : "#ffffff"}` }} />
+            </div>
+          </div>
+          <div className="main__nav__wrapper" style={{ height: state.hamburgerBar ? 100 : 0, paddingTop: state.hamburgerBar ? 30 : 0 }}>
+            <p className="main__nav__link" style={{ color: `${scrollTop >= (getHeight - 35) ? "#1c1c1c" : "#FFFFFF"}` }} onClick={() => {
+                window.open("https://elysia.gitbook.io/elysia-guide/", '_blank')
+              }}>
+              Help Desk
+            </p>
+            <p className="main__nav__link" style={{ color: `${scrollTop >= (getHeight - 35) ? "#1c1c1c" : "#FFFFFF"}` }} onClick={() => {
+                window.open("https://defi.elysia.land", '_blank')
+              }}>
+              ELYFI<span className="main__nav__link--span">beta</span>
+            </p>
+          </div>
         </header>
         <div className="main__content-container">
           <h1 className="main__content-text--bold">
