@@ -1,106 +1,44 @@
 {
   "translation": {
+    "navigation": {
+      "service": "Service",
+      "portfolio": "Portfolio",
+      "partners": "Partners",
+      "team": "Team",
+      "contact": "Contact",
+      "helpdesk": "Help Desk",
+      "elyfi": "ELYFI"
+    },
     "main": {
-      "service": "服务",
-      "milestone": "里程碑",
-      "team": "团队",
-      "partners": "合作伙伴",
-      "contact": "联系客服",
-      "markets": "已上线交易所",
-      "invest_label": "可以购买代币化房地产的超级市场。"
+      "content-title": "DIGITAL INFRASTRUCTURE FOR\nREAL ESTATE ASSETS",
+      "content-sub-title": "Elysia provides the latest technology to bridge the gap between\ntraditional real estate participants and global investors"
     },
     "service": {
-      "onboarding": "使用流程",
-      "onboarding_label": "让您的房地产资产流动起来，创造更多收益。",
-      "elysia_app": "爱立厦 (ELYSIA) 2.0",
-      "elysia_app_label": "您可以购买房地产部分所有权，并获取相应收益。",
-      "defi": "DEFI",
-      "defi_label": "用房地产去撬动数字资产。"
+      "title": "What is ELYSIA?",
+      "sub-title": "We help digitalize real estate ownership to provide direct access to secondary markets on a global scale",
+      "owners": "For Owners",
+      "owners-title": "Tokenize your real estate with Elysia",
+      "owners-content": "Use blockchain technology to create immutable\nrepresentation of your assets. Meet instant global liquidity",
+      "owners-button": "Contact us",
+      "buyers": "For Buyers",
+      "buyers-title": "Real estate investing at your fingertips",
+      "buyers-content": "Find real estate opportunities around the world and\nsettle transactions with almost no intermediary costs",
+      "buyers-button": "Download the app",
+      "participants": "For Participants",
+      "participants-title": "Decentralized Applications",
+      "participants-content": "Demand driven peer-to-peer lending markets using real estate\ntokens as collateral will be the next step for personal finance",
+      "participants-button": "Explore ELYFI"
     },
-    "mliestone": {
-      "header_label": "里程碑",
-      "timeline": [
-        "2018年9月",
-        "2018年9月",
-        "2018年10月",
-        "2019年3月",
-        "2019年4月",
-        "2020年3月",
-        "2020年5月",
-        "2020年8月",
-        "2020年10月",
-        "2020年11月",
-        "2020年12月",
-        "2021年第一季度",
-        "2021年第二季度",
-        "2021年第三季度",
-        "2021年第四季度"
-      ],
-      "timeline_contant": [
-        "在新加坡设立法人",
-        "参加COEX房地产博览会",
-        "首个房地产代币产品售罄",
-        "在韩国首尔设立办公室",
-        "选入韩国农协银行主办的第一期“农协数字创新园",
-        "在官网（elysia.land）售出10个以上房地产代币产品",
-        "推出第一个商用房地产代币产品",
-        "与安居客达成合作",
-        "推出安卓和苹果IOS手机应用",
-        "推出爱立厦（ELYSIA） 手机应用2.0版本",
-        "· 改进资产证券化协议\n· 产品注册自主权\n· 改善基于Tx的控股资产和收益UI界面",
-        "· 取得新加坡金融管理局许可\n· 上线海外房地产产品\n· 计划上线50个以上房地产产品",
-        "· 引入房地产价格预言机解决方案\n· 取得美国Reg.D 执照"
-      ]
-    },
-    "team": {
-      "header_label": "团队",
-      "name": [
-        "JungGun Lim",
-        "Wonjoon Cha",
-        "Yoon Kim",
-        "Donguk Seo",
-        "Hyuno Bae",
-        "Heesoo Han",
-        "Shiliang Feng",
-        "Jacob Lee"
-      ],
-      "dept": [
-        "CEO",
-        "CSO",
-        "CMO",
-        "CTO",
-        "软件开发工程师",
-        "设计师",
-        "中国市场",
-        "Bees公司CEO"
-      ]
+    "portfolio": {
+      "title": "Our Track Record",
+      "total": "Total",
+      "funded": "Funded",
+      "seemore": "See More >",
+      "close": "Close <"
     },
     "partners": {
-      "header_label": "合作伙伴"
-    },
-    "contact": {
-      "info_header": "没有找到您想要的东西？",
-      "info_label": "我们致力于帮助客户解决问题，我们很乐意听取您的意见。",
-      "contact_button": "联系客服",
-      "form_header": "E爱立厦(ELYSIA)联系方式",
-      "input_email": "您的邮箱地址",
-      "input_message": "您的信息",
-      "request_label": "请输入您的详细问题，我们的客服将会尽快答复您。",
-      "send_button": "发送"
-    },
-    "footer": {
-      "logo_label": "ELYSIA PLATFORM PTE. LTD",
-      "contact": "联系",
-      "email": "cs@elysia.land",
-      "whitepaper": "白皮书",
-      "community": "社群",
-      "copyright": "ELYSIA ⓒ 2018-2021. All rights reserved.",
-      "privacy_policy": "隐私政策",
-      "terms_service": "服务条款",
-      "language": "语言",
-      "language_en": "English",
-      "language_ko": "한국어",
-      "language_zh·hans": "中文"
+      "title": "PARTNERS",
+      "legal-advisors": "LEGAL ADVISORS"
     }
   }
 }

@@ -212,47 +212,55 @@ const Main = () => {
           <nav className="main__gnb__link-container">
             <figure className="elysia-logo" onClick={() => Scroll("top")} style={{ backgroundImage: `url(${scrollTop >= 100 ? ElysiaLogo : ElysiaWhiteLogo})` }} />
             <div className="main__gnb__link-wrapper">
-              <p className="main__gnb__link" onClick={() => Scroll("service")}
+              {/* <p className="main__gnb__link" onClick={() => Scroll("serviceref")}
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
-                Service
+                {t("navigation.service")}
               </p>
-              <p className="main__gnb__link" onClick={() => Scroll("portfolio")}
+              <p className="main__gnb__link" onClick={() => Scroll("portfolioref")}
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
-                Portfolio
-              </p>
+                {t("navigation.portfolio")}
+              </p> */}
+              <a className="main__gnb__link" href="#service"
+                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
+                {t("navigation.service")}
+              </a>
+              <a className="main__gnb__link" href="#portfolio"
+                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
+                {t("navigation.portfolio")}
+              </a>
               <p className="main__gnb__link" onClick={() => Scroll("partners")}
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
-                Partners
+                {t("navigation.partners")}
               </p>
               <p className="main__gnb__link" onClick={() => Scroll("team")}
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
-                Team
+                {t("navigation.team")}
               </p>
               <p className="main__gnb__link" onClick={() => Scroll("contact")}
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
-                Contact
+                {t("navigation.contact")}
               </p>
-              <p className="main__gnb__link main__gnb--bold" onClick={() => {
-                window.open("https://elysia.gitbook.io/elysia-guide/", '_blank')
-              }}
+              <a className="main__gnb__link main__gnb--bold" 
+                href="https://elysia.gitbook.io/elysia-guide/"
+                target="_blank"
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
-                Help Desk
-              </p>
-              <p className="main__gnb__link main__gnb--bold" onClick={() => {
-                window.open("https://defi.elysia.land", '_blank')
-              }}
+                {t("navigation.helpdesk")}
+              </a>
+              <a className="main__gnb__link main__gnb--bold" 
+                href="https://defi.elysia.land"
+                target="_blank"
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
-                ELYFI<span className="main__gnb__link--span">beta</span>
-              </p>
+                {t("navigation.elyfi")}<span className="main__gnb__link--span">beta</span>
+              </a>
             </div>
           </nav>
         </header>
         <div className="main__content-container">
           <h1 className="main__content-text--bold">
-            DIGITAL INFRASTRUCTURE FOR<br />REAL ESTATE ASSETS
+            {t("main.content-title")}
           </h1>
           <p className="main__content-text">
-            Elysia provides the latest technology to bridge the gap between<br />traditional real estate participants and global investors
+            {t("main.content-sub-title")}
           </p>
           <a className="main__store__button" href="https://play.google.com/store/apps/details?id=land.elysia">
             <figure className="main__image__google-play" style={{ backgroundImage: `url(${GoogleLogo})` }} />
@@ -267,27 +275,27 @@ const Main = () => {
           <img className="main__down-arrow" src={DownArrow} alt="" onClick={() => Scroll("service")} />
         </div>
       </section>
-      <section className="service contents-container" id="service" ref={Service} >
-        <h1 className="section__text section__text scroll-animation scroll-animation--up">
-          What is ELYSIA?
+      <section className="service contents-container" id="serviceref" ref={Service} >
+        <h1 id="service" className="section__text section__text scroll-animation scroll-animation--up">
+          {t("service.title")}
         </h1>
         <h1 className="section__text--bold scroll-animation scroll-animation--up" data-sa-delay="200">
-          We help digitalize real estate ownership to provide direct access to secondary markets on a global scale
+        {t("service.sub-title")}
         </h1>
         <div className="service__container">
           <img className="service__image scroll-animation scroll-animation--right" src={Service00} alt="" />
           <div className="service__text-wrapper scroll-animation" data-sa-delay="200">
             <h1 className="service__header-text">
-              For Owners
+            {t("service.owners")}
             </h1>
             <h1 className="service__header-text--bold">
-              Tokenize your real estate with Elysia
+            {t("service.owners-title")}
             </h1>
             <p className="service__text">
-              Use blockchain technology to create immutable<br />representation of your assets. Meet instant global liquidity
+            {t("service.owners-content")}
             </p>
             <p className="button" onClick={() => Scroll("contact")}>
-              Contact us
+              {t("service.owners-button")}
               <div className="button__arrow-wrapper">
                 <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }} />
               </div>
@@ -297,19 +305,19 @@ const Main = () => {
         <div className="service__container">
           <div className="service__text-wrapper scroll-animation" data-sa-delay="200">
             <h1 className="service__header-text">
-              For Buyers
+              {t("service.buyers")}
             </h1>
             <h1 className="service__header-text--bold">
-              Real estate investing at your fingertips
+              {t("service.buyers-title")}
             </h1>
             <p className="service__text">
-              Find real estate opportunities around the world and<br />settle transactions with almost no intermediary costs
+              {t("service.buyers-content")}
             </p>
             <Link to="/AppLink">
               <p className="button" onClick={() => {
                 window.location.replace("https://play.google.com/store/apps/details?id=land.elysia")
               }}>
-                Download the app
+                {t("service.buyers-button")}
                 <div className="button__arrow-wrapper">
                   <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }} />
                 </div>
@@ -322,27 +330,29 @@ const Main = () => {
           <img className="service__image  scroll-animation scroll-animation--right" src={Service02} alt="" />
           <div className="service__text-wrapper scroll-animation" data-sa-delay="200">
             <h1 className="service__header-text">
-              For Participants
+              {t("service.participants")}
             </h1>
             <h1 className="service__header-text--bold">
-              Decentralized Applications
+              {t("service.participants-title")}
             </h1>
             <p className="service__text">
-              Demand driven peer-to-peer lending markets using real estate<br />tokens as collateral will be the next step for personal finance
+              {t("service.participants-content")}
             </p>
-            <p className="button--disable">
-              Coming soon
-              <div className="button--disable__arrow-wrapper">
-                <figure className="button--disable__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }} />
+            <p className="button" onClick={() => {
+                window.location.replace("https://defi.elysia.land")
+              }}>
+              {t("service.participants-button")}
+              <div className="button__arrow-wrapper">
+                <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }} />
               </div>
             </p>
           </div>
         </div>
       </section>
-      <section className="portfolio contents-container" id="portfolio" ref={Portfolio} >
+      <section className="portfolio contents-container" id="portfolioref" ref={Portfolio} >
         <div className="portfolio__container">
-          <h1 className="portfolio__text--bold section__text--bold scroll-animation scroll-animation--up" style={{ paddingTop: 70 }}>
-            Our Track Record
+          <h1 id="portfolio" className="portfolio__text--bold section__text--bold scroll-animation scroll-animation--up" style={{ paddingTop: 70 }}>
+            {t("portfolio.title")}
           </h1>
           <div className="portfolio__wrapper">
             {
@@ -362,11 +372,11 @@ const Main = () => {
                   }}
                     data-sa-margin={index * 15}
                   >
-                    <div className="portfolio__asset-funded">Funded</div>
+                    <div className="portfolio__asset-funded">{t("portfolio.funded")}</div>
                     <img src={AssetImage} className="portfolio__asset-picture" alt="Elysia Asset" />
                     <h1 className="portfolio__asset-name">{AssetName}</h1>
                     <p className="portfolio__asset-info funded">
-                      Total <span className="portfolio__asset-value">${AssetFunded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
+                      {t("portfolio.total")} <span className="portfolio__asset-value">${AssetFunded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
                     </p>
                   </div>
                 );
@@ -374,11 +384,11 @@ const Main = () => {
             }
           </div>
         </div>
-        <h1 className="portfolio__see-more" onClick={SwithcingState}>{!state.isMoreAsset ? "See More >" : "Close <"}</h1>
+        <h1 className="portfolio__see-more" onClick={SwithcingState}>{!state.isMoreAsset ? t("portfolio.seemore") : t("portfolio.close")}</h1>
       </section>
       <section className="partners contents-container" id="partners" ref={Partners}>
         <h1 className="partners__text--bold section__text--bold scroll-animation scroll-animation--up" style={{ paddingTop: 70 }}>
-          PARTNERS
+          {t("partners.title")}
         </h1>
         <div className="partners__wrapper">
           {
@@ -406,7 +416,7 @@ const Main = () => {
           }
         </div>
         <h1 className="partners__text--bold section__text--bold scroll-animation scroll-animation--up" style={{ paddingTop: 70 }}>
-          LEGAL ADVISORS
+          {t("partners.legal-advisors")}
         </h1>
         <div className="partners__wrapper">
           {

@@ -1,107 +1,44 @@
 {
   "translation": {
+    "navigation": {
+      "service": "Service",
+      "portfolio": "Portfolio",
+      "partners": "Partners",
+      "team": "Team",
+      "contact": "Contact",
+      "helpdesk": "Help Desk",
+      "elyfi": "ELYFI"
+    },
     "main": {
-      "service": "서비스",
-      "milestone": "마일스톤",
-      "team": "팀",
-      "partners": "파트너",
-      "contact": "문의하기",
-      "markets": "거래하기",
-      "invest_label": "세상에 없던 새로운\n부동산 투자"
+      "content-title": "DIGITAL INFRASTRUCTURE FOR\nREAL ESTATE ASSETS",
+      "content-sub-title": "Elysia provides the latest technology to bridge the gap between\ntraditional real estate participants and global investors"
     },
     "service": {
-      "onboarding": "ONBOARDING",
-      "onboarding_label": "당신의 부동산 자산을 부동산 토큰으로 바꾸세요",
-      "elysia_app": "ELYSIA 2.0",
-      "elysia_app_label": "다양한 부동산 토큰에 투자해보세요",
-      "defi": "DEFI",
-      "defi_label": "부동산 토큰으로 DEFI에 참여해 보세요"
+      "title": "What is ELYSIA?",
+      "sub-title": "We help digitalize real estate ownership to provide direct access to secondary markets on a global scale",
+      "owners": "For Owners",
+      "owners-title": "Tokenize your real estate with Elysia",
+      "owners-content": "Use blockchain technology to create immutable\nrepresentation of your assets. Meet instant global liquidity",
+      "owners-button": "Contact us",
+      "buyers": "For Buyers",
+      "buyers-title": "Real estate investing at your fingertips",
+      "buyers-content": "Find real estate opportunities around the world and\nsettle transactions with almost no intermediary costs",
+      "buyers-button": "Download the app",
+      "participants": "For Participants",
+      "participants-title": "Decentralized Applications",
+      "participants-content": "Demand driven peer-to-peer lending markets using real estate\ntokens as collateral will be the next step for personal finance",
+      "participants-button": "Explore ELYFI"
     },
-    "mliestone": {
-      "header_label": "마일스톤",
-      "timeline": [
-        "2018.09",
-        "2018.09",
-        "2018.10",
-        "2019.03",
-        "2019.04",
-        "2020.03",
-        "2020.05",
-        "2020.08",
-        "2020.10",
-        "2020.11",
-        "2020.12",
-        "2021 Q1",
-        "2021 Q2",
-        "2021 Q3",
-        "2021 Q4"
-      ],
-      "timeline_contant": [
-        "법인 설립",
-        "코엑스 부동산 블록체인 박람회 출전",
-        "첫 상품 완판",
-        "한국 지사 설립",
-        "농협 디지털 챌린지 1기 선정",
-        "총 10개 상품 완판",
-        "첫 상업용 부동산 출시",
-        "안주커 협약",
-        "Android 및 IOS 앱 출시",
-        "ELYSIA 2.0",
-        "· 자산 유동화 프로토콜 개선\n· 상품 등록 자율화\n· Tx 기반 보유 자산 및 수익 UI 개편",
-        "· 부동산 상품 5개 추가 목표\n· 블록체인 신원 증명 서비스 도입\n· 부동산 온보딩 서비스\n· 부동산 토큰 DEFI 컨트랙트 공개",
-        "· 부동산 상품 10개 추가 목표\n· 부동산 토큰 DEFI 컨트랙트 공개\n· 부동산 토큰 모니터링 및 필터링"
-      ]
-    },
-    "team": {
-      "header_label": "팀",
-      "name": [
-        "임정건",
-        "차원준",
-        "김윤수",
-        "서동욱",
-        "배현오",
-        "한희수",
-        "풍샤량",
-        "이재곱"
-      ],
-      "dept": [
-        "CEO",
-        "CSO",
-        "CMO",
-        "CTO",
-        "Developer",
-        "Designer",
-        "CHINA Marketing",
-        "Bees' Company CEO"
-      ]
+    "portfolio": {
+      "title": "Our Track Record",
+      "total": "Total",
+      "funded": "Funded",
+      "seemore": "See More >",
+      "close": "Close <"
     },
     "partners": {
-      "header_label": "파트너"
-    },
-    "contact": {
-      "info_header": "혹시 문의할 내용이 있으신가요?",
-      "info_label": "여러분의 의견을 듣고 싶습니다.",
-      "contact_button": "CONTACT",
-      "form_header": "ELYSIA Contact",
-      "input_email": "이메일 주소",
-      "input_message": "내용",
-      "request_label": "상세한 내용을 적어주세요. 서포트팀이 3 영업일 이내에 이메일로 답변을 드리겠습니다.",
-      "send_button": "보내기",
-      "success": "성공적으로 문의 내용을 제출했습니다. 3 영업일 이내에 이메일로 답변을 드리겠습니다.",
-      "fail": "제출에 실패했습니다. 다시 제출해주세요."
-    },
-    "footer": {
-      "logo_label": "ELYSIA PLATFORM PTE. LTD",
-      "contact": "CONTACT",
-      "email": "cs@elysia.land",
-      "community": "COMMUNITY",
-      "copyright": "ELYSIA ⓒ 2018-2021. All rights reserved.",
-      "privacy_policy": "Privacy Policy",
-      "terms_service": "Terms of Service",
-      "language": "LANGUAGE",
-      "language_en": "English",
-      "language_ko": "한국어",
-      "language_zh-hans": "중국어"
+      "title": "PARTNERS",
+      "legal-advisors": "LEGAL ADVISORS"
     }
   }
 }
