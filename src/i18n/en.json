@@ -39,6 +39,20 @@
     "partners": {
       "title": "PARTNERS",
       "legal-advisors": "LEGAL ADVISORS"
+    },
+    "footer": {
+      "logo_label": "ELYSIA PLATFORM PTE. LTD",
+      "contact": "CONTACT",
+      "email": "cs@elysia.land",
+      "whitepaper": "WhitePaper (old)",
+      "community": "COMMUNITY",
+      "copyright": "ELYSIA ⓒ 2018·2021. All rights reserved.",
+      "privacy_policy": "Privacy Policy",
+      "terms_service": "Terms of Service",
+      "language": "LANGUAGE",
+      "language_en": "English",
+      "language_ko": "한국어",
+      "language_zh·hans": "중국어"
     }
   }
 }
