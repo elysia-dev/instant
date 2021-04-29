@@ -11,6 +11,7 @@
 
 .elysia--mobile {
 
+  white-space: pre-line;
 
 .navTrigger {
   cursor: pointer;
@@ -121,7 +122,8 @@
 
 
   h3,
-  h1 {
+  h1,
+  h2 {
     font-family: "Montserrat-bold";
     color: #000;
     opacity: 0.88;
@@ -279,6 +281,7 @@
       opacity: 0;
       animation: fadeOut 1.7s cubic-bezier(0, 0, 0.1, 1) 0.0001s;
       animation-fill-mode: forwards;
+      white-space: initial;
     }
     &__content-text {
       font-size: 16px;

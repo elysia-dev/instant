@@ -22,6 +22,7 @@
       "owners-button": "Contact us",
       "buyers": "For Buyers",
       "buyers-title": "Real estate investing at your fingertips",
+      "buyers-title-moblie": "Real estate investing\nat your fingertips",
       "buyers-content": "Find real estate opportunities around the world and\nsettle transactions with almost no intermediary costs",
       "buyers-button": "Download the app",
       "participants": "For Participants",
@@ -40,6 +41,48 @@
       "title": "PARTNERS",
       "legal-advisors": "LEGAL ADVISORS"
     },
+    "team": {
+      "title": "EXECUTIVE TEAM",
+      "name": [
+        "JungGun Lim",
+        "WonJoon Cha",
+        "Yoon Kim",
+        "DongUk Seo",
+        "Michael Chung",
+        "Jacob Lee"
+      ],
+      "dept": [
+        "CEO",
+        "CSO",
+        "CMO",
+        "CTO",
+        "COO",
+        "Bees’ Company CEO"
+      ],
+      "info": [
+        "・Seoul National University, Dept. of\n　chemical & biological engineering\n・Samsung SDI\n・Specializes in Ruby/React JS\n\nMr. Lim is the CEO of Elysia. He outlines the direction of the foundation and manages the overall operations and resources of Elysia",
+        "・Seoul National University, School of\n　mechanical & aerospace engineering\n・CEO of BTbridge lnc.\n ・Specializes in Big data development\n\nMr. Cha reviews the overall planning and legal regulations for the business",
+        "・Pepperdine University B.A.\n・Business Development at STX O&S\n　and Hanjin\n・Business Development at ICONLOOP\n\nMr. Kim manages sales and marketing operations at Elysia",
+        "・Seoul National University,\n　Computer Science & Engineering\n・Backend Lead Developer at HCG\n・Backend Development Intern at Naver\n\nMr. Seo is currently the Chief Technology Officer at Elysia and is in charge of blockchain architecture and software engineering",
+        "・KAIST National University\n・Industrial engineering\n・KTB Investment & securities\n・Prop Trading, FRM\n・ICONLOOP \n・Business Development\n\nMr.Chung manages operations and finance at Elysia",
+        "・Hanyang University, Dept. of\n　mechanical engineering\n・ STX Co.junior engineer\n・ Specializes in rental management\n　and consulting\n\nMr.Lee is responsible for industry partnerships and advises real estate operations"
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "sub-title": "Didn’t find what you were looking for?",
+      "title-info": "Shoot us an email with your request and we will contact you within one business day.",
+      "checkbox": "I consent to ELYSIA PLATFORM PTE. LTD processing my personal information as set out in the Privacy Policy and Cookie Policy and that, given the global nature of ELYSIA PLATFORM PTE. LTD's business, such processing may take place outside of my home jurisdiction.",
+      "button": "CONTACT",
+      "name": "Name",
+      "phone": "Phone",
+      "email": "E-mail",
+      "company": "Company",
+      "message": "Message",
+      "required": "Name, E-mail address, and Content field is Required",
+      "success": "You have successfully submitted your inquiry. We will respond by email within 3 business days.",
+      "fail": "Submission failed. Please resubmit."
+    },
     "footer": {
       "logo_label": "ELYSIA PLATFORM PTE. LTD",
       "contact": "CONTACT",
@@ -52,7 +95,9 @@
       "language": "LANGUAGE",
       "language_en": "English",
       "language_ko": "한국어",
-      "language_zh·hans": "중국어"
+      "language_zh·hans": "중국어",
+      "contract": "CONTRACT",
+      "el": "Elysia (EL)"
     }
   }
 }

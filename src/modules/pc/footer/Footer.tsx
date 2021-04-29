@@ -34,10 +34,10 @@ const Footer: FunctionComponent = () => {
                   {t("footer.email")}
                 </p>
                 <p className="footer__header-text" style={{ marginTop: 10 }}>
-                  CONTRACT
+                  {t("footer.contract")}
                 </p>
                 <a className="footer__text" target="_blank" rel="noreferrer" href='https://etherscan.io/token/0x2781246fe707bb15cee3e5ea354e2154a2877b16'>
-                  Elysia(EL)
+                  {t("footer.el")}
                 </a>
               </div>
             </div>

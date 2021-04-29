@@ -42,12 +42,7 @@ ELYSIA shall destroy personal information upon the expiry of the retention perio
 ELYSIA takes the following measures to ensure the security of personal information. 1) Managing Measures Establishment and implementation of internal management policy 2) Technical Measures Management of system access rights 3) Physical Measures Separate storage of personal information, control of unauthorized access
                   <h2>Article 10 (Privacy Officer)</h2>
 To protect personal information of members and handle complaints regarding personal information, ELYSIA designates the chief privacy officer as the following according to the Article 31 (Designation of Privacy Officers) of the [PERSONAL INFORMATION PROTECTION ACT].
-                  <br />Privacy Officer of ELYSIA
-                  <br />– Organization: ELYSIA
-                  <br />– Name: Won-jun Cha
-                  <br />– Title: CSO
-                  <br />– Tel.: 010-7102-9382
-                  <br />– E-mail: wonjoon.cha@elysia.or.kr
+                  
             </div>
       );
 }

@@ -256,9 +256,9 @@ const Main = () => {
           </nav>
         </header>
         <div className="main__content-container">
-          <h1 className="main__content-text--bold">
+          <h2 className="main__content-text--bold">
             {t("main.content-title")}
-          </h1>
+          </h2>
           <p className="main__content-text">
             {t("main.content-sub-title")}
           </p>
@@ -285,12 +285,12 @@ const Main = () => {
         <div className="service__container">
           <img className="service__image scroll-animation scroll-animation--right" src={Service00} alt="" />
           <div className="service__text-wrapper scroll-animation" data-sa-delay="200">
-            <h1 className="service__header-text">
+            <h2 className="service__header-text">
             {t("service.owners")}
-            </h1>
-            <h1 className="service__header-text--bold">
+            </h2>
+            <h2 className="service__header-text--bold">
             {t("service.owners-title")}
-            </h1>
+            </h2>
             <p className="service__text">
             {t("service.owners-content")}
             </p>
@@ -304,12 +304,12 @@ const Main = () => {
         </div>
         <div className="service__container">
           <div className="service__text-wrapper scroll-animation" data-sa-delay="200">
-            <h1 className="service__header-text">
+            <h2 className="service__header-text">
               {t("service.buyers")}
-            </h1>
-            <h1 className="service__header-text--bold">
+            </h2>
+            <h2 className="service__header-text--bold">
               {t("service.buyers-title")}
-            </h1>
+            </h2>
             <p className="service__text">
               {t("service.buyers-content")}
             </p>
@@ -329,12 +329,12 @@ const Main = () => {
         <div className="service__container">
           <img className="service__image  scroll-animation scroll-animation--right" src={Service02} alt="" />
           <div className="service__text-wrapper scroll-animation" data-sa-delay="200">
-            <h1 className="service__header-text">
+            <h2 className="service__header-text">
               {t("service.participants")}
-            </h1>
-            <h1 className="service__header-text--bold">
+            </h2>
+            <h2 className="service__header-text--bold">
               {t("service.participants-title")}
-            </h1>
+            </h2>
             <p className="service__text">
               {t("service.participants-content")}
             </p>
@@ -374,7 +374,7 @@ const Main = () => {
                   >
                     <div className="portfolio__asset-funded">{t("portfolio.funded")}</div>
                     <img src={AssetImage} className="portfolio__asset-picture" alt="Elysia Asset" />
-                    <h1 className="portfolio__asset-name">{AssetName}</h1>
+                    <h2 className="portfolio__asset-name">{AssetName}</h2>
                     <p className="portfolio__asset-info funded">
                       {t("portfolio.total")} <span className="portfolio__asset-value">${AssetFunded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
                     </p>
@@ -384,7 +384,7 @@ const Main = () => {
             }
           </div>
         </div>
-        <h1 className="portfolio__see-more" onClick={SwithcingState}>{!state.isMoreAsset ? t("portfolio.seemore") : t("portfolio.close")}</h1>
+        <h2 className="portfolio__see-more" onClick={SwithcingState}>{!state.isMoreAsset ? t("portfolio.seemore") : t("portfolio.close")}</h2>
       </section>
       <section className="partners contents-container" id="partners" ref={Partners}>
         <h1 className="partners__text--bold section__text--bold scroll-animation scroll-animation--up" style={{ paddingTop: 70 }}>
@@ -415,9 +415,9 @@ const Main = () => {
             })
           }
         </div>
-        <h1 className="partners__text--bold section__text--bold scroll-animation scroll-animation--up" style={{ paddingTop: 70 }}>
+        <h2 className="partners__text--bold section__text--bold scroll-animation scroll-animation--up" style={{ paddingTop: 70 }}>
           {t("partners.legal-advisors")}
-        </h1>
+        </h2>
         <div className="partners__wrapper">
           {
             [
@@ -437,73 +437,30 @@ const Main = () => {
       </section>
       <section className="team contents-container" id="team" ref={Team}>
         <h1 className="section__text--bold scroll-animation scroll-animation--up" style={{ paddingTop: 70 }}>
-          EXECUTIVE TEAM
+          {t("team.title")}
         </h1>
         <div className="team__info-wrapper scroll-animation scroll-animation--up" >
           {
             [
               [
-                Team1,
-                "JungGun Lim", "CEO",
-                `・Seoul National University, Dept. of
-                　chemical & biological engineering
-                ・Samsung SDI
-                ・Specializes in Ruby/React JS\n
-                Mr. Lim is the CEO of Elysia. He outlines the direction of the foundation and manages the overall operations and resources of Elysia`,
-                "https://www.linkedin.com/in/junggun-lim-2b1a1a137/",
+                Team1, "https://www.linkedin.com/in/junggun-lim-2b1a1a137/",
               ],
               [
-                Team2,
-                "WonJoon Cha", "CSO",
-                `・Seoul National University, School of
-                　mechanical & aerospace engineering
-                ・CEO of BTbridge lnc.
-                ・Specializes in Big data development\n
-                Mr. Cha reviews the overall planning and legal regulations for the business`,
-                "https://www.linkedin.com/in/%EC%9B%90%EC%A4%80-%EC%B0%A8-1b707653/",
+                Team2, "https://www.linkedin.com/in/%EC%9B%90%EC%A4%80-%EC%B0%A8-1b707653/",
               ],
               [
-                Team3,
-                "Yoon Kim", "CMO",
-                `・Pepperdine University B.A.
-                ・Business Development at STX O&S
-                　and Hanjin
-                ・Business Development at ICONLOOP\n
-                Mr. Kim manages sales and marketing operations at Elysia`,
-                "https://www.linkedin.com/in/yoon-kim-02228619/"
+                Team3, "https://www.linkedin.com/in/yoon-kim-02228619/"
               ],
               [
-                Team4, "DongUk Seo", "CTO",
-                `・Seoul National University,
-                　Computer Science & Engineering
-                ・Backend Lead Developer at HCG
-                ・Backend Development Intern at Naver\n
-                Mr. Seo is currently the Chief Technology Officer at Elysia and is in charge of blockchain architecture and software engineering`,
-                "https://www.linkedin.com/in/donguk-seo-6483141b6/"
+                Team4, "https://www.linkedin.com/in/donguk-seo-6483141b6/"
               ],
               [
-                Team5,
-                "Michael Chung", "COO",
-                `・KAIST National University
-                ・Industrial engineering
-                ・KTB Investment & securities
-                ・Prop Trading, FRM
-                ・ICONLOOP
-                ・Business Development\n
-                Mr.Chung manages operations and finance at Elysia`,
-                "https://www.linkedin.com/in/jaehun-chung-538a52174/",
+                Team5, "https://www.linkedin.com/in/jaehun-chung-538a52174/",
               ],
               [
-                Team6,
-                "Jacob Lee", "Bees’ Company CEO",
-                `・ Hanyang University, Dept. of
-                 mechanical engineering
-                ・ STX Co.junior engineer
-                ・ Specializes in rental management
-                 and consulting\n\n
-                Mr.Lee is responsible for industry partnerships and advises real estate operations`
+                Team6
               ],
-            ].map(([TeamImage, TeamName, TeamDept, TeamHover, linkedInUrl], index) => {
+            ].map(([TeamImage, linkedInUrl], index) => {
               return (
                 <div className="team__container">
                   <div className="team__wrapper">
@@ -516,14 +473,15 @@ const Main = () => {
                           </a>
                         </div>
                       }
-                      {TeamHover.split('\n').map(line => {
+                      {/* {TeamHover.split('\n').map(line => {
                         return (<span>{line}<br /></span>)
-                      })}
+                      })} */}
+                      {(t("team.info." + index))}
                     </p>
                   </div>
                   <div className="team__text-wrapper">
-                    <h1 className="team__text--bold" style={{ whiteSpace: "nowrap" }}>{TeamName}</h1>
-                    <p className="team__text" style={{ whiteSpace: "nowrap" }}>{TeamDept}</p>
+                    <h2 className="team__text--bold" style={{ whiteSpace: "nowrap" }}>{t("team.name." + index)}</h2>
+                    <p className="team__text" style={{ whiteSpace: "nowrap" }}>{t("team.dept." + index)}</p>
                   </div>
                 </div>
               );
@@ -533,13 +491,13 @@ const Main = () => {
       </section>
       <section className="contact contents-container scroll-animation scroll-animation--up" id="contact" ref={Contact}>
         <h1 className="section__text scroll-animation scroll-animation--up">
-          Contact
+          {t("contact.title")}
         </h1>
-        <h1 className="section__text--bold scroll-animation scroll-animation--up" style={{ paddingBottom: 0 }} data-sa-delay="200">
-          Didn’t find what you were looking for?
-        </h1>
+        <h2 className="section__text--bold scroll-animation scroll-animation--up" style={{ paddingBottom: 0 }} data-sa-delay="200">
+          {t("contact.sub-title")}
+        </h2>
         <p className="contact__section__text scroll-animation scroll-animation--up" data-sa-delay="400">
-          Shoot us an email with your request and we will contact you within one business day.
+          {t("contact.title-info")}
         </p>
         <div className="contact__form-container scroll-animation scroll-animation--up">
           <div className="contact__input-wrapper scroll-animation scroll-animation--right">
@@ -550,7 +508,7 @@ const Main = () => {
                   ? "contact__input--required"
                   : "contact__input"
               }
-              placeholder="Name"
+              placeholder={t("contact.name")}
               value={contactState.name}
               onChange={(event) => {
                 setContactState({ ...contactState, name: event.target.value })
@@ -562,7 +520,7 @@ const Main = () => {
             <input
               type="text"
               className="contact__input"
-              placeholder="Phone"
+              placeholder={t("contact.phone")}
               value={contactState.phone}
               onChange={(event) => {
                 setContactState({ ...contactState, phone: event.target.value })
@@ -577,7 +535,7 @@ const Main = () => {
                   ? "contact__input--required"
                   : "contact__input"
               }
-              placeholder="E-mail"
+              placeholder={t("contact.email")}
               value={contactState.email}
               onChange={(event) => {
                 setContactState({ ...contactState, email: event.target.value })
@@ -589,7 +547,7 @@ const Main = () => {
             <input
               type="text"
               className="contact__input"
-              placeholder="Company"
+              placeholder={t("contact.company")}
               value={contactState.company}
               onChange={(event) => {
                 setContactState({ ...contactState, company: event.target.value })
@@ -603,7 +561,7 @@ const Main = () => {
                   ? "contact__textarea--required"
                   : "contact__textarea"
               }
-              placeholder="Message"
+              placeholder={t("contact.message")}
               value={contactState.content}
               onChange={(event) => {
                 setContactState({ ...contactState, content: event.target.value })
@@ -630,28 +588,28 @@ const Main = () => {
               }}
             />
             <p className="contact__checkbox-text">
-              I consent to ELYSIA PLATFORM PTE. LTD processing my personal information as set out in the Privacy Policy and Cookie Policy and that, given the global nature of ELYSIA PLATFORM PTE. LTD's business, such processing may take place outside of my home jurisdiction.
+              {t("contact.checkbox")}
             </p>
           </div>
         </div>
         <div className="contact__button-wrapper scroll-animation">
           {(state.onChecked && state.recaptcha) ? (
             <p className="button" onClick={sendContact}>
-              CONTACT
+              {t("contact.button")}
               <div className="button__arrow-wrapper">
                 <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }} />
               </div>
             </p>
           ) : (
             <p className="button--disable">
-              CONTACT
+              {t("contact.button")}
               <div className="button--disable__arrow-wrapper">
                 <figure className="button--disable__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }} />
               </div>
             </p>
           )}
         </div>
-        <p className="contact__required-message" style={{ display: `${state.fieldNull === true ? ("inline-block") : ("none")}` }}>Name, E-mail address, and Content field is Required</p>
+        <p className="contact__required-message" style={{ display: `${state.fieldNull === true ? ("inline-block") : ("none")}` }}>{t("contact.required")}</p>
       </section>
     </div>
   );
