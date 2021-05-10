@@ -29,12 +29,15 @@ const App = () => {
 
   useEffect(() => {
     // ref http://www.lingoes.net/en/translator/langcode.htm
-    const lang = navigator.language;
+    let lang = navigator.language;
+    lang = lang.toLowerCase().substring(0, 2);
 
     if (lang.includes('ko')) {
       i18n.changeLanguage('ko')
     } else if (lang.includes('zh')) {
-      i18n.changeLanguage('zh')
+      i18n.changeLanguage('zhHans')
+    } else { 
+      i18n.changeLanguage('en')
     }
   }, [])
 
