@@ -16,6 +16,7 @@
     "service": {
       "title": "What is ELYSIA?",
       "sub-title": "We help digitalize real estate ownership to provide direct access to secondary markets on a global scale",
+      "sub-title-moblie": "We help digitalize real estate ownership to provide direct access to secondary markets on a global scale",
       "owners": "For Owners",
       "owners-title": "Tokenize your real estate with Elysia",
       "owners-content": "Use blockchain technology to create immutable\nrepresentation of your assets. Meet instant global liquidity",
@@ -64,7 +65,7 @@
         "・Seoul National University, School of\n　mechanical & aerospace engineering\n・CEO of BTbridge lnc.\n ・Specializes in Big data development\n\nMr. Cha reviews the overall planning and legal regulations for the business",
         "・Pepperdine University B.A.\n・Business Development at STX O&S\n　and Hanjin\n・Business Development at ICONLOOP\n\nMr. Kim manages sales and marketing operations at Elysia",
         "・Seoul National University,\n　Computer Science & Engineering\n・Backend Lead Developer at HCG\n・Backend Development Intern at Naver\n\nMr. Seo is currently the Chief Technology Officer at Elysia and is in charge of blockchain architecture and software engineering",
-        "・KAIST National University\n・Industrial engineering\n・KTB Investment & securities\n・Prop Trading, FRM\n・ICONLOOP \n・Business Development\n\nMr.Chung manages operations and finance at Elysia",
+        "・KAIST National University Industrial 　engineering\n・KTB Investment & securities Prop 　Trading, FRM\n・ICONLOOP Business Development\n\nMr.Chung manages operations and finance at Elysia",
         "・Hanyang University, Dept. of\n　mechanical engineering\n・ STX Co.junior engineer\n・ Specializes in rental management\n　and consulting\n\nMr.Lee is responsible for industry partnerships and advises real estate operations"
       ]
     },

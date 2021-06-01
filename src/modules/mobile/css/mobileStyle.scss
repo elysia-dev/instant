@@ -274,7 +274,7 @@
       right: 0;
     }
     &__content-text--bold {
-      font-size: 32px;
+      font-size: 31px;
       color: #ffffff;
       line-height: 35px;
       margin-bottom: 26px;
@@ -341,6 +341,9 @@
       font-size: 17px;
       line-height: 25px;
       margin: 0 0 45px 0;
+    }
+    &__text-wrapper {
+      min-width: 0px !important;
     }
   }
   .portfolio {

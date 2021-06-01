@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next';
 
 const Footer: FunctionComponent = () => {
   const history = useHistory();
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   return (
     <>
@@ -39,6 +39,20 @@ const Footer: FunctionComponent = () => {
                 <a className="footer__text" target="_blank" rel="noreferrer" href='https://etherscan.io/token/0x2781246fe707bb15cee3e5ea354e2154a2877b16'>
                   {t("footer.el")}
                 </a>
+              </div>
+              <div className="footer__contact-container" style={{ marginLeft: 100 }}>
+                <p className="footer__header-text">
+                  {t("footer.language")}
+                </p>
+                <p className="footer__text" onClick={() => { i18n.changeLanguage("en") }}>
+                  English
+                </p>
+                {/* <p className="footer__text" onClick={() => { i18n.changeLanguage("zhHans") }}>
+                  中文
+                </p> */}
+                <p className="footer__text" onClick={() => { i18n.changeLanguage("ko") }}>
+                  한국어
+                </p>
               </div>
             </div>
             <div className="footer__container--right">

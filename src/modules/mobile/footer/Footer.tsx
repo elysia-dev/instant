@@ -14,29 +14,44 @@ import { useTranslation } from 'react-i18next';
 
 const Footer: FunctionComponent = () => {
   const history = useHistory();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <footer className="mobile-footer">
       <div className="mobile-footer-container">
         <div className="mobile-footer-wrapper">
-          <div className="mobile-footer-container-contact">
-            <p className="mobile-footer-header-text">
-              {i18n.t("footer.contact")}
-            </p>
-            <p className="mobile-footer-text">
-              {i18n.t("footer.email")}
-            </p>
-            <p className="mobile-footer-header-text" style={{ marginTop: 10 }}>
-              {i18n.t("footer.contract")}
+          <div style={{ display: 'flex'}}>
+            <div className="mobile-footer-container-contact">
+              <p className="mobile-footer-header-text">
+                {t("footer.contact")}
               </p>
-            <a className="mobile-footer-text" target="_blank" rel="noreferrer" href='https://etherscan.io/token/0x2781246fe707bb15cee3e5ea354e2154a2877b16'>
-              {i18n.t("footer.el")}
-            </a>
+              <p className="mobile-footer-text">
+                {t("footer.email")}
+              </p>
+              <p className="mobile-footer-header-text" style={{ marginTop: 10 }}>
+                {t("footer.contract")}
+                </p>
+              <a className="mobile-footer-text" target="_blank" rel="noreferrer" href='https://etherscan.io/token/0x2781246fe707bb15cee3e5ea354e2154a2877b16'>
+                {t("footer.el")}
+              </a>
+            </div>
+            <div className="mobile-footer-container-contact" style={{ marginLeft: 100 }}>
+              <p className="mobile-footer-header-text">
+                {t("footer.language")}
+              </p>
+              <p className="mobile-footer-text" onClick={() => { i18n.changeLanguage("en") }}>
+                English
+              </p>
+              {/* <p className="footer__text" onClick={() => { i18n.changeLanguage("zhHans") }}>
+                中文
+              </p> */}
+              <p className="mobile-footer-text" onClick={() => { i18n.changeLanguage("ko") }}>
+                한국어
+              </p>
+            </div>
           </div>
-
           <p className="mobile-footer-header-text">
-            {i18n.t("footer.community")}
+            {t("footer.community")}
           </p>
           <div className="mobile-footer-container-icon">
             <div>

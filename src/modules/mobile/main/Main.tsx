@@ -237,7 +237,7 @@ const Main = () => {
           {t("service.title")}
         </h1>
         <h1 className="section__text--bold scroll-animation scroll-animation--up" data-sa-delay="200">
-          {t("service.sub-title")}<br/>
+          {t("service.sub-title-moblie")}<br/>
         </h1>
         <div className="service__container">
           <img className="service__image scroll-animation scroll-animation--up" src={Service00} alt="" />

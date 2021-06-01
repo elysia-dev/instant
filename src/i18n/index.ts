@@ -10,7 +10,7 @@ i18n
     resources: {
       en,
       ko,
-      zhHans
+      // zhHans
     },
     lng: "ko",
     fallbackLng: "ko",

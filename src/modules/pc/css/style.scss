@@ -330,6 +330,7 @@ section.contents-container {
     margin: 150px 0px;
   }
   &__text-wrapper {
+    min-width: 550px;
     display: flex;
     flex-direction: column;
     justify-content: center;
