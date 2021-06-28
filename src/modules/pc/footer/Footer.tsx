@@ -93,7 +93,7 @@ const Footer: FunctionComponent = () => {
           <p
             className="footer__text--whitepaper"
             onClick={() => {
-              window.location.replace("https://drive.google.com/file/d/1Sxu8-jIIJlVUZoVhtX4QG8kS73vXr3Cs/view")
+              window.location.replace("https://drive.google.com/file/d/16ey8rTnm_1H9zqstKcQK0EzA47h-UDMo/view?usp=sharing")
             }}
           >
             Whitepaper
