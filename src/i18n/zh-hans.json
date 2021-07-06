@@ -51,14 +51,7 @@
         "Michael Chung",
         "Jacob Lee"
       ],
-      "dept": [
-        "CEO",
-        "CSO",
-        "CMO",
-        "CTO",
-        "COO",
-        "Bees’ Company CEO"
-      ],
+      "dept": ["CEO", "CSO", "CMO", "CTO", "COO", "Bees’ Company CEO"],
       "info": [
         "・首尔国立大学化学与生物工程系\n・三星SDI\n・专门研究Ruby / React JS\n\n林先生是Elysia的首席执行官。 他概述了基金会的发展方向，并管理Elysia的整体运营和资源",
         "・首尔国立大学机械与航空工程学院\n・BTbridge公司首席执行官\n・专门从事大数据开发\n\n查先生审查了该业务的总体规划和法律法规",
@@ -97,7 +90,8 @@
       "language_ko": "한국어",
       "language_zh·hans": "简体中文",
       "contract": "CONTRACT",
-      "el": "Elysia (EL)"
+      "el": "Elysia (EL)",
+      "elfi": "Elyfi (ELFI)"
     }
   }
 }
