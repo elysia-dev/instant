@@ -52,8 +52,12 @@ import { useTranslation } from 'react-i18next';
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
 
+import PopupImageKor from '../../../shared/image/popup--kor.png'
+import PopupImageEng from '../../../shared/image/popup--eng.png'
+
 const Main = () => {
   const { t, i18n } = useTranslation();
+  const [popup, setPopup] = useState(false);
 
   const [state, setState] = useState({
     isMoreAsset: false,
@@ -186,8 +190,77 @@ const Main = () => {
   window.addEventListener('scroll', ScrollAnimationFunc);
 
 
+  const PopupKor = () => {
+    return (
+      <div className="popup">
+        <div className="popup__container">
+          <div>
+            <div onClick={() => PopupDisable()}>
+              <div className="popup__button" />
+              <p>
+                오늘 그만보기
+              </p>
+            </div>
+            <div className="close-button" onClick={() => { setPopup(true) }}>
+              <div className="close-button--1">
+                <div className="close-button--2" />
+              </div>
+            </div>
+          </div>
+          <a href="https://defi.elysia.land/" target="__blank" style={{ cursor: 'pointer' }}>
+            <img src={PopupImageKor} />
+          </a>
+        </div>
+      </div>
+    )
+  }
+
+  const PopupEng = () => {
+    return (
+      <div className="popup">
+        <div className="popup__container">
+          <div>
+            <div onClick={() => PopupDisable()}>
+              <div className="popup__button" />
+              <p>
+                do not open this window today
+              </p>
+            </div>
+            <div className="close-button" onClick={() => { setPopup(true) }}>
+              <div className="close-button--1">
+                <div className="close-button--2" />
+              </div>
+            </div>
+          </div>
+          <a href="https://defi.elysia.land/" target="__blank" style={{ cursor: 'pointer' }}>
+            <img src={PopupImageEng} />
+          </a>
+        </div>
+      </div>
+    )
+  }
+
+  const PopupDisable = () => {
+    var today = new Date();
+    today.setDate(today.getDate() + 1);
+    
+    window.localStorage.setItem("@disableTime", (today.getDate()).toString());
+    setPopup(true);
+  }
+  
+  useEffect(() => {
+    var nowTime = new Date();
+    const setTime = window.localStorage.getItem("@disableTime") || "0";
+
+    nowTime.getDate() < parseInt(setTime) && setPopup(true)
+
+    console.log(nowTime.getDate())
+    console.log(setTime)
+  }, [])
+
   return (
     <div className="elysia--mobile" id="top">
+      {!popup && (i18n.language === "ko" ? PopupKor() : PopupEng())}
       <section className="main" id="main" style={{ backgroundImage: `url(${MainBackground})` }}>
         <header className="main__nav" style={{ backgroundColor: `${scrollTop >= (getHeight - 35) ? "#FFFFFF" : "#1c1c1c"}` }} >
           <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>

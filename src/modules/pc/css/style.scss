@@ -108,6 +108,74 @@ section.contents-container {
   }
 }
 
+.popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  &__container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    > div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        gap: 10px;
+        margin-left: 5px;
+        > p {
+          color: #ffffff;
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+    > a > img {
+      max-height: 80vh;
+    }
+  }
+  &__button {
+    border: 1px solid #ffffff;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    &:hover {
+      background-color: #ffffff50;
+    }
+  }
+}
+.close-button {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  cursor: pointer;
+  &--1 {
+    height: 25px;
+    width: 2px;
+    margin-left: 12.5px;
+    background-color: #ffffff;
+    transform: rotate(45deg);
+    z-index: 1;
+  }
+  &--2 {
+    height: 25px;
+    width: 2px;
+    background-color: #ffffff;
+    transform: rotate(90deg);
+    z-index: 2;
+  }
+}
 /* main */
 .main {
   position: relative;
@@ -116,6 +184,9 @@ section.contents-container {
   background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &__gnb {
     margin: 0 auto;
     padding: 25px;
@@ -155,7 +226,6 @@ section.contents-container {
   &__content-container {
     text-align: center;
     margin: 0 auto;
-    top: 26vh;
     position: absolute;
     left: 0;
     right: 0;

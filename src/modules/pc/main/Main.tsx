@@ -60,9 +60,14 @@ import { useTranslation } from 'react-i18next';
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
 
+import PopupImageKor from '../../../shared/image/popup--kor.png'
+import PopupImageEng from '../../../shared/image/popup--eng.png'
+
 const Main = () => {
   // const history = useHistory();
   const { t, i18n } = useTranslation();
+
+  const [popup, setPopup] = useState(false);
 
   const Service = React.createRef<HTMLDivElement>();
   const Portfolio = React.createRef<HTMLDivElement>();
@@ -172,6 +177,7 @@ const Main = () => {
     window.scrollTo(0, 0);
   }
 
+
   /* 클래스에 scroll-animation 지정한 블록들에 애니메이션을 추가합니다 */
   const ScrollAnimationDefaultMargin = 100;
   let ScrollAnimationTriggerMargin = 0;
@@ -205,8 +211,78 @@ const Main = () => {
   window.addEventListener('load', ScrollAnimationFunc);
   window.addEventListener('scroll', ScrollAnimationFunc);
 
+
+  const PopupKor = () => {
+    return (
+      <div className="popup">
+        <div className="popup__container">
+          <div>
+            <div onClick={() => PopupDisable()}>
+              <div className="popup__button" />
+              <p>
+                오늘 그만보기
+              </p>
+            </div>
+            <div className="close-button" onClick={() => { setPopup(true) }}>
+              <div className="close-button--1">
+                <div className="close-button--2" />
+              </div>
+            </div>
+          </div>
+          <a href="https://defi.elysia.land/" target="__blank" style={{ cursor: 'pointer' }}>
+            <img src={PopupImageKor} />
+          </a>
+        </div>
+      </div>
+    )
+  }
+
+  const PopupEng = () => {
+    return (
+      <div className="popup">
+        <div className="popup__container">
+          <div>
+            <div onClick={() => PopupDisable()}>
+              <div className="popup__button" />
+              <p>
+                do not open this window today
+              </p>
+            </div>
+            <div className="close-button" onClick={() => { setPopup(true) }}>
+              <div className="close-button--1">
+                <div className="close-button--2" />
+              </div>
+            </div>
+          </div>
+          <a href="https://defi.elysia.land/" target="__blank" style={{ cursor: 'pointer' }}>
+            <img src={PopupImageEng} />
+          </a>
+        </div>
+      </div>
+    )
+  }
+
+  const PopupDisable = () => {
+    var today = new Date();
+    today.setDate(today.getDate() + 1);
+    
+    window.localStorage.setItem("@disableTime", (today.getDate()).toString());
+    setPopup(true);
+  }
+  
+  useEffect(() => {
+    var nowTime = new Date();
+    const setTime = window.localStorage.getItem("@disableTime") || "0";
+
+    nowTime.getDate() < parseInt(setTime) && setPopup(true)
+
+    console.log(nowTime.getDate())
+    console.log(setTime)
+  }, [])
+
   return (
     <div className="elysia" id="top" ref={Top}>
+      {!popup && (i18n.language === "ko" ? PopupKor() : PopupEng())}
       <section className="main" id="main" style={{ backgroundImage: `url(${MainBackground})` }} >
         <header className="main__gnb" style={{ backgroundColor: `${scrollTop >= 100 ? "#FFFFFF" : "transparent"}` }} >
           <nav className="main__gnb__link-container">

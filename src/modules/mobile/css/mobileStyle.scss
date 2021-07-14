@@ -10,7 +10,6 @@
 }
 
 .elysia--mobile {
-
   white-space: pre-line;
 
 .navTrigger {
@@ -235,6 +234,78 @@
       display: inline-block;
     }
   }
+
+
+.popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  &__container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    > div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        gap: 5px;
+        > p {
+          color: #ffffff;
+          font-size: 12px;
+          cursor: pointer;
+        }
+      }
+    }
+    > a > img {
+      min-width: 270px;
+      width: 90vw;
+      max-height: 80vh;
+    }
+  }
+  &__button {
+    border: 1px solid #ffffff;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    &:hover {
+      background-color: #ffffff50;
+    }
+  }
+}
+.close-button {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+  &--1 {
+    height: 20px;
+    width: 2px;
+    margin-left: 10px;
+    background-color: #ffffff;
+    transform: rotate(45deg);
+    z-index: 1;
+  }
+  &--2 {
+    height: 20px;
+    width: 2px;
+    background-color: #ffffff;
+    transform: rotate(90deg);
+    z-index: 2;
+  }
+}
+
   .main {
     &__nav {
       margin: 0 auto;
