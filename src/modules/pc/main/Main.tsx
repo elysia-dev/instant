@@ -240,17 +240,17 @@ const Main = () => {
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
                 {t("navigation.contact")}
               </p>
-              <a className="main__gnb__link main__gnb--bold" 
+              <a className="main__gnb__link main__gnb--bold"
                 href="https://elysia.gitbook.io/elysia-guide/"
                 target="_blank"
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
                 {t("navigation.helpdesk")}
               </a>
-              <a className="main__gnb__link main__gnb--bold" 
+              <a className="main__gnb__link main__gnb--bold"
                 href="https://defi.elysia.land"
                 target="_blank"
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
-                {t("navigation.elyfi")}<span className="main__gnb__link--span">beta</span>
+                {t("navigation.elyfi")}
               </a>
             </div>
           </nav>
@@ -280,19 +280,19 @@ const Main = () => {
           {t("service.title")}
         </h1>
         <h1 className="section__text--bold scroll-animation scroll-animation--up" data-sa-delay="200">
-        {t("service.sub-title")}
+          {t("service.sub-title")}
         </h1>
         <div className="service__container">
           <img className="service__image scroll-animation scroll-animation--right" src={Service00} alt="" />
           <div className="service__text-wrapper scroll-animation" data-sa-delay="200">
             <h2 className="service__header-text">
-            {t("service.owners")}
+              {t("service.owners")}
             </h2>
             <h2 className="service__header-text--bold">
-            {t("service.owners-title")}
+              {t("service.owners-title")}
             </h2>
             <p className="service__text">
-            {t("service.owners-content")}
+              {t("service.owners-content")}
             </p>
             <p className="button" onClick={() => Scroll("contact")}>
               {t("service.owners-button")}
@@ -339,8 +339,8 @@ const Main = () => {
               {t("service.participants-content")}
             </p>
             <p className="button" onClick={() => {
-                window.location.replace("https://defi.elysia.land")
-              }}>
+              window.location.replace("https://defi.elysia.land")
+            }}>
               {t("service.participants-button")}
               <div className="button__arrow-wrapper">
                 <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }} />
@@ -429,7 +429,7 @@ const Main = () => {
               TSMP,
             ].map((image, index) => {
               return (
-                <img src={image} className="partners__picture scroll-animation scroll-animation--up" alt="Elysia" data-sa-margin={index * 5} style={{ margin: "20px 107px"}} />
+                <img src={image} className="partners__picture scroll-animation scroll-animation--up" alt="Elysia" data-sa-margin={index * 5} style={{ margin: "20px 107px" }} />
               );
             })
           }

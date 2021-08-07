@@ -192,23 +192,23 @@ const Main = () => {
         <header className="main__nav" style={{ backgroundColor: `${scrollTop >= (getHeight - 35) ? "#FFFFFF" : "#1c1c1c"}` }} >
           <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
             <figure className="elysia-logo" style={{ backgroundImage: `url(${scrollTop >= (getHeight - 35) ? ElysiaLogo : ElysiaWhiteLogo})` }} />
-            <div className={`navTrigger ${state.hamburgerBar && "active"}`} 
-              onClick={() => { setState({ ...state, hamburgerBar: !state.hamburgerBar })}}>
-              <i style={{backgroundColor: `${scrollTop >= (getHeight - 35) ? "#1c1c1c" : "#ffffff"}` }} />
-              <i style={{backgroundColor: `${scrollTop >= (getHeight - 35) ? "#1c1c1c" : "#ffffff"}` }} />
-              <i style={{backgroundColor: `${scrollTop >= (getHeight - 35) ? "#1c1c1c" : "#ffffff"}` }} />
+            <div className={`navTrigger ${state.hamburgerBar && "active"}`}
+              onClick={() => { setState({ ...state, hamburgerBar: !state.hamburgerBar }) }}>
+              <i style={{ backgroundColor: `${scrollTop >= (getHeight - 35) ? "#1c1c1c" : "#ffffff"}` }} />
+              <i style={{ backgroundColor: `${scrollTop >= (getHeight - 35) ? "#1c1c1c" : "#ffffff"}` }} />
+              <i style={{ backgroundColor: `${scrollTop >= (getHeight - 35) ? "#1c1c1c" : "#ffffff"}` }} />
             </div>
           </div>
           <div className="main__nav__wrapper" style={{ height: state.hamburgerBar ? 100 : 0, paddingTop: state.hamburgerBar ? 30 : 0 }}>
             <p className="main__nav__link" style={{ color: `${scrollTop >= (getHeight - 35) ? "#1c1c1c" : "#FFFFFF"}` }} onClick={() => {
-                window.open("https://elysia.gitbook.io/elysia-guide/", '_blank')
-              }}>
+              window.open("https://elysia.gitbook.io/elysia-guide/", '_blank')
+            }}>
               {t("navigation.helpdesk")}
             </p>
             <p className="main__nav__link" style={{ color: `${scrollTop >= (getHeight - 35) ? "#1c1c1c" : "#FFFFFF"}` }} onClick={() => {
-                window.open("https://defi.elysia.land", '_blank')
-              }}>
-              {t("navigation.elyfi")}<span className="main__nav__link--span">beta</span>
+              window.open("https://defi.elysia.land", '_blank')
+            }}>
+              {t("navigation.elyfi")}
             </p>
           </div>
         </header>
@@ -237,7 +237,7 @@ const Main = () => {
           {t("service.title")}
         </h1>
         <h1 className="section__text--bold scroll-animation scroll-animation--up" data-sa-delay="200">
-          {t("service.sub-title-moblie")}<br/>
+          {t("service.sub-title-moblie")}<br />
         </h1>
         <div className="service__container">
           <img className="service__image scroll-animation scroll-animation--up" src={Service00} alt="" />
@@ -296,8 +296,8 @@ const Main = () => {
               {t("service.participants-content")}
             </p>
             <p className="button" onClick={() => {
-                window.location.replace("https://defi.elysia.land")
-              }}>
+              window.location.replace("https://defi.elysia.land")
+            }}>
               {t("service.participants-button")}
               <div className="button__arrow-wrapper">
                 <figure className="button__arrow-image" style={{ backgroundImage: `url(${ButtonArrow})` }} />
@@ -390,7 +390,7 @@ const Main = () => {
                 Team5, "https://www.linkedin.com/in/jaehun-chung-538a52174/"
               ],
               [
-                Team6 
+                Team6
               ],
             ].map(([TeamImage, linkedInUrl], index) => {
               return (
@@ -520,7 +520,7 @@ const Main = () => {
               }}
             />
             <p className="contact__checkbox-text">
-            {t("contact.checkbox")}
+              {t("contact.checkbox")}
             </p>
           </div>
         </div>
