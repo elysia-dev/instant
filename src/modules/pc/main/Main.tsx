@@ -326,7 +326,7 @@ const Main = () => {
                 href="https://defi.elysia.land"
                 target="_blank"
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
-                {t("navigation.elyfi")}<span className="main__gnb__link--span">beta</span>
+                {t("navigation.elyfi")}
               </a>
             </div>
           </nav>

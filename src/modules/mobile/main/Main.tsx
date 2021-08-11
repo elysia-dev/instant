@@ -281,7 +281,7 @@ const Main = () => {
             <p className="main__nav__link" style={{ color: `${scrollTop >= (getHeight - 35) ? "#1c1c1c" : "#FFFFFF"}` }} onClick={() => {
                 window.open("https://defi.elysia.land", '_blank')
               }}>
-              {t("navigation.elyfi")}<span className="main__nav__link--span">beta</span>
+              {t("navigation.elyfi")}
             </p>
           </div>
         </header>
