@@ -67,7 +67,7 @@ const Main = () => {
   // const history = useHistory();
   const { t, i18n } = useTranslation();
 
-  const [popup, setPopup] = useState(false);
+  const [popup, setPopup] = useState(true);
 
   const Service = React.createRef<HTMLDivElement>();
   const Portfolio = React.createRef<HTMLDivElement>();
@@ -270,15 +270,12 @@ const Main = () => {
     setPopup(true);
   }
   
-  useEffect(() => {
-    var nowTime = new Date();
-    const setTime = window.localStorage.getItem("@disableTime") || "0";
+  // useEffect(() => {
+  //   var nowTime = new Date();
+  //   const setTime = window.localStorage.getItem("@disableTime") || "0";
 
-    nowTime.getDate() < parseInt(setTime) && setPopup(true)
-
-    console.log(nowTime.getDate())
-    console.log(setTime)
-  }, [])
+  //   nowTime.getDate() < parseInt(setTime) && setPopup(true)
+  // }, [])
 
   return (
     <div className="elysia" id="top" ref={Top}>

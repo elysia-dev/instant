@@ -57,7 +57,7 @@ import PopupImageEng from '../../../shared/image/popup--eng.png'
 
 const Main = () => {
   const { t, i18n } = useTranslation();
-  const [popup, setPopup] = useState(false);
+  const [popup, setPopup] = useState(true);
 
   const [state, setState] = useState({
     isMoreAsset: false,
@@ -248,15 +248,15 @@ const Main = () => {
     setPopup(true);
   }
   
-  useEffect(() => {
-    var nowTime = new Date();
-    const setTime = window.localStorage.getItem("@disableTime") || "0";
+  // useEffect(() => {
+  //   var nowTime = new Date();
+  //   const setTime = window.localStorage.getItem("@disableTime") || "0";
 
-    nowTime.getDate() < parseInt(setTime) && setPopup(true)
+  //   nowTime.getDate() < parseInt(setTime) && setPopup(true)
 
-    console.log(nowTime.getDate())
-    console.log(setTime)
-  }, [])
+  //   console.log(nowTime.getDate())
+  //   console.log(setTime)
+  // }, [])
 
   return (
     <div className="elysia--mobile" id="top">
