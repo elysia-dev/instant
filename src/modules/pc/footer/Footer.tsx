@@ -93,7 +93,7 @@ const Footer: FunctionComponent = () => {
           <p
             className="footer__text--whitepaper"
             onClick={() => {
-              window.location.replace("https://drive.google.com/file/d/16ey8rTnm_1H9zqstKcQK0EzA47h-UDMo/view?usp=sharing")
+              window.location.replace("https://elysia-docs.elysia.land/")
             }}
           >
             Whitepaper

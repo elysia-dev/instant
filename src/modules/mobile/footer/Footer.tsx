@@ -99,7 +99,7 @@ const Footer: FunctionComponent = () => {
           </p>
           <p className="mobile-footer-terms-fo-service mobile-footer-link"
             onClick={() => {
-              window.location.replace("https://drive.google.com/file/d/1Sxu8-jIIJlVUZoVhtX4QG8kS73vXr3Cs/view")
+              window.location.replace("https://elysia-docs.elysia.land/")
             }}>
             Whitepaper
           </p>
