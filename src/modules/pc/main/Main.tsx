@@ -229,7 +229,7 @@ const Main = () => {
               </div>
             </div>
           </div>
-          <a href="https://defi.elysia.land/" target="__blank" style={{ cursor: 'pointer' }}>
+          <a href="https://elyfi.world/" target="__blank" style={{ cursor: 'pointer' }}>
             <img src={PopupImageKor} />
           </a>
         </div>
@@ -254,7 +254,7 @@ const Main = () => {
               </div>
             </div>
           </div>
-          <a href="https://defi.elysia.land/" target="__blank" style={{ cursor: 'pointer' }}>
+          <a href="https://elyfi.world/" target="__blank" style={{ cursor: 'pointer' }}>
             <img src={PopupImageEng} />
           </a>
         </div>
@@ -320,7 +320,7 @@ const Main = () => {
                 {t("navigation.helpdesk")}
               </a>
               <a className="main__gnb__link main__gnb--bold" 
-                href="https://defi.elysia.land"
+                href="https://elyfi.world"
                 target="_blank"
                 style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
                 {t("navigation.elyfi")}
@@ -412,7 +412,7 @@ const Main = () => {
               {t("service.participants-content")}
             </p>
             <p className="button" onClick={() => {
-                window.location.replace("https://defi.elysia.land")
+                window.location.replace("https://elyfi.world")
               }}>
               {t("service.participants-button")}
               <div className="button__arrow-wrapper">
