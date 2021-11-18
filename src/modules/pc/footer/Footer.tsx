@@ -25,6 +25,10 @@ const Footer: FunctionComponent = () => {
               <div className="footer__logo__wrapper">
                 <img src={ElysiaLogoWhite} style={{ cursor: "pointer" }} className="elysia-white-logo" alt="Elysia" onClick={() => { history.push('/') }} />
                 <p className="footer__logo-text">{t("footer.logo_label")}</p>
+                <iframe 
+                  className="elysia-widget"
+                  src={"https://elysia-public.s3.ap-northeast-2.amazonaws.com/widget.html"} 
+                />
               </div>
               <div className="footer__contact-container" style={{ marginLeft: "auto" }}>
                 <p className="footer__header-text">
