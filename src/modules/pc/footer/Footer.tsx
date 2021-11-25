@@ -27,7 +27,7 @@ const Footer: FunctionComponent = () => {
                 <img src={ElysiaLogoWhite} style={{ cursor: "pointer" }} className="elysia-white-logo" alt="Elysia" onClick={() => { history.push('/') }} />
                 <p className="footer__logo-text">{t("footer.logo_label")}</p>
                 <Frame
-                  style={{ border: "none" }}
+                  style={{ border: "none", width: 220 }}
                   initialContent='<!DOCTYPE html><html><head></head><body><script src="https://crypto.com/price/static/widget/index.js"></script>
                   <div id="crypto-widget-CoinList" data-design="classic" data-coins="elysia"></div><div id="mountHere"></div></body></html>'
                 >
