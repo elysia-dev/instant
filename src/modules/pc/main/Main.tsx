@@ -48,11 +48,11 @@ import SRC from '../../../shared/image/partners/src.png';
 import Fang from '../../../shared/image/partners/fang.png';
 import Gopax from '../../../shared/image/partners/gopax.png';
 import Bithumb from '../../../shared/image/partners/bithumb.png';
-import BithumbGlobal from '../../../shared/image/partners/bithumbglobal.png';
 import HUB from '../../../shared/image/partners/hub.png';
 import HOW from '../../../shared/image/partners/how.png';
 import Anjuke from '../../../shared/image/partners/anjuke.png';
 import SaeJong from '../../../shared/image/partners/shinkim.jpg';
+import Crypto from '../../../shared/image/partners/crypto.png';
 
 import '../css/style.scss';
 import { useHistory, Link } from 'react-router-dom';
@@ -480,10 +480,12 @@ const Main = () => {
               Fang,
               Gopax,
               Bithumb,
-              BithumbGlobal
+              Crypto
             ].map((image, index) => {
               return (
-                <img src={image} className="partners__picture scroll-animation scroll-animation--up" alt="Elysia" data-sa-margin={index * 5} />
+                <a href={index === 14 ? "https://crypto.com/price/elysia" : undefined} target="_blank" >
+                  <img src={image} className="partners__picture scroll-animation scroll-animation--up" alt="Elysia" data-sa-margin={index * 5} style={{ objectFit: 'contain' }} />
+                </a>
               );
             })
           }

@@ -39,7 +39,7 @@ import SRC from '../../../shared/image/partners/src.png';
 import Fang from '../../../shared/image/partners/fang.png';
 import Gopax from '../../../shared/image/partners/gopax.png';
 import Bithumb from '../../../shared/image/partners/bithumb.png';
-import BithumbGlobal from '../../../shared/image/partners/bithumbglobal.png';
+import Crypto from '../../../shared/image/partners/crypto.png';
 import HUB from '../../../shared/image/partners/hub.png';
 import HOW from '../../../shared/image/partners/how.png';
 import Anjuke from '../../../shared/image/partners/anjuke.png';
@@ -408,11 +408,13 @@ const Main = () => {
               Fang,
               Gopax,
               Bithumb,
-              BithumbGlobal
+              Crypto
             ].map((image, index) => {
               return (
                 <div className="partners__item">
-                  <img src={image} className="partners__image scroll-animation scroll-animation--up" alt="" />
+                  <a href={index === 14 ? "https://crypto.com/price/elysia" : undefined} target="_blank" >
+                    <img src={image} className="partners__image scroll-animation scroll-animation--up" alt="" style={{ objectFit: 'contain' }} />
+                  </a>
                 </div>
               );
             })
