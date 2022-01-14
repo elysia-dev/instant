@@ -52,14 +52,7 @@
         "Michael Chung",
         "Jacob Lee"
       ],
-      "dept": [
-        "CEO",
-        "CSO",
-        "CMO",
-        "CTO",
-        "COO",
-        "Bees’ Company CEO"
-      ],
+      "dept": ["CEO", "CSO", "CMO", "CTO", "COO", "Bees’ Company CEO"],
       "info": [
         "・Seoul National University, Dept. of\n　chemical & biological engineering\n・Samsung SDI\n・Specializes in Ruby/React JS\n\nMr. Lim is the CEO of Elysia. He outlines the direction of the foundation and manages the overall operations and resources of Elysia",
         "・Seoul National University, School of\n　mechanical & aerospace engineering\n・CEO of BTbridge lnc.\n ・Specializes in Big data development\n\nMr. Cha reviews the overall planning and legal regulations for the business",
@@ -98,7 +91,8 @@
       "language_ko": "한국어",
       "language_zh·hans": "简体中文",
       "contract": "CONTRACT",
-      "el": "Elysia (EL)"
+      "el": "Elysia (EL)",
+      "elfi": "Elyfi (ELFI)"
     }
   }
 }

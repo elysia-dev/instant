@@ -46,6 +46,9 @@ const Footer: FunctionComponent = () => {
                 <a className="footer__text" target="_blank" rel="noreferrer" href='https://etherscan.io/token/0x2781246fe707bb15cee3e5ea354e2154a2877b16'>
                   {t("footer.el")}
                 </a>
+                <a className="footer__text" target="_blank" rel="noreferrer" href='https://etherscan.io/token/0x4dA34f8264CB33A5c9F17081B9EF5Ff6091116f4'>
+                  {t("footer.elfi")}
+                </a>
               </div>
               <div className="footer__contact-container" style={{ marginLeft: 100 }}>
                 <p className="footer__header-text">
