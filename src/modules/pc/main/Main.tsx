@@ -32,6 +32,8 @@ import Team6 from "../../../shared/image/team/Team8.png";
 import LinkedIn from "../../../shared/image/linkedin.png";
 
 /* Partners Image */
+import Certik from "../../../shared/image/partners/certik.png";
+import HaechiLabs from '../../../shared/image/partners/haechi_labs.png';
 import Iconloop from "../../../shared/image/partners/iconloop.png";
 import Hexlant from "../../../shared/image/partners/hexlant.png";
 import Bishijie from "../../../shared/image/partners/bishijie.png";
@@ -252,14 +254,6 @@ const Main = () => {
               }}
             />
             <div className="main__gnb__link-wrapper">
-              {/* <p className="main__gnb__link" onClick={() => Scroll("serviceref")}
-                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
-                {t("navigation.service")}
-              </p>
-              <p className="main__gnb__link" onClick={() => Scroll("portfolioref")}
-                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}>
-                {t("navigation.portfolio")}
-              </p> */}
               <a
                 className="main__gnb__link"
                 href="#service"
@@ -319,26 +313,9 @@ const Main = () => {
             {t("main.content-title")}
           </h2>
           <p className="main__content-text">{t("main.content-sub-title")}</p>
-          <a
-            className="main__store__button"
-            href="https://play.google.com/store/apps/details?id=land.elysia"
-          >
-            <figure
-              className="main__image__google-play"
-              style={{ backgroundImage: `url(${GoogleLogo})` }}
-            />
-            <span className="main__image__text">Google Play</span>
-          </a>
-          <a
-            className="main__store__button"
-            href="https://apps.apple.com/us/app/elysia/id1536733411"
-          >
-            <figure
-              className="main__image__app-store"
-              style={{ backgroundImage: `url(${AppleLogo})` }}
-            />
-            <span className="main__image__text">App Store</span>
-          </a>
+          <p className="main__content__dao">
+            {t("main.content-dao")}
+          </p>
         </div>
         <div className="main__down-arrow-wrapper">
           <img
@@ -366,7 +343,7 @@ const Main = () => {
         >
           {t("service.sub-title")}
         </h1>
-        <div className="service__container">
+        {/* <div className="service__container">
           <img
             className="service__image scroll-animation scroll-animation--right"
             src={Service00}
@@ -391,7 +368,7 @@ const Main = () => {
               </div>
             </p>
           </div>
-        </div>
+        </div> */}
         <div className="service__container">
           <div
             className="service__text-wrapper scroll-animation"
@@ -528,6 +505,27 @@ const Main = () => {
         id="partners"
         ref={Partners}
       >
+        <h1
+          className="partners__text--bold section__text--bold scroll-animation scroll-animation--up"
+          style={{ paddingTop: 70 }}
+        >
+          {t("partners.audit")}
+        </h1>
+        <div style={{
+          display: "flex",
+          justifyContent: "space-evenly"
+        }}>
+        {[Certik, HaechiLabs].map((data, index) => {
+          return (
+            <img
+              src={data}
+              className="partners__picture scroll-animation scroll-animation--up"
+              alt="Elysia"
+              data-sa-margin={index * 5}
+            />
+          )
+        })}
+        </div>
         <h1
           className="partners__text--bold section__text--bold scroll-animation scroll-animation--up"
           style={{ paddingTop: 70 }}

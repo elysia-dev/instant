@@ -10,8 +10,9 @@
       "elyfi": "ELYFI"
     },
     "main": {
-      "content-title": "세상에 없던 부동산 투자",
-      "content-sub-title": "엘리시아는 전세계 부동산 투자자들을 위한 최신 기술을 제공합니다"
+      "content-title": "실물자산 토큰화 프로토콜",
+      "content-sub-title": "엘리시아는 부동산과 같은 실물자산을 유동화 할 수 있도록 토큰화 서비스를 제공합니다.",
+      "content-dao": "Led by ELYSIA DAO LLC"
     },
     "service": {
       "title": "엘리시아란 무엇인가요?",
@@ -39,6 +40,7 @@
       "close": "닫기 <"
     },
     "partners": {
+      "audit": "감사(Audit) 업체",
       "title": "파트너",
       "legal-advisors": "법률 지원"
     },

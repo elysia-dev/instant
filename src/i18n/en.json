@@ -11,7 +11,8 @@
     },
     "main": {
       "content-title": "DIGITAL INFRASTRUCTURE FOR\nREAL ESTATE ASSETS",
-      "content-sub-title": "Elysia provides the latest technology to bridge the gap between\ntraditional real estate participants and global investors"
+      "content-sub-title": "Elysia provides the latest technology to bridge the gap between\ntraditional real estate participants and global investors",
+      "content-dao": "Led by ELYSIA DAO LLC"
     },
     "service": {
       "title": "What is ELYSIA?",
@@ -39,6 +40,7 @@
       "close": "Close <"
     },
     "partners": {
+      "audit": "Audited by",
       "title": "PARTNERS",
       "legal-advisors": "LEGAL ADVISORS"
     },

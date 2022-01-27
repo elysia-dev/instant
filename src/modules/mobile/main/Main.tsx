@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ElysiaLogo from "../../../shared/image/Elysia_Logo.png";
 import ElysiaWhiteLogo from "../../../shared/image/Elysia_Logo_White.png";
 import MainBackground from "../../../shared/image/main-background.png";
-import GoogleLogo from "../../../shared/image/google-logo.png";
-import AppleLogo from "../../../shared/image/apple-logo.png";
 import DownArrow from "../../../shared/image/down-arrow.png";
 
 /* Service */
@@ -23,6 +21,8 @@ import Team6 from "../../../shared/image/team/Team8.png";
 import LinkedIn from "../../../shared/image/linkedin.png";
 
 /* Partners Image */
+import Certik from "../../../shared/image/partners/certik.png";
+import HaechiLabs from '../../../shared/image/partners/haechi_labs.png';
 import Iconloop from "../../../shared/image/partners/iconloop.png";
 import Hexlant from "../../../shared/image/partners/hexlant.png";
 import Bishijie from "../../../shared/image/partners/bishijie.png";
@@ -56,9 +56,6 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
-
-import PopupImageKor from "../../../shared/image/popup--kor.png";
-import PopupImageEng from "../../../shared/image/popup--eng.png";
 
 const Main = () => {
   const { t, i18n } = useTranslation();
@@ -306,26 +303,9 @@ const Main = () => {
             {t("main.content-title")}
           </h1>
           <p className="main__content-text">{t("main.content-sub-title")}</p>
-          <a
-            className="main__store__button"
-            href="https://play.google.com/store/apps/details?id=land.elysia"
-          >
-            <figure
-              className="main__image__google-play"
-              style={{ backgroundImage: `url(${GoogleLogo})` }}
-            />
-            <span className="main__image__text">Google Play</span>
-          </a>
-          <a
-            className="main__store__button"
-            href="https://apps.apple.com/us/app/elysia/id1536733411"
-          >
-            <figure
-              className="main__image__app-store"
-              style={{ backgroundImage: `url(${AppleLogo})` }}
-            />
-            <span className="main__image__text">App Store</span>
-          </a>
+          <p className="main__content__dao">
+            {t("main.content-dao")}
+          </p>
         </div>
         <div className="main__down-arrow-wrapper">
           <img
@@ -347,7 +327,7 @@ const Main = () => {
           {t("service.sub-title-moblie")}
           <br />
         </h1>
-        <div className="service__container">
+        {/* <div className="service__container">
           <img
             className="service__image scroll-animation scroll-animation--up"
             src={Service00}
@@ -369,7 +349,7 @@ const Main = () => {
               </div>
             </p>
           </div>
-        </div>
+        </div> */}
         <div className="service__container">
           <img
             className="service__image scroll-animation scroll-animation--up"
@@ -445,6 +425,27 @@ const Main = () => {
         </div>
       </section>
       <section className="partners" id="partners">
+        <h1
+          className="partners__text--bold section__text--bold scroll-animation scroll-animation--up"
+          style={{ paddingTop: 70 }}
+        >
+        {t("partners.audit")}
+        </h1>
+        <div style={{
+          display: "flex",
+          justifyContent: "space-evenly"
+        }}>
+        {[Certik, HaechiLabs].map((data, index) => {
+          return (
+            <img
+              src={data}
+              className="partners__image scroll-animation scroll-animation--up"
+              alt="Elysia"
+              data-sa-margin={index * 5}
+            />
+          )
+        })}
+        </div>
         <h1
           className="partners__text--bold section__text--bold scroll-animation scroll-animation--up"
           style={{ paddingTop: 70 }}
