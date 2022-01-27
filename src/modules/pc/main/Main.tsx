@@ -228,88 +228,8 @@ const Main = () => {
   window.addEventListener("load", ScrollAnimationFunc);
   window.addEventListener("scroll", ScrollAnimationFunc);
 
-  const PopupKor = () => {
-    return (
-      <div className="popup">
-        <div className="popup__container">
-          <div>
-            <div onClick={() => PopupDisable()}>
-              <div className="popup__button" />
-              <p>오늘 그만보기</p>
-            </div>
-            <div
-              className="close-button"
-              onClick={() => {
-                setPopup(true);
-              }}
-            >
-              <div className="close-button--1">
-                <div className="close-button--2" />
-              </div>
-            </div>
-          </div>
-          <a
-            href="https://elyfi.world/"
-            target="__blank"
-            style={{ cursor: "pointer" }}
-          >
-            <img src={PopupImageKor} />
-          </a>
-        </div>
-      </div>
-    );
-  };
-
-  const PopupEng = () => {
-    return (
-      <div className="popup">
-        <div className="popup__container">
-          <div>
-            <div onClick={() => PopupDisable()}>
-              <div className="popup__button" />
-              <p>do not open this window today</p>
-            </div>
-            <div
-              className="close-button"
-              onClick={() => {
-                setPopup(true);
-              }}
-            >
-              <div className="close-button--1">
-                <div className="close-button--2" />
-              </div>
-            </div>
-          </div>
-          <a
-            href="https://elyfi.world/"
-            target="__blank"
-            style={{ cursor: "pointer" }}
-          >
-            <img src={PopupImageEng} />
-          </a>
-        </div>
-      </div>
-    );
-  };
-
-  const PopupDisable = () => {
-    var today = new Date();
-    today.setDate(today.getDate() + 1);
-
-    window.localStorage.setItem("@disableTime", today.getDate().toString());
-    setPopup(true);
-  };
-
-  // useEffect(() => {
-  //   var nowTime = new Date();
-  //   const setTime = window.localStorage.getItem("@disableTime") || "0";
-
-  //   nowTime.getDate() < parseInt(setTime) && setPopup(true)
-  // }, [])
-
   return (
     <div className="elysia" id="top" ref={Top}>
-      {!popup && (i18n.language === "ko" ? PopupKor() : PopupEng())}
       <section
         className="main"
         id="main"
