@@ -39,11 +39,16 @@ import SRC from "../../../shared/image/partners/src.png";
 import Fang from "../../../shared/image/partners/fang.png";
 import Gopax from "../../../shared/image/partners/gopax.png";
 import Bithumb from "../../../shared/image/partners/bithumb.png";
-import Crypto from "../../../shared/image/partners/crypto.png";
+import BithumbGlobal from "../../../shared/image/partners/bithumbglobal.png";
 import HUB from "../../../shared/image/partners/hub.png";
 import HOW from "../../../shared/image/partners/how.png";
 import Anjuke from "../../../shared/image/partners/anjuke.png";
 import SaeJong from "../../../shared/image/partners/shinkim.jpg";
+import XT from "../../../shared/image/partners/xt.png";
+import Mexc from "../../../shared/image/partners/mexc-global6000.png";
+import Fbg from "../../../shared/image/partners/fbg.png";
+import Blocore from "../../../shared/image/partners/blocore.png";
+import Crypto from "../../../shared/image/partners/crypto@2x.png";
 
 import "../css/mobileStyle.scss";
 import Slider from "../slider/Slider";
@@ -531,21 +536,26 @@ const Main = () => {
         </h1>
         <div className="partners__container">
           {[
-            Iconloop,
-            Hexlant,
-            Bishijie,
+            Fbg,
+            Bithumb,
+            Crypto,
+            Mexc,
+            BithumbGlobal,
+            Blocore,
+            XT,
+            Gopax,
             Xangle,
             Chainlink,
+            Anjuke,
+            Fang,
+            Bishijie,
+            Iconloop,
+            Hexlant,
             HahmShout,
             HiBlocks,
-            Argos,
             PropWave,
-            Anjuke,
             SRC,
-            Fang,
-            Gopax,
-            Bithumb,
-            Crypto
+            Argos
           ].map((image, index) => {
             return (
               <div className="partners__item">
