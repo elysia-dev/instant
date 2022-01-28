@@ -313,9 +313,6 @@ const Main = () => {
             {t("main.content-title")}
           </h2>
           <p className="main__content-text">{t("main.content-sub-title")}</p>
-          <p className="main__content__dao">
-            {t("main.content-dao")}
-          </p>
         </div>
         <div className="main__down-arrow-wrapper">
           <img
