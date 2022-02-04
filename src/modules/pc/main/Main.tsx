@@ -12,6 +12,8 @@ import Service01 from "../../../shared/image/service01.png";
 import Service02 from "../../../shared/image/service02.png";
 import ButtonArrow from "../../../shared/image/button-arrow.png";
 
+import FBGCapital from '../../../shared/image/fbgcapital.png';
+
 /* Portfolio */
 import ElysiaAsset3 from "../../../shared/image/portfolio/elysia-asset-3.png";
 import ElysiaAsset4 from "../../../shared/image/portfolio/elysia-asset-4.png";
@@ -432,6 +434,17 @@ const Main = () => {
                 />
               </div>
             </p>
+          </div>
+        </div>
+      </section>
+      <section className="backed">
+        <div>
+          <h2>
+            Backed by
+          </h2>
+          <div>
+            <img src={FBGCapital} className="scroll-animation scroll-animation--up" />
+            <img src={Blocore} className="scroll-animation scroll-animation--up" />
           </div>
         </div>
       </section>

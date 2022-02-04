@@ -339,13 +339,12 @@
       width: 300px;
       margin: 0 auto;
       text-align: center;
-      top: 21vh;
       position: absolute;
       left: 0;
       right: 0;
     }
     &__content-text--bold {
-      font-size: 31px;
+      font-size: 29px;
       color: #ffffff;
       line-height: 35px;
       margin-bottom: 26px;
@@ -421,6 +420,34 @@
       min-width: 0px !important;
     }
   }
+
+  .backed {
+    background-color: #F0F0F1;
+    > div {
+      width: 300px;
+      margin: 0 auto;
+      height: 265px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      > h2 {
+        font-size: 22px;
+      }
+      > div {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding-bottom: 30px;
+        > img {
+          width: 120px;
+        }
+      }
+    }
+  }
+
   .portfolio {
     &__slider-container {
       width: 300px;

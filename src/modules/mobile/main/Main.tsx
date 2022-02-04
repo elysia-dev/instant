@@ -20,6 +20,9 @@ import Team6 from "../../../shared/image/team/Team8.png";
 
 import LinkedIn from "../../../shared/image/linkedin.png";
 
+
+import FBGCapital from '../../../shared/image/fbgcapital.png';
+
 /* Partners Image */
 import Certik from "../../../shared/image/partners/certik.png";
 import HaechiLabs from '../../../shared/image/partners/haechi_labs.png';
@@ -407,6 +410,17 @@ const Main = () => {
                 />
               </div>
             </p>
+          </div>
+        </div>
+      </section>
+      <section className="backed">
+        <div>
+          <h2>
+            Backed by
+          </h2>
+          <div>
+            <img src={FBGCapital} className="scroll-animation scroll-animation--up" />
+            <img src={Blocore} className="scroll-animation scroll-animation--up" />
           </div>
         </div>
       </section>
