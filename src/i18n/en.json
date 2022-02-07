@@ -12,7 +12,7 @@
     "main": {
       "content-title": "DIGITAL INFRASTRUCTURE FOR\nREAL ESTATE ASSETS",
       "content-sub-title": "Elysia provides the latest technology to bridge the gap between\ntraditional real estate participants and global investors",
-      "content-dao": "Led by ELYSIA DAO LLC"
+      "content-dao": "ELYSIA DAO LLC registered in Wyoming, US"
     },
     "service": {
       "title": "What is ELYSIA?",
@@ -38,6 +38,14 @@
       "funded": "Funded",
       "seemore": "See More >",
       "close": "Close <"
+    },
+    "dao": {
+      "title": "Registered in Wyoming, US",
+      "content": [
+        "Asia’s first DAO LLC.",
+        "The world’s second DAO LLC qualified by the US government.",
+        "DAO LLC established first among listed projects."
+      ]
     },
     "partners": {
       "audit": "Audited by",

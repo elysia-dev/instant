@@ -458,6 +458,50 @@ section.contents-container {
     }
   }
 }
+.dao {
+  height: 634px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__title {
+    text-align: center;
+    > h3 {
+      color: #fff;
+      font-size: 40px;
+    }
+    > h2 {
+      color: #fff;
+      font-size: 20px;
+    }
+  }
+  &__content {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    width: 1190px;
+    margin: 0 auto 30px;
+    justify-content: space-between;
+    > div {
+      border: 1px solid #707070;
+      background: #FFF;
+      border-radius: 100%;
+      width: 280px;
+      height: 280px;
+      padding: 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      > p {
+        font-size: 20px;
+        line-height: 40px;
+        word-break: keep-all;
+      }
+    }
+  }
+}
 
 /* portfolio */
 .portfolio {

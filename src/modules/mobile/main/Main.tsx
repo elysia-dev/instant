@@ -3,6 +3,7 @@ import ElysiaLogo from "../../../shared/image/Elysia_Logo.png";
 import ElysiaWhiteLogo from "../../../shared/image/Elysia_Logo_White.png";
 import MainBackground from "../../../shared/image/main-background.png";
 import DownArrow from "../../../shared/image/down-arrow.png";
+import Dao from '../../../shared/image/dao-background.png';
 
 /* Service */
 import Service00 from "../../../shared/image/service00.png";
@@ -306,6 +307,9 @@ const Main = () => {
             {t("main.content-title")}
           </h1>
           <p className="main__content-text">{t("main.content-sub-title")}</p>
+          <p className="main__content__dao">
+            {t("main.content-dao")}
+          </p>
         </div>
         <div className="main__down-arrow-wrapper">
           <img
@@ -433,6 +437,34 @@ const Main = () => {
         </h1>
         <div className="portfolio__slider-container scroll-animation scroll-animation--up">
           <Slider />
+        </div>
+      </section>
+
+      <section className="dao" style={{ backgroundImage: `url(${Dao})` }}>
+        <div className="dao__title">
+          <h3 className=" scroll-animation scroll-animation--up">
+            ELYSIA DAO LLC 
+          </h3>
+          <h2 className=" scroll-animation scroll-animation--up">
+            {t("dao.title")}
+          </h2>
+        </div>
+        <div className="dao__content scroll-animation scroll-animation--up">
+          <div>
+            <p>
+              {t("dao.content.0")}
+            </p>
+          </div>
+          <div>
+            <p>
+              {t("dao.content.1")}
+            </p>
+          </div>
+          <div>
+            <p>
+              {t("dao.content.2")}
+            </p>
+          </div>
         </div>
       </section>
       <section className="partners" id="partners">
