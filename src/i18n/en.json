@@ -37,7 +37,11 @@
       "total": "Total",
       "funded": "Funded",
       "seemore": "See More >",
-      "close": "Close <"
+      "close": "Close <",
+      "elyfi": {
+        "loan_interest_rate": "Loan interest rate",
+        "borrowed": "Borrowed"
+      }
     },
     "dao": {
       "title": "Registered in Wyoming, US",

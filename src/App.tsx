@@ -19,6 +19,9 @@ import FooterMobile from './modules/mobile/footer/Footer';
 
 import { useMediaQuery } from "react-responsive";
 import { useTranslation } from 'react-i18next';
+import SubgraphProvider from './providers/SubgraphProvider';
+import useMediaQueryType from './hooks/useMediaQueryType';
+import MediaQuery from './enums/MediaQuery';
 
 const PcRouter = () => {
   return (
@@ -70,9 +73,7 @@ const MobileRouter = () => {
 
 const App = () => {
   const { i18n } = useTranslation();
-  const isPc = useMediaQuery({
-    query: "(min-width: 768px)"
-  });
+  const { value: mediaQuery } = useMediaQueryType();
 
   useEffect(() => {
     // ref http://www.lingoes.net/en/translator/langcode.htm
@@ -89,10 +90,14 @@ const App = () => {
   }, [])
 
   return (
-    isPc ?
-      <PcRouter />
-      :
-      <MobileRouter />
+    <SubgraphProvider>
+    {
+      mediaQuery === MediaQuery.PC ?
+        <PcRouter />
+        :
+        <MobileRouter />
+    }
+    </SubgraphProvider>
   );
 }
 

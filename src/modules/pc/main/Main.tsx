@@ -1,75 +1,67 @@
 import React, { useEffect, useState } from "react";
-import ElysiaLogo from "../../../shared/image/Elysia_Logo.png";
-import ElysiaWhiteLogo from "../../../shared/image/Elysia_Logo_White.png";
-import MainBackground from "../../../shared/image/main-background.png";
-import DownArrow from "../../../shared/image/down-arrow.png";
-import Dao from '../../../shared/image/dao-background.png';
+import ElysiaLogo from "src/shared/image/Elysia_Logo.png";
+import ElysiaWhiteLogo from "src/shared/image/Elysia_Logo_White.png";
+import MainBackground from "src/shared/image/main-background.png";
+import DownArrow from "src/shared/image/down-arrow.png";
+import Dao from 'src/shared/image/dao-background.png';
 
 /* Service */
-import Service00 from "../../../shared/image/service00.png";
-import Service01 from "../../../shared/image/service01.png";
-import Service02 from "../../../shared/image/service02.png";
-import ButtonArrow from "../../../shared/image/button-arrow.png";
+import Service00 from "src/shared/image/service00.png";
+import Service01 from "src/shared/image/service01.png";
+import Service02 from "src/shared/image/service02.png";
+import ButtonArrow from "src/shared/image/button-arrow.png";
 
-import FBGCapital from '../../../shared/image/fbgcapital.png';
+import FBGCapital from 'src/shared/image/fbgcapital.png';
 
 /* Portfolio */
-import ElysiaAsset3 from "../../../shared/image/portfolio/elysia-asset-3.png";
-import ElysiaAsset4 from "../../../shared/image/portfolio/elysia-asset-4.png";
-import ElysiaAsset5 from "../../../shared/image/portfolio/elysia-asset-5.png";
-import ElysiaAsset6 from "../../../shared/image/portfolio/elysia-asset-6.png";
-import ElysiaAsset7 from "../../../shared/image/portfolio/elysia-asset-7.png";
-import ElysiaAssetRed1 from "../../../shared/image/portfolio/elysia-asset-red-1.png";
-import ElysiaAssetBlue1 from "../../../shared/image/portfolio/elysia-asset-blue-1.png";
 
 /* Team Image */
-import Team1 from "../../../shared/image/team/Team1.png";
-import Team2 from "../../../shared/image/team/Team2.png";
-import Team3 from "../../../shared/image/team/Team3.png";
-import Team4 from "../../../shared/image/team/Team4.png";
-import Team5 from "../../../shared/image/team/Team9.png";
-import Team6 from "../../../shared/image/team/Team8.png";
+import Team1 from "src/shared/image/team/Team1.png";
+import Team2 from "src/shared/image/team/Team2.png";
+import Team3 from "src/shared/image/team/Team3.png";
+import Team4 from "src/shared/image/team/Team4.png";
+import Team5 from "src/shared/image/team/Team9.png";
+import Team6 from "src/shared/image/team/Team8.png";
 
-import LinkedIn from "../../../shared/image/linkedin.png";
+import LinkedIn from "src/shared/image/linkedin.png";
 
 /* Partners Image */
-import Certik from "../../../shared/image/partners/certik.png";
-import HaechiLabs from '../../../shared/image/partners/haechi_labs.png';
-import Iconloop from "../../../shared/image/partners/iconloop.png";
-import Hexlant from "../../../shared/image/partners/hexlant.png";
-import Bishijie from "../../../shared/image/partners/bishijie.png";
-import Xangle from "../../../shared/image/partners/xangle.png";
-import Chainlink from "../../../shared/image/partners/chainlink.png";
-import HahmShout from "../../../shared/image/partners/hahmshout.png";
-import BKL from "../../../shared/image/partners/bkl.png";
-import TSMP from "../../../shared/image/partners/tsmp.png";
-import FocusLawAsia from "../../../shared/image/partners/focuslawasia.png";
-import HiBlocks from "../../../shared/image/partners/hiblocks.png";
-import Argos from "../../../shared/image/partners/argos.png";
-import PropWave from "../../../shared/image/partners/propwave.png";
-import SRC from "../../../shared/image/partners/src.png";
-import Fang from "../../../shared/image/partners/fang.png";
-import Gopax from "../../../shared/image/partners/gopax.png";
-import Bithumb from "../../../shared/image/partners/bithumb.png";
-import BithumbGlobal from "../../../shared/image/partners/bithumbglobal.png";
-import HUB from "../../../shared/image/partners/hub.png";
-import HOW from "../../../shared/image/partners/how.png";
-import Anjuke from "../../../shared/image/partners/anjuke.png";
-import SaeJong from "../../../shared/image/partners/shinkim.jpg";
-import XT from "../../../shared/image/partners/xt.png";
-import Mexc from "../../../shared/image/partners/mexc-global6000.png";
-import Fbg from "../../../shared/image/partners/fbg.png";
-import Blocore from "../../../shared/image/partners/blocore.png";
-import Crypto from "../../../shared/image/partners/crypto@2x.png";
+import Certik from "src/shared/image/partners/certik.png";
+import HaechiLabs from 'src/shared/image/partners/haechi_labs.png';
+import Iconloop from "src/shared/image/partners/iconloop.png";
+import Hexlant from "src/shared/image/partners/hexlant.png";
+import Bishijie from "src/shared/image/partners/bishijie.png";
+import Xangle from "src/shared/image/partners/xangle.png";
+import Chainlink from "src/shared/image/partners/chainlink.png";
+import HahmShout from "src/shared/image/partners/hahmshout.png";
+import BKL from "src/shared/image/partners/bkl.png";
+import TSMP from "src/shared/image/partners/tsmp.png";
+import FocusLawAsia from "src/shared/image/partners/focuslawasia.png";
+import HiBlocks from "src/shared/image/partners/hiblocks.png";
+import Argos from "src/shared/image/partners/argos.png";
+import PropWave from "src/shared/image/partners/propwave.png";
+import SRC from "src/shared/image/partners/src.png";
+import Fang from "src/shared/image/partners/fang.png";
+import Gopax from "src/shared/image/partners/gopax.png";
+import Bithumb from "src/shared/image/partners/bithumb.png";
+import BithumbGlobal from "src/shared/image/partners/bithumbglobal.png";
+import HUB from "src/shared/image/partners/hub.png";
+import HOW from "src/shared/image/partners/how.png";
+import Anjuke from "src/shared/image/partners/anjuke.png";
+import SaeJong from "src/shared/image/partners/shinkim.jpg";
+import XT from "src/shared/image/partners/xt.png";
+import Mexc from "src/shared/image/partners/mexc-global6000.png";
+import Fbg from "src/shared/image/partners/fbg.png";
+import Blocore from "src/shared/image/partners/blocore.png";
+import Crypto from "src/shared/image/partners/crypto@2x.png";
 
 import "../css/style.scss";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
+import Portfolio from "src/components/Portfolio";
 
-import PopupImageKor from "../../../shared/image/popup--kor.png";
-import PopupImageEng from "../../../shared/image/popup--eng.png";
 
 const Main = () => {
   // const history = useHistory();
@@ -78,23 +70,16 @@ const Main = () => {
   const [popup, setPopup] = useState(true);
 
   const Service = React.createRef<HTMLDivElement>();
-  const Portfolio = React.createRef<HTMLDivElement>();
+  const portfolio = React.createRef<HTMLDivElement>();
   const Team = React.createRef<HTMLDivElement>();
   const Partners = React.createRef<HTMLDivElement>();
   const Contact = React.createRef<HTMLDivElement>();
   const Top = React.createRef<HTMLDivElement>();
   const [state, setState] = useState({
-    isMoreAsset: false,
     recaptcha: false,
     onChecked: false,
     fieldNull: false
   });
-
-  /* See More을 핸들링하는 함수입니다 */
-  const SwithcingState = () => {
-    setState({ ...state, isMoreAsset: !state.isMoreAsset });
-    console.log(state.isMoreAsset);
-  };
 
   /* 색션마다 선언된 인자값을 받아 해당 위치로 이동하는 함수입니다 */
   const Scroll = (ref: string) => {
@@ -345,6 +330,7 @@ const Main = () => {
         >
           {t("service.sub-title")}
         </h1>
+
         {/* <div className="service__container">
           <img
             className="service__image scroll-animation scroll-animation--right"
@@ -451,68 +437,8 @@ const Main = () => {
           </div>
         </div>
       </section>
-      <section
-        className="portfolio contents-container"
-        id="portfolioref"
-        ref={Portfolio}
-      >
-        <div className="portfolio__container">
-          <h1
-            id="portfolio"
-            className="portfolio__text--bold section__text--bold scroll-animation scroll-animation--up"
-            style={{ paddingTop: 70 }}
-          >
-            {t("portfolio.title")}
-          </h1>
-          <div className="portfolio__wrapper">
-            {[
-              [ElysiaAssetBlue1, "Elysia Asset Blue #1", "426075"],
-              [ElysiaAssetRed1, "Elysia Asset Red #1", "181704"],
-              [ElysiaAsset7, "Elysia Asset #7", "823045"],
-              [ElysiaAsset6, "Elysia Asset #6", "1182180"],
-              [ElysiaAsset5, "Elysia Asset #5", "1040950"],
-              [ElysiaAsset4, "Elysia Asset #4", "814810"],
-              [ElysiaAsset3, "Elysia Asset #3", "1041150"]
-            ].map(([AssetImage, AssetName, AssetFunded], index) => {
-              return (
-                <div
-                  className="portfolio__asset__container scroll-animation scroll-animation--up"
-                  style={{
-                    opacity: `${index >= 6 && !state.isMoreAsset ? 0 : 1}`,
-                    display: `${
-                      index >= 6 && !state.isMoreAsset ? "none" : "block"
-                    }`
-                  }}
-                  data-sa-margin={index * 15}
-                >
-                  <div className="portfolio__asset-funded">
-                    {t("portfolio.funded")}
-                  </div>
-                  <img
-                    src={AssetImage}
-                    className="portfolio__asset-picture"
-                    alt="Elysia Asset"
-                  />
-                  <h2 className="portfolio__asset-name">{AssetName}</h2>
-                  <p className="portfolio__asset-info funded">
-                    {t("portfolio.total")}{" "}
-                    <span className="portfolio__asset-value">
-                      $
-                      {AssetFunded.toString().replace(
-                        /\B(?=(\d{3})+(?!\d))/g,
-                        ","
-                      )}
-                    </span>
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <h2 className="portfolio__see-more" onClick={SwithcingState}>
-          {!state.isMoreAsset ? t("portfolio.seemore") : t("portfolio.close")}
-        </h2>
-      </section>
+      
+      <Portfolio />
 
       <section className="dao" style={{ backgroundImage: `url(${Dao})` }}>
         <div className="dao__title">

@@ -37,7 +37,11 @@
       "total": "총",
       "funded": "투자완료",
       "seemore": "더 보기 >",
-      "close": "닫기 <"
+      "close": "닫기 <",
+      "elyfi": {
+        "loan_interest_rate": "대출이자율",
+        "borrowed": "대출금"
+      }
     },
     "dao": {
       "title": "Registered in Wyoming, US",

@@ -514,6 +514,8 @@ section.contents-container {
   }
   &__container {
     text-align: center;
+    width: 1190px;
+    margin: 0 auto;
   }
   &__asset-picture {
     width: 360px;
@@ -562,10 +564,104 @@ section.contents-container {
     width: 1190px;
     text-align: right;
     margin: 0 auto;
-    padding-bottom: 50px;
+    padding-bottom: 150px;
     font-size: 20px;
     color: #888888;
     cursor: pointer;
+  }
+  &__button {
+    &__wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+    flex: 1;
+    border: 1px solid #00BFFF;
+    background-color: #ffffff;
+    border-radius: 10px;
+    height: 55px;
+    cursor: pointer;
+    > h2 {
+      font-size: 20px;
+      color: #00bfff;
+      line-height: 55px;
+      margin: 0;
+      cursor: pointer;
+    }
+    &:first-child {
+      margin-right: 55px;
+    }
+    &.disable {
+      border: 1px solid #B7B7B7;  
+      > h2 {
+        color: #B7B7B7;
+      }
+    }
+  }
+  &__content {
+    border-top: 1px solid #00BFFF;
+    border-bottom: 1px solid #00BFFF;
+    margin: 15px 0 20px; 
+    > p {
+      font-size: 18px;
+      text-align: left;
+    }
+  }
+  &__elyfi {
+    width: 1190px;
+    margin: 0 auto;
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      margin-top: 25px;
+      margin-bottom: 30px;
+      border: 0;
+      grid-gap: 45px;
+      gap: 45px;
+    }
+    &__items { 
+      width: 360px;
+      box-shadow: 0px 0px 6px #00000029;
+      cursor: pointer;
+    }
+    &__image {
+      width: 360px;
+      height: 227px;
+      > img {
+        width: 360px;
+        height: 227px;
+        border-radius: 5px 5px 0 0;
+      }
+    }
+    &__data {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      background: #fff;
+      border-radius: 0 0 5px 5px;
+      padding: 15px;
+      > div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &:first-child {
+          border-right: 1px solid #E6E6E6;
+        }
+        > p {
+          font-size: 12px;
+          margin: 0 0 5px;
+          color: #888888;
+        }
+        > h2 {
+          font-size: 18px;
+          margin: 0;
+        }
+      }
+    }
   }
 }
 
