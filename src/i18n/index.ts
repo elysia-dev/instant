@@ -10,10 +10,10 @@ i18n
     resources: {
       en,
       ko,
-      zhHans
+      // zhHans
     },
-    lng: "en",
-    fallbackLng: "en",
+    lng: "ko",
+    fallbackLng: "ko",
 
     interpolation: {
       escapeValue: false
