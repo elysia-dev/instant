@@ -11,6 +11,7 @@ import React, { FunctionComponent } from 'react';
 import '../css/mobileStyle.scss';
 import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import Frame from 'react-frame-component';
 
 const Footer: FunctionComponent = () => {
   const history = useHistory();
@@ -90,6 +91,12 @@ const Footer: FunctionComponent = () => {
           <img src={ElysiaLogoWhite} className="mobile-elysia-logo-white" alt="Elysia" onClick={() => { history.push('/') }} />
           <p className="mobile-elysia-logo-text">{i18n.t("footer.logo_label")}</p>
         </div>
+        <Frame
+          style={{ border: "none" }}
+          initialContent='<!DOCTYPE html><html><head></head><body><script src="https://crypto.com/price/static/widget/index.js"></script>
+           <div id="crypto-widget-CoinList" data-design="classic" data-coins="elysia"></div><div id="mountHere"></div></body></html>'
+        >
+        </Frame>
         <div className="mobile-footer-link-wrapper">
           <p className="mobile-footer-privacy-policy mobile-footer-link" onClick={() => history.push("/privacyPolicy")}>
             Privacy Policy
@@ -99,7 +106,7 @@ const Footer: FunctionComponent = () => {
           </p>
           <p className="mobile-footer-terms-fo-service mobile-footer-link"
             onClick={() => {
-              window.location.replace("https://drive.google.com/file/d/1Sxu8-jIIJlVUZoVhtX4QG8kS73vXr3Cs/view")
+              window.location.replace("https://elysia-docs.elysia.land/")
             }}>
             Whitepaper
           </p>

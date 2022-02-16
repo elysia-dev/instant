@@ -11,7 +11,8 @@
     },
     "main": {
       "content-title": "DIGITAL INFRASTRUCTURE FOR\nREAL ESTATE ASSETS",
-      "content-sub-title": "Elysia provides the latest technology to bridge the gap between\ntraditional real estate participants and global investors"
+      "content-sub-title": "Elysia provides the latest technology to bridge the gap between\ntraditional real estate participants and global investors",
+      "content-dao": "ELYSIA DAO LLC registered in Wyoming, US"
     },
     "service": {
       "title": "What is ELYSIA?",
@@ -36,9 +37,22 @@
       "total": "Total",
       "funded": "Funded",
       "seemore": "See More >",
-      "close": "Close <"
+      "close": "Close <",
+      "elyfi": {
+        "loan_interest_rate": "Loan interest rate",
+        "borrowed": "Borrowed"
+      }
+    },
+    "dao": {
+      "title": "Registered in Wyoming, US",
+      "content": [
+        "Asia’s first DAO LLC.",
+        "The world’s second DAO LLC qualified by the US government.",
+        "DAO LLC established first among listed projects."
+      ]
     },
     "partners": {
+      "audit": "Audited by",
       "title": "PARTNERS",
       "legal-advisors": "LEGAL ADVISORS"
     },
@@ -83,7 +97,7 @@
       "email": "cs@elysia.land",
       "whitepaper": "WhitePaper (old)",
       "community": "COMMUNITY",
-      "copyright": "ELYSIA ⓒ 2018·2021. All rights reserved.",
+      "copyright": "ELYSIA ⓒ 2018·2022. All rights reserved.",
       "privacy_policy": "Privacy Policy",
       "terms_service": "Terms of Service",
       "language": "LANGUAGE",

@@ -11,6 +11,7 @@ import { FunctionComponent } from 'react';
 import '../css/style.scss';
 import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import Frame from 'react-frame-component';
 
 const Footer: FunctionComponent = () => {
   const history = useHistory();
@@ -25,6 +26,12 @@ const Footer: FunctionComponent = () => {
               <div className="footer__logo__wrapper">
                 <img src={ElysiaLogoWhite} style={{ cursor: "pointer" }} className="elysia-white-logo" alt="Elysia" onClick={() => { history.push('/') }} />
                 <p className="footer__logo-text">{t("footer.logo_label")}</p>
+                <Frame
+                  style={{ border: "none", width: 220 }}
+                  initialContent='<!DOCTYPE html><html><head></head><body><script src="https://crypto.com/price/static/widget/index.js"></script>
+                  <div id="crypto-widget-CoinList" data-design="classic" data-coins="elysia"></div><div id="mountHere"></div></body></html>'
+                >
+                </Frame>
               </div>
               <div className="footer__contact-container" style={{ marginLeft: "auto" }}>
                 <p className="footer__header-text">
@@ -96,7 +103,7 @@ const Footer: FunctionComponent = () => {
           <p
             className="footer__text--whitepaper"
             onClick={() => {
-              window.location.replace("https://drive.google.com/file/d/16ey8rTnm_1H9zqstKcQK0EzA47h-UDMo/view?usp=sharing")
+              window.location.replace("https://elysia-docs.elysia.land/")
             }}
           >
             Whitepaper

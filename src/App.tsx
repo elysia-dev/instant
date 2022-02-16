@@ -6,22 +6,6 @@ import {
 } from "react-router-dom";
 import "./i18n"
 
-<<<<<<< HEAD
-import Main from './modules/main/Main';
-import Contact from './modules/contact/Contact';
-import PrivacyPolicy from './modules/PrivacyPolicy';
-import Disclaimer from './modules/Disclaimer';
-import RouteWithLayout from './modules/RouteWithLayout';
-import ScrollToTop from './modules/ScrollToTop';
-import EventPage from './modules/EventPage';
-
-/*mobile */
-import MainMobile from './mobile/modules/main/Main';
-import ContactMobile from './mobile/modules/contact/Contact';
-import PrivacyPolicyMobile from './mobile/modules/PrivacyPolicy';
-import DisclaimerMobile from './mobile/modules/Disclaimer';
-import EventPageMobile from './mobile/modules/EventPage';
-=======
 import Main from './modules/pc/main/Main';
 import PrivacyPolicy from './modules/pc/PrivacyPolicy';
 import Disclaimer from './modules/pc/Disclaimer';
@@ -32,19 +16,64 @@ import AppPage from './modules/AppLink';
 
 import MainMobile from './modules/mobile/main/Main';
 import FooterMobile from './modules/mobile/footer/Footer';
->>>>>>> 45041ee762e3939ba0c0195a32c79be50c549ba4
 
 import { useMediaQuery } from "react-responsive";
 import { useTranslation } from 'react-i18next';
-import AppLink from './modules/AppLink';
-import AppLinkCh from './modules/AppLinkCh';
+import SubgraphProvider from './providers/SubgraphProvider';
+import useMediaQueryType from './hooks/useMediaQueryType';
+import MediaQuery from './enums/MediaQuery';
 
+const PcRouter = () => {
+  return (
+    <Router>
+      <ScrollToTop />
+      <Switch>
+        <RouteWithHeader path="/privacyPolicy">
+          <PrivacyPolicy />
+        </RouteWithHeader>
+        <RouteWithHeader path="/disclaimer">
+          <Disclaimer />
+        </RouteWithHeader>
+        <Route path="/AppLink">
+          <AppPage />
+        </Route>
+        <Route path="*">
+          <Main />
+        </Route>
+      </Switch>
+      <Footer />
+    </Router>
+  );
+}
+const MobileRouter = () => {
+  return (
+    <Router>
+      <ScrollToTop />
+      <Switch>
+        {/* <RouteWithHeader path="/contact">
+          <ContactMobile />
+        </RouteWithHeader>
+        <Route path="/privacyPolicy">
+          <PrivacyPolicyMobile />
+        </Route>
+        <Route path="/disclaimer">
+          <DisclaimerMobile />
+        </Route>
+        <Route path="/eventPage">
+          <EventPageMobile />
+        </Route> */}
+        <Route path="*">
+          <MainMobile />
+        </Route>
+      </Switch>
+      <FooterMobile />
+    </Router>
+  );
+}
 
 const App = () => {
   const { i18n } = useTranslation();
-  const isPc = useMediaQuery({
-    query: "(min-width: 768px)"
-  });
+  const { value: mediaQuery } = useMediaQueryType();
 
   useEffect(() => {
     // ref http://www.lingoes.net/en/translator/langcode.htm
@@ -55,96 +84,20 @@ const App = () => {
       i18n.changeLanguage('ko')
     } else if (lang.includes('zh')) {
       i18n.changeLanguage('zhHans')
-    } else { 
+    } else {
       i18n.changeLanguage('en')
     }
   }, [])
 
-  const PcRouter = () => {
-    return (
-      <Router>
-        <ScrollToTop />
-        <Switch>
-<<<<<<< HEAD
-          <RouteWithLayout path="/contact">
-            <Contact />
-          </RouteWithLayout>
-          <RouteWithLayout path="/privacyPolicy">
-=======
-          <RouteWithHeader path="/privacyPolicy">
->>>>>>> 45041ee762e3939ba0c0195a32c79be50c549ba4
-            <PrivacyPolicy />
-          </RouteWithLayout>
-          <RouteWithLayout path="/disclaimer">
-            <Disclaimer />
-<<<<<<< HEAD
-          </RouteWithLayout>
-          <RouteWithLayout header={false} path="/eventPage">
-            <EventPage />
-          </RouteWithLayout>
-          <Route path="/app">
-            <AppLink />
-=======
-          </RouteWithHeader>
-          <Route path="/AppLink">
-            <AppPage />
->>>>>>> 45041ee762e3939ba0c0195a32c79be50c549ba4
-          </Route>
-          <Route path="/appch">
-            <AppLinkCh />
-          </Route>
-          <RouteWithLayout header={false} path="*">
-            <Main />
-          </RouteWithLayout >
-        </Switch>
-      </Router>
-    );
-  }
-  const MobileRouter = () => {
-    return (
-      <Router>
-        <ScrollToTop />
-        <Switch>
-<<<<<<< HEAD
-          <RouteWithLayout path="/contact" isPc={false}>
-=======
-          {/* <RouteWithHeader path="/contact">
->>>>>>> 45041ee762e3939ba0c0195a32c79be50c549ba4
-            <ContactMobile />
-          </RouteWithLayout>
-          <RouteWithLayout path="/privacyPolicy" isPc={false}>
-            <PrivacyPolicyMobile />
-          </RouteWithLayout>
-          <RouteWithLayout path="/disclaimer" isPc={false}>
-            <DisclaimerMobile />
-          </RouteWithLayout>
-          <RouteWithLayout path="/eventPage" isPc={false}>
-            <EventPageMobile />
-<<<<<<< HEAD
-          </RouteWithLayout>
-          <Route path="/app">
-            <AppLink />
-          </Route>
-          <Route path="/appch">
-            <AppLinkCh />
-=======
-          </Route> */}
-          <Route path="*">
-            <MainMobile />
->>>>>>> 45041ee762e3939ba0c0195a32c79be50c549ba4
-          </Route>
-          <RouteWithLayout path="*" isPc={false} header={false}>
-            <MainMobile />
-          </RouteWithLayout>
-        </Switch>
-      </Router>
-    );
-  }
   return (
-    isPc ?
-      <PcRouter />
-      :
-      <MobileRouter />
+    <SubgraphProvider>
+    {
+      mediaQuery === MediaQuery.PC ?
+        <PcRouter />
+        :
+        <MobileRouter />
+    }
+    </SubgraphProvider>
   );
 }
 
