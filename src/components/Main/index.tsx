@@ -1,59 +1,59 @@
 import React, { useEffect, useState } from "react";
-import ElysiaLogo from "src/shared/image/Elysia_Logo.png";
-import ElysiaWhiteLogo from "src/shared/image/Elysia_Logo_White.png";
-import MainBackground from "src/shared/image/main-background.png";
-import DownArrow from "src/shared/image/down-arrow.png";
-import Dao from 'src/shared/image/dao-background.png';
+import ElysiaLogo from "src/assets/image/Elysia_Logo.png";
+import ElysiaWhiteLogo from "src/assets/image/Elysia_Logo_White.png";
+import MainBackground from "src/assets/image/main-background.png";
+import DownArrow from "src/assets/image/down-arrow.png";
+import Dao from 'src/assets/image/dao-background.png';
 
 /* Service */
-import Service00 from "src/shared/image/service00.png";
-import Service01 from "src/shared/image/service01.png";
-import Service02 from "src/shared/image/service02.png";
-import ButtonArrow from "src/shared/image/button-arrow.png";
+import Service00 from "src/assets/image/service00.png";
+import Service01 from "src/assets/image/service01.png";
+import Service02 from "src/assets/image/service02.png";
+import ButtonArrow from "src/assets/image/button-arrow.png";
 
-import FBGCapital from 'src/shared/image/fbgcapital.png';
+import FBGCapital from 'src/assets/image/fbgcapital.png';
 
 /* Portfolio */
 
 /* Team Image */
-import Team1 from "src/shared/image/team/Team1.png";
-import Team2 from "src/shared/image/team/Team2.png";
-import Team3 from "src/shared/image/team/Team3.png";
-import Team4 from "src/shared/image/team/Team4.png";
-import Team5 from "src/shared/image/team/Team9.png";
-import Team6 from "src/shared/image/team/Team8.png";
+import Team1 from "src/assets/image/team/Team1.png";
+import Team2 from "src/assets/image/team/Team2.png";
+import Team3 from "src/assets/image/team/Team3.png";
+import Team4 from "src/assets/image/team/Team4.png";
+import Team5 from "src/assets/image/team/Team9.png";
+import Team6 from "src/assets/image/team/Team8.png";
 
-import LinkedIn from "src/shared/image/linkedin.png";
+import LinkedIn from "src/assets/image/linkedin.png";
 
 /* Partners Image */
-import Certik from "src/shared/image/partners/certik.png";
-import HaechiLabs from 'src/shared/image/partners/haechi_labs.png';
-import Iconloop from "src/shared/image/partners/iconloop.png";
-import Hexlant from "src/shared/image/partners/hexlant.png";
-import Bishijie from "src/shared/image/partners/bishijie.png";
-import Xangle from "src/shared/image/partners/xangle.png";
-import Chainlink from "src/shared/image/partners/chainlink.png";
-import HahmShout from "src/shared/image/partners/hahmshout.png";
-import BKL from "src/shared/image/partners/bkl.png";
-import TSMP from "src/shared/image/partners/tsmp.png";
-import FocusLawAsia from "src/shared/image/partners/focuslawasia.png";
-import HiBlocks from "src/shared/image/partners/hiblocks.png";
-import Argos from "src/shared/image/partners/argos.png";
-import PropWave from "src/shared/image/partners/propwave.png";
-import SRC from "src/shared/image/partners/src.png";
-import Fang from "src/shared/image/partners/fang.png";
-import Gopax from "src/shared/image/partners/gopax.png";
-import Bithumb from "src/shared/image/partners/bithumb.png";
-import BithumbGlobal from "src/shared/image/partners/bithumbglobal.png";
-import HUB from "src/shared/image/partners/hub.png";
-import HOW from "src/shared/image/partners/how.png";
-import Anjuke from "src/shared/image/partners/anjuke.png";
-import SaeJong from "src/shared/image/partners/shinkim.jpg";
-import XT from "src/shared/image/partners/xt.png";
-import Mexc from "src/shared/image/partners/mexc-global6000.png";
-import Fbg from "src/shared/image/partners/fbg.png";
-import Blocore from "src/shared/image/partners/blocore.png";
-import Crypto from "src/shared/image/partners/crypto@2x.png";
+import Certik from "src/assets/image/partners/certik.png";
+import HaechiLabs from 'src/assets/image/partners/haechi_labs.png';
+import Iconloop from "src/assets/image/partners/iconloop.png";
+import Hexlant from "src/assets/image/partners/hexlant.png";
+import Bishijie from "src/assets/image/partners/bishijie.png";
+import Xangle from "src/assets/image/partners/xangle.png";
+import Chainlink from "src/assets/image/partners/chainlink.png";
+import HahmShout from "src/assets/image/partners/hahmshout.png";
+import BKL from "src/assets/image/partners/bkl.png";
+import TSMP from "src/assets/image/partners/tsmp.png";
+import FocusLawAsia from "src/assets/image/partners/focuslawasia.png";
+import HiBlocks from "src/assets/image/partners/hiblocks.png";
+import Argos from "src/assets/image/partners/argos.png";
+import PropWave from "src/assets/image/partners/propwave.png";
+import SRC from "src/assets/image/partners/src.png";
+import Fang from "src/assets/image/partners/fang.png";
+import Gopax from "src/assets/image/partners/gopax.png";
+import Bithumb from "src/assets/image/partners/bithumb.png";
+import BithumbGlobal from "src/assets/image/partners/bithumbglobal.png";
+import HUB from "src/assets/image/partners/hub.png";
+import HOW from "src/assets/image/partners/how.png";
+import Anjuke from "src/assets/image/partners/anjuke.png";
+import SaeJong from "src/assets/image/partners/shinkim.jpg";
+import XT from "src/assets/image/partners/xt.png";
+import Mexc from "src/assets/image/partners/mexc-global6000.png";
+import Fbg from "src/assets/image/partners/fbg.png";
+import Blocore from "src/assets/image/partners/blocore.png";
+import Crypto from "src/assets/image/partners/crypto@2x.png";
 
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -63,8 +63,7 @@ import Portfolio from "src/components/Portfolio";
 
 
 const Main = () => {
-  // const history = useHistory();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const [popup, setPopup] = useState(true);
 

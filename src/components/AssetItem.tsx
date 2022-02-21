@@ -1,5 +1,5 @@
 import { FunctionComponent, useEffect, useMemo, useState } from 'react';
-import { toCompactForBignumber, toPercent } from 'src/utiles/formatters';
+import { toCompactForBignumber, toPercent } from 'src/pages/utiles/formatters';
 import { parseTokenId } from 'src/utiles/parseTokenId';
 import GoogleMapReact from 'google-map-react';
 

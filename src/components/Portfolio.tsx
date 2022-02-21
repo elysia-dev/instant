@@ -1,12 +1,12 @@
 import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 
-import ElysiaAsset3 from "src/shared/image/portfolio/elysia-asset-3.png";
-import ElysiaAsset4 from "src/shared/image/portfolio/elysia-asset-4.png";
-import ElysiaAsset5 from "src/shared/image/portfolio/elysia-asset-5.png";
-import ElysiaAsset6 from "src/shared/image/portfolio/elysia-asset-6.png";
-import ElysiaAsset7 from "src/shared/image/portfolio/elysia-asset-7.png";
-import ElysiaAssetRed1 from "src/shared/image/portfolio/elysia-asset-red-1.png";
-import ElysiaAssetBlue1 from "src/shared/image/portfolio/elysia-asset-blue-1.png";
+import ElysiaAsset3 from "src/assets/image/portfolio/elysia-asset-3.png";
+import ElysiaAsset4 from "src/assets/image/portfolio/elysia-asset-4.png";
+import ElysiaAsset5 from "src/assets/image/portfolio/elysia-asset-5.png";
+import ElysiaAsset6 from "src/assets/image/portfolio/elysia-asset-6.png";
+import ElysiaAsset7 from "src/assets/image/portfolio/elysia-asset-7.png";
+import ElysiaAssetRed1 from "src/assets/image/portfolio/elysia-asset-red-1.png";
+import ElysiaAssetBlue1 from "src/assets/image/portfolio/elysia-asset-blue-1.png";
 import { useTranslation } from "react-i18next";
 import SubgraphContext, { IAssetBond, IReserveSubgraphData } from "src/contexts/SubgraphContext";
 import { parseTokenId } from "src/utiles/parseTokenId";
