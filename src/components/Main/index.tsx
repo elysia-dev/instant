@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import ElysiaLogo from "src/assets/image/Elysia_Logo.png";
-import ElysiaWhiteLogo from "src/assets/image/Elysia_Logo_White.png";
+import React from "react";
 import MainBackground from "src/assets/image/main-background.png";
 import DownArrow from "src/assets/image/down-arrow.png";
 import Dao from 'src/assets/image/dao-background.png';
@@ -57,15 +55,12 @@ import Crypto from "src/assets/image/partners/crypto@2x.png";
 
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import ReCAPTCHA from "react-google-recaptcha";
-import axios from "axios";
 import Portfolio from "src/components/Portfolio";
+import Navigation from 'src/components/Navigation';
 
 
 const Main = () => {
   const { t } = useTranslation();
-
-  const [popup, setPopup] = useState(true);
 
   const Service = React.createRef<HTMLDivElement>();
   const portfolio = React.createRef<HTMLDivElement>();
@@ -73,107 +68,12 @@ const Main = () => {
   const Partners = React.createRef<HTMLDivElement>();
   const Contact = React.createRef<HTMLDivElement>();
   const Top = React.createRef<HTMLDivElement>();
-  const [state, setState] = useState({
-    recaptcha: false,
-    onChecked: false,
-    fieldNull: false
-  });
 
-  /* 색션마다 선언된 인자값을 받아 해당 위치로 이동하는 함수입니다 */
-  const Scroll = (ref: string) => {
-    // ref.current.scrollIntoView({ behavior: 'smooth' })
-    var element = document.getElementById(ref);
-    const offset = 85;
-    const bodyRect = document.body.getBoundingClientRect().top;
-    const elementRect = element!.getBoundingClientRect().top;
-    const elementPosition = elementRect - bodyRect;
-    const offsetPosition = elementPosition - offset;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  };
 
-  /* 현재 스크롤값을 실시간으로 계산해 상단 GNB를 변환시킬 함수입니다 */
-  const [scrolling, setScrolling] = useState(false);
-  const [scrollTop, setScrollTop] = useState(0);
-  useEffect(() => {
-    function onScroll() {
-      let currentPosition = window.pageYOffset;
-      if (currentPosition > scrollTop) {
-        setScrolling(false);
-      } else {
-        setScrolling(true);
-      }
-      setScrollTop(currentPosition <= 0 ? 0 : currentPosition);
-    }
-
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [scrollTop]);
 
   /* slack api를 호출합니다 */
-  const [contactState, setContactState] = useState<{
-    name: string;
-    phone: string;
-    email: string;
-    company: string;
-    content: string;
-  }>({
-    name: "",
-    phone: "",
-    email: "",
-    company: "",
-    content: ""
-  });
-
-  const sendContact = () => {
-    setState({ ...state, fieldNull: false });
-    if (contactState.email === "") {
-      setState({ ...state, fieldNull: true });
-      return;
-    }
-    if (contactState.name === "") {
-      setState({ ...state, fieldNull: true });
-      return;
-    }
-    if (contactState.content === "") {
-      setState({ ...state, fieldNull: true });
-      return;
-    }
-    axios
-      .post("https://api.elysia.land/land/contact", {
-        email: contactState.email,
-        content:
-          "\nname : " +
-          contactState.name +
-          "\nphone : " +
-          contactState.phone +
-          "\ncompany : " +
-          contactState.company +
-          "\nmessage : " +
-          contactState.content
-      })
-      .then(() => {
-        alert(t("contact.success"));
-        setContactState({
-          ...contactState,
-          name: "",
-          phone: "",
-          email: "",
-          company: "",
-          content: ""
-        });
-      })
-      .catch(() => {
-        alert(t("contact.fail"));
-      });
-  };
-
-  window.onbeforeunload = function() {
-    window.scrollTo(0, 0);
-  };
+  
 
   /* 클래스에 scroll-animation 지정한 블록들에 애니메이션을 추가합니다 */
   const ScrollAnimationDefaultMargin = 100;
@@ -221,77 +121,7 @@ const Main = () => {
         id="main"
         style={{ backgroundImage: `url(${MainBackground})` }}
       >
-        <header
-          className="main__gnb"
-          style={{
-            backgroundColor: `${scrollTop >= 100 ? "#FFFFFF" : "transparent"}`
-          }}
-        >
-          <nav className="main__gnb__link-container">
-            <figure
-              className="elysia-logo"
-              onClick={() => Scroll("top")}
-              style={{
-                backgroundImage: `url(${
-                  scrollTop >= 100 ? ElysiaLogo : ElysiaWhiteLogo
-                })`
-              }}
-            />
-            <div className="main__gnb__link-wrapper">
-              <a
-                className="main__gnb__link"
-                href="#service"
-                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}
-              >
-                {t("navigation.service")}
-              </a>
-              <a
-                className="main__gnb__link"
-                href="#portfolio"
-                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}
-              >
-                {t("navigation.portfolio")}
-              </a>
-              <p
-                className="main__gnb__link"
-                onClick={() => Scroll("partners")}
-                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}
-              >
-                {t("navigation.partners")}
-              </p>
-              <p
-                className="main__gnb__link"
-                onClick={() => Scroll("team")}
-                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}
-              >
-                {t("navigation.team")}
-              </p>
-              <p
-                className="main__gnb__link"
-                onClick={() => Scroll("contact")}
-                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}
-              >
-                {t("navigation.contact")}
-              </p>
-              <a
-                className="main__gnb__link main__gnb--bold"
-                href="https://elysia.gitbook.io/elysia-guide/"
-                target="_blank"
-                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}
-              >
-                {t("navigation.helpdesk")}
-              </a>
-              <a
-                className="main__gnb__link main__gnb--bold"
-                href="https://elyfi.world"
-                target="_blank"
-                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}
-              >
-                {t("navigation.elyfi")}
-              </a>
-            </div>
-          </nav>
-        </header>
+        <Navigation />
         <div className="main__content-container">
           <h2 className="main__content-text--bold">
             {t("main.content-title")}
@@ -603,160 +433,7 @@ const Main = () => {
           })}
         </div>
       </section>
-      <section
-        className="contact contents-container scroll-animation scroll-animation--up"
-        id="contact"
-        ref={Contact}
-      >
-        <h1 className="section__text scroll-animation scroll-animation--up">
-          {t("contact.title")}
-        </h1>
-        <h2
-          className="section__text--bold scroll-animation scroll-animation--up"
-          style={{ paddingBottom: 0 }}
-          data-sa-delay="200"
-        >
-          {t("contact.sub-title")}
-        </h2>
-        <p
-          className="contact__section__text scroll-animation scroll-animation--up"
-          data-sa-delay="400"
-        >
-          {t("contact.title-info")}
-        </p>
-        <div className="contact__form-container scroll-animation scroll-animation--up">
-          <div className="contact__input-wrapper scroll-animation scroll-animation--right">
-            <input
-              type="text"
-              className={
-                state.fieldNull === true && contactState.name === ""
-                  ? "contact__input--required"
-                  : "contact__input"
-              }
-              placeholder={t("contact.name")}
-              value={contactState.name}
-              onChange={event => {
-                setContactState({ ...contactState, name: event.target.value });
-              }}
-            />
-            <span className="contact__required-point">*</span>
-          </div>
-          <div className="contact__input-wrapper scroll-animation scroll-animation--left">
-            <input
-              type="text"
-              className="contact__input"
-              placeholder={t("contact.phone")}
-              value={contactState.phone}
-              onChange={event => {
-                setContactState({ ...contactState, phone: event.target.value });
-              }}
-            />
-          </div>
-          <div className="contact__input-wrapper scroll-animation scroll-animation--right">
-            <input
-              type="text"
-              className={
-                state.fieldNull === true && contactState.email === ""
-                  ? "contact__input--required"
-                  : "contact__input"
-              }
-              placeholder={t("contact.email")}
-              value={contactState.email}
-              onChange={event => {
-                setContactState({ ...contactState, email: event.target.value });
-              }}
-            />
-            <span className="contact__required-point">*</span>
-          </div>
-          <div className="contact__input-wrapper scroll-animation scroll-animation--left">
-            <input
-              type="text"
-              className="contact__input"
-              placeholder={t("contact.company")}
-              value={contactState.company}
-              onChange={event => {
-                setContactState({
-                  ...contactState,
-                  company: event.target.value
-                });
-              }}
-            />
-          </div>
-          <div
-            className="contact__input-wrapper scroll-animation scroll-animation--up"
-            style={{ gridColumn: "span 2" }}
-          >
-            <textarea
-              className={
-                state.fieldNull === true && contactState.content === ""
-                  ? "contact__textarea--required"
-                  : "contact__textarea"
-              }
-              placeholder={t("contact.message")}
-              value={contactState.content}
-              onChange={event => {
-                setContactState({
-                  ...contactState,
-                  content: event.target.value
-                });
-              }}
-            />
-            <span className="contact__required-point">*</span>
-          </div>
-        </div>
-        <div className="contact__submit-container scroll-animation">
-          <div className="contact__recaptcha-wrapper">
-            <ReCAPTCHA
-              sitekey={"6LdAI24aAAAAAG0QIW1ZdyfsQMHrW3uwskzlVTH7"}
-              onChange={() => setState({ ...state, recaptcha: true })}
-              onExpired={() => setState({ ...state, recaptcha: false })}
-            />
-          </div>
-          <div className="contact__checkbox-wrapper">
-            <input
-              className="contact__checkbox"
-              type="checkbox"
-              name="check"
-              value="check"
-              onClick={() => {
-                setState({ ...state, onChecked: !state.onChecked });
-              }}
-            />
-            <p className="contact__checkbox-text">{t("contact.checkbox")}</p>
-          </div>
-        </div>
-        <div className="contact__button-wrapper scroll-animation">
-          {state.onChecked && state.recaptcha ? (
-            <p className="button" onClick={sendContact}>
-              {t("contact.button")}
-              <div className="button__arrow-wrapper">
-                <figure
-                  className="button__arrow-image"
-                  style={{ backgroundImage: `url(${ButtonArrow})` }}
-                />
-              </div>
-            </p>
-          ) : (
-            <p className="button--disable">
-              {t("contact.button")}
-              <div className="button--disable__arrow-wrapper">
-                <figure
-                  className="button--disable__arrow-image"
-                  style={{ backgroundImage: `url(${ButtonArrow})` }}
-                />
-              </div>
-            </p>
-          )}
-        </div>
-        <p
-          className="contact__required-message"
-          style={{
-            display: `${state.fieldNull === true ? "inline-block" : "none"}`
-          }}
-        >
-          {t("contact.required")}
-        </p>
-      </section>
+      
     </div>
   );
 };
