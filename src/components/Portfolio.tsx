@@ -9,7 +9,7 @@ import ElysiaAssetRed1 from "src/assets/image/portfolio/elysia-asset-red-1.png";
 import ElysiaAssetBlue1 from "src/assets/image/portfolio/elysia-asset-blue-1.png";
 import { useTranslation } from "react-i18next";
 import SubgraphContext, { IAssetBond, IReserveSubgraphData } from "src/contexts/SubgraphContext";
-import { parseTokenId } from "src/utiles/parseTokenId";
+import { parseTokenId } from "src/pages/utiles/parseTokenId";
 import CollateralCategory from "src/enums/CollateralCategory";
 import AssetList from 'src/components/AssetList';
 import useMediaQueryType from "src/hooks/useMediaQueryType";
