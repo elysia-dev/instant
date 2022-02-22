@@ -11,9 +11,9 @@ import '../stylesheets/mobile.scss';
 
 import Main from 'src/components/Main';
 import Footer from 'src/components/Footer';
-import ScrollToTop from 'src/pages/utiles/ScrollToTop';
 import useMediaQueryType from "src/hooks/useMediaQueryType";
 import MediaQuery from "src/enums/MediaQuery";
+import Navigation from "src/components/Navigation";
 
 
 const AppNavigator: React.FC = () => {
@@ -22,7 +22,7 @@ const AppNavigator: React.FC = () => {
   return (
     <div className={`elysia ${mediaQuery === MediaQuery.PC ? 'view-w' : 'view-m'}`}>
       <Router>
-        <ScrollToTop />
+        <Navigation />
         <Switch>
           {/* <RouteWithHeader path="/privacyPolicy">
             <PrivacyPolicy />

@@ -2,7 +2,7 @@
 
 const pageToScroll = (ref: string) => {
   var element = document.getElementById(ref);
-  const offset = 85;
+  const offset = 80;
   const bodyRect = document.body.getBoundingClientRect().top;
   const elementRect = element!.getBoundingClientRect().top;
   const elementPosition = elementRect - bodyRect;

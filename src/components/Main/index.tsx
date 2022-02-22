@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MainBackground from "src/assets/image/main-background.png";
 import DownArrow from "src/assets/image/down-arrow.png";
 import Dao from 'src/assets/image/dao-background.png';
 
 /* Service */
-import Service00 from "src/assets/image/service00.png";
+// import Service00 from "src/assets/image/service00.png";
 import Service01 from "src/assets/image/service01.png";
 import Service02 from "src/assets/image/service02.png";
 import ButtonArrow from "src/assets/image/button-arrow.png";
@@ -55,73 +55,29 @@ import Crypto from "src/assets/image/partners/crypto@2x.png";
 
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import Portfolio from "src/components/Portfolio";
-import Navigation from 'src/components/Navigation';
+import Portfolio from "src/components/Main/Portfolio";
+import pageToScroll from "src/pages/utiles/pageToScroll";
+import Contect from 'src/components/Main/Contect';
 
 
 const Main = () => {
   const { t } = useTranslation();
 
+  const topRef = React.createRef<HTMLDivElement>();
   const Service = React.createRef<HTMLDivElement>();
   const portfolio = React.createRef<HTMLDivElement>();
   const Team = React.createRef<HTMLDivElement>();
   const Partners = React.createRef<HTMLDivElement>();
-  const Contact = React.createRef<HTMLDivElement>();
-  const Top = React.createRef<HTMLDivElement>();
-
-
-
-
-  /* slack api를 호출합니다 */
-  
-
-  /* 클래스에 scroll-animation 지정한 블록들에 애니메이션을 추가합니다 */
-  const ScrollAnimationDefaultMargin = 100;
-  let ScrollAnimationTriggerMargin = 0;
-  let ScrollAnimationTriggerHeight = 0;
-  const ScrollAnimationElementList = document.querySelectorAll(
-    ".scroll-animation"
-  );
-
-  const ScrollAnimationFunc = function() {
-    for (const element of ScrollAnimationElementList as any) {
-      if (!element.classList.contains("show")) {
-        if (element.dataset.saMargin) {
-          ScrollAnimationTriggerMargin = parseInt(element.dataset.saMargin);
-        } else {
-          ScrollAnimationTriggerMargin = ScrollAnimationDefaultMargin;
-        }
-
-        if (element.dataset.saTrigger) {
-          ScrollAnimationTriggerHeight =
-            document
-              .querySelector(element.dataset.saTrigger)
-              .getBoundingClientRect().top + ScrollAnimationTriggerMargin;
-        } else {
-          ScrollAnimationTriggerHeight =
-            element.getBoundingClientRect().top + ScrollAnimationTriggerMargin;
-        }
-
-        if (window.innerHeight > ScrollAnimationTriggerHeight) {
-          let delay = element.dataset.saDelay ? element.dataset.saDelay : 0;
-          setTimeout(function() {
-            element.classList.add("show");
-          }, delay);
-        }
-      }
-    }
-  };
-  window.addEventListener("load", ScrollAnimationFunc);
-  window.addEventListener("scroll", ScrollAnimationFunc);
+  const contectRef = React.createRef<HTMLDivElement>();
 
   return (
-    <div className="elysia" id="top" ref={Top}>
+    <>
       <section
         className="main"
-        id="main"
+        id="top"
         style={{ backgroundImage: `url(${MainBackground})` }}
+        ref={topRef}
       >
-        <Navigation />
         <div className="main__content-container">
           <h2 className="main__content-text--bold">
             {t("main.content-title")}
@@ -137,7 +93,7 @@ const Main = () => {
             className="main__down-arrow"
             src={DownArrow}
             alt=""
-            onClick={() => Scroll("service")}
+            onClick={() => pageToScroll("service")}
           />
         </div>
       </section>
@@ -148,12 +104,12 @@ const Main = () => {
       >
         <h1
           id="service"
-          className="section__text section__text scroll-animation scroll-animation--up"
+          className="section__text section__text sa sa--up"
         >
           {t("service.title")}
         </h1>
         <h1
-          className="section__text--bold scroll-animation scroll-animation--up"
+          className="section__text--bold sa sa--up"
           data-sa-delay="200"
         >
           {t("service.sub-title")}
@@ -161,12 +117,12 @@ const Main = () => {
 
         {/* <div className="service__container">
           <img
-            className="service__image scroll-animation scroll-animation--right"
+            className="service__image sa sa--right"
             src={Service00}
             alt=""
           />
           <div
-            className="service__text-wrapper scroll-animation"
+            className="service__text-wrapper sa"
             data-sa-delay="200"
           >
             <h2 className="service__header-text">{t("service.owners")}</h2>
@@ -187,7 +143,7 @@ const Main = () => {
         </div> */}
         <div className="service__container">
           <div
-            className="service__text-wrapper scroll-animation"
+            className="service__text-wrapper sa"
             data-sa-delay="200"
           >
             <h2 className="service__header-text">{t("service.buyers")}</h2>
@@ -215,19 +171,19 @@ const Main = () => {
             </Link>
           </div>
           <img
-            className="service__image scroll-animation scroll-animation--left"
+            className="service__image sa sa--left"
             src={Service01}
             alt=""
           />
         </div>
         <div className="service__container">
           <img
-            className="service__image  scroll-animation scroll-animation--right"
+            className="service__image  sa sa--right"
             src={Service02}
             alt=""
           />
           <div
-            className="service__text-wrapper scroll-animation"
+            className="service__text-wrapper sa"
             data-sa-delay="200"
           >
             <h2 className="service__header-text">
@@ -260,24 +216,24 @@ const Main = () => {
             Backed by
           </h2>
           <div>
-            <img src={FBGCapital} className="scroll-animation scroll-animation--up" />
-            <img src={Blocore} className="scroll-animation scroll-animation--up" />
+            <img src={FBGCapital} className="sa sa--up" />
+            <img src={Blocore} className="sa sa--up" />
           </div>
         </div>
       </section>
       
-      <Portfolio />
+      <Portfolio ref={portfolio} />
 
       <section className="dao" style={{ backgroundImage: `url(${Dao})` }}>
         <div className="dao__title">
-          <h3 className=" scroll-animation scroll-animation--up">
+          <h3 className=" sa sa--up">
           ELYSIA DAO LLC 
           </h3>
-          <h2 className=" scroll-animation scroll-animation--up">
+          <h2 className=" sa sa--up">
             {t("dao.title")}
           </h2>
         </div>
-        <div className="dao__content scroll-animation scroll-animation--up">
+        <div className="dao__content sa sa--up">
           <div>
             <p>
               {t("dao.content.0")}
@@ -301,7 +257,7 @@ const Main = () => {
         ref={Partners}
       >
         <h1
-          className="partners__text--bold section__text--bold scroll-animation scroll-animation--up"
+          className="partners__text--bold section__text--bold sa sa--up"
           style={{ paddingTop: 70 }}
         >
           {t("partners.audit")}
@@ -314,7 +270,7 @@ const Main = () => {
           return (
             <img
               src={data}
-              className="partners__picture scroll-animation scroll-animation--up"
+              className="partners__picture sa sa--up"
               alt="Elysia"
               data-sa-margin={index * 5}
             />
@@ -322,7 +278,7 @@ const Main = () => {
         })}
         </div>
         <h1
-          className="partners__text--bold section__text--bold scroll-animation scroll-animation--up"
+          className="partners__text--bold section__text--bold sa sa--up"
           style={{ paddingTop: 70 }}
         >
           {t("partners.title")}
@@ -353,7 +309,7 @@ const Main = () => {
             return (
               <img
                 src={image}
-                className="partners__picture scroll-animation scroll-animation--up"
+                className="partners__picture sa sa--up"
                 alt="Elysia"
                 data-sa-margin={index * 5}
               />
@@ -361,7 +317,7 @@ const Main = () => {
           })}
         </div>
         <h2
-          className="partners__text--bold section__text--bold scroll-animation scroll-animation--up"
+          className="partners__text--bold section__text--bold sa sa--up"
           style={{ paddingTop: 70 }}
         >
           {t("partners.legal-advisors")}
@@ -371,7 +327,7 @@ const Main = () => {
             return (
               <img
                 src={image}
-                className="partners__picture scroll-animation scroll-animation--up"
+                className="partners__picture sa sa--up"
                 alt="Elysia"
                 data-sa-margin={index * 5}
                 style={{ margin: "20px 107px" }}
@@ -382,12 +338,12 @@ const Main = () => {
       </section>
       <section className="team contents-container" id="team" ref={Team}>
         <h1
-          className="section__text--bold scroll-animation scroll-animation--up"
+          className="section__text--bold sa sa--up"
           style={{ paddingTop: 70 }}
         >
           {t("team.title")}
         </h1>
-        <div className="team__info-wrapper scroll-animation scroll-animation--up">
+        <div className="team__info-wrapper sa sa--up">
           {[
             [Team1, "https://www.linkedin.com/in/junggun-lim-2b1a1a137/"],
             [
@@ -433,8 +389,8 @@ const Main = () => {
           })}
         </div>
       </section>
-      
-    </div>
+      <Contect ref={contectRef} />
+    </>
   );
 };
 
