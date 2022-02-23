@@ -57,8 +57,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Portfolio from "src/components/Main/Portfolio";
 import pageToScroll from "src/pages/utiles/pageToScroll";
-import Contect from 'src/components/Main/Contect';
-
+import Contact from 'src/components/Main/Contact';
 
 const Main = () => {
   const { t } = useTranslation();
@@ -68,7 +67,7 @@ const Main = () => {
   const portfolio = React.createRef<HTMLDivElement>();
   const Team = React.createRef<HTMLDivElement>();
   const Partners = React.createRef<HTMLDivElement>();
-  const contectRef = React.createRef<HTMLDivElement>();
+  const contactRef = React.createRef<HTMLDivElement>();
 
   return (
     <>
@@ -389,7 +388,7 @@ const Main = () => {
           })}
         </div>
       </section>
-      <Contect ref={contectRef} />
+      <Contact ref={contactRef} />
     </>
   );
 };
