@@ -3,9 +3,9 @@ import '../css/style.scss';
 import {
   Route,
 } from "react-router-dom";
-import Header from './Header';
-import Footer from './footer/Footer';
-import FooterMobile from './../mobile/modules/footer/Footer';
+// import Header from './Header';
+// import Footer from './footer/Footer';
+// import FooterMobile from './../mobile/modules/footer/Footer';
 
 
 type Props = {
@@ -19,9 +19,9 @@ type Props = {
 const RouteWithLayout: React.FunctionComponent<Props> = (props) => {
   return (
     <Route path={props.path}>
-      {props.header && <Header />}
+      {/* {props.header && <Header />}
       {props.children}
-      {props.footer && props.isPc ? <Footer /> : <FooterMobile />}
+      {props.footer && props.isPc ? <Footer /> : <FooterMobile />} */}
     </Route>
   )
 }

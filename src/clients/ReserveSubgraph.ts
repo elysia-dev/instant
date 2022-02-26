@@ -96,6 +96,6 @@ export class ReserveSubgraph {
     return axios.post("https://api.thegraph.com/subgraphs/name/donguks/elyfi-bsc", { query })
   }
   static getEthReserveData = async (): Promise<AxiosResponse<IResponse>> => {
-    return axios.post("https://gateway.thegraph.com/api/96f993b15274d04d4c1be0cb5fb79ff6/subgraphs/id/0x9d2d46e67c420147834c76b23c9bac485f114feb-0", { query })
+    return axios.post("https://api.studio.thegraph.com/query/862/elyfi/v0.0.4", { query })
   }
 }
