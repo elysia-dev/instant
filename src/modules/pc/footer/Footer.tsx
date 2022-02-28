@@ -8,6 +8,7 @@ import Telegram from '../../../shared/image/telegram.png';
 import Weibo from '../../../shared/image/weibo.png';
 import Twitter from '../../../shared/image/twitter.png';
 import { FunctionComponent } from 'react';
+import '../css/style.scss';
 import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Frame from 'react-frame-component';

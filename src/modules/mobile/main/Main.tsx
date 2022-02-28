@@ -54,6 +54,7 @@ import Fbg from "src/shared/image/partners/fbg.png";
 import Blocore from "src/shared/image/partners/blocore.png";
 import Crypto from "src/shared/image/partners/crypto@2x.png";
 
+import Portfolio from "src/components/Portfolio";
 
 import "../css/mobileStyle.scss";
 import { Link } from "react-router-dom";
@@ -441,6 +442,7 @@ const Main = () => {
         </div>
       </section> */}
 
+      <Portfolio />
 
       <section className="dao" style={{ backgroundImage: `url(${Dao})` }}>
         <div className="dao__title">
@@ -450,6 +452,11 @@ const Main = () => {
           <h2 className=" scroll-animation scroll-animation--up">
             {t("dao.title")}
           </h2>
+          <p>
+            {
+              t("dao.comment")
+            }
+          </p>
         </div>
         <div className="dao__content scroll-animation scroll-animation--up">
           <div>

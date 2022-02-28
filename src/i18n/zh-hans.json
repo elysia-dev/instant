@@ -1,0 +1,97 @@
+{
+  "translation": {
+    "navigation": {
+      "service": "服务",
+      "portfolio": "作品集",
+      "partners": "伙伴",
+      "team": "团队",
+      "contact": "联系客服",
+      "helpdesk": "Help Desk",
+      "elyfi": "ELYFI"
+    },
+    "main": {
+      "content-title": "房地产资产的数字基础设施",
+      "content-sub-title": "Elysia提供最新技术来弥合传统房地产参与者与全球投资者之间的鸿沟"
+    },
+    "service": {
+      "title": "什么是ELYSIA？",
+      "sub-title": "我们帮助对房地产所有权进行数字化处理，以便在全球范围内直接进入二级市场",
+      "owners": "对于业主",
+      "owners-title": "用Elysia代币化您的房地产",
+      "owners-content": "使用区块链技术创建资产的不变表示。 满足即时的全球流动性",
+      "owners-button": "联系我们",
+      "buyers": "对于买家",
+      "buyers-title": "房地产投资触手可及",
+      "buyers-title-moblie": "房地产投资触手可及",
+      "buyers-content": "寻找世界各地的房地产机会，几乎无需中介费用即可完成交易",
+      "buyers-button": "下载应用程式",
+      "participants": "参加者",
+      "participants-title": "分散应用",
+      "participants-content": "使用房地产代币作为抵押品的需求驱动的点对点贷款市场将是个人理财的下一步",
+      "participants-button": "探索ELYFI"
+    },
+    "portfolio": {
+      "title": "我们的往绩",
+      "total": "全部的",
+      "funded": "已资助",
+      "seemore": "查看更多 >",
+      "close": "关闭 <"
+    },
+    "partners": {
+      "title": "伙伴",
+      "legal-advisors": "法律顾问"
+    },
+    "team": {
+      "title": "高管团队",
+      "name": [
+        "JungGun Lim",
+        "WonJoon Cha",
+        "Yoon Kim",
+        "DongUk Seo",
+        "Michael Chung",
+        "Jacob Lee"
+      ],
+      "dept": ["CEO", "CSO", "CMO", "CTO", "COO", "Bees’ Company CEO"],
+      "info": [
+        "・首尔国立大学化学与生物工程系\n・三星SDI\n・专门研究Ruby / React JS\n\n林先生是Elysia的首席执行官。 他概述了基金会的发展方向，并管理Elysia的整体运营和资源",
+        "・首尔国立大学机械与航空工程学院\n・BTbridge公司首席执行官\n・专门从事大数据开发\n\n查先生审查了该业务的总体规划和法律法规",
+        "・Pepperdine University学士\n・STX O＆S和韩进的业务发展\n・ICONLOOP的业务发展\n\n金先生负责Elysia的销售和市场运营",
+        "・首尔国立大学，计算机科学与工程\n・HCG的后端首席开发人员\n・Naver后端开发实习生\n\nSeo先生目前是Elysia的首席技术官，负责区块链架构和软件工程",
+        "・KAIST国立大学\n・工业工程\n・KTB投资证券\n・道具交易，FRM\n・ICONLOOP\n·业务发展\n\n钟先生在Elysia管理运营和财务",
+        "・汉阳大学机械工学系\n・STX初级工程师\n・专门从事房租管理和咨询\n\n李先生负责行业合作并为房地产业务提供咨询"
+      ]
+    },
+    "contact": {
+      "title": "接触",
+      "sub-title": "找不到您想要的东西吗？",
+      "title-info": "向我们发送一封包含您的请求的电子邮件，我们将在一个工作日内与您联系。",
+      "checkbox": "我同意ELYSIA PLATFORM PTE。 LTD处理我的个人信息根据《隐私权政策》和《 Cookie政策》中的规定，鉴于ELYSIA平台PTE。 LTD的业务，此类处理可能在我本国管辖范围之外进行。",
+      "button": "接触",
+      "name": "名称",
+      "phone": "电话",
+      "email": "电子邮件",
+      "company": "公司",
+      "message": "信息",
+      "required": "名称，电子邮件地址和内容字段为必填项",
+      "success": "您已成功提交查询。 我们将在3个工作日内通过电子邮件回复。",
+      "fail": "提交失败。 请重新提交。"
+    },
+    "footer": {
+      "logo_label": "ELYSIA PLATFORM PTE. LTD",
+      "contact": "CONTACT",
+      "email": "cs@elysia.land",
+      "whitepaper": "WhitePaper (old)",
+      "community": "COMMUNITY",
+      "copyright": "ELYSIA ⓒ 2018·2022. All rights reserved.",
+      "privacy_policy": "Privacy Policy",
+      "terms_service": "Terms of Service",
+      "language": "LANGUAGE",
+      "language_en": "English",
+      "language_ko": "한국어",
+      "language_zh·hans": "简体中文",
+      "contract": "CONTRACT",
+      "el": "Elysia (EL)",
+      "elfi": "Elyfi (ELFI)"
+    }
+  }
+}
