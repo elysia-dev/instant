@@ -12,7 +12,7 @@
     "main": {
       "content-title": "DIGITAL INFRASTRUCTURE FOR\nREAL ESTATE ASSETS",
       "content-sub-title": "Elysia provides the latest technology to bridge the gap between\ntraditional real estate participants and global investors",
-      "content-dao": "ELYSIA DAO LLC registered in Wyoming, US"
+      "content-dao": "Elysia is a Decentralized Autonomous Organization (DAO) registered in the state of Wyoming, USA."
     },
     "service": {
       "title": "What is ELYSIA?",
@@ -44,12 +44,13 @@
       }
     },
     "dao": {
-      "title": "Registered in Wyoming, US",
+      "title": "Registered in the state of Wyoming, USA",
       "content": [
         "Asia’s first DAO LLC.",
         "The world’s second DAO LLC qualified by the US government.",
         "DAO LLC established first among listed projects."
-      ]
+      ],
+      "comment": "All decisions made by the limited liability company is automated, decentralized and based on open-source code."
     },
     "partners": {
       "audit": "Audited by",

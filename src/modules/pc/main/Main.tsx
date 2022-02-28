@@ -445,6 +445,11 @@ const Main = () => {
           <h2 className=" scroll-animation scroll-animation--up">
             {t("dao.title")}
           </h2>
+          <p>
+            {
+              t("dao.comment")
+            }
+          </p>
         </div>
         <div className="dao__content scroll-animation scroll-animation--up">
           <div>

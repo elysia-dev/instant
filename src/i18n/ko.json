@@ -12,7 +12,7 @@
     "main": {
       "content-title": "실물자산 토큰화 프로토콜",
       "content-sub-title": "엘리시아는 부동산과 같은 실물자산을 유동화 할 수 있도록 토큰화 서비스를 제공합니다.",
-      "content-dao": "ELYSIA DAO LLC registered in Wyoming, US"
+      "content-dao": "Elysia is a Decentralized Autonomous Organization (DAO) registered in the state of Wyoming, USA."
     },
     "service": {
       "title": "엘리시아란 무엇인가요?",
@@ -44,12 +44,13 @@
       }
     },
     "dao": {
-      "title": "Registered in Wyoming, US",
+      "title": "Registered in the state of Wyoming, USA",
       "content": [
         "아시아 최초 DAO 법인",
         "미국 정부가 인정한 세계 두 번째 DAO 법인",
         "상장 회사 중 최초로 설립된 DAO 법인"
-      ]
+      ],
+      "comment": "ELYSIA DAO LLC / LLC의 모든 결정은 자동화되고 분산되며 오픈 소스 코드를 기반으로 합니다."
     },
     "partners": {
       "audit": "감사(Audit) 업체",
