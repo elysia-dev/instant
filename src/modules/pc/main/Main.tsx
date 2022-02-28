@@ -55,10 +55,12 @@ import Fbg from "src/shared/image/partners/fbg.png";
 import Blocore from "src/shared/image/partners/blocore.png";
 import Crypto from "src/shared/image/partners/crypto@2x.png";
 
+import "../css/style.scss";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
+import Portfolio from "src/components/Portfolio";
 
 
 const Main = () => {
@@ -436,6 +438,7 @@ const Main = () => {
         </div>
       </section>
       
+      <Portfolio />
 
       <section className="dao" style={{ backgroundImage: `url(${Dao})` }}>
         <div className="dao__title">
