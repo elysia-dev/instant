@@ -11,7 +11,7 @@
     },
     "main": {
       "content-title": "DIGITAL INFRASTRUCTURE FOR\nREAL ESTATE ASSETS",
-      "content-sub-title": "Elysia provides the latest technology to bridge the gap between\ntraditional real estate participants and global investors",
+      "content-sub-title": "Elysia provides the latest technology to bridge the gap between\ntraditional real estate participants and the general public.",
       "content-dao": "Elysia is a Decentralized Autonomous Organization (DAO) registered in the state of Wyoming, USA."
     },
     "service": {
@@ -23,8 +23,8 @@
       "owners-content": "Use blockchain technology to create immutable\nrepresentation of your assets. Meet instant global liquidity",
       "owners-button": "Contact us",
       "buyers": "For Buyers",
-      "buyers-title": "Real estate investing at your fingertips",
-      "buyers-title-moblie": "Real estate investing\nat your fingertips",
+      "buyers-title": "Real estate token market at your fingertips",
+      "buyers-title-moblie": "Real estate token\nmarket at your fingertips",
       "buyers-content": "Find real estate opportunities around the world and\nsettle transactions with almost no intermediary costs",
       "buyers-button": "Download the app",
       "participants": "For Participants",
@@ -35,7 +35,7 @@
     "portfolio": {
       "title": "Our Track Record",
       "total": "Total",
-      "funded": "Funded",
+      "funded": "Closed",
       "seemore": "See More >",
       "close": "Close <",
       "elyfi": {
