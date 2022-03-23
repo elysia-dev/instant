@@ -3,30 +3,33 @@ import ElysiaLogo from "src/shared/image/Elysia_Logo.png";
 import ElysiaWhiteLogo from "src/shared/image/Elysia_Logo_White.png";
 import MainBackground from "src/shared/image/main-background.png";
 import DownArrow from "src/shared/image/down-arrow.png";
-import Dao from 'src/shared/image/dao-background.png';
+import Dao from "src/shared/image/dao-background.png";
 
 /* Service */
-import Service00 from "src/shared/image/service00.png";
 import Service01 from "src/shared/image/service01.png";
 import Service02 from "src/shared/image/service02.png";
 import ButtonArrow from "src/shared/image/button-arrow.png";
 
 /* Team Image */
-import Team1 from "src/shared/image/team/Team1.png";
-import Team2 from "src/shared/image/team/Team2.png";
-import Team3 from "src/shared/image/team/Team3.png";
-import Team4 from "src/shared/image/team/Team4.png";
-import Team5 from "src/shared/image/team/Team9.png";
-import Team6 from "src/shared/image/team/Team8.png";
+import member1 from "src/shared/image/team/ELY_JungGun.png";
+import member2 from "src/shared/image/team/ELY_Wonjoon.png";
+import member3 from "src/shared/image/team/ELY_Donguk.png";
+import member4 from "src/shared/image/team/ELY_Jeff.png";
+import member5 from "src/shared/image/team/ELY_Hyunmin.png";
+import member6 from "src/shared/image/team/ELY_Jonghyun.png";
+import member7 from "src/shared/image/team/ELY_Heesoo.png";
+import member8 from "src/shared/image/team/ELY_Hyuno.png";
+import member9 from "src/shared/image/team/ELY_Myunghun.png";
+import member10 from "src/shared/image/team/ELY_Gyucheol.png";
+import member11 from "src/shared/image/team/ELY_Deokjae.png";
 
 import LinkedIn from "src/shared/image/linkedin.png";
 
-
-import FBGCapital from 'src/shared/image/fbgcapital.png';
+import FBGCapital from "src/shared/image/fbgcapital.png";
 
 /* Partners Image */
 import Certik from "src/shared/image/partners/certik.png";
-import HaechiLabs from 'src/shared/image/partners/haechi_labs.png';
+import HaechiLabs from "src/shared/image/partners/haechi_labs.png";
 import Iconloop from "src/shared/image/partners/iconloop.png";
 import Hexlant from "src/shared/image/partners/hexlant.png";
 import Bishijie from "src/shared/image/partners/bishijie.png";
@@ -63,8 +66,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 
 const Main = () => {
-  const { t, i18n } = useTranslation();
-  const [popup, setPopup] = useState(true);
+  const { t } = useTranslation();
 
   const [state, setState] = useState({
     isMoreAsset: false,
@@ -308,9 +310,7 @@ const Main = () => {
             {t("main.content-title")}
           </h1>
           <p className="main__content-text">{t("main.content-sub-title")}</p>
-          <p className="main__content__dao">
-            {t("main.content-dao")}
-          </p>
+          <p className="main__content__dao">{t("main.content-dao")}</p>
         </div>
         <div className="main__down-arrow-wrapper">
           <img
@@ -420,16 +420,22 @@ const Main = () => {
       </section>
       <section className="backed">
         <div>
-          <h2>
-            Backed by
-          </h2>
+          <h2>Backed by</h2>
           <div>
-            <img src={FBGCapital} className="scroll-animation scroll-animation--up" />
-            <img src={Blocore} className="scroll-animation scroll-animation--up" />
+            <img
+              src={FBGCapital}
+              className="scroll-animation scroll-animation--up"
+              alt="FBGCapital"
+            />
+            <img
+              src={Blocore}
+              className="scroll-animation scroll-animation--up"
+              alt={"Blocore"}
+            />
           </div>
         </div>
       </section>
-      
+
       {/* <section className="portfolio" id="milestone">
         <h1
           className="section__text--bold scroll-animation scroll-animation--up"
@@ -447,32 +453,22 @@ const Main = () => {
       <section className="dao" style={{ backgroundImage: `url(${Dao})` }}>
         <div className="dao__title">
           <h3 className=" scroll-animation scroll-animation--up">
-            ELYSIA DAO LLC 
+            ELYSIA DAO LLC
           </h3>
           <h2 className=" scroll-animation scroll-animation--up">
             {t("dao.title")}
           </h2>
-          <p>
-            {
-              t("dao.comment")
-            }
-          </p>
+          <p>{t("dao.comment")}</p>
         </div>
         <div className="dao__content scroll-animation scroll-animation--up">
           <div>
-            <p>
-              {t("dao.content.0")}
-            </p>
+            <p>{t("dao.content.0")}</p>
           </div>
           <div>
-            <p>
-              {t("dao.content.1")}
-            </p>
+            <p>{t("dao.content.1")}</p>
           </div>
           <div>
-            <p>
-              {t("dao.content.2")}
-            </p>
+            <p>{t("dao.content.2")}</p>
           </div>
         </div>
       </section>
@@ -481,22 +477,24 @@ const Main = () => {
           className="partners__text--bold section__text--bold scroll-animation scroll-animation--up"
           style={{ paddingTop: 70 }}
         >
-        {t("partners.audit")}
+          {t("partners.audit")}
         </h1>
-        <div style={{
-          display: "flex",
-          justifyContent: "space-evenly"
-        }}>
-        {[Certik, HaechiLabs].map((data, index) => {
-          return (
-            <img
-              src={data}
-              className="partners__image scroll-animation scroll-animation--up"
-              alt="Elysia"
-              data-sa-margin={index * 5}
-            />
-          )
-        })}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-evenly"
+          }}
+        >
+          {[Certik, HaechiLabs].map((data, index) => {
+            return (
+              <img
+                src={data}
+                className="partners__image scroll-animation scroll-animation--up"
+                alt="Elysia"
+                data-sa-margin={index * 5}
+              />
+            );
+          })}
         </div>
         <h1
           className="partners__text--bold section__text--bold scroll-animation scroll-animation--up"
@@ -534,6 +532,7 @@ const Main = () => {
                     index === 14 ? "https://crypto.com/price/elysia" : undefined
                   }
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <img
                     src={image}
@@ -575,45 +574,61 @@ const Main = () => {
         </h2>
         <div className="team__info-wrapper scroll-animation scroll-animation--up">
           {[
-            [Team1, "https://www.linkedin.com/in/junggun-lim-2b1a1a137/"],
-            [
-              Team2,
-              "https://www.linkedin.com/in/%EC%9B%90%EC%A4%80-%EC%B0%A8-1b707653/"
-            ],
-            [Team3, "https://www.linkedin.com/in/yoon-kim-02228619/"],
-            [Team4, "https://www.linkedin.com/in/donguk-seo-6483141b6/"],
-            [Team5, "https://www.linkedin.com/in/jaehun-chung-538a52174/"],
-            [Team6]
-          ].map(([TeamImage, linkedInUrl], index) => {
+            [member1, member2],
+            [member3, member4],
+            [member5, member6],
+            [member7, member8],
+            [member9, member10],
+            [member11]
+          ].map((TeamImage, index) => {
             return (
-              <div className="team__container">
-                <div className="team__wrapper">
-                  <img src={TeamImage} className="team__picture" alt="Elysia" />
-                  <p className="team__hover-infomation">
-                    {linkedInUrl && (
-                      <div>
-                        <a href={linkedInUrl} target="_blank" rel="noopener">
-                          <img src={LinkedIn} alt="LinkiedIn" />
-                        </a>
+              <div className="team__info-wrapper__line">
+                {TeamImage.map((memberImg, memberIdx) => {
+                  return (
+                    <div className="team__container">
+                      <div className="team__wrapper">
+                        <img
+                          src={memberImg}
+                          className="team__picture"
+                          alt="Elysia"
+                        />
                       </div>
-                    )}
-                    {/* {TeamHover.split('\n').map(line => {
-                        return (<span>{line}<br /></span>)
-                      })} */}
-                    {t("team.info." + index)}
-                  </p>
-                </div>
-                <div className="team__text-wrapper">
-                  <h2
-                    className="team__text--bold"
-                    style={{ whiteSpace: "nowrap" }}
-                  >
-                    {t("team.name." + index)}
-                  </h2>
-                  <p className="team__text" style={{ whiteSpace: "nowrap" }}>
-                    {t("team.dept." + index)}
-                  </p>
-                </div>
+                      <div className="team__text-wrapper">
+                        <div>
+                          <h2
+                            className="team__text--bold"
+                            style={{ whiteSpace: "nowrap" }}
+                          >
+                            {t(`team.name.moblie.${index}.${memberIdx}`)}
+                          </h2>
+                          {index === 0 && memberIdx === 0 && (
+                            <a
+                              href="https://www.linkedin.com/authwall?trk=bf&tr
+                          kInfo=AQEzDHTrIMh2iwAAAX-
+                          1u9gIBk_B_duASD3l0PP-
+                          EGZX17vOS6y5g1jVHA5lC7mPc2djigdQ5
+                          EA72-Hy1CE6T2dFZmmxlZ-EF4ExYk-
+                          GWN0Q_f8cC86CdSiT7blbcR0-
+                          noX_gN0=&originalReferer=&sessionRedir
+                          ect=https%3A%2F%2Fwww.linkedin.com%
+                          2Fin%2Fjunggun-lim-2b1a1a137%2F"
+                              target="blank"
+                              rel="noopener noreferrer"
+                            >
+                              <img src={LinkedIn} alt={"linkedIn"} />
+                            </a>
+                          )}
+                        </div>
+                        <p
+                          className="team__text"
+                          style={{ whiteSpace: "nowrap" }}
+                        >
+                          {t(`team.dept.moblie.${index}.${memberIdx}`)}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             );
           })}
