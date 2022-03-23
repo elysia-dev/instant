@@ -760,15 +760,15 @@
     text-align: left;
     &__info-wrapper {
       text-align: center;
-      width: 100%;
-      margin: 40px 0px;
+      width: 300px;
+      margin: 40px auto;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
     }
-    &__container {
-      margin: 0px auto;
-    }
+    // &__container {
+    //   // margin: 0px auto;
+    // }
+
     &__picture {
       width: 100px;
       height: 100px;
