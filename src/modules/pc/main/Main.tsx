@@ -591,15 +591,7 @@ const Main = () => {
                           </h2>
                           {index === 0 && memberIdx === 0 && (
                             <a
-                              href="https://www.linkedin.com/authwall?trk=bf&tr
-                            kInfo=AQEzDHTrIMh2iwAAAX-
-                            1u9gIBk_B_duASD3l0PP-
-                            EGZX17vOS6y5g1jVHA5lC7mPc2djigdQ5
-                            EA72-Hy1CE6T2dFZmmxlZ-EF4ExYk-
-                            GWN0Q_f8cC86CdSiT7blbcR0-
-                            noX_gN0=&originalReferer=&sessionRedir
-                            ect=https%3A%2F%2Fwww.linkedin.com%
-                            2Fin%2Fjunggun-lim-2b1a1a137%2F"
+                              href="https://www.linkedin.com/in/junggun-lim-2b1a1a137/"
                               target="blank"
                               rel="noopener noreferrer"
                             >
