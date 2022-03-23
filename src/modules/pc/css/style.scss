@@ -13,14 +13,13 @@
 @font-face {
   font-family: "SpoqaHanSansNeo";
   src: url("../../../shared/fonts/SpoqaHanSansNeo-Regular.ttf")
-  format("truetype");
+    format("truetype");
   unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF,
     U+0030-0039;
 }
 @font-face {
   font-family: "SpoqaHanSansNeo-Bold";
-  src: url("../../../shared/fonts/SpoqaHanSansNeo-Bold.ttf")
-  format("truetype");
+  src: url("../../../shared/fonts/SpoqaHanSansNeo-Bold.ttf") format("truetype");
   unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF,
     U+0030-0039;
 }
@@ -229,8 +228,8 @@ section.contents-container {
       }
     }
   }
-  &__content__dao { 
-    color: #FFF;
+  &__content__dao {
+    color: #fff;
     font-size: 25px;
     font-style: italic;
   }
@@ -433,7 +432,7 @@ section.contents-container {
 }
 
 .backed {
-  background-color: #F0F0F1;
+  background-color: #f0f0f1;
   > div {
     width: 1190px;
     margin: 0 auto;
@@ -489,7 +488,7 @@ section.contents-container {
     justify-content: space-between;
     > div {
       border: 1px solid #707070;
-      background: #FFF;
+      background: #fff;
       border-radius: 100%;
       width: 280px;
       height: 280px;
@@ -579,7 +578,7 @@ section.contents-container {
       flex-direction: row;
     }
     flex: 1;
-    border: 1px solid #00BFFF;
+    border: 1px solid #00bfff;
     background-color: #ffffff;
     border-radius: 10px;
     height: 55px;
@@ -595,16 +594,16 @@ section.contents-container {
       margin-right: 55px;
     }
     &.disable {
-      border: 1px solid #B7B7B7;  
+      border: 1px solid #b7b7b7;
       > h2 {
-        color: #B7B7B7;
+        color: #b7b7b7;
       }
     }
   }
   &__content {
-    border-top: 1px solid #00BFFF;
-    border-bottom: 1px solid #00BFFF;
-    margin: 15px 0 20px; 
+    border-top: 1px solid #00bfff;
+    border-bottom: 1px solid #00bfff;
+    margin: 15px 0 20px;
     > p {
       font-size: 18px;
       text-align: left;
@@ -625,7 +624,7 @@ section.contents-container {
       grid-gap: 45px;
       gap: 45px;
     }
-    &__items { 
+    &__items {
       width: 360px;
       box-shadow: 0px 0px 6px #00000029;
       cursor: pointer;
@@ -653,7 +652,7 @@ section.contents-container {
         align-items: center;
         justify-content: center;
         &:first-child {
-          border-right: 1px solid #E6E6E6;
+          border-right: 1px solid #e6e6e6;
         }
         > p {
           font-size: 12px;
@@ -677,38 +676,22 @@ section.contents-container {
   &__info-wrapper {
     text-align: center;
     width: 1190px;
-    margin: 40px auto;
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    padding-bottom: 130px;
+    align-items: center;
+    &__line {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 40px;
+    }
   }
   &__picture {
     width: 140px;
     height: 140px;
     border-radius: 5px;
-  }
-  &__hover-infomation {
-    position: absolute;
-    font-size: 11px;
-    line-height: 14px;
-    text-align: left !important;
-    opacity: 0;
-    display: inline-block;
-    z-index: 2;
-    top: -28px;
-    left: -46px;
-    background-color: #000000dd;
-    color: #fff;
-    padding: 15px 5px;
-    transition: all 0.3s ease-in-out;
-    width: 224px;
-    height: 170px;
-    border-radius: 5px;
-    box-shadow: 0px 6px 10px #00000052;
-    &:hover {
-      opacity: 1;
-    }
   }
   &__container {
     display: inline-block;
@@ -719,6 +702,21 @@ section.contents-container {
     justify-content: space-between;
     text-align: left;
     width: 140px;
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      > a {
+        width: 21px;
+        height: 21px;
+        margin-left: 12.5px;
+        > img {
+          width: 21px;
+          height: 21px;
+        }
+      }
+    }
   }
   &__text--bold {
     font-size: 19px;
@@ -728,6 +726,7 @@ section.contents-container {
     font-size: 15px;
     color: #888888;
     margin: 0;
+    text-align: center;
   }
   &__wrapper {
     position: relative;
