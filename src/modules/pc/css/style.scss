@@ -403,6 +403,7 @@ section.contents-container {
   &__image {
     width: 578px;
     height: 452px;
+    object-fit: cover;
   }
   &__container {
     display: flex;
