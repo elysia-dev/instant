@@ -459,6 +459,7 @@
     &__image {
       width: 300px;
       height: 250px;
+      object-fit: cover;
     }
     &__container {
       margin: 0px 0px 80px;
@@ -694,6 +695,7 @@
           width: 135px;
           height: 112px;
           border-radius: 5px 5px 0 0;
+          object-fit: cover;
         }
       }
       &__data {
