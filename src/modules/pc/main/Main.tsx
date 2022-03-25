@@ -8,6 +8,8 @@ import Dao from "src/shared/image/dao-background.png";
 /* Service */
 import Service01 from "src/shared/image/service01.png";
 import Service02 from "src/shared/image/service02.png";
+import Service01WebP from "src/shared/image/service01.webp";
+import Service02WebP from "src/shared/image/service02.webp";
 import ButtonArrow from "src/shared/image/button-arrow.png";
 
 import FBGCapital from "src/shared/image/fbgcapital.png";
@@ -387,18 +389,18 @@ const Main = () => {
               </p>
             </Link>
           </div>
-          <img
-            className="service__image scroll-animation scroll-animation--left"
-            src={Service01}
-            alt=""
-          />
+          <picture>
+            <source srcSet={Service01WebP} type="image/webp" className="service__image scroll-animation scroll-animation--left" />
+            <source srcSet={Service01} type="image/jpeg" className="service__image scroll-animation scroll-animation--left" />
+            <img src={Service01WebP} className="service__image scroll-animation scroll-animation--left" />
+          </picture>
         </div>
         <div className="service__container">
-          <img
-            className="service__image  scroll-animation scroll-animation--right"
-            src={Service02}
-            alt=""
-          />
+          <picture>
+            <source srcSet={Service02WebP} type="image/webp" className="service__image  scroll-animation scroll-animation--right" />
+            <source srcSet={Service02} type="image/jpeg" className="service__image  scroll-animation scroll-animation--right" />
+            <img src={Service02WebP} className="service__image  scroll-animation scroll-animation--right" />
+          </picture>
           <div
             className="service__text-wrapper scroll-animation"
             data-sa-delay="200"
