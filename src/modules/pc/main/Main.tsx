@@ -28,6 +28,7 @@ import member8 from "src/shared/image/team/ELY_Hyuno.png";
 import member9 from "src/shared/image/team/ELY_Myunghun.png";
 import member10 from "src/shared/image/team/ELY_Gyucheol.png";
 import member11 from "src/shared/image/team/ELY_Deokjae.png";
+import defaultImg from "src/shared/image/team/default.png";
 
 import LinkedIn from "src/shared/image/linkedin.png";
 
@@ -390,16 +391,38 @@ const Main = () => {
             </Link>
           </div>
           <picture>
-            <source srcSet={Service01WebP} type="image/webp" className="service__image scroll-animation scroll-animation--left" />
-            <source srcSet={Service01} type="image/jpeg" className="service__image scroll-animation scroll-animation--left" />
-            <img src={Service01WebP} className="service__image scroll-animation scroll-animation--left" />
+            <source
+              srcSet={Service01WebP}
+              type="image/webp"
+              className="service__image scroll-animation scroll-animation--left"
+            />
+            <source
+              srcSet={Service01}
+              type="image/jpeg"
+              className="service__image scroll-animation scroll-animation--left"
+            />
+            <img
+              src={Service01WebP}
+              className="service__image scroll-animation scroll-animation--left"
+            />
           </picture>
         </div>
         <div className="service__container">
           <picture>
-            <source srcSet={Service02WebP} type="image/webp" className="service__image  scroll-animation scroll-animation--right" />
-            <source srcSet={Service02} type="image/jpeg" className="service__image  scroll-animation scroll-animation--right" />
-            <img src={Service02WebP} className="service__image  scroll-animation scroll-animation--right" />
+            <source
+              srcSet={Service02WebP}
+              type="image/webp"
+              className="service__image  scroll-animation scroll-animation--right"
+            />
+            <source
+              srcSet={Service02}
+              type="image/jpeg"
+              className="service__image  scroll-animation scroll-animation--right"
+            />
+            <img
+              src={Service02WebP}
+              className="service__image  scroll-animation scroll-animation--right"
+            />
           </picture>
           <div
             className="service__text-wrapper scroll-animation"
@@ -567,13 +590,19 @@ const Main = () => {
         </h1>
         <div className="team__info-wrapper scroll-animation scroll-animation--up">
           {[
-            [member1, member2, member3, member4, member5],
-            [member6, member7, member8, member9, member10],
-            [member11]
+            [member1, member2, member3, defaultImg, member4],
+            [member5, member6, member7, member8, member9],
+            [member10, member11, defaultImg, "", ""]
           ].map((TeamImage, index) => {
             return (
               <div className="team__info-wrapper__line">
                 {TeamImage.map((memberImg, memberIdx) => {
+                  if (index === 2 && memberIdx >= 3)
+                    return (
+                      <div className="team__container">
+                        <div className="team__text-wrapper" />
+                      </div>
+                    );
                   return (
                     <div className="team__container">
                       <div className="team__wrapper">
