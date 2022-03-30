@@ -22,6 +22,7 @@ import member8 from "src/shared/image/team/ELY_Hyuno.png";
 import member9 from "src/shared/image/team/ELY_Myunghun.png";
 import member10 from "src/shared/image/team/ELY_Gyucheol.png";
 import member11 from "src/shared/image/team/ELY_Deokjae.png";
+import defaultImg from "src/shared/image/team/default.png";
 
 import LinkedIn from "src/shared/image/linkedin.png";
 
@@ -575,11 +576,12 @@ const Main = () => {
         <div className="team__info-wrapper scroll-animation scroll-animation--up">
           {[
             [member1, member2],
-            [member3, member4],
-            [member5, member6],
-            [member7, member8],
-            [member9, member10],
-            [member11]
+            [member3, defaultImg],
+            [member4, member5],
+            [member6, member7],
+            [member8, member9],
+            [member10, member11],
+            [defaultImg]
           ].map((TeamImage, index) => {
             return (
               <div className="team__info-wrapper__line">

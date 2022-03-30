@@ -61,29 +61,24 @@
       "title": "ELYSIA DAO Members",
       "name": {
         "pc": [
+          ["JungGun Lim", "Wonjoon Cha", "Donguk Seo", "Yoon Kim", "Jeff Lee"],
           [
-            "JungGun Lim",
-            "Wonjoon Cha",
-            "Donguk Seo",
-            "Jeff Lee",
-            "Hyunmin Lee"
-          ],
-          [
+            "Hyunmin Lee",
             "Jonghyun Lee",
             "Heesoo Han",
             "Hyuno Bae",
-            "Myunghun Shim",
-            "Gyucheol Jung"
+            "Myunghun Shim"
           ],
-          ["Deokjae Seo"]
+          ["Gyucheol Jung", "Deokjae Seo", "Michael Chung"]
         ],
         "moblie": [
           ["JungGun Lim", "Wonjoon Cha"],
-          ["Donguk Seo", "Jeff Lee"],
-          ["Hyunmin Lee", "Jonghyun Lee"],
-          ["Heesoo Han", "Hyuno Bae"],
-          ["Myunghun Shim", "Gyucheol Jung"],
-          ["Deokjae Seo"]
+          ["Donguk Seo", "Yoon Kim"],
+          ["Jeff Lee", "Hyunmin Lee"],
+          ["Jonghyun Lee", "Heesoo Han"],
+          ["Hyuno Bae", "Myunghun Shim"],
+          ["Gyucheol Jung", "Deokjae Seo"],
+          ["Michael Chung"]
         ]
       },
       "dept": {
@@ -92,26 +87,26 @@
             "Strategy & Planning",
             "Strategy & Planning",
             "Development",
-            "Development",
+            "Marketing",
             "Development"
           ],
           [
+            "Development",
             "Strategy & Planning",
             "Design",
             "Development",
-            "Development",
             "Development"
           ],
-          ["Marketing"]
+          ["Development", "Marketing", "Marketing"]
         ],
         "moblie": [
           ["Strategy & Planning", "Strategy & Planning"],
 
+          ["Development", "Marketing"],
           ["Development", "Development"],
-          ["Development", "Strategy & Planning"],
-          ["Design", "Development"],
+          ["Strategy & Planning", "Design"],
           ["Development", "Development"],
-          ["Marketing"]
+          ["Development", "Marketing", "Marketing"]
         ]
       },
       "info": [
