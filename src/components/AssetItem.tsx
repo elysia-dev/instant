@@ -6,7 +6,7 @@ import GoogleMapReact from 'google-map-react';
 import Slate from 'src/clients/Slate';
 import ReserveData from 'src/core/data/reserves';
 import { useTranslation } from 'react-i18next';
-import { IAssetBond } from 'src/contexts/SubgraphContext';
+import { IAssetBond } from 'src/core/types/reserveSubgraph';
 
 const defaultLat = 37.5172;
 const defaultLng = 127.0473;

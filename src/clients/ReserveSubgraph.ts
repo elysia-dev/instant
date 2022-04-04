@@ -1,6 +1,6 @@
-import axios, { AxiosResponse } from 'axios';
 import moment from 'moment';
-import { IReserveSubgraphData, IAssetBond } from 'src/contexts/SubgraphContext';
+import { IReserveSubgraphData } from 'src/core/types/reserveSubgraph';
+import { request } from 'graphql-request';
 
 const minimumTimestamp = moment().subtract(35, 'days').unix();
 
@@ -84,18 +84,8 @@ const query = `
 }
 `
 
-interface IResponse {
-  data: {
-    reserves: IReserveSubgraphData[],
-    assetBondTokens: IAssetBond[]
-  }
-}
+export const bscReserveDataFetcher = (): Promise<IReserveSubgraphData[]> =>
+  request("https://api.thegraph.com/subgraphs/name/donguks/elyfi-bsc", query);
 
-export class ReserveSubgraph {
-  static getBscReserveData = async (): Promise<AxiosResponse<IResponse>> => {
-    return axios.post("https://api.thegraph.com/subgraphs/name/donguks/elyfi-bsc", { query })
-  }
-  static getEthReserveData = async (): Promise<AxiosResponse<IResponse>> => {
-    return axios.post("https://api.studio.thegraph.com/query/862/elyfi/v0.0.4", { query })
-  }
-}
+export const ethReserveDataFetcher = (): Promise<IReserveSubgraphData[]> =>
+  request("https://api.studio.thegraph.com/query/862/elyfi/v0.0.4", query);
