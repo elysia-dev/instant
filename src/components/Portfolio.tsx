@@ -40,7 +40,6 @@ const Portfolio = () => {
     [ElysiaAsset4, "Elysia Asset #4", "814810"],
     [ElysiaAsset3, "Elysia Asset #3", "1041150"]
   ]
-  console.log(assetBondToken)
   const assetBondTokenLength = useMemo(() => {
     return assetBondToken.length
   }, [assetBondToken, loanData, loading])
