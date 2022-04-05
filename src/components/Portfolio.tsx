@@ -24,6 +24,11 @@ const Portfolio = () => {
   const assetBondToken = loanData.filter((product) => {
     const parsedId = parseTokenId(product.id);
     return CollateralCategory.Others !== parsedId.collateralCategory;
+  }).sort((a, b) => {
+    return b.loanStartTimestamp! - a.loanStartTimestamp! >=
+      0
+      ? 1
+      : -1;
   });
 
   const elysiaArray = [
@@ -35,6 +40,7 @@ const Portfolio = () => {
     [ElysiaAsset4, "Elysia Asset #4", "814810"],
     [ElysiaAsset3, "Elysia Asset #3", "1041150"]
   ]
+  console.log(assetBondToken)
   const assetBondTokenLength = useMemo(() => {
     return assetBondToken.length
   }, [assetBondToken, loanData, loading])
@@ -94,14 +100,7 @@ const Portfolio = () => {
                   {
                     <AssetList
                       assetBondTokens={
-                        [...((assetBondToken as IAssetBond[]) || [])]
-                          .slice(0, pageNumber * 6)
-                          .sort((a, b) => {
-                            return b.loanStartTimestamp! - a.loanStartTimestamp! >=
-                              0
-                              ? 1
-                              : -1;
-                          }) || []
+                        assetBondToken.slice(0, pageNumber * 6)
                       }
                     />
                   }
