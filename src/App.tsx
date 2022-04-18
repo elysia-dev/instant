@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import {
   Switch,
   Route,
   BrowserRouter as Router,
 } from "react-router-dom";
 import "./i18n"
-
 import Main from './modules/pc/main/Main';
 import PrivacyPolicy from './modules/pc/PrivacyPolicy';
 import Disclaimer from './modules/pc/Disclaimer';
@@ -13,13 +12,9 @@ import Footer from './modules/pc/footer/Footer';
 import RouteWithHeader from './modules/pc/RouteWithHeader';
 import ScrollToTop from './modules/pc/ScrollToTop';
 import AppPage from './modules/AppLink';
-
 import MainMobile from './modules/mobile/main/Main';
 import FooterMobile from './modules/mobile/footer/Footer';
-
-import { useMediaQuery } from "react-responsive";
 import { useTranslation } from 'react-i18next';
-import SubgraphProvider from './providers/SubgraphProvider';
 import useMediaQueryType from './hooks/useMediaQueryType';
 import MediaQuery from './enums/MediaQuery';
 
@@ -90,14 +85,10 @@ const App = () => {
   }, [])
 
   return (
-    <SubgraphProvider>
-    {
-      mediaQuery === MediaQuery.PC ?
-        <PcRouter />
-        :
-        <MobileRouter />
-    }
-    </SubgraphProvider>
+    mediaQuery === MediaQuery.PC ?
+      <PcRouter />
+      :
+      <MobileRouter />
   );
 }
 

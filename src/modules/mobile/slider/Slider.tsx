@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
-import { IAssetBond } from 'src/contexts/SubgraphContext';
+import { IAssetBond } from 'src/core/types/reserveSubgraph';
 
 import { useTranslation } from 'react-i18next';
 
@@ -23,7 +23,7 @@ const Slider: React.FunctionComponent<{
   })
   SwiperCore.use([Navigation, Pagination, Autoplay]);
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const elysiaSlides = [];
   for (let i = 0; i < elysiaArray.length; i++) {
@@ -36,16 +36,6 @@ const Slider: React.FunctionComponent<{
     );
   }
 
-  const elyfiSlides = [];
-  for (let i = 0; i < assetBond.length; i++) {
-    elysiaSlides.push(
-      <SwiperSlide key={`slide-${i}`} tag="li">
-        <div style={{ textAlign: "center" }}>
-          <img src={elysiaArray[i][0]} alt="elysia" style={{ height: 300, listStyle: 'none', margin: "auto" }} />
-        </div>
-      </SwiperSlide>
-    );
-  }
   return (
     <>
       <div className="mobile-slider-container">

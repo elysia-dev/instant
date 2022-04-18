@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 import ElysiaAsset3 from "src/shared/image/portfolio/elysia-asset-3.png";
 import ElysiaAsset4 from "src/shared/image/portfolio/elysia-asset-4.png";
@@ -8,27 +8,29 @@ import ElysiaAsset7 from "src/shared/image/portfolio/elysia-asset-7.png";
 import ElysiaAssetRed1 from "src/shared/image/portfolio/elysia-asset-red-1.png";
 import ElysiaAssetBlue1 from "src/shared/image/portfolio/elysia-asset-blue-1.png";
 import { useTranslation } from "react-i18next";
-import SubgraphContext, { IAssetBond, IReserveSubgraphData } from "src/contexts/SubgraphContext";
+import { IAssetBond } from "src/core/types/reserveSubgraph";
 import { parseTokenId } from "src/utiles/parseTokenId";
 import CollateralCategory from "src/enums/CollateralCategory";
 import AssetList from 'src/components/AssetList';
-import useMediaQueryType from "src/hooks/useMediaQueryType";
-import MediaQuery from "src/enums/MediaQuery";
-import Slider from "src/modules/mobile/slider/Slider";
-
+import useReserveData from "src/hooks/useReserveData";
 
 const Portfolio = () => {
-  const { getAssetBonds } = useContext(SubgraphContext);
+  const { getAssetBonds, loading } = useReserveData();
   const [isMoreAsset, setMoreAsset] = useState(false);
   const [pageNumber, setPageNumber] = useState(1);
   const [loanSwitch, setLoanSwitch] = useState(false)
   const loanData = getAssetBonds();
   const { t } = useTranslation();
-  const { value: mediaQuery } = useMediaQueryType();
   const assetBondToken = loanData.filter((product) => {
     const parsedId = parseTokenId(product.id);
     return CollateralCategory.Others !== parsedId.collateralCategory;
+  }).sort((a, b) => {
+    return b.loanStartTimestamp! - a.loanStartTimestamp! >=
+      0
+      ? 1
+      : -1;
   });
+
   const elysiaArray = [
     [ElysiaAssetBlue1, "Elysia Asset Blue #1", "426075"],
     [ElysiaAssetRed1, "Elysia Asset Red #1", "181704"],
@@ -40,7 +42,7 @@ const Portfolio = () => {
   ]
   const assetBondTokenLength = useMemo(() => {
     return assetBondToken.length
-  }, [assetBondToken, loanData])
+  }, [assetBondToken, loanData, loading])
 
   const SwithcingState = () => {
     setMoreAsset(!isMoreAsset);
@@ -49,8 +51,9 @@ const Portfolio = () => {
     if (pageNumber >= assetBondTokenLength / 6) {
       return setPageNumber(1)
     }
-    setPageNumber((prev) => prev + 1);
-  }, [pageNumber]);
+    setPageNumber(prev => prev + 1);
+  }, [pageNumber, assetBondTokenLength]);
+
   return (
     <section
       className="portfolio contents-container"
@@ -96,14 +99,7 @@ const Portfolio = () => {
                   {
                     <AssetList
                       assetBondTokens={
-                        [...((assetBondToken as IAssetBond[]) || [])]
-                          .slice(0, pageNumber * 6)
-                          .sort((a, b) => {
-                            return b.loanStartTimestamp! - a.loanStartTimestamp! >=
-                              0
-                              ? 1
-                              : -1;
-                          }) || []
+                        assetBondToken.slice(0, pageNumber * 6)
                       }
                     />
                   }
@@ -150,7 +146,7 @@ const Portfolio = () => {
             }
           </div>
         </div>
-        <h2 className="portfolio__see-more" onClick={loanSwitch ? viewMoreHandler : SwithcingState}>
+        <h2 className="portfolio__see-more" onClick={() => { loanSwitch ? viewMoreHandler() : SwithcingState() }}>
           {(loanSwitch ? (pageNumber < assetBondTokenLength / 6) : !isMoreAsset) ? t("portfolio.seemore") : t("portfolio.close")}
         </h2>
       </section>
