@@ -299,6 +299,15 @@ const Main = () => {
               >
                 {t("navigation.elyfi")}
               </a>
+              <a
+                className="main__gnb__link main__gnb--bold"
+                href="https://gov.elysia.land"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: `${scrollTop >= 100 ? "#333333" : "#FFFFFF"}` }}
+              >
+                {t("navigation.governance")}
+              </a>
             </div>
           </nav>
         </header>
